@@ -21,6 +21,7 @@ I have chosen this project because the current services are either designed for 
 
 # Technologies
   
+  * Log in system with authentication
   * Hibernate to access my database
   * Log4j to help debug
   * JUnit to test
