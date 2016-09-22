@@ -1,0 +1,29 @@
+
+
+#### Project Plan
+
+
+## Pathfinder Character Sheet Organizer
+# Project Statement
+
+My project is going to be used while playing the table-top RPG Pathfinder.  It is aimed at helping myself and others keep track of their character sheets and game-master notes.  At minimum, my website will function similarly to myth-weavers.com and roll20.net.  Myth-weavers is a site that lets you edit your character sheets and save them online.  Roll20 is an online service that acts as a sort of chatroom combined with resources for the GM to use.
+
+Things I want to accomplish in order of priority:
+  * Editable sheets that are saved in a database
+  * Page where GM can keep notes for their campaign
+  * Page where GM can view player sheets
+  * Have sheets dynamically update when you edit fields
+  * Have sheets change from the GM's view
+  * Chat-room
+  * Commands or buttons in chat-room for rolling dice and changing values
+
+I have chosen this project because the current services are either designed for just players, or designed entirely for online use.  When I play Pathfinder, we tend to keep our character sheets on our computers but like using real dice and figures during combat.
+
+# Technologies
+  
+  * Hibernate to access my database
+  * Log4j to help debug
+  * JUnit to test
+  * I will need to research ways to make my pages dynamically update
+  
+#
