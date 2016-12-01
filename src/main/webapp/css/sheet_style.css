@@ -1,0 +1,23 @@
+
+.number-box {
+    width: 25px;
+    text-align: center;
+}
+
+.score-header {
+    font-size: 12px;
+}
+
+.underline {
+    border: 0;
+    border-bottom: solid 1px #000;
+    outline: none; /* prevents textbox highlight in chrome */
+}
+
+.score-table {
+    border: 2px solid black;
+}
+
+.score-table td {
+    border: 2px solid black;
+}

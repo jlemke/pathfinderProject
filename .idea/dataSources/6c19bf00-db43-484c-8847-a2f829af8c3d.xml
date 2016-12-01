@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - pathfinderdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="pathfinderdb">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="authentication_db"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="performance_schema"/>
+    <schema id="6" name="sample"/>
+    <schema id="7" name="sys"/>
+    <schema id="8" name="pathfinder_bestiarydb"/>
+    <table id="9" parent="1" name="users"/>
+    <table id="10" parent="1" name="sheet_main"/>
+    <table id="11" parent="1" name="user_roles"/>
+    <column id="12" parent="9" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="13" parent="9" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(128)|0</data-type>
+    </column>
+    <column id="14" parent="9" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="15" parent="9" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+    <column id="16" parent="10" name="sheet_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="10" name="owner">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="18" parent="10" name="character_name">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="19" parent="10" name="character_race">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="20" parent="10" name="date_created">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="21" parent="10" name="last_accessed">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="22" parent="10" name="campaign">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="23" parent="10" name="username">
+      <columns>owner</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="24" parent="10" name="PRIMARY">
+      <columns>sheet_id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="25" parent="10" name="sheet_main_ibfk_1">
+      <columns>owner</columns>
+      <ref-key>~.users.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="26" parent="11" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="27" parent="11" name="role_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <key id="28" parent="11" name="PRIMARY">
+      <columns>username
+role_name</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="29" parent="11" name="user_roles_ibfk_1">
+      <columns>username</columns>
+      <ref-key>~.users.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
