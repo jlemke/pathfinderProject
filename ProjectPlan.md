@@ -422,5 +422,4 @@ TODO
 		Problems to solve with game page:
 			how to show each player a different version
 			how to show the gm the sheets as the values are changing
-			
-	
+
