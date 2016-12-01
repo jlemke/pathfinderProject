@@ -3,6 +3,6 @@
 <%@include file="navbar.jsp"%>
 <body>
 <p>test</p>
-<a href="sheets.jsp">View Sheets</a>
+<a href="${pageContext.request.contextPath}/sheets">View Sheets</a>
 </body>
 </html>

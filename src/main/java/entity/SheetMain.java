@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,17 +14,18 @@ import java.util.Date;
 public class SheetMain {
 
     @Id
-    @Column
-
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="sheet_id")
     private int sheetId;
 
-    @Column
+    @Column(name="owner")
     private String username;
 
-    @Column
+    @Column(name="character_name")
     private String characterName;
 
-    @Column
+    @Column(name="character_race")
     private String characterRace;
 
     @Column(name = "date_created", columnDefinition="DATETIME")
@@ -33,7 +36,7 @@ public class SheetMain {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastAccessed;
 
-    @Column
+    @Column(name="campaign")
     private String campaign;
 
 

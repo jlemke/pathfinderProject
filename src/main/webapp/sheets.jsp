@@ -19,7 +19,6 @@
             <td>${sheet.characterRace}</td>
             <td>${sheet.campaign}</td>
             <td></td>
-
         </tr>
     </c:forEach>
 </table>

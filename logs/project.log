@@ -1,0 +1,5 @@
+2016-11-30 20:34:30,823 0    [http-nio-8080-exec-9] WARN  org.hibernate.orm.connections.pooling  - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-11-30 20:34:33,503 2680 [http-nio-8080-exec-9] WARN  org.hibernate.orm.deprecation  - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2016-11-30 20:46:42,368 731545 [http-nio-8080-exec-2] WARN  org.hibernate.orm.deprecation  - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2016-11-30 20:46:47,399 736576 [http-nio-8080-exec-3] WARN  org.hibernate.orm.deprecation  - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2016-11-30 20:46:47,961 737138 [http-nio-8080-exec-4] WARN  org.hibernate.orm.deprecation  - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead

@@ -2,6 +2,7 @@ package persistence;
 
 import entity.Sheet;
 import entity.SheetMain;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -13,6 +14,12 @@ import java.util.List;
  */
 public class SheetDao {
 
+    private final Logger logger = Logger.getLogger("logger");
+
+
+    public SheetDao() {
+        logger.info("dao created");
+    }
     /**
      *
      * @param username the owner of the sheets
@@ -20,11 +27,13 @@ public class SheetDao {
      *
      */
     public List<SheetMain> getListOfSheets(String username) {
+        logger.info("in getListOfSheets");
         List<SheetMain> thisUsersSheets = new ArrayList<SheetMain>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-        thisUsersSheets = session.createCriteria(SheetMain.class).add(Restrictions.eq("owner", username)).list();
+        thisUsersSheets = (List<SheetMain>) session.createCriteria(SheetMain.class).add(Restrictions.eq("owner", username)).list();
 
+        logger.info(thisUsersSheets);
         return thisUsersSheets;
     }
 
@@ -42,5 +51,7 @@ public class SheetDao {
         sheet = session.get(Sheet.class, sheetId);
         return sheet;
     }
+
+
 
 }

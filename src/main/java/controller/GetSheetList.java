@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by Joe on 10/26/2016.
@@ -26,12 +27,17 @@ import java.util.List;
 
 public class GetSheetList extends HttpServlet {
 
+    private final Logger logger = Logger.getLogger("logger");
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        logger.info("in getSheetList servlet");
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
+        String username; // = (String) session.getAttribute("username");
+
+        username = "jlemke";
 
         //get sheets for this user
         List<SheetMain> sheets = new ArrayList<SheetMain>();
