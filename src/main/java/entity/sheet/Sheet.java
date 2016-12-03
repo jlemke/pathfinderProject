@@ -1,4 +1,4 @@
-package entity;
+package entity.sheet;
 
 /**
  * Created by Joe on 11/23/2016.

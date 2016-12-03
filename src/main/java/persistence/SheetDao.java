@@ -1,7 +1,7 @@
 package persistence;
 
-import entity.Sheet;
-import entity.SheetMain;
+import entity.sheet.Sheet;
+import entity.sheet.SheetMain;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -20,6 +20,7 @@ public class SheetDao {
     public SheetDao() {
         logger.info("dao created");
     }
+
     /**
      *
      * @param username the owner of the sheets
@@ -48,8 +49,16 @@ public class SheetDao {
         Sheet sheet = new Sheet();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-        sheet = session.get(Sheet.class, sheetId);
+        sheet = (Sheet) session.get(Sheet.class, sheetId);
         return sheet;
+    }
+
+    /**
+     * Creates a new character sheet with default values in each field
+     * @param owner username of the creator of this sheet
+     */
+    public void createBlankSheet(String owner) {
+
     }
 
 

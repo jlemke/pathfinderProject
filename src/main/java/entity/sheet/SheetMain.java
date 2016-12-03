@@ -1,4 +1,4 @@
-package entity;
+package entity.sheet;
 
 import org.hibernate.annotations.GenericGenerator;
 

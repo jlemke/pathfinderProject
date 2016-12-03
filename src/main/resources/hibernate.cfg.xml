@@ -21,7 +21,7 @@
         <property name="show_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="entity.SheetMain"/>
+        <mapping class="entity.sheet.SheetMain"/>
 
     </session-factory>
 

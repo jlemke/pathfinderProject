@@ -1,10 +1,9 @@
 package controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.SheetMain;
+import entity.sheet.SheetMain;
 import persistence.SheetDao;
 
+import javax.faces.context.FacesContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,20 +32,26 @@ public class GetSheetList extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //get username from j_security_check
+        String username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         logger.info("in getSheetList servlet");
-        HttpSession session = request.getSession();
-        String username; // = (String) session.getAttribute("username");
 
         username = "jlemke";
 
-        //get sheets for this user
-        List<SheetMain> sheets = new ArrayList<SheetMain>();
-        SheetDao dao = new SheetDao();
-        sheets = dao.getListOfSheets(username);
+        //if user isn't logged in then don't list any pages
+        if (username == null || username == "") {
 
-        request.setAttribute("sheets", sheets);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/sheets.jsp");
-        dispatcher.forward(request, response);
+        } else {
+            //get sheets for this user
+            List<SheetMain> sheets = new ArrayList<SheetMain>();
+            SheetDao dao = new SheetDao();
+            sheets = dao.getListOfSheets(username);
+
+            request.setAttribute("sheets", sheets);
+            request.setAttribute("user", username)
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/sheets.jsp");
+            dispatcher.forward(request, response);
+        }
 
     }
 
