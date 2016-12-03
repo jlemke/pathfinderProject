@@ -151,13 +151,14 @@ I have chosen this project because the current services are either designed for 
 				
 		CREATE TABLE sheet_main (
 			sheet_id int NOT NULL AUTO_INCREMENT,
-			username varchar(30) NOT NULL,
+			owner varchar(30) NOT NULL,
 			character_name varchar(50),
 			character_race varchar(50),
 			date_created DATETIME,
 			last_accessed DATETIME,
 			campaign varchar(50),
-			PRIMARY KEY (sheet_id)
+			PRIMARY KEY (sheet_id),
+			FOREIGN KEY (owner) REFERENCES users(username)
 		);
 		
 		//contains character description
@@ -172,7 +173,8 @@ I have chosen this project because the current services are either designed for 
 			visual_description text,
 			biography text,
 			languages varchar(255),
-			PRIMARY KEY (sheet_id)
+			PRIMARY KEY (sheet_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		
@@ -185,7 +187,8 @@ I have chosen this project because the current services are either designed for 
 			fort_misc int DEFAULT 0,
 			ref_misc int DEFAULT 0,
 			will_misc int DEFAULT 0,
-			PRIMARY KEY (sheet_id)
+			PRIMARY KEY (sheet_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		//This table will hold the information for the different classes
@@ -202,10 +205,11 @@ I have chosen this project because the current services are either designed for 
 			will_progression ENUM('fast', 'slow'),
 			skills_per_level int DEFAULT 0,
 			caster_ability ENUM('---', 'int', 'wis', 'cha'),
-			PRIMARY KEY (sheet_id, class_name)
+			PRIMARY KEY (sheet_id, class_name),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
-		CREATE TABLE sheet_ability_scores (
+		CREATE TABLE sheet_ability_score_columns (
 			sheet_id int NOT NULL,
 			column_id int NOT NULL,
 			column_name varchar(30),
@@ -215,32 +219,35 @@ I have chosen this project because the current services are either designed for 
 			int_column int,
 			wis_column int,
 			cha_column int,
-			PRIMARY KEY (sheet_id, column_id)
+			PRIMARY KEY (sheet_id, column_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_skills (
 			sheet_id int NOT NULL,
-			skill_id int NOT NULL,
-			skill_name varchar(30),
+			skill_name varchar(30) NOT NULL,
 			skill_ability ENUM('str', 'dex', 'con', 'int', 'wis', 'cha'),
 			skill_ranks int DEFAULT 0,
 			skill_misc int DEFAULT 0,
 			is_class_skill boolean DEFAULT FALSE,
 			req_trained boolean DEFAULT FALSE,
-			PRIMARY KEY (sheet_id, skill_id)
+			PRIMARY KEY (sheet_id, skill_name),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
-		CREATE TABLE sheet_skills_specialized (
+		CREATE TABLE sheet_specialized_skills (
 			sheet_id int NOT NULL,
 			skill_id int NOT NULL,
-			skill_name varchar(30),
+			skill_name varchar(30) NOT NULL,
 			specialization varchar(30),
 			skill_ability ENUM('str', 'dex', 'con', 'int', 'wis', 'cha') DEFAULT 'cha',
 			skill_ranks int DEFAULT 0,
 			skill_misc int DEFAULT 0,
 			is_class_skill boolean DEFAULT FALSE,
 			req_trained boolean DEFAULT FALSE,
-			PRIMARY KEY (sheet_id, skill_id)
+			PRIMARY KEY (sheet_id, skill_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id),
+			FOREIGN KEY (sheet_id, skill_name) REFERENCES sheet_skills(sheet_id, skill_name)
 		);
 	
 		
@@ -252,7 +259,8 @@ I have chosen this project because the current services are either designed for 
 			speed_climb int,
 			speed_burrow int,
 			calculate_by varchar(50),
-			PRIMARY KEY (sheet_id)
+			PRIMARY KEY (sheet_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_armors (
@@ -269,7 +277,8 @@ I have chosen this project because the current services are either designed for 
 			proficient BOOLEAN DEFAULT TRUE,
 			equipped BOOLEAN DEFAULT FALSE,
 			value int DEFAULT 0,
-			PRIMARY KEY (sheet_id, armor_id)
+			PRIMARY KEY (sheet_id, armor_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_weapons (
@@ -291,7 +300,8 @@ I have chosen this project because the current services are either designed for 
 			weight int DEFAULT 0,
 			proficient BOOLEAN DEFAULT TRUE,
 			value int DEFAULT 0,
-			PRIMARY KEY (sheet_id, weapon_id)
+			PRIMARY KEY (sheet_id, weapon_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_feats (
@@ -299,7 +309,8 @@ I have chosen this project because the current services are either designed for 
 			feat_id int NOT NULL,
 			feat_name varchar(50) NOT NULL,
 			feat_description text,
-			PRIMARY KEY (sheet_id, feat_id)
+			PRIMARY KEY (sheet_id, feat_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_abilities (
@@ -307,7 +318,8 @@ I have chosen this project because the current services are either designed for 
 			ability_id int NOT NULL,
 			ability_name varchar(50),
 			ability_description text,
-			PRIMARY KEY (sheet_id, ability_id)
+			PRIMARY KEY (sheet_id, ability_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_racial_traits (
@@ -315,16 +327,19 @@ I have chosen this project because the current services are either designed for 
 			trait_id int NOT NULL,
 			trait_name varchar(50),
 			trait_description text,
-			PRIMARY KEY (sheet_id, trait_id)
+			PRIMARY KEY (sheet_id, trait_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
-		CREATE TABLE class_features (
+		CREATE TABLE sheet_class_features (
 			sheet_id int NOT NULL,
 			class_name varchar(25) NOT NULL,
 			feature_id int NOT NULL,
 			feature_name varchar(30),
 			feature_description text,
-			PRIMARY KEY (sheet_id, class_name, feature_id)
+			PRIMARY KEY (sheet_id, class_name, feature_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id),
+			FOREIGN KEY (sheet_id, class_name) REFERENCES sheet_classes(sheet_id, class_name)
 		);
 		
 		CREATE TABLE sheet_spells (
@@ -349,7 +364,9 @@ I have chosen this project because the current services are either designed for 
 			focus BOOLEAN DEFAULT FALSE,
 			divine_focus BOOLEAN DEFAULT FALSE,
 			prepared BOOLEAN DEFAULT FALSE,
-			PRIMARY KEY (sheet_id, class_name, spell_id)
+			PRIMARY KEY (sheet_id, class_name, spell_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id),
+			FOREIGN KEY (sheet_id, class_name) REFERENCES sheet_classes(sheet_id, class_name)
 		);
 		
 		CREATE TABLE sheet_money (
@@ -358,7 +375,8 @@ I have chosen this project because the current services are either designed for 
 			gp int DEFAULT 0,
 			sp int DEFAULT 0,
 			cp int DEFAULT 0,
-			PRIMARY KEY (sheet_id)
+			PRIMARY KEY (sheet_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
 		CREATE TABLE sheet_items (
@@ -369,13 +387,14 @@ I have chosen this project because the current services are either designed for 
 			item_quantity int DEFAULT 0,
 			unit_weight int DEFAULT 0,
 			unit_value int DEFAULT 0,
-			PRIMARY KEY (sheet_id, item_id)
+			PRIMARY KEY (sheet_id, item_id),
+			FOREIGN KEY (sheet_id) REFERENCES sheet_main(sheet_id)
 		);
 		
+		
+		
+		
 		sheet_settings table
-		
-		
-		fort_base, fort_ability, fort_misc
 		
 		base attack bonus
 		
@@ -384,7 +403,7 @@ I have chosen this project because the current services are either designed for 
 				WHERE skill_name IN ('Acrobatics', 'Appraise', ...);
 		
 		
-		skills_specialized table
+		specialized_skills table
 		INSERT INTO sheet_skills_specialized VALUES
 			(sheet_id, 'Craft', 'Pottery', 'int', 0, 0, false, false),
 			(sheet_id, 'Perform', 'Dance', 'cha', 0, 0, false, false),
@@ -397,19 +416,6 @@ I have chosen this project because the current services are either designed for 
 			INSERT INTO sheet_main VALUES (
 				sheet_id int NOT NULL AUTO_INCREMENT,
 				owner,
-				character_name varchar(50),
-				character_race varchar(50),
-				date_created DATETIME,
-				last_accessed DATETIME,
-				campaign varchar(50),
-				PRIMARY KEY (sheet_id)
-			);
-			
-			
-				
-			INSERT INTO sheet_main VALUES (
-				sheet_id int NOT NULL AUTO_INCREMENT,
-				username varchar(30) NOT NULL,
 				character_name varchar(50),
 				character_race varchar(50),
 				date_created DATETIME,
@@ -462,7 +468,7 @@ I have chosen this project because the current services are either designed for 
 				'---'
 			);
 			
-			INSERT INTO sheet_ability_scores VALUES
+			INSERT INTO sheet_ability_score_columns VALUES
 				(sheet_id, 0, 'BASE', 10, 10, 10, 10, 10, 10),
 				(sheet_id, 1, 'RACE', 0, 0, 0, 0, 0, 0),
 				(sheet_id, 2, 'MISC', 0, 0, 0, 0, 0, 0),
@@ -717,4 +723,179 @@ TODO
 		Problems to solve with game page:
 			how to show each player a different version
 			how to show the gm the sheets as the values are changing
+
+			
+		SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, GROUP_CONCAT(TRIM(CONCAT(sc.archetype, CONCAT(' ', CONCAT(sc.class_name, CONCAT(' ', CONCAT(sc.level)))))) SEPARATOR '/') 
+		FROM sheet_main sm JOIN sheet_classes sc ON sm.sheet_id = sc.sheet_id GROUP BY sheet_id;
+			
+			
+		select group_concat(CONCAT(first_name, CONCAT(' ', CONCAT(last_name))) SEPARATOR ', ') from users;
+			
+		
+			
+			
+			
+			
+			temp sheet main save (just in case):
+			
+package entity.sheet;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.util.Date;
+
+/**
+ * Created by Joe on 10/26/2016.
+ */
+
+@Entity
+@Table(name = "sheet_main")
+public class SheetMain {
+
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name="increment", strategy="increment")
+    @Column(name="sheet_id")
+    private int sheetId;
+
+    @Column(name="owner")
+    private String username;
+
+    @Column(name="character_name")
+    private String characterName;
+
+    @Column(name="character_race")
+    private String characterRace;
+
+    @Column(name = "date_created", columnDefinition="DATETIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreated;
+
+    @Column(name = "last_accessed", columnDefinition="DATETIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastAccessed;
+
+    @Column(name="campaign")
+    private String campaign;
+
+
+    public int getSheetId() {
+        return sheetId;
+    }
+
+    public void setSheetId(int sheetId) {
+        this.sheetId = sheetId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
+
+    public String getCharacterRace() {
+        return characterRace;
+    }
+
+    public void setCharacterRace(String characterRace) {
+        this.characterRace = characterRace;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public Date getLastAccessed() {
+        return lastAccessed;
+    }
+
+    public void setLastAccessed(Date lastAccessed) {
+        this.lastAccessed = lastAccessed;
+    }
+
+    public String getCampaign() {
+        return campaign;
+    }
+
+    public void setCampaign(String campaign) {
+        this.campaign = campaign;
+    }
+
+}
+
+
+
+
+
+
+package entity;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+/**
+ * Created by Joe on 10/23/2016.
+ */
+
+@Entity
+@Table(name = "users")
+public class User {
+
+    @Id
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "email")
+    private String email;
+
+    public User(){}
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}
 

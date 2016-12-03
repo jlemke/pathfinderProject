@@ -11,8 +11,6 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/pathfinderdb</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">catplanet</property>
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
@@ -21,7 +19,25 @@
         <property name="show_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="entity.sheet.SheetMain"/>
+        <mapping class="entity.sheet.Sheet"/>
+        <mapping class="entity.User"/>
+        <mapping class="entity.UserRoles"/>
+        <mapping class="entity.sheet.SheetClass"/>
+        <mapping class="entity.sheet.SheetDescription"/>
+        <mapping class="entity.sheet.SheetGeneral"/>
+        <mapping class="entity.sheet.SheetArmor"/>
+        <mapping class="entity.sheet.SheetSkill"/>
+        <mapping class="entity.sheet.SheetSpeeds"/>
+        <mapping class="entity.sheet.SheetAbility"/>
+        <mapping class="entity.sheet.SheetFeat"/>
+        <mapping class="entity.sheet.SheetItem"/>
+        <mapping class="entity.sheet.SheetMoney"/>
+        <mapping class="entity.sheet.SheetRacialTrait"/>
+        <mapping class="entity.sheet.SheetSpell"/>
+        <mapping class="entity.sheet.SheetWeapon"/>
+        <mapping class="entity.sheet.SheetClassFeature"/>
+        <mapping class="entity.sheet.SheetAbilityScoreColumn"/>
+        <mapping class="entity.sheet.SheetSpecializedSkill"/>
 
     </session-factory>
 

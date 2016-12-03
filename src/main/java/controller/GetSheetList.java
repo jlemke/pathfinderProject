@@ -1,6 +1,6 @@
 package controller;
 
-import entity.sheet.SheetMain;
+import entity.sheet.Sheet;
 import persistence.SheetDao;
 
 import javax.faces.context.FacesContext;
@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +42,7 @@ public class GetSheetList extends HttpServlet {
 
         } else {
             //get sheets for this user
-            List<SheetMain> sheets = new ArrayList<SheetMain>();
+            List<Sheet> sheets = new ArrayList<Sheet>();
             SheetDao dao = new SheetDao();
             sheets = dao.getListOfSheets(username);
 
