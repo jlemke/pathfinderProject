@@ -23,19 +23,19 @@ public class Sheet {
     private Collection<SheetClass> sheetClassesBySheetId;
     private SheetDescription sheetDescriptionBySheetId;
     private SheetGeneral sheetGeneralBySheetId;
-    private Collection<SheetArmor> sheetArmorsesBySheetId;
-    private Collection<SheetSkill> sheetSkillsesBySheetId;
+    private Collection<SheetArmor> sheetArmorsBySheetId;
+    private Collection<SheetSkill> sheetSkillsBySheetId;
     private SheetSpeeds sheetSpeedsBySheetId;
     private Collection<SheetAbility> sheetAbilitiesBySheetId;
-    private Collection<SheetFeat> sheetFeatsesBySheetId;
-    private Collection<SheetItem> sheetItemsesBySheetId;
+    private Collection<SheetFeat> sheetFeatsBySheetId;
+    private Collection<SheetItem> sheetItemsBySheetId;
     private SheetMoney sheetMoneyBySheetId;
-    private Collection<SheetRacialTrait> sheetRacialTraitsesBySheetId;
-    private Collection<SheetSpell> sheetSpellsesBySheetId;
-    private Collection<SheetWeapon> sheetWeaponsesBySheetId;
+    private Collection<SheetRacialTrait> sheetRacialTraitsBySheetId;
+    private Collection<SheetSpell> sheetSpellsBySheetId;
+    private Collection<SheetWeapon> sheetWeaponsBySheetId;
     private Collection<SheetClassFeature> sheetClassFeaturesBySheetId;
-    private Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumnsesBySheetId;
-    private Collection<SheetSpecializedSkill> sheetSpecializedSkillsesBySheetId;
+    private Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumnsBySheetId;
+    private Collection<SheetSpecializedSkill> sheetSpecializedSkillsBySheetId;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -142,7 +142,7 @@ public class Sheet {
     }
 
     @ManyToOne
-    @JoinColumn(name = "owner", referencedColumnName = "username", nullable = false)
+    @JoinColumn(name = "owner", referencedColumnName = "username", insertable = false, updatable = false)
     public User getUsersByOwner() {
         return usersByOwner;
     }
@@ -151,7 +151,7 @@ public class Sheet {
         this.usersByOwner = usersByOwner;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
+    @OneToMany(mappedBy = "sheetBySheetId")
     public Collection<SheetClass> getSheetClassesBySheetId() {
         return sheetClassesBySheetId;
     }
@@ -160,7 +160,7 @@ public class Sheet {
         this.sheetClassesBySheetId = sheetClassesBySheetId;
     }
 
-    @OneToOne(mappedBy = "sheetMainBySheetId")
+    @OneToOne(mappedBy = "sheetBySheetId")
     public SheetDescription getSheetDescriptionBySheetId() {
         return sheetDescriptionBySheetId;
     }
@@ -169,7 +169,7 @@ public class Sheet {
         this.sheetDescriptionBySheetId = sheetDescriptionBySheetId;
     }
 
-    @OneToOne(mappedBy = "sheetMainBySheetId")
+    @OneToOne(mappedBy = "sheetBySheetId")
     public SheetGeneral getSheetGeneralBySheetId() {
         return sheetGeneralBySheetId;
     }
@@ -178,25 +178,25 @@ public class Sheet {
         this.sheetGeneralBySheetId = sheetGeneralBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetArmor> getSheetArmorsesBySheetId() {
-        return sheetArmorsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetArmor> getSheetArmorsBySheetId() {
+        return sheetArmorsBySheetId;
     }
 
-    public void setSheetArmorsesBySheetId(Collection<SheetArmor> sheetArmorsesBySheetId) {
-        this.sheetArmorsesBySheetId = sheetArmorsesBySheetId;
+    public void setSheetArmorsBySheetId(Collection<SheetArmor> sheetArmorsesBySheetId) {
+        this.sheetArmorsBySheetId = sheetArmorsesBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetSkill> getSheetSkillsesBySheetId() {
-        return sheetSkillsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetSkill> getSheetSkillsBySheetId() {
+        return sheetSkillsBySheetId;
     }
 
-    public void setSheetSkillsesBySheetId(Collection<SheetSkill> sheetSkillsesBySheetId) {
-        this.sheetSkillsesBySheetId = sheetSkillsesBySheetId;
+    public void setSheetSkillsBySheetId(Collection<SheetSkill> sheetSkillsesBySheetId) {
+        this.sheetSkillsBySheetId = sheetSkillsesBySheetId;
     }
 
-    @OneToOne(mappedBy = "sheetMainBySheetId")
+    @OneToOne(mappedBy = "sheetBySheetId")
     public SheetSpeeds getSheetSpeedsBySheetId() {
         return sheetSpeedsBySheetId;
     }
@@ -205,7 +205,7 @@ public class Sheet {
         this.sheetSpeedsBySheetId = sheetSpeedsBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
+    @OneToMany(mappedBy = "sheetBySheetId")
     public Collection<SheetAbility> getSheetAbilitiesBySheetId() {
         return sheetAbilitiesBySheetId;
     }
@@ -214,25 +214,25 @@ public class Sheet {
         this.sheetAbilitiesBySheetId = sheetAbilitiesBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetFeat> getSheetFeatsesBySheetId() {
-        return sheetFeatsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetFeat> getSheetFeatsBySheetId() {
+        return sheetFeatsBySheetId;
     }
 
-    public void setSheetFeatsesBySheetId(Collection<SheetFeat> sheetFeatsesBySheetId) {
-        this.sheetFeatsesBySheetId = sheetFeatsesBySheetId;
+    public void setSheetFeatsBySheetId(Collection<SheetFeat> sheetFeatsesBySheetId) {
+        this.sheetFeatsBySheetId = sheetFeatsesBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetItem> getSheetItemsesBySheetId() {
-        return sheetItemsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetItem> getSheetItemsBySheetId() {
+        return sheetItemsBySheetId;
     }
 
-    public void setSheetItemsesBySheetId(Collection<SheetItem> sheetItemsesBySheetId) {
-        this.sheetItemsesBySheetId = sheetItemsesBySheetId;
+    public void setSheetItemsBySheetId(Collection<SheetItem> sheetItemsesBySheetId) {
+        this.sheetItemsBySheetId = sheetItemsesBySheetId;
     }
 
-    @OneToOne(mappedBy = "sheetMainBySheetId")
+    @OneToOne(mappedBy = "sheetBySheetId")
     public SheetMoney getSheetMoneyBySheetId() {
         return sheetMoneyBySheetId;
     }
@@ -241,34 +241,34 @@ public class Sheet {
         this.sheetMoneyBySheetId = sheetMoneyBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetRacialTrait> getSheetRacialTraitsesBySheetId() {
-        return sheetRacialTraitsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetRacialTrait> getSheetRacialTraitsBySheetId() {
+        return sheetRacialTraitsBySheetId;
     }
 
-    public void setSheetRacialTraitsesBySheetId(Collection<SheetRacialTrait> sheetRacialTraitsesBySheetId) {
-        this.sheetRacialTraitsesBySheetId = sheetRacialTraitsesBySheetId;
+    public void setSheetRacialTraitsBySheetId(Collection<SheetRacialTrait> sheetRacialTraitsesBySheetId) {
+        this.sheetRacialTraitsBySheetId = sheetRacialTraitsesBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetSpell> getSheetSpellsesBySheetId() {
-        return sheetSpellsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetSpell> getSheetSpellsBySheetId() {
+        return sheetSpellsBySheetId;
     }
 
-    public void setSheetSpellsesBySheetId(Collection<SheetSpell> sheetSpellsesBySheetId) {
-        this.sheetSpellsesBySheetId = sheetSpellsesBySheetId;
+    public void setSheetSpellsBySheetId(Collection<SheetSpell> sheetSpellsBySheetId) {
+        this.sheetSpellsBySheetId = sheetSpellsBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetWeapon> getSheetWeaponsesBySheetId() {
-        return sheetWeaponsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetWeapon> getSheetWeaponsBySheetId() {
+        return sheetWeaponsBySheetId;
     }
 
-    public void setSheetWeaponsesBySheetId(Collection<SheetWeapon> sheetWeaponsesBySheetId) {
-        this.sheetWeaponsesBySheetId = sheetWeaponsesBySheetId;
+    public void setSheetWeaponsBySheetId(Collection<SheetWeapon> sheetWeaponsBySheetId) {
+        this.sheetWeaponsBySheetId = sheetWeaponsBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
+    @OneToMany(mappedBy = "sheetBySheetId")
     public Collection<SheetClassFeature> getSheetClassFeaturesBySheetId() {
         return sheetClassFeaturesBySheetId;
     }
@@ -277,21 +277,21 @@ public class Sheet {
         this.sheetClassFeaturesBySheetId = sheetClassFeaturesBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetAbilityScoreColumn> getSheetAbilityScoreColumnsesBySheetId() {
-        return sheetAbilityScoreColumnsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetAbilityScoreColumn> getSheetAbilityScoreColumnsBySheetId() {
+        return sheetAbilityScoreColumnsBySheetId;
     }
 
-    public void setSheetAbilityScoreColumnsesBySheetId(Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumnsesBySheetId) {
-        this.sheetAbilityScoreColumnsesBySheetId = sheetAbilityScoreColumnsesBySheetId;
+    public void setSheetAbilityScoreColumnsBySheetId(Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumnsBySheetId) {
+        this.sheetAbilityScoreColumnsBySheetId = sheetAbilityScoreColumnsBySheetId;
     }
 
-    @OneToMany(mappedBy = "sheetMainBySheetId")
-    public Collection<SheetSpecializedSkill> getSheetSpecializedSkillsesBySheetId() {
-        return sheetSpecializedSkillsesBySheetId;
+    @OneToMany(mappedBy = "sheetBySheetId")
+    public Collection<SheetSpecializedSkill> getSheetSpecializedSkillsBySheetId() {
+        return sheetSpecializedSkillsBySheetId;
     }
 
-    public void setSheetSpecializedSkillsesBySheetId(Collection<SheetSpecializedSkill> sheetSpecializedSkillsesBySheetId) {
-        this.sheetSpecializedSkillsesBySheetId = sheetSpecializedSkillsesBySheetId;
+    public void setSheetSpecializedSkillsBySheetId(Collection<SheetSpecializedSkill> sheetSpecializedSkillsBySheetId) {
+        this.sheetSpecializedSkillsBySheetId = sheetSpecializedSkillsBySheetId;
     }
 }

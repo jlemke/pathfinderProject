@@ -1,6 +1,7 @@
 package entity.sheet;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Joe on 12/3/2016.
@@ -15,7 +16,8 @@ public class SheetSkill {
     private Integer skillMisc;
     private Byte isClassSkill;
     private Byte reqTrained;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
+    private Collection<SheetSpecializedSkill> sheetSpecializedSkills;
 
     @Basic
     @Column(name = "sheet_id", nullable = false)
@@ -117,13 +119,23 @@ public class SheetSkill {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    @OneToMany(mappedBy = "sheetSkill")
+    public Collection<SheetSpecializedSkill> getSheetSpecializedSkills() {
+        return sheetSpecializedSkills;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetSpecializedSkills(Collection<SheetSpecializedSkill> sheetSpecializedSkills) {
+        this.sheetSpecializedSkills = sheetSpecializedSkills;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
+    }
+
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 }

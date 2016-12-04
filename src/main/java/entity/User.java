@@ -14,7 +14,7 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Collection<Sheet> sheetMainsByUsername;
+    private Collection<Sheet> sheetsByUsername;
     private Collection<UserRoles> userRolesByUsername;
 
     @Id
@@ -70,12 +70,12 @@ public class User {
     }
 
     @OneToMany(mappedBy = "usersByOwner")
-    public Collection<Sheet> getSheetMainsByUsername() {
-        return sheetMainsByUsername;
+    public Collection<Sheet> getSheetsByUsername() {
+        return sheetsByUsername;
     }
 
-    public void setSheetMainsByUsername(Collection<Sheet> sheetMainsByUsername) {
-        this.sheetMainsByUsername = sheetMainsByUsername;
+    public void setSheetsByUsername(Collection<Sheet> sheetsByUsername) {
+        this.sheetsByUsername = sheetsByUsername;
     }
 
     @OneToMany(mappedBy = "usersByUsername")

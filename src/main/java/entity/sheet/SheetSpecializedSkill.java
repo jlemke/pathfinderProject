@@ -18,7 +18,8 @@ public class SheetSpecializedSkill {
     private Integer skillMisc;
     private Byte isClassSkill;
     private Byte reqTrained;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
+    private SheetSkill sheetSkill;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -146,12 +147,25 @@ public class SheetSpecializedSkill {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
+    }
+
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false),
+            @JoinColumn(name = "skill_name", referencedColumnName = "skill_name", insertable = false, updatable = false)
+    })
+    public SheetSkill getSheetSkill() {
+        return sheetSkill;
+    }
+
+    public void setSheetSkill(SheetSkill sheetSkill) {
+        this.sheetSkill = sheetSkill;
     }
 }

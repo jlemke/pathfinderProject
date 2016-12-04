@@ -5,6 +5,9 @@ import entity.sheet.SheetInfo;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.dialect.function.StandardSQLFunction;
+import org.hibernate.type.StringType;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -32,12 +35,14 @@ public class SheetDao {
         logger.info("in getListOfSheets");
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
+
         //TODO add 'as' statements and figure out how to access object
-        String hql = "SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, " +
+        String sql = "SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, " +
                 "GROUP_CONCAT(TRIM(CONCAT(sc.archetype, CONCAT(' ', CONCAT(sc.class_name, " +
                 "CONCAT(' ', CONCAT(sc.level)))))) SEPARATOR '/'), sm.date_created, sm.last_accessed, sm.campaign " +
-                "FROM sheet_main sm JOIN sheet_classes sc ON sm.sheet_id = sc.sheet_id GROUP BY sheet_id";
-        Query query = session.createQuery(hql);
+                "FROM sheet_main AS sm JOIN sheet_classes AS sc ON sm.sheet_id = sc.sheet_id " +
+                "WHERE sm.owner = '" + username + "' GROUP BY sc.sheet_id ORDER BY sc.level DESC";
+        Query query = session.createSQLQuery(sql);
 
         List<SheetInfo> thisUsersSheets = new ArrayList<SheetInfo>();
         SheetInfo temp;

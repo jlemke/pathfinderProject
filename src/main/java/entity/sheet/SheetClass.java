@@ -22,8 +22,8 @@ public class SheetClass {
     private String willProgression;
     private Integer skillsPerLevel;
     private String casterAbility;
-    private Sheet sheetMainBySheetId;
-    private Collection<SheetSpell> sheetSpellses;
+    private Sheet sheetBySheetId;
+    private Collection<SheetSpell> sheetSpells;
     private Collection<SheetClassFeature> sheetClassFeatures;
 
     @Id
@@ -193,22 +193,22 @@ public class SheetClass {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 
     @OneToMany(mappedBy = "sheetClasses")
-    public Collection<SheetSpell> getSheetSpellses() {
-        return sheetSpellses;
+    public Collection<SheetSpell> getSheetSpells() {
+        return sheetSpells;
     }
 
-    public void setSheetSpellses(Collection<SheetSpell> sheetSpellses) {
-        this.sheetSpellses = sheetSpellses;
+    public void setSheetSpells(Collection<SheetSpell> sheetSpells) {
+        this.sheetSpells = sheetSpells;
     }
 
     @OneToMany(mappedBy = "sheetClasses")

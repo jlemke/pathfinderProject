@@ -15,7 +15,7 @@ public class SheetSpeeds {
     private Integer speedClimb;
     private Integer speedBurrow;
     private String calculateBy;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -119,11 +119,11 @@ public class SheetSpeeds {
 
     @OneToOne
     @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 }

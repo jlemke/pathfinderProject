@@ -10,12 +10,11 @@ import javax.persistence.*;
 public class SheetGeneral {
     private int sheetId;
     private Integer hpCurrent;
-    private Integer hpMax;
     private Integer initMisc;
     private Integer fortMisc;
     private Integer refMisc;
     private Integer willMisc;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -35,16 +34,6 @@ public class SheetGeneral {
 
     public void setHpCurrent(Integer hpCurrent) {
         this.hpCurrent = hpCurrent;
-    }
-
-    @Basic
-    @Column(name = "hp_max", nullable = true)
-    public Integer getHpMax() {
-        return hpMax;
-    }
-
-    public void setHpMax(Integer hpMax) {
-        this.hpMax = hpMax;
     }
 
     @Basic
@@ -96,7 +85,6 @@ public class SheetGeneral {
 
         if (sheetId != that.sheetId) return false;
         if (hpCurrent != null ? !hpCurrent.equals(that.hpCurrent) : that.hpCurrent != null) return false;
-        if (hpMax != null ? !hpMax.equals(that.hpMax) : that.hpMax != null) return false;
         if (initMisc != null ? !initMisc.equals(that.initMisc) : that.initMisc != null) return false;
         if (fortMisc != null ? !fortMisc.equals(that.fortMisc) : that.fortMisc != null) return false;
         if (refMisc != null ? !refMisc.equals(that.refMisc) : that.refMisc != null) return false;
@@ -109,7 +97,6 @@ public class SheetGeneral {
     public int hashCode() {
         int result = sheetId;
         result = 31 * result + (hpCurrent != null ? hpCurrent.hashCode() : 0);
-        result = 31 * result + (hpMax != null ? hpMax.hashCode() : 0);
         result = 31 * result + (initMisc != null ? initMisc.hashCode() : 0);
         result = 31 * result + (fortMisc != null ? fortMisc.hashCode() : 0);
         result = 31 * result + (refMisc != null ? refMisc.hashCode() : 0);
@@ -119,11 +106,11 @@ public class SheetGeneral {
 
     @OneToOne
     @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 }

@@ -181,8 +181,7 @@ I have chosen this project because the current services are either designed for 
 		//contains general statistics
 		CREATE TABLE sheet_general (
 			sheet_id int NOT NULL,
-			hp_current int,
-			hp_max int,
+			hp_current int DEFAULT 0,
 			init_misc int DEFAULT 0,
 			fort_misc int DEFAULT 0,
 			ref_misc int DEFAULT 0,
@@ -195,7 +194,7 @@ I have chosen this project because the current services are either designed for 
 		CREATE TABLE sheet_classes (
 			sheet_id int NOT NULL,
 			class_name varchar(25) NOT NULL,
-			archetype varchar(30),
+			archetype varchar(30) DEFAULT '',
 			level int DEFAULT 0,
 			hit_points int DEFAULT 0,
 			hit_die int DEFAULT 6,
@@ -240,7 +239,7 @@ I have chosen this project because the current services are either designed for 
 			skill_id int NOT NULL,
 			skill_name varchar(30) NOT NULL,
 			specialization varchar(30),
-			skill_ability ENUM('str', 'dex', 'con', 'int', 'wis', 'cha') DEFAULT 'cha',
+			skill_ability ENUM('str', 'dex', 'con', 'int', 'wis', 'cha') DEFAULT 'str',
 			skill_ranks int DEFAULT 0,
 			skill_misc int DEFAULT 0,
 			is_class_skill boolean DEFAULT FALSE,
@@ -413,216 +412,144 @@ I have chosen this project because the current services are either designed for 
 		
 		ON CHARACTER CREATION ----
 		
-			INSERT INTO sheet_main VALUES (
-				sheet_id int NOT NULL AUTO_INCREMENT,
-				owner,
-				character_name varchar(50),
-				character_race varchar(50),
-				date_created DATETIME,
-				last_accessed DATETIME,
-				campaign varchar(50),
-				PRIMARY KEY (sheet_id)
-			);
+			INSERT INTO sheet_main (owner, date_created, last_accessed) VALUES
+				(owner, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 			
-			//contains character description
-			INSERT INTO sheet_description VALUES (
-				sheet_id int NOT NULL,
-				gender varchar(20),
-				alignment varchar(10),
-				deity varchar(50),
-				age int,
-				height varchar(25),
-				weight varchar(25),
-				visual_description text,
-				biography text,
-				languages varchar(255),
-				PRIMARY KEY (sheet_id)
-			);
-			
-			
-			//contains general statistics
-			INSERT INTO sheet_general VALUES (
-				sheet_id int NOT NULL,
-				hp_current int,
-				hp_max int,
-				init_misc int DEFAULT 0,
-				fort_misc int DEFAULT 0,
-				ref_misc int DEFAULT 0,
-				will_misc int DEFAULT 0,
-				PRIMARY KEY (sheet_id)
-			);
-			
+			INSERT INTO sheet_description (sheet_id) VALUES 
+				(sheet_id);
+		
+			INSERT INTO sheet_general VALUES 
+				(sheet_id, hp_current, hp_max, init_misc, fort_misc, ref_misc, will_misc);
+
 			//This table will hold the information for the different classes
-			INSERT INTO sheet_classes VALUES (
-				sheet_id,
-				"unnamed class",
-				null,
-				1,
-				0,
-				6,
-				'full',
-				'slow',
-				'slow',
-				'slow',
-				0,
-				'---'
-			);
-			
+			INSERT INTO sheet_classes VALUES 
+				(sheet_id, "unnamed class 1", null, 1, 0, 6, 'full', 'slow', 'slow', 'slow', 0, '---');
+
 			INSERT INTO sheet_ability_score_columns VALUES
 				(sheet_id, 0, 'BASE', 10, 10, 10, 10, 10, 10),
 				(sheet_id, 1, 'RACE', 0, 0, 0, 0, 0, 0),
 				(sheet_id, 2, 'MISC', 0, 0, 0, 0, 0, 0),
 				(sheet_id, 3, 'TEMP', 0, 0, 0, 0, 0, 0);
-			
+
 			INSERT INTO sheet_skills VALUES
-				(sheet_id, 0, 'Acrobatics', 'dex', 0, 0, false, false),
-				(sheet_id, 1, 'Appraise', 'int', 0, 0, false, false),
-				(sheet_id, 2, 'Bluff', 'cha', 0, 0, false, false),
-				(sheet_id, 3, 'Climb', 'int', 0, 0, false, false),
-				(sheet_id, 4, 'Craft', null, 0, 0, false, false),
-				(sheet_id, 5, 'Diplomacy', 'int', 0, 0, false, false),
-				(sheet_id, 6, 'Disable Device', 'dex', 0, 0, false, true),
-				(sheet_id, 7, 'Disguise', 'cha', 0, 0, false, false),
-				(sheet_id, 8, 'Escape Artist', 'dex', 0, 0, false, false),
-				(sheet_id, 9, 'Fly', 'dex', 0, 0, false, false),
-				(sheet_id, 10, 'Handle Animal', 'cha', 0, 0, false, true),
-				(sheet_id, 11, 'Heal', 'wis', 0, 0, false, false),
-				(sheet_id, 12, 'Intimidate', 'cha', 0, 0, false, false),
-				(sheet_id, 13, 'Knowledge (Arcana)', 'int', 0, 0, false, true),
-				(sheet_id, 14, 'Knowledge (Dungeoneering)', 'int', 0, 0, false, true),
-				(sheet_id, 15, 'Knowledge (Engineering)', 'int', 0, 0, false, true),
-				(sheet_id, 16, 'Knowledge (Geography)', 'int', 0, 0, false, true),
-				(sheet_id, 17, 'Knowledge (History)', 'int', 0, 0, false, true),
-				(sheet_id, 18, 'Knowledge (Local)', 'int', 0, 0, false, true),
-				(sheet_id, 19, 'Knowledge (Nature)', 'int', 0, 0, false, true),
-				(sheet_id, 20, 'Knowledge (Nobility)', 'int', 0, 0, false, true),
-				(sheet_id, 21, 'Knowledge (Planes)', 'int', 0, 0, false, true),
-				(sheet_id, 22, 'Knowledge (Religion)', 'int', 0, 0, false, true),
-				(sheet_id, 23, 'Linguistics', 'int', 0, 0, false, true),
-				(sheet_id, 24, 'Perception', 'wis', 0, 0, false, false),
-				(sheet_id, 25, 'Perform', null, 0, 0, false, false),
-				(sheet_id, 26, 'Profession', null, 0, 0, false, true),
-				(sheet_id, 27, 'Ride', 'dex', 0, 0, false, false),
-				(sheet_id, 28, 'Sense Motive', 'wis', 0, 0, false, false),
-				(sheet_id, 29, 'Sleight of Hand', 'dex', 0, 0, false, true),
-				(sheet_id, 30, 'Spellcraft', 'int', 0, 0, false, true),
-				(sheet_id, 31, 'Stealth', 'dex', 0, 0, false, false),
-				(sheet_id, 32, 'Survival', 'wis', 0, 0, false, false),
-				(sheet_id, 33, 'Swim', 'str', 0, 0, false, false),
-				(sheet_id, 34, 'Use Magic Device', 'cha', 0, 0, false, true);
-			
+				(sheet_id, 'Acrobatics', 'dex', 0, 0, false, false),
+				(sheet_id, 'Appraise', 'int', 0, 0, false, false),
+				(sheet_id, 'Bluff', 'cha', 0, 0, false, false),
+				(sheet_id, 'Climb', 'int', 0, 0, false, false),
+				(sheet_id, 'Craft', null, 0, 0, false, false),
+				(sheet_id, 'Diplomacy', 'int', 0, 0, false, false),
+				(sheet_id, 'Disable Device', 'dex', 0, 0, false, true),
+				(sheet_id, 'Disguise', 'cha', 0, 0, false, false),
+				(sheet_id, 'Escape Artist', 'dex', 0, 0, false, false),
+				(sheet_id, 'Fly', 'dex', 0, 0, false, false),
+				(sheet_id, 'Handle Animal', 'cha', 0, 0, false, true),
+				(sheet_id, 'Heal', 'wis', 0, 0, false, false),
+				(sheet_id, 'Intimidate', 'cha', 0, 0, false, false),
+				(sheet_id, 'Knowledge (Arcana)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Dungeoneering)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Engineering)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Geography)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (History)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Local)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Nature)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Nobility)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Planes)', 'int', 0, 0, false, true),
+				(sheet_id, 'Knowledge (Religion)', 'int', 0, 0, false, true),
+				(sheet_id, 'Linguistics', 'int', 0, 0, false, true),
+				(sheet_id, 'Perception', 'wis', 0, 0, false, false),
+				(sheet_id, 'Perform', null, 0, 0, false, false),
+				(sheet_id, 'Profession', null, 0, 0, false, true),
+				(sheet_id, 'Ride', 'dex', 0, 0, false, false),
+				(sheet_id, 'Sense Motive', 'wis', 0, 0, false, false),
+				(sheet_id, 'Sleight of Hand', 'dex', 0, 0, false, true),
+				(sheet_id, 'Spellcraft', 'int', 0, 0, false, true),
+				(sheet_id, 'Stealth', 'dex', 0, 0, false, false),
+				(sheet_id, 'Survival', 'wis', 0, 0, false, false),
+				(sheet_id, 'Swim', 'str', 0, 0, false, false),
+				(sheet_id, 'Use Magic Device', 'cha', 0, 0, false, true);
+
 			INSERT INTO sheet_speeds (sheet_id, speed_base) VALUES
 				(sheet_id, 30);
+
+			INSERT INTO sheet_money (sheet_id) VALUES 
+				(sheet_id);
+				
+			test sheet
 			
-			INSERT INTO sheet_armors VALUES 
-			(
-				sheet_id int NOT NULL,
-				armor_id int NOT NULL,
-				armor_name varchar(50),
-				masterwork BOOLEAN DEFAULT FALSE,
-				ac_bonus int DEFAULT 0,
-				max_dex_bonus int,
-				skill_penalty int DEFAULT 0,
-				type varchar(50),
-				spell_failure_chance int DEFAULT 0,
-				weight int DEFAULT 0,
-				proficient BOOLEAN DEFAULT TRUE,
-				equipped BOOLEAN DEFAULT FALSE,
-				value int DEFAULT 0,
-				PRIMARY KEY (sheet_id, armor_id)
-			);
+			INSERT INTO sheet_main (owner, date_created, last_accessed) VALUES
+				('jlemke', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 			
-			INSERT INTO sheet_weapons VALUES (
-				sheet_id int NOT NULL,
-				weapon_id int NOT NULL,
-				weapon_name varchar(50),
-				masterwork BOOLEAN DEFAULT FALSE,
-				enhancement_bonus int DEFAULT 0,
-				damage_roll varchar(10),
-				critical_range int DEFAULT 20,
-				critical_multiplier int DEFAULT 2,
-				attack_ability ENUM('str','dex') DEFAULT 'str',
-				damage_ability ENUM('none', 'str', 'dex') DEFAULT 'str',
-				range int,
-				two_hand BOOLEAN DEFAULT FALSE,
-				bludgeoning BOOLEAN DEFAULT FALSE,
-				piercing BOOLEAN DEFAULT FALSE,
-				slashing BOOLEAN DEFAULT FALSE,
-				weight int DEFAULT 0,
-				proficient BOOLEAN DEFAULT TRUE,
-				value int DEFAULT 0,
-				PRIMARY KEY (sheet_id, weapon_id)
-			);
 			
-			INSERT INTO sheet_feats VALUES (
-				sheet_id int NOT NULL,
-				feat_id int NOT NULL,
-				feat_name varchar(50) NOT NULL,
-				feat_description text,
-				PRIMARY KEY (sheet_id, feat_id)
-			);
 			
-			INSERT INTO sheet_abilities VALUES (
-				sheet_id int NOT NULL,
-				ability_id int NOT NULL,
-				ability_name varchar(50),
-				ability_description text,
-				PRIMARY KEY (sheet_id, ability_id)
-			);
+			INSERT INTO sheet_description (sheet_id) VALUES 
+				(3);
+		
+			INSERT INTO sheet_general VALUES 
+				(3, 0, 0, 0, 0, 0);
+
+			//This table will hold the information for the different classes
+			INSERT INTO sheet_classes VALUES 
+				(3, "class 1", null, 1, 0, 6, 'full', 'slow', 'slow', 'slow', 0, '---'),
+				(3, "class 2", null, 1, 0, 6, 'full', 'slow', 'slow', 'slow', 0, '---');
 			
-			INSERT INTO class_features VALUES (
-				sheet_id int NOT NULL,
-				class_name varchar(25) NOT NULL,
-				feature_id int NOT NULL,
-				feature_name varchar(30),
-				feature_description text,
-				PRIMARY KEY (sheet_id, class_name, feature_id)
-			);
+			INSERT INTO sheet_ability_score_columns VALUES
+				(3, 0, 'BASE', 10, 10, 10, 10, 10, 10),
+				(3, 1, 'RACE', 0, 0, 0, 0, 0, 0),
+				(3, 2, 'MISC', 0, 0, 0, 0, 0, 0),
+				(3, 3, 'TEMP', 0, 0, 0, 0, 0, 0);
+
+			INSERT INTO sheet_skills VALUES
+				(3, 'Acrobatics', 'dex', 0, 0, false, false),
+				(3, 'Appraise', 'int', 0, 0, false, false),
+				(3, 'Bluff', 'cha', 0, 0, false, false),
+				(3, 'Climb', 'int', 0, 0, false, false),
+				(3, 'Craft', null, 0, 0, false, false),
+				(3, 'Diplomacy', 'int', 0, 0, false, false),
+				(3, 'Disable Device', 'dex', 0, 0, false, true),
+				(3, 'Disguise', 'cha', 0, 0, false, false),
+				(3, 'Escape Artist', 'dex', 0, 0, false, false),
+				(3, 'Fly', 'dex', 0, 0, false, false),
+				(3, 'Handle Animal', 'cha', 0, 0, false, true),
+				(3, 'Heal', 'wis', 0, 0, false, false),
+				(3, 'Intimidate', 'cha', 0, 0, false, false),
+				(3, 'Knowledge (Arcana)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Dungeoneering)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Engineering)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Geography)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (History)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Local)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Nature)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Nobility)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Planes)', 'int', 0, 0, false, true),
+				(3, 'Knowledge (Religion)', 'int', 0, 0, false, true),
+				(3, 'Linguistics', 'int', 0, 0, false, true),
+				(3, 'Perception', 'wis', 0, 0, false, false),
+				(3, 'Perform', null, 0, 0, false, false),
+				(3, 'Profession', null, 0, 0, false, true),
+				(3, 'Ride', 'dex', 0, 0, false, false),
+				(3, 'Sense Motive', 'wis', 0, 0, false, false),
+				(3, 'Sleight of Hand', 'dex', 0, 0, false, true),
+				(3, 'Spellcraft', 'int', 0, 0, false, true),
+				(3, 'Stealth', 'dex', 0, 0, false, false),
+				(3, 'Survival', 'wis', 0, 0, false, false),
+				(3, 'Swim', 'str', 0, 0, false, false),
+				(3, 'Use Magic Device', 'cha', 0, 0, false, true);
+
+			INSERT INTO sheet_skills_specialized VALUES
+				(3, 0, 'Craft', 'Pottery', 'int', 0, 0, false, false),
+				(3, 1, 'Perform', 'Dance', 'cha', 0, 0, false, false),
+				(3, 2, 'Profession', 'Tailor', 'wis', 0, 0, false, true);
+
+			INSERT INTO sheet_speeds (sheet_id, speed_base) VALUES
+				(3, 30);
+
+			INSERT INTO sheet_money (sheet_id) VALUES 
+				(3);
 			
-			INSERT INTO sheet_spells VALUES (
-				sheet_id int NOT NULL,
-				class_name varchar(25) NOT NULL,
-				spell_id int NOT NULL,
-				spell_level int DEFAULT 0,
-				spell_name varchar(50),
-				school varchar(20),
-				subschool varchar(25),
-				domain varchar(20),
-				subdomain varchar(30),
-				bloodline varchar(20),
-				patron varchar(15),
-				spell_description text,
-				target varchar(255),
-				range varchar(60),
-				casting_time varchar(25),
-				verbal BOOLEAN DEFAULT FALSE,
-				somatic BOOLEAN DEFAULT FALSE,
-				material BOOLEAN DEFAULT FALSE,
-				focus BOOLEAN DEFAULT FALSE,
-				divine_focus BOOLEAN DEFAULT FALSE,
-				prepared BOOLEAN DEFAULT FALSE,
-				PRIMARY KEY (sheet_id, class_name, spell_id)
-			);
 			
-			INSERT INTO sheet_money VALUES (
-				sheet_id int NOT NULL,
-				pp int DEFAULT 0,
-				gp int DEFAULT 0,
-				sp int DEFAULT 0,
-				cp int DEFAULT 0,
-				PRIMARY KEY (sheet_id)
-			);
 			
-			INSERT INTO sheet_items VALUES (
-				sheet_id int NOT NULL,
-				item_id int NOT NULL,
-				item_name varchar(50),
-				item_description text,
-				item_quantity int DEFAULT 0,
-				unit_weight int DEFAULT 0,
-				unit_value int DEFAULT 0,
-				PRIMARY KEY (sheet_id, item_id)
-			);
+			
+			
 			
 			//check-mark all of their class skills
 			UPDATE skills SET is_class_skill = true
@@ -725,13 +652,14 @@ TODO
 			how to show the gm the sheets as the values are changing
 
 			
-		SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, GROUP_CONCAT(TRIM(CONCAT(sc.archetype, CONCAT(' ', CONCAT(sc.class_name, CONCAT(' ', CONCAT(sc.level)))))) SEPARATOR '/') 
-		FROM sheet_main sm JOIN sheet_classes sc ON sm.sheet_id = sc.sheet_id GROUP BY sheet_id;
+SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, GROUP_CONCAT(TRIM(CONCAT(sc.archetype, CONCAT(' ', CONCAT(sc.class_name, CONCAT(' ', CONCAT(sc.level)))))) SEPARATOR '/') 
+FROM sheet_main sm JOIN sheet_classes sc ON sm.sheet_id = sc.sheet_id GROUP BY sc.sheet_id;
 			
 			
 		select group_concat(CONCAT(first_name, CONCAT(' ', CONCAT(last_name))) SEPARATOR ', ') from users;
 			
-		
+select sm.sheet_id, sm.owner, sm.character_name, sm.character_race, group_concat(trim(concat(sc.archetype, concat(' ', concat(sc.class_name, concat(' ', sc.level))))) SEPARATOR '/')
+from sheet_main sm JOIN sheet_classes sc on sm.sheet_id = sc.sheet_id group by sc.sheet_id;
 			
 			
 			
@@ -751,7 +679,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "sheet_main")
-public class SheetMain {
+public class Sheet {
 
     @Id
     @GeneratedValue(generator = "increment")

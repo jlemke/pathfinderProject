@@ -21,7 +21,25 @@
         <property name="show_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="entity.SheetMain"/>
+        <mapping class="entity.sheet.Sheet"/>
+        <mapping class="entity.User"/>
+        <mapping class="entity.UserRoles"/>
+        <mapping class="entity.sheet.SheetClass"/>
+        <mapping class="entity.sheet.SheetDescription"/>
+        <mapping class="entity.sheet.SheetGeneral"/>
+        <mapping class="entity.sheet.SheetArmor"/>
+        <mapping class="entity.sheet.SheetSkill"/>
+        <mapping class="entity.sheet.SheetSpeeds"/>
+        <mapping class="entity.sheet.SheetAbility"/>
+        <mapping class="entity.sheet.SheetFeat"/>
+        <mapping class="entity.sheet.SheetItem"/>
+        <mapping class="entity.sheet.SheetMoney"/>
+        <mapping class="entity.sheet.SheetRacialTrait"/>
+        <mapping class="entity.sheet.SheetSpell"/>
+        <mapping class="entity.sheet.SheetWeapon"/>
+        <mapping class="entity.sheet.SheetClassFeature"/>
+        <mapping class="entity.sheet.SheetAbilityScoreColumn"/>
+        <mapping class="entity.sheet.SheetSpecializedSkill"/>
 
     </session-factory>
 

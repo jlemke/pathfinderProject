@@ -13,7 +13,7 @@ public class SheetRacialTrait {
     private int traitId;
     private String traitName;
     private String traitDescription;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -81,12 +81,12 @@ public class SheetRacialTrait {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 }

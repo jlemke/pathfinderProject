@@ -1,6 +1,6 @@
 package controller;
 
-import entity.sheet.Sheet;
+import entity.sheet.SheetInfo;
 import persistence.SheetDao;
 
 import javax.faces.context.FacesContext;
@@ -42,12 +42,12 @@ public class GetSheetList extends HttpServlet {
 
         } else {
             //get sheets for this user
-            List<Sheet> sheets = new ArrayList<Sheet>();
+            List<SheetInfo> sheets;
             SheetDao dao = new SheetDao();
             sheets = dao.getListOfSheets(username);
 
             request.setAttribute("sheets", sheets);
-            request.setAttribute("user", username)
+            request.setAttribute("user", username);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/sheets.jsp");
             dispatcher.forward(request, response);
         }

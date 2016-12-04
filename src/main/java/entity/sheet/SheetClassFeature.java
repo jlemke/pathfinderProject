@@ -15,7 +15,7 @@ public class SheetClassFeature {
     private String featureName;
     private String featureDescription;
     private SheetClass sheetClasses;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -95,7 +95,7 @@ public class SheetClassFeature {
     }
 
     @ManyToOne
-    @JoinColumns({@JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false), @JoinColumn(name = "class_name", referencedColumnName = "class_name", nullable = false)})
+    @JoinColumns({@JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false), @JoinColumn(name = "class_name", referencedColumnName = "class_name", insertable = false, updatable = false)})
     public SheetClass getSheetClasses() {
         return sheetClasses;
     }
@@ -105,12 +105,12 @@ public class SheetClassFeature {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 }

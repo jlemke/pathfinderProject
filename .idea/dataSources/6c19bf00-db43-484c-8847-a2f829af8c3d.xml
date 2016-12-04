@@ -203,627 +203,616 @@ class_name</columns>
     <column id="73" parent="14" name="hp_current">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="74" parent="14" name="hp_max">
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="75" parent="14" name="init_misc">
+    <column id="74" parent="14" name="init_misc">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="76" parent="14" name="fort_misc">
+    <column id="75" parent="14" name="fort_misc">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="77" parent="14" name="ref_misc">
+    <column id="76" parent="14" name="ref_misc">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="78" parent="14" name="will_misc">
+    <column id="77" parent="14" name="will_misc">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <key id="79" parent="14" name="PRIMARY">
+    <key id="78" parent="14" name="PRIMARY">
       <columns>sheet_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="80" parent="14" name="sheet_general_ibfk_1">
+    <foreign-key id="79" parent="14" name="sheet_general_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="81" parent="15" name="sheet_id">
+    <column id="80" parent="15" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="82" parent="15" name="armor_id">
+    <column id="81" parent="15" name="armor_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="83" parent="15" name="armor_name">
+    <column id="82" parent="15" name="armor_name">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="84" parent="15" name="masterwork">
+    <column id="83" parent="15" name="masterwork">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="85" parent="15" name="ac_bonus">
+    <column id="84" parent="15" name="ac_bonus">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="86" parent="15" name="max_dex_bonus">
+    <column id="85" parent="15" name="max_dex_bonus">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="87" parent="15" name="skill_penalty">
+    <column id="86" parent="15" name="skill_penalty">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="88" parent="15" name="type">
+    <column id="87" parent="15" name="type">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="89" parent="15" name="spell_failure_chance">
+    <column id="88" parent="15" name="spell_failure_chance">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="90" parent="15" name="weight">
+    <column id="89" parent="15" name="weight">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="91" parent="15" name="proficient">
+    <column id="90" parent="15" name="proficient">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;1&apos;</default-expression>
     </column>
-    <column id="92" parent="15" name="equipped">
+    <column id="91" parent="15" name="equipped">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="93" parent="15" name="value">
+    <column id="92" parent="15" name="value">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <key id="94" parent="15" name="PRIMARY">
+    <key id="93" parent="15" name="PRIMARY">
       <columns>sheet_id
 armor_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="95" parent="15" name="sheet_armors_ibfk_1">
+    <foreign-key id="94" parent="15" name="sheet_armors_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="96" parent="16" name="sheet_id">
+    <column id="95" parent="16" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="97" parent="16" name="skill_name">
+    <column id="96" parent="16" name="skill_name">
       <mandatory>1</mandatory>
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="98" parent="16" name="skill_ability">
+    <column id="97" parent="16" name="skill_ability">
       <data-type>enum(&apos;str&apos;, &apos;dex&apos;, &apos;con&apos;, &apos;int&apos;, &apos;wis&apos;, &apos;cha&apos;)|0</data-type>
     </column>
-    <column id="99" parent="16" name="skill_ranks">
+    <column id="98" parent="16" name="skill_ranks">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="100" parent="16" name="skill_misc">
+    <column id="99" parent="16" name="skill_misc">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="101" parent="16" name="is_class_skill">
+    <column id="100" parent="16" name="is_class_skill">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="102" parent="16" name="req_trained">
+    <column id="101" parent="16" name="req_trained">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <index id="103" parent="16" name="sheet_id">
+    <index id="102" parent="16" name="sheet_id">
       <columns>sheet_id</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="104" parent="16" name="skill_name">
-      <columns>skill_name</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="105" parent="16" name="PRIMARY">
-      <columns>skill_name</columns>
+    <key id="103" parent="16" name="PRIMARY">
+      <columns>skill_name
+sheet_id</columns>
       <primary>1</primary>
     </key>
-    <key id="106" parent="16" name="skill_name">
-      <columns>skill_name</columns>
-      <underlying-index>skill_name</underlying-index>
-    </key>
-    <foreign-key id="107" parent="16" name="sheet_skills_ibfk_1">
+    <foreign-key id="104" parent="16" name="sheet_skills_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="108" parent="17" name="sheet_id">
+    <column id="105" parent="17" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="109" parent="17" name="speed_base">
+    <column id="106" parent="17" name="speed_base">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;30&apos;</default-expression>
     </column>
-    <column id="110" parent="17" name="speed_fly">
+    <column id="107" parent="17" name="speed_fly">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="111" parent="17" name="speed_swim">
+    <column id="108" parent="17" name="speed_swim">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="112" parent="17" name="speed_climb">
+    <column id="109" parent="17" name="speed_climb">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="113" parent="17" name="speed_burrow">
+    <column id="110" parent="17" name="speed_burrow">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="114" parent="17" name="calculate_by">
+    <column id="111" parent="17" name="calculate_by">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <key id="115" parent="17" name="PRIMARY">
+    <key id="112" parent="17" name="PRIMARY">
       <columns>sheet_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="116" parent="17" name="sheet_speeds_ibfk_1">
+    <foreign-key id="113" parent="17" name="sheet_speeds_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="117" parent="18" name="sheet_id">
+    <column id="114" parent="18" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="118" parent="18" name="ability_id">
+    <column id="115" parent="18" name="ability_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="119" parent="18" name="ability_name">
+    <column id="116" parent="18" name="ability_name">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="120" parent="18" name="ability_description">
+    <column id="117" parent="18" name="ability_description">
       <data-type>text|0</data-type>
     </column>
-    <key id="121" parent="18" name="PRIMARY">
+    <key id="118" parent="18" name="PRIMARY">
       <columns>sheet_id
 ability_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="122" parent="18" name="sheet_abilities_ibfk_1">
+    <foreign-key id="119" parent="18" name="sheet_abilities_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="123" parent="19" name="sheet_id">
+    <column id="120" parent="19" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="124" parent="19" name="feat_id">
+    <column id="121" parent="19" name="feat_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="125" parent="19" name="feat_name">
+    <column id="122" parent="19" name="feat_name">
       <mandatory>1</mandatory>
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="126" parent="19" name="feat_description">
+    <column id="123" parent="19" name="feat_description">
       <data-type>text|0</data-type>
     </column>
-    <key id="127" parent="19" name="PRIMARY">
+    <key id="124" parent="19" name="PRIMARY">
       <columns>sheet_id
 feat_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="128" parent="19" name="sheet_feats_ibfk_1">
+    <foreign-key id="125" parent="19" name="sheet_feats_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="129" parent="20" name="sheet_id">
+    <column id="126" parent="20" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="130" parent="20" name="item_id">
+    <column id="127" parent="20" name="item_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="131" parent="20" name="item_name">
+    <column id="128" parent="20" name="item_name">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="132" parent="20" name="item_description">
+    <column id="129" parent="20" name="item_description">
       <data-type>text|0</data-type>
     </column>
-    <column id="133" parent="20" name="item_quantity">
+    <column id="130" parent="20" name="item_quantity">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="134" parent="20" name="unit_weight">
+    <column id="131" parent="20" name="unit_weight">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="135" parent="20" name="unit_value">
+    <column id="132" parent="20" name="unit_value">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <key id="136" parent="20" name="PRIMARY">
+    <key id="133" parent="20" name="PRIMARY">
       <columns>sheet_id
 item_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="137" parent="20" name="sheet_items_ibfk_1">
+    <foreign-key id="134" parent="20" name="sheet_items_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="138" parent="21" name="sheet_id">
+    <column id="135" parent="21" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="139" parent="21" name="pp">
+    <column id="136" parent="21" name="pp">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="140" parent="21" name="gp">
+    <column id="137" parent="21" name="gp">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="141" parent="21" name="sp">
+    <column id="138" parent="21" name="sp">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="142" parent="21" name="cp">
+    <column id="139" parent="21" name="cp">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <key id="143" parent="21" name="PRIMARY">
+    <key id="140" parent="21" name="PRIMARY">
       <columns>sheet_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="144" parent="21" name="sheet_money_ibfk_1">
+    <foreign-key id="141" parent="21" name="sheet_money_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="145" parent="22" name="sheet_id">
+    <column id="142" parent="22" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="146" parent="22" name="trait_id">
+    <column id="143" parent="22" name="trait_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="147" parent="22" name="trait_name">
+    <column id="144" parent="22" name="trait_name">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="148" parent="22" name="trait_description">
+    <column id="145" parent="22" name="trait_description">
       <data-type>text|0</data-type>
     </column>
-    <key id="149" parent="22" name="PRIMARY">
+    <key id="146" parent="22" name="PRIMARY">
       <columns>sheet_id
 trait_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="150" parent="22" name="sheet_racial_traits_ibfk_1">
+    <foreign-key id="147" parent="22" name="sheet_racial_traits_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="151" parent="23" name="sheet_id">
+    <column id="148" parent="23" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="152" parent="23" name="class_name">
+    <column id="149" parent="23" name="class_name">
       <mandatory>1</mandatory>
       <data-type>varchar(25)|0</data-type>
     </column>
-    <column id="153" parent="23" name="spell_id">
+    <column id="150" parent="23" name="spell_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="154" parent="23" name="spell_level">
+    <column id="151" parent="23" name="spell_level">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="155" parent="23" name="spell_name">
+    <column id="152" parent="23" name="spell_name">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="156" parent="23" name="school">
+    <column id="153" parent="23" name="school">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="157" parent="23" name="subschool">
+    <column id="154" parent="23" name="subschool">
       <data-type>varchar(25)|0</data-type>
     </column>
-    <column id="158" parent="23" name="domain">
+    <column id="155" parent="23" name="domain">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="159" parent="23" name="subdomain">
+    <column id="156" parent="23" name="subdomain">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="160" parent="23" name="bloodline">
+    <column id="157" parent="23" name="bloodline">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="161" parent="23" name="patron">
+    <column id="158" parent="23" name="patron">
       <data-type>varchar(15)|0</data-type>
     </column>
-    <column id="162" parent="23" name="spell_description">
+    <column id="159" parent="23" name="spell_description">
       <data-type>text|0</data-type>
     </column>
-    <column id="163" parent="23" name="target">
+    <column id="160" parent="23" name="target">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="164" parent="23" name="range">
+    <column id="161" parent="23" name="range">
       <data-type>varchar(60)|0</data-type>
     </column>
-    <column id="165" parent="23" name="casting_time">
+    <column id="162" parent="23" name="casting_time">
       <data-type>varchar(25)|0</data-type>
     </column>
-    <column id="166" parent="23" name="verbal">
+    <column id="163" parent="23" name="verbal">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="167" parent="23" name="somatic">
+    <column id="164" parent="23" name="somatic">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="168" parent="23" name="material">
+    <column id="165" parent="23" name="material">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="169" parent="23" name="focus">
+    <column id="166" parent="23" name="focus">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="170" parent="23" name="divine_focus">
+    <column id="167" parent="23" name="divine_focus">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="171" parent="23" name="prepared">
+    <column id="168" parent="23" name="prepared">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <key id="172" parent="23" name="PRIMARY">
+    <key id="169" parent="23" name="PRIMARY">
       <columns>sheet_id
 class_name
 spell_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="173" parent="23" name="sheet_spells_ibfk_2">
+    <foreign-key id="170" parent="23" name="sheet_spells_ibfk_2">
       <columns>sheet_id
 class_name</columns>
       <ref-key>~.sheet_classes.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="174" parent="23" name="sheet_spells_ibfk_1">
+    <foreign-key id="171" parent="23" name="sheet_spells_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="175" parent="24" name="sheet_id">
+    <column id="172" parent="24" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="176" parent="24" name="weapon_id">
+    <column id="173" parent="24" name="weapon_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="177" parent="24" name="weapon_name">
+    <column id="174" parent="24" name="weapon_name">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="178" parent="24" name="masterwork">
+    <column id="175" parent="24" name="masterwork">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="179" parent="24" name="enhancement_bonus">
+    <column id="176" parent="24" name="enhancement_bonus">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="180" parent="24" name="damage_roll">
+    <column id="177" parent="24" name="damage_roll">
       <data-type>varchar(10)|0</data-type>
     </column>
-    <column id="181" parent="24" name="critical_range">
+    <column id="178" parent="24" name="critical_range">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;20&apos;</default-expression>
     </column>
-    <column id="182" parent="24" name="critical_multiplier">
+    <column id="179" parent="24" name="critical_multiplier">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;2&apos;</default-expression>
     </column>
-    <column id="183" parent="24" name="attack_ability">
+    <column id="180" parent="24" name="attack_ability">
       <data-type>enum(&apos;str&apos;, &apos;dex&apos;)|0</data-type>
       <default-expression>&apos;str&apos;</default-expression>
     </column>
-    <column id="184" parent="24" name="damage_ability">
+    <column id="181" parent="24" name="damage_ability">
       <data-type>enum(&apos;none&apos;, &apos;str&apos;, &apos;dex&apos;)|0</data-type>
       <default-expression>&apos;str&apos;</default-expression>
     </column>
-    <column id="185" parent="24" name="range">
+    <column id="182" parent="24" name="range">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="186" parent="24" name="two_hand">
+    <column id="183" parent="24" name="two_hand">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="187" parent="24" name="bludgeoning">
+    <column id="184" parent="24" name="bludgeoning">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="188" parent="24" name="piercing">
+    <column id="185" parent="24" name="piercing">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="189" parent="24" name="slashing">
+    <column id="186" parent="24" name="slashing">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="190" parent="24" name="weight">
+    <column id="187" parent="24" name="weight">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="191" parent="24" name="proficient">
+    <column id="188" parent="24" name="proficient">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;1&apos;</default-expression>
     </column>
-    <column id="192" parent="24" name="value">
+    <column id="189" parent="24" name="value">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <key id="193" parent="24" name="PRIMARY">
+    <key id="190" parent="24" name="PRIMARY">
       <columns>sheet_id
 weapon_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="194" parent="24" name="sheet_weapons_ibfk_1">
+    <foreign-key id="191" parent="24" name="sheet_weapons_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="195" parent="25" name="sheet_id">
+    <column id="192" parent="25" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="196" parent="25" name="class_name">
+    <column id="193" parent="25" name="class_name">
       <mandatory>1</mandatory>
       <data-type>varchar(25)|0</data-type>
     </column>
-    <column id="197" parent="25" name="feature_id">
+    <column id="194" parent="25" name="feature_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="198" parent="25" name="feature_name">
+    <column id="195" parent="25" name="feature_name">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="199" parent="25" name="feature_description">
+    <column id="196" parent="25" name="feature_description">
       <data-type>text|0</data-type>
     </column>
-    <key id="200" parent="25" name="PRIMARY">
+    <key id="197" parent="25" name="PRIMARY">
       <columns>sheet_id
 class_name
 feature_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="201" parent="25" name="sheet_class_features_ibfk_2">
+    <foreign-key id="198" parent="25" name="sheet_class_features_ibfk_2">
       <columns>sheet_id
 class_name</columns>
       <ref-key>~.sheet_classes.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="202" parent="25" name="sheet_class_features_ibfk_1">
+    <foreign-key id="199" parent="25" name="sheet_class_features_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="203" parent="26" name="sheet_id">
+    <column id="200" parent="26" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="204" parent="26" name="column_id">
+    <column id="201" parent="26" name="column_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="205" parent="26" name="column_name">
+    <column id="202" parent="26" name="column_name">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="206" parent="26" name="str_column">
+    <column id="203" parent="26" name="str_column">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="207" parent="26" name="dex_column">
+    <column id="204" parent="26" name="dex_column">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="208" parent="26" name="con_column">
+    <column id="205" parent="26" name="con_column">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="209" parent="26" name="int_column">
+    <column id="206" parent="26" name="int_column">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="210" parent="26" name="wis_column">
+    <column id="207" parent="26" name="wis_column">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="211" parent="26" name="cha_column">
+    <column id="208" parent="26" name="cha_column">
       <data-type>int(11)|0</data-type>
     </column>
-    <key id="212" parent="26" name="PRIMARY">
+    <key id="209" parent="26" name="PRIMARY">
       <columns>sheet_id
 column_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="213" parent="26" name="sheet_ability_score_columns_ibfk_1">
+    <foreign-key id="210" parent="26" name="sheet_ability_score_columns_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="214" parent="27" name="sheet_id">
+    <column id="211" parent="27" name="sheet_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="215" parent="27" name="skill_id">
+    <column id="212" parent="27" name="skill_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="216" parent="27" name="skill_name">
+    <column id="213" parent="27" name="skill_name">
       <mandatory>1</mandatory>
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="217" parent="27" name="specialization">
+    <column id="214" parent="27" name="specialization">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="218" parent="27" name="skill_ability">
+    <column id="215" parent="27" name="skill_ability">
       <data-type>enum(&apos;str&apos;, &apos;dex&apos;, &apos;con&apos;, &apos;int&apos;, &apos;wis&apos;, &apos;cha&apos;)|0</data-type>
       <default-expression>&apos;cha&apos;</default-expression>
     </column>
-    <column id="219" parent="27" name="skill_ranks">
+    <column id="216" parent="27" name="skill_ranks">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="220" parent="27" name="skill_misc">
+    <column id="217" parent="27" name="skill_misc">
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="221" parent="27" name="is_class_skill">
+    <column id="218" parent="27" name="is_class_skill">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="222" parent="27" name="req_trained">
+    <column id="219" parent="27" name="req_trained">
       <data-type>tinyint(1)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <index id="223" parent="27" name="sheet_id">
+    <index id="220" parent="27" name="sheet_specialized_skills_ibfk_2">
       <columns>sheet_id
 skill_name</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="224" parent="27" name="skill_name">
+    <index id="221" parent="27" name="skill_name">
       <columns>skill_name</columns>
       <desc-columns></desc-columns>
     </index>
-    <key id="225" parent="27" name="PRIMARY">
+    <key id="222" parent="27" name="PRIMARY">
       <columns>sheet_id
 skill_id</columns>
       <primary>1</primary>
     </key>
-    <foreign-key id="226" parent="27" name="sheet_specialized_skills_ibfk_2">
+    <foreign-key id="223" parent="27" name="sheet_specialized_skills_ibfk_2">
       <columns>sheet_id
 skill_name</columns>
       <ref-key>pathfinderdb.sheet_skills(sheet_id,skill_name)</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="227" parent="27" name="sheet_specialized_skills_ibfk_1">
+    <foreign-key id="224" parent="27" name="sheet_specialized_skills_ibfk_1">
       <columns>sheet_id</columns>
       <ref-key>~.sheet_main.PRIMARY</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>

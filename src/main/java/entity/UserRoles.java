@@ -54,7 +54,7 @@ public class UserRoles {
     }
 
     @ManyToOne
-    @JoinColumn(name = "username", referencedColumnName = "username", nullable = false)
+    @JoinColumn(name = "username", referencedColumnName = "username", insertable = false, updatable = false)
     public User getUsersByUsername() {
         return usersByUsername;
     }

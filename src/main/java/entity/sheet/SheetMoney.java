@@ -13,7 +13,7 @@ public class SheetMoney {
     private Integer gp;
     private Integer sp;
     private Integer cp;
-    private Sheet sheetMainBySheetId;
+    private Sheet sheetBySheetId;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -93,11 +93,11 @@ public class SheetMoney {
 
     @OneToOne
     @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetMainBySheetId() {
-        return sheetMainBySheetId;
+    public Sheet getSheetBySheetId() {
+        return sheetBySheetId;
     }
 
-    public void setSheetMainBySheetId(Sheet sheetMainBySheetId) {
-        this.sheetMainBySheetId = sheetMainBySheetId;
+    public void setSheetBySheetId(Sheet sheetBySheetId) {
+        this.sheetBySheetId = sheetBySheetId;
     }
 }
