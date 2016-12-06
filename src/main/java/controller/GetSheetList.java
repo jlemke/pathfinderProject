@@ -32,10 +32,10 @@ public class GetSheetList extends HttpServlet {
             throws ServletException, IOException {
 
         //get username from j_security_check
-        String username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
+        //String username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         logger.info("in getSheetList servlet");
 
-        username = "jlemke";
+        String username = "jlemke";
 
         //if user isn't logged in then don't list any pages
         if (username == null || username == "") {

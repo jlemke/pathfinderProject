@@ -4411,3 +4411,1115 @@
 2016-12-05 20:25:25,840 2704 [main] INFO  logger  - adding ability column MISC with id = 2
 2016-12-05 20:25:25,840 2704 [main] INFO  logger  - adding ability column TEMP with id = 3
 2016-12-05 20:25:25,840 2704 [main] INFO  logger  - creating skills
+2016-12-05 20:47:24,877 1    [main] INFO  logger  - dao created
+2016-12-05 20:47:25,218 342  [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 20:47:25,237 361  [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 20:47:25,240 364  [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 20:47:25,243 367  [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 20:47:25,289 413  [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 20:47:25,289 413  [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 20:47:25,488 612  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 20:47:25,674 798  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 20:47:25,684 808  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 20:47:25,685 809  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 20:47:25,685 809  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 20:47:25,687 811  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 20:47:26,149 1273 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 20:47:26,788 1912 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 20:47:26,807 1931 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 20:47:28,322 3446 [main] INFO  logger  - creating sheet
+2016-12-05 20:47:28,395 3519 [main] INFO  logger  - creating description
+2016-12-05 20:47:28,395 3519 [main] INFO  logger  - creating general
+2016-12-05 20:47:28,395 3519 [main] INFO  logger  - creating ability columns
+2016-12-05 20:47:28,395 3519 [main] INFO  logger  - adding ability column BASE with id = 0
+2016-12-05 20:47:28,395 3519 [main] INFO  logger  - adding ability column RACE with id = 1
+2016-12-05 20:47:28,396 3520 [main] INFO  logger  - adding ability column MISC with id = 2
+2016-12-05 20:47:28,396 3520 [main] INFO  logger  - adding ability column TEMP with id = 3
+2016-12-05 20:47:28,396 3520 [main] INFO  logger  - creating skills
+2016-12-05 20:49:27,971 0    [main] INFO  logger  - dao created
+2016-12-05 20:49:28,354 383  [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 20:49:28,370 399  [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 20:49:28,370 399  [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 20:49:28,385 414  [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 20:49:28,423 452  [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 20:49:28,423 452  [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 20:49:28,570 599  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 20:49:28,765 794  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 20:49:28,781 810  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 20:49:28,781 810  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 20:49:28,781 810  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 20:49:28,781 810  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 20:49:29,271 1300 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 20:49:29,975 2004 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 20:49:29,991 2020 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 20:49:31,290 3319 [main] INFO  logger  - creating sheet
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - creating description
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - creating general
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - creating ability columns
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - adding ability column BASE with id = 0
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - adding ability column RACE with id = 1
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - adding ability column MISC with id = 2
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - adding ability column TEMP with id = 3
+2016-12-05 20:49:31,343 3372 [main] INFO  logger  - creating skills
+2016-12-05 20:51:17,199 0    [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-05 20:51:17,684 485  [http-nio-8080-exec-1] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 20:51:17,708 509  [http-nio-8080-exec-1] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 20:51:17,714 515  [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 20:51:17,718 519  [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 20:51:17,805 606  [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 20:51:17,805 606  [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 20:51:17,991 792  [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 20:51:18,346 1147 [http-nio-8080-exec-1] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 20:51:18,358 1159 [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 20:51:18,358 1159 [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 20:51:18,359 1160 [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 20:51:18,365 1166 [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 20:51:18,886 1687 [http-nio-8080-exec-1] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 20:51:19,991 2792 [http-nio-8080-exec-1] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 20:51:20,016 2817 [http-nio-8080-exec-1] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:01:11,184 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:01:11,649 465  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:01:11,677 493  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:01:11,685 501  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:01:11,689 505  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:01:11,798 614  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:01:11,798 614  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:01:12,011 827  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:01:12,385 1201 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:01:12,397 1213 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:01:12,398 1214 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:01:12,398 1214 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:01:12,403 1219 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:01:12,890 1706 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:01:13,834 2650 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:01:13,856 2672 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:14:13,869 0    [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-05 21:14:14,347 478  [http-nio-8080-exec-10] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:14:14,375 506  [http-nio-8080-exec-10] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:14:14,382 513  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:14:14,387 518  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:14:14,491 622  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:14:14,491 622  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:14:14,676 807  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:14:15,038 1169 [http-nio-8080-exec-10] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:14:15,051 1182 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:14:15,052 1183 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:14:15,052 1183 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:14:15,057 1188 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:14:15,726 1857 [http-nio-8080-exec-10] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:14:16,611 2742 [http-nio-8080-exec-10] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:14:16,630 2761 [http-nio-8080-exec-10] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:18:54,894 1    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:18:55,361 468  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:18:55,388 495  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:18:55,398 505  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:18:55,403 510  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:18:55,504 611  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:18:55,505 612  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:18:55,696 803  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:18:56,044 1151 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:18:56,056 1163 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:18:56,056 1163 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:18:56,056 1163 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:18:56,061 1168 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:18:56,537 1644 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:18:57,414 2521 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:18:57,433 2540 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:25:38,584 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:25:39,055 471  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:25:39,082 498  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:25:39,089 505  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:25:39,093 509  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:25:39,183 599  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:25:39,183 599  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:25:39,356 772  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:25:39,714 1130 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:25:39,734 1150 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:25:39,734 1150 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:25:39,734 1150 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:25:39,740 1156 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:25:40,218 1634 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:25:41,133 2549 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:25:41,153 2569 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:43:53,305 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:43:53,308 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 21:43:53,777 472  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:43:53,801 496  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:43:53,809 504  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:43:53,814 509  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:43:53,905 600  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:43:53,905 600  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:43:54,105 800  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:43:54,454 1149 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:43:54,465 1160 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:43:54,466 1161 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:43:54,466 1161 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:43:54,471 1166 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:43:54,950 1645 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:43:55,750 2445 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:43:55,771 2466 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:43:57,689 4384 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 21:43:57,689 4384 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 21:43:57,690 4385 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 21:43:57,691 4386 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 21:43:57,691 4386 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 21:43:57,692 4387 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 21:43:57,692 4387 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:43:57,693 4388 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:43:57,694 4389 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:43:57,695 4390 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:43:57,695 4390 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:43:57,695 4390 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:43:57,695 4390 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:48:02,293 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:48:02,296 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 21:48:02,759 466  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:48:02,786 493  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:48:02,794 501  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:48:02,799 506  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:48:02,897 604  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:48:02,897 604  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:48:03,086 793  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:48:03,455 1162 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:48:03,466 1173 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:48:03,467 1174 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:48:03,467 1174 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:48:03,472 1179 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:48:03,955 1662 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:48:04,873 2580 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:48:04,893 2600 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 21:48:06,700 4407 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 21:48:06,701 4408 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 21:48:06,703 4410 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 21:48:06,703 4410 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 21:48:06,703 4410 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:48:06,703 4410 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:48:06,703 4410 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 21:48:06,703 4410 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:48:06,704 4411 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:48:06,705 4412 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:51:49,289 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:51:49,292 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 21:51:49,785 496  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:51:49,812 523  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:51:49,819 530  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:51:49,823 534  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:51:49,917 628  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:51:49,917 628  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:51:50,106 817  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:51:50,487 1198 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:51:50,500 1211 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:51:50,501 1212 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:51:50,501 1212 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:51:50,513 1224 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:51:50,995 1706 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:51:51,933 2644 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:51:51,953 2664 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:51:53,790 4501 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 21:51:53,790 4501 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 21:51:53,790 4501 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 21:51:53,791 4502 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 21:51:53,792 4503 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 21:51:53,792 4503 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:51:53,794 4505 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:51:53,795 4506 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:51:53,796 4507 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:51:53,796 4507 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:52:06,690 17401 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-05 21:52:12,021 22732 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-05 21:52:16,005 26716 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-05 21:52:23,587 34298 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-05 21:53:55,134 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:53:55,137 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 21:53:55,606 472  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:53:55,632 498  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:53:55,640 506  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:53:55,645 511  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:53:55,744 610  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:53:55,744 610  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:53:55,930 796  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:53:56,294 1160 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:53:56,306 1172 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:53:56,306 1172 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:53:56,306 1172 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:53:56,311 1177 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:53:56,836 1702 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:53:57,734 2600 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:53:57,753 2619 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 21:53:59,491 4357 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 21:53:59,492 4358 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 21:53:59,494 4360 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 21:53:59,494 4360 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 21:53:59,494 4360 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:53:59,494 4360 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:53:59,494 4360 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 21:53:59,494 4360 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 21:53:59,495 4361 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:53:59,496 4362 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:55:48,879 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:55:48,883 4    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 21:55:49,337 458  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:55:49,362 483  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:55:49,369 490  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:55:49,374 495  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:55:49,470 591  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:55:49,471 592  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:55:49,646 767  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:55:50,010 1131 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:55:50,022 1143 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:55:50,022 1143 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:55:50,023 1144 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:55:50,028 1149 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:55:50,506 1627 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:55:51,455 2576 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:55:51,475 2596 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:55:53,309 4430 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 21:55:53,309 4430 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 21:55:53,309 4430 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:55:53,309 4430 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:55:53,309 4430 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 21:55:53,310 4431 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:55:53,312 4433 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 21:55:53,313 4434 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:55:53,314 4435 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:55:53,315 4436 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:55:53,315 4436 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:55:53,315 4436 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:55:56,826 7947 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-05 21:59:18,688 1    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 21:59:18,690 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 21:59:19,164 477  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 21:59:19,198 511  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 21:59:19,206 519  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 21:59:19,212 525  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 21:59:19,304 617  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 21:59:19,304 617  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 21:59:19,495 808  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 21:59:19,864 1177 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 21:59:19,877 1190 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 21:59:19,877 1190 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 21:59:19,878 1191 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 21:59:19,884 1197 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 21:59:20,381 1694 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 21:59:21,334 2647 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 21:59:21,355 2668 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 21:59:23,155 4468 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 21:59:23,156 4469 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 21:59:23,157 4470 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 21:59:23,157 4470 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 21:59:23,157 4470 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 21:59:23,157 4470 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:59:23,159 4472 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 21:59:23,160 4473 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 21:59:23,161 4474 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:59:23,161 4474 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:59:23,161 4474 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 21:59:23,161 4474 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 21:59:23,161 4474 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 21:59:23,161 4474 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:09:28,320 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:09:28,323 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:09:28,801 481  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:09:28,835 515  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:09:28,842 522  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:09:28,847 527  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:09:28,939 619  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:09:28,939 619  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:09:29,143 823  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:09:29,522 1202 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:09:29,535 1215 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:09:29,535 1215 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:09:29,535 1215 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:09:29,540 1220 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:09:30,065 1745 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:09:30,946 2626 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:09:30,967 2647 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:09:32,685 4365 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:09:32,686 4366 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:09:32,688 4368 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:09:32,689 4369 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:09:32,690 4370 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:09:32,690 4370 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:09:32,690 4370 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:09:32,690 4370 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:09:32,690 4370 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:09:32,691 4371 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:14:05,474 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:14:05,477 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:14:05,968 494  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:14:05,995 521  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:14:06,003 529  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:14:06,008 534  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:14:06,113 639  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:14:06,113 639  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:14:06,313 839  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:14:06,697 1223 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:14:06,710 1236 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:14:06,710 1236 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:14:06,711 1237 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:14:06,716 1242 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:14:07,238 1764 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:14:08,176 2702 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:14:08,197 2723 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:14:10,017 4543 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:14:10,018 4544 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:14:10,018 4544 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:14:10,018 4544 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:14:10,018 4544 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:14:10,018 4544 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:14:10,020 4546 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:14:10,021 4547 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:14:10,022 4548 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:14:10,022 4548 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:14:10,022 4548 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:14:10,022 4548 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:14:10,022 4548 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:14:10,022 4548 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:14:10,023 4549 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:15:46,581 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:15:46,585 4    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:15:47,045 464  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:15:47,070 489  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:15:47,079 498  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:15:47,084 503  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:15:47,172 591  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:15:47,172 591  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:15:47,349 768  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:15:47,713 1132 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:15:47,725 1144 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:15:47,725 1144 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:15:47,725 1144 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:15:47,731 1150 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:15:48,221 1640 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:15:49,130 2549 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:15:49,148 2567 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:15:50,926 4345 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:15:50,927 4346 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:15:50,929 4348 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:15:50,930 4349 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:15:50,931 4350 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:23:06,020 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:23:06,023 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:23:06,486 466  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:23:06,513 493  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:23:06,521 501  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:23:06,526 506  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:23:06,616 596  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:23:06,616 596  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:23:06,793 773  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:23:07,157 1137 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:23:07,169 1149 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:23:07,169 1149 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:23:07,170 1150 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:23:07,175 1155 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:23:07,654 1634 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:23:08,615 2595 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:23:08,638 2618 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:23:10,481 4461 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:23:10,482 4462 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:23:10,483 4463 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:23:10,483 4463 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:23:10,483 4463 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:23:10,483 4463 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:23:10,484 4464 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:23:10,485 4465 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:23:10,486 4466 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:23:10,487 4467 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:23:10,487 4467 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:23:10,487 4467 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:23:10,487 4467 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:23:10,487 4467 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:23:54,500 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:23:54,503 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:23:54,976 476  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:23:55,001 501  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:23:55,010 510  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:23:55,016 516  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:23:55,120 620  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:23:55,120 620  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:23:55,310 810  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:23:55,700 1200 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:23:55,713 1213 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:23:55,713 1213 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:23:55,713 1213 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:23:55,720 1220 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:23:56,217 1717 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:23:57,125 2625 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:23:57,146 2646 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:23:58,953 4453 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:23:58,954 4454 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:23:58,956 4456 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:23:58,958 4458 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:24:01,920 7420 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-05 22:31:57,124 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:31:57,127 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:31:57,600 476  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:31:57,626 502  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:31:57,634 510  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:31:57,639 515  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:31:57,739 615  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:31:57,739 615  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:31:57,937 813  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:31:58,377 1253 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:31:58,403 1279 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:31:58,403 1279 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:31:58,403 1279 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:31:58,409 1285 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:31:58,954 1830 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:31:59,911 2787 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:31:59,927 2803 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:32:01,907 4783 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:32:01,923 4799 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:36:45,142 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:36:45,145 3    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:36:45,611 469  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:36:45,639 497  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:36:45,647 505  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:36:45,653 511  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:36:45,755 613  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:36:45,756 614  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:36:45,940 798  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:36:46,302 1160 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:36:46,315 1173 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:36:46,315 1173 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:36:46,316 1174 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:36:46,322 1180 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:36:46,802 1660 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:36:47,743 2601 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:36:47,763 2621 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:36:49,600 4458 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:36:49,600 4458 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:36:49,600 4458 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:36:49,600 4458 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:36:49,600 4458 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:36:49,600 4458 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:36:49,601 4459 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:36:49,603 4461 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:36:49,603 4461 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:36:49,603 4461 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:36:49,603 4461 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:36:49,604 4462 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:36:49,605 4463 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:36:49,606 4464 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:36:49,606 4464 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:36:49,606 4464 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:36:49,606 4464 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:39:13,504 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:39:13,508 4    [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:39:14,010 506  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:39:14,037 533  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:39:14,045 541  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:39:14,049 545  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:39:14,144 640  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:39:14,144 640  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:39:14,332 828  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:39:14,674 1170 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:39:14,686 1182 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:39:14,686 1182 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:39:14,686 1182 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:39:14,692 1188 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:39:15,167 1663 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:39:16,091 2587 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:39:16,113 2609 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:39:17,959 4455 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:39:17,960 4456 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:39:17,962 4458 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:39:17,963 4459 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:39:17,964 4460 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:39:17,964 4460 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:39:17,964 4460 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:40:39,574 0    [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-05 22:40:39,589 15   [http-nio-8080-exec-9] INFO  logger  - in getListOfSheets
+2016-12-05 22:40:40,064 490  [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-05 22:40:40,094 520  [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-05 22:40:40,102 528  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-05 22:40:40,107 533  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-05 22:40:40,214 640  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-05 22:40:40,214 640  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-05 22:40:40,406 832  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-05 22:40:40,765 1191 [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-05 22:40:40,777 1203 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-05 22:40:40,778 1204 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-05 22:40:40,778 1204 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-05 22:40:40,783 1209 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-05 22:40:41,293 1719 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-05 22:40:42,228 2654 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-05 22:40:42,250 2676 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-05 22:40:44,087 4513 [http-nio-8080-exec-9] INFO  logger  - before = 2
+2016-12-05 22:40:44,087 4513 [http-nio-8080-exec-9] INFO  logger  - after = 2
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - before = test character
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - after = test character
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:50.0
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:50.0
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 16:50:53.0
+2016-12-05 22:40:44,088 4514 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 16:50:53.0
+2016-12-05 22:40:44,089 4515 [http-nio-8080-exec-9] INFO  logger  - before = test campaign
+2016-12-05 22:40:44,089 4515 [http-nio-8080-exec-9] INFO  logger  - after = test campaign
+2016-12-05 22:40:44,090 4516 [http-nio-8080-exec-9] INFO  logger  - before = 3
+2016-12-05 22:40:44,090 4516 [http-nio-8080-exec-9] INFO  logger  - after = 3
+2016-12-05 22:40:44,090 4516 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = Test2
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = Test2
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = Undead Lord Cleric 3/Fighter 1
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-04 10:22:35.0
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-04 10:22:35.0
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:40:44,091 4517 [http-nio-8080-exec-9] INFO  logger  - before = 16
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - after = 16
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - before = jlemke
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - after = jlemke
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - before = Test3
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - after = Test3
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - before = human
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - after = human
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - before = null
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - after = 
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:40:44,092 4518 [http-nio-8080-exec-9] INFO  logger  - before = 2016-12-05 14:39:10.0
+2016-12-05 22:40:44,093 4519 [http-nio-8080-exec-9] INFO  logger  - after = 2016-12-05 14:39:10.0
+2016-12-05 22:40:44,093 4519 [http-nio-8080-exec-9] INFO  logger  - before = Test Campaign
+2016-12-05 22:40:44,093 4519 [http-nio-8080-exec-9] INFO  logger  - after = Test Campaign
+2016-12-05 22:40:45,904 6330 [http-nio-8080-exec-3] INFO  logger  - dao created

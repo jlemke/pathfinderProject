@@ -1,5 +1,7 @@
 package controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.sheet.Sheet;
 import persistence.SheetDao;
 
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Logger;
 
 /**
@@ -29,11 +32,21 @@ public class LoadSheet extends HttpServlet {
             throws ServletException, IOException {
 
         SheetDao dao = new SheetDao();
-        int sheetId = Integer.parseInt(request.getParameter("sheetId"));
-        Sheet sheet = dao.getSheet(sheetId);
-        request.setAttribute("sheet", sheet);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/sheet.jsp");
-        dispatcher.forward(request, response);
+        int sheetId = Integer.parseInt(request.getParameter("id"));
 
+        Sheet sheet = dao.getSheet(sheetId);
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        String output = null;
+        try {
+            output = mapper.writeValueAsString(sheet);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        out.print(output);
     }
 }

@@ -4,6 +4,7 @@ import entity.User;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,7 +14,7 @@ import java.util.Collection;
  */
 @Entity
 @Table(name = "sheet_main", schema = "pathfinderdb", catalog = "")
-public class Sheet {
+public class Sheet implements Serializable {
     private int sheetId;
     private User owner;
     private String characterName;

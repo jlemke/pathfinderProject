@@ -100,7 +100,7 @@ public class SheetDao {
             thisUsersSheets.add(temp);
         }
 
-        //session.close();
+        session.close();
         return thisUsersSheets;
     }
 
@@ -195,6 +195,7 @@ public class SheetDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Sheet sheet = (Sheet) session.get(Sheet.class, id);
+
         session.close();
         return sheet;
     }
