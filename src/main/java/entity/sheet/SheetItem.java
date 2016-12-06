@@ -1,9 +1,11 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_items", schema = "pathfinderdb", catalog = "")
@@ -13,10 +15,10 @@ public class SheetItem {
     private int itemId;
     private String itemName;
     private String itemDescription;
-    private Integer itemQuantity;
-    private Integer unitWeight;
-    private Integer unitValue;
-    private Sheet sheetBySheetId;
+    private int itemQuantity;
+    private int unitWeight;
+    private int unitValue;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -59,32 +61,32 @@ public class SheetItem {
     }
 
     @Basic
-    @Column(name = "item_quantity", nullable = true)
-    public Integer getItemQuantity() {
+    @Column(name = "item_quantity", nullable = false)
+    public int getItemQuantity() {
         return itemQuantity;
     }
 
-    public void setItemQuantity(Integer itemQuantity) {
+    public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
 
     @Basic
-    @Column(name = "unit_weight", nullable = true)
-    public Integer getUnitWeight() {
+    @Column(name = "unit_weight", nullable = false)
+    public int getUnitWeight() {
         return unitWeight;
     }
 
-    public void setUnitWeight(Integer unitWeight) {
+    public void setUnitWeight(int unitWeight) {
         this.unitWeight = unitWeight;
     }
 
     @Basic
-    @Column(name = "unit_value", nullable = true)
-    public Integer getUnitValue() {
+    @Column(name = "unit_value", nullable = false)
+    public int getUnitValue() {
         return unitValue;
     }
 
-    public void setUnitValue(Integer unitValue) {
+    public void setUnitValue(int unitValue) {
         this.unitValue = unitValue;
     }
 
@@ -97,13 +99,12 @@ public class SheetItem {
 
         if (sheetId != sheetItem.sheetId) return false;
         if (itemId != sheetItem.itemId) return false;
+        if (itemQuantity != sheetItem.itemQuantity) return false;
+        if (unitWeight != sheetItem.unitWeight) return false;
+        if (unitValue != sheetItem.unitValue) return false;
         if (itemName != null ? !itemName.equals(sheetItem.itemName) : sheetItem.itemName != null) return false;
         if (itemDescription != null ? !itemDescription.equals(sheetItem.itemDescription) : sheetItem.itemDescription != null)
             return false;
-        if (itemQuantity != null ? !itemQuantity.equals(sheetItem.itemQuantity) : sheetItem.itemQuantity != null)
-            return false;
-        if (unitWeight != null ? !unitWeight.equals(sheetItem.unitWeight) : sheetItem.unitWeight != null) return false;
-        if (unitValue != null ? !unitValue.equals(sheetItem.unitValue) : sheetItem.unitValue != null) return false;
 
         return true;
     }
@@ -114,19 +115,19 @@ public class SheetItem {
         result = 31 * result + itemId;
         result = 31 * result + (itemName != null ? itemName.hashCode() : 0);
         result = 31 * result + (itemDescription != null ? itemDescription.hashCode() : 0);
-        result = 31 * result + (itemQuantity != null ? itemQuantity.hashCode() : 0);
-        result = 31 * result + (unitWeight != null ? unitWeight.hashCode() : 0);
-        result = 31 * result + (unitValue != null ? unitValue.hashCode() : 0);
+        result = 31 * result + itemQuantity;
+        result = 31 * result + unitWeight;
+        result = 31 * result + unitValue;
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

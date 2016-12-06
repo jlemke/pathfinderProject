@@ -1,9 +1,11 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_weapons", schema = "pathfinderdb", catalog = "")
@@ -12,22 +14,22 @@ public class SheetWeapon {
     private int sheetId;
     private int weaponId;
     private String weaponName;
-    private Byte masterwork;
-    private Integer enhancementBonus;
+    private boolean masterwork;
+    private int enhancementBonus;
     private String damageRoll;
-    private Integer criticalRange;
-    private Integer criticalMultiplier;
+    private int criticalRange;
+    private int criticalMultiplier;
     private String attackAbility;
     private String damageAbility;
-    private Integer range;
-    private Byte twoHand;
-    private Byte bludgeoning;
-    private Byte piercing;
-    private Byte slashing;
-    private Integer weight;
-    private Byte proficient;
-    private Integer value;
-    private Sheet sheetBySheetId;
+    private int range;
+    private boolean twoHand;
+    private boolean bludgeoning;
+    private boolean piercing;
+    private boolean slashing;
+    private int weight;
+    private boolean proficient;
+    private int value;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -60,22 +62,22 @@ public class SheetWeapon {
     }
 
     @Basic
-    @Column(name = "masterwork", nullable = true)
-    public Byte getMasterwork() {
+    @Column(name = "masterwork", nullable = false)
+    public boolean isMasterwork() {
         return masterwork;
     }
 
-    public void setMasterwork(Byte masterwork) {
+    public void setMasterwork(boolean masterwork) {
         this.masterwork = masterwork;
     }
 
     @Basic
-    @Column(name = "enhancement_bonus", nullable = true)
-    public Integer getEnhancementBonus() {
+    @Column(name = "enhancement_bonus", nullable = false)
+    public int getEnhancementBonus() {
         return enhancementBonus;
     }
 
-    public void setEnhancementBonus(Integer enhancementBonus) {
+    public void setEnhancementBonus(int enhancementBonus) {
         this.enhancementBonus = enhancementBonus;
     }
 
@@ -90,27 +92,27 @@ public class SheetWeapon {
     }
 
     @Basic
-    @Column(name = "critical_range", nullable = true)
-    public Integer getCriticalRange() {
+    @Column(name = "critical_range", nullable = false)
+    public int getCriticalRange() {
         return criticalRange;
     }
 
-    public void setCriticalRange(Integer criticalRange) {
+    public void setCriticalRange(int criticalRange) {
         this.criticalRange = criticalRange;
     }
 
     @Basic
-    @Column(name = "critical_multiplier", nullable = true)
-    public Integer getCriticalMultiplier() {
+    @Column(name = "critical_multiplier", nullable = false)
+    public int getCriticalMultiplier() {
         return criticalMultiplier;
     }
 
-    public void setCriticalMultiplier(Integer criticalMultiplier) {
+    public void setCriticalMultiplier(int criticalMultiplier) {
         this.criticalMultiplier = criticalMultiplier;
     }
 
     @Basic
-    @Column(name = "attack_ability", nullable = true)
+    @Column(name = "attack_ability", nullable = false)
     public String getAttackAbility() {
         return attackAbility;
     }
@@ -120,7 +122,7 @@ public class SheetWeapon {
     }
 
     @Basic
-    @Column(name = "damage_ability", nullable = true)
+    @Column(name = "damage_ability", nullable = false)
     public String getDamageAbility() {
         return damageAbility;
     }
@@ -130,82 +132,82 @@ public class SheetWeapon {
     }
 
     @Basic
-    @Column(name = "range", nullable = true)
-    public Integer getRange() {
+    @Column(name = "range", nullable = false)
+    public int getRange() {
         return range;
     }
 
-    public void setRange(Integer range) {
+    public void setRange(int range) {
         this.range = range;
     }
 
     @Basic
-    @Column(name = "two_hand", nullable = true)
-    public Byte getTwoHand() {
+    @Column(name = "two_hand", nullable = false)
+    public boolean isTwoHand() {
         return twoHand;
     }
 
-    public void setTwoHand(Byte twoHand) {
+    public void setTwoHand(boolean twoHand) {
         this.twoHand = twoHand;
     }
 
     @Basic
-    @Column(name = "bludgeoning", nullable = true)
-    public Byte getBludgeoning() {
+    @Column(name = "bludgeoning", nullable = false)
+    public boolean isBludgeoning() {
         return bludgeoning;
     }
 
-    public void setBludgeoning(Byte bludgeoning) {
+    public void setBludgeoning(boolean bludgeoning) {
         this.bludgeoning = bludgeoning;
     }
 
     @Basic
-    @Column(name = "piercing", nullable = true)
-    public Byte getPiercing() {
+    @Column(name = "piercing", nullable = false)
+    public boolean isPiercing() {
         return piercing;
     }
 
-    public void setPiercing(Byte piercing) {
+    public void setPiercing(boolean piercing) {
         this.piercing = piercing;
     }
 
     @Basic
-    @Column(name = "slashing", nullable = true)
-    public Byte getSlashing() {
+    @Column(name = "slashing", nullable = false)
+    public boolean isSlashing() {
         return slashing;
     }
 
-    public void setSlashing(Byte slashing) {
+    public void setSlashing(boolean slashing) {
         this.slashing = slashing;
     }
 
     @Basic
-    @Column(name = "weight", nullable = true)
-    public Integer getWeight() {
+    @Column(name = "weight", nullable = false)
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
     @Basic
-    @Column(name = "proficient", nullable = true)
-    public Byte getProficient() {
+    @Column(name = "proficient", nullable = false)
+    public boolean isProficient() {
         return proficient;
     }
 
-    public void setProficient(Byte proficient) {
+    public void setProficient(boolean proficient) {
         this.proficient = proficient;
     }
 
     @Basic
-    @Column(name = "value", nullable = true)
-    public Integer getValue() {
+    @Column(name = "value", nullable = false)
+    public int getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
@@ -218,27 +220,24 @@ public class SheetWeapon {
 
         if (sheetId != that.sheetId) return false;
         if (weaponId != that.weaponId) return false;
+        if (masterwork != that.masterwork) return false;
+        if (enhancementBonus != that.enhancementBonus) return false;
+        if (criticalRange != that.criticalRange) return false;
+        if (criticalMultiplier != that.criticalMultiplier) return false;
+        if (range != that.range) return false;
+        if (twoHand != that.twoHand) return false;
+        if (bludgeoning != that.bludgeoning) return false;
+        if (piercing != that.piercing) return false;
+        if (slashing != that.slashing) return false;
+        if (weight != that.weight) return false;
+        if (proficient != that.proficient) return false;
+        if (value != that.value) return false;
         if (weaponName != null ? !weaponName.equals(that.weaponName) : that.weaponName != null) return false;
-        if (masterwork != null ? !masterwork.equals(that.masterwork) : that.masterwork != null) return false;
-        if (enhancementBonus != null ? !enhancementBonus.equals(that.enhancementBonus) : that.enhancementBonus != null)
-            return false;
         if (damageRoll != null ? !damageRoll.equals(that.damageRoll) : that.damageRoll != null) return false;
-        if (criticalRange != null ? !criticalRange.equals(that.criticalRange) : that.criticalRange != null)
-            return false;
-        if (criticalMultiplier != null ? !criticalMultiplier.equals(that.criticalMultiplier) : that.criticalMultiplier != null)
-            return false;
         if (attackAbility != null ? !attackAbility.equals(that.attackAbility) : that.attackAbility != null)
             return false;
         if (damageAbility != null ? !damageAbility.equals(that.damageAbility) : that.damageAbility != null)
             return false;
-        if (range != null ? !range.equals(that.range) : that.range != null) return false;
-        if (twoHand != null ? !twoHand.equals(that.twoHand) : that.twoHand != null) return false;
-        if (bludgeoning != null ? !bludgeoning.equals(that.bludgeoning) : that.bludgeoning != null) return false;
-        if (piercing != null ? !piercing.equals(that.piercing) : that.piercing != null) return false;
-        if (slashing != null ? !slashing.equals(that.slashing) : that.slashing != null) return false;
-        if (weight != null ? !weight.equals(that.weight) : that.weight != null) return false;
-        if (proficient != null ? !proficient.equals(that.proficient) : that.proficient != null) return false;
-        if (value != null ? !value.equals(that.value) : that.value != null) return false;
 
         return true;
     }
@@ -248,31 +247,31 @@ public class SheetWeapon {
         int result = sheetId;
         result = 31 * result + weaponId;
         result = 31 * result + (weaponName != null ? weaponName.hashCode() : 0);
-        result = 31 * result + (masterwork != null ? masterwork.hashCode() : 0);
-        result = 31 * result + (enhancementBonus != null ? enhancementBonus.hashCode() : 0);
+        result = 31 * result + (masterwork ? 1 : 0);
+        result = 31 * result + enhancementBonus;
         result = 31 * result + (damageRoll != null ? damageRoll.hashCode() : 0);
-        result = 31 * result + (criticalRange != null ? criticalRange.hashCode() : 0);
-        result = 31 * result + (criticalMultiplier != null ? criticalMultiplier.hashCode() : 0);
+        result = 31 * result + criticalRange;
+        result = 31 * result + criticalMultiplier;
         result = 31 * result + (attackAbility != null ? attackAbility.hashCode() : 0);
         result = 31 * result + (damageAbility != null ? damageAbility.hashCode() : 0);
-        result = 31 * result + (range != null ? range.hashCode() : 0);
-        result = 31 * result + (twoHand != null ? twoHand.hashCode() : 0);
-        result = 31 * result + (bludgeoning != null ? bludgeoning.hashCode() : 0);
-        result = 31 * result + (piercing != null ? piercing.hashCode() : 0);
-        result = 31 * result + (slashing != null ? slashing.hashCode() : 0);
-        result = 31 * result + (weight != null ? weight.hashCode() : 0);
-        result = 31 * result + (proficient != null ? proficient.hashCode() : 0);
-        result = 31 * result + (value != null ? value.hashCode() : 0);
+        result = 31 * result + range;
+        result = 31 * result + (twoHand ? 1 : 0);
+        result = 31 * result + (bludgeoning ? 1 : 0);
+        result = 31 * result + (piercing ? 1 : 0);
+        result = 31 * result + (slashing ? 1 : 0);
+        result = 31 * result + weight;
+        result = 31 * result + (proficient ? 1 : 0);
+        result = 31 * result + value;
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

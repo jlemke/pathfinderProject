@@ -142,7 +142,7 @@ I have chosen this project because the current services are either designed for 
 
 	SHEET FIELDS:
 				
-		CREATE TABLE users (
+		CREATE TABLE user (
 			username varchar(30) NOT NULL,
 			password varchar(128) NOT NULL,
 			email varchar(255),
@@ -158,7 +158,7 @@ I have chosen this project because the current services are either designed for 
 			last_accessed DATETIME,
 			campaign varchar(50),
 			PRIMARY KEY (sheet_id),
-			FOREIGN KEY (owner) REFERENCES users(username)
+			FOREIGN KEY (owner) REFERENCES user(username)
 		);
 		
 		//contains character description
@@ -656,7 +656,7 @@ SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, GROUP_CONCAT
 FROM sheet_main sm JOIN sheet_classes sc ON sm.sheet_id = sc.sheet_id GROUP BY sc.sheet_id;
 			
 			
-		select group_concat(CONCAT(first_name, CONCAT(' ', CONCAT(last_name))) SEPARATOR ', ') from users;
+		select group_concat(CONCAT(first_name, CONCAT(' ', CONCAT(last_name))) SEPARATOR ', ') from user;
 			
 select sm.sheet_id, sm.owner, sm.character_name, sm.character_race, group_concat(trim(concat(sc.archetype, concat(' ', concat(sc.class_name, concat(' ', sc.level))))) SEPARATOR '/')
 from sheet_main sm JOIN sheet_classes sc on sm.sheet_id = sc.sheet_id group by sc.sheet_id;
@@ -782,7 +782,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
     @Id

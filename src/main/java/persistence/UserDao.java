@@ -1,9 +1,9 @@
 package persistence;
 
-import entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import entity.User;
 
 /**
  * Created by Joe on 10/26/2016.
@@ -26,5 +26,13 @@ public class UserDao {
         if (password.equals(user.getPassword()))
             return true;
         return false;
+    }
+
+    public User getUser(String username) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        User user = (User) session.get(User.class, username);
+        session.close();
+        return user;
     }
 }

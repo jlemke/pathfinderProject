@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "users", schema = "pathfinderdb", catalog = "")
@@ -15,7 +15,7 @@ public class User {
     private String password;
     private String email;
     private Collection<Sheet> sheetsByUsername;
-    private Collection<UserRoles> userRolesByUsername;
+    private Collection<UserRole> userRolesByUsername;
 
     @Id
     @Column(name = "username", nullable = false, length = 30)
@@ -69,7 +69,7 @@ public class User {
         return result;
     }
 
-    @OneToMany(mappedBy = "usersByOwner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     public Collection<Sheet> getSheetsByUsername() {
         return sheetsByUsername;
     }
@@ -78,12 +78,12 @@ public class User {
         this.sheetsByUsername = sheetsByUsername;
     }
 
-    @OneToMany(mappedBy = "usersByUsername")
-    public Collection<UserRoles> getUserRolesByUsername() {
+    @OneToMany(mappedBy = "user")
+    public Collection<UserRole> getUserRolesByUsername() {
         return userRolesByUsername;
     }
 
-    public void setUserRolesByUsername(Collection<UserRoles> userRolesByUsername) {
+    public void setUserRolesByUsername(Collection<UserRole> userRolesByUsername) {
         this.userRolesByUsername = userRolesByUsername;
     }
 }

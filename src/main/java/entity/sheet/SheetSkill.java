@@ -1,25 +1,28 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_skills", schema = "pathfinderdb", catalog = "")
+@IdClass(SheetSkillPK.class)
 public class SheetSkill {
     private int sheetId;
     private String skillName;
     private String skillAbility;
-    private Integer skillRanks;
-    private Integer skillMisc;
-    private Byte isClassSkill;
-    private Byte reqTrained;
-    private Sheet sheetBySheetId;
+    private int skillRanks;
+    private boolean isClassSkill;
+    private int skillMisc;
+    private boolean reqTrained;
     private Collection<SheetSpecializedSkill> sheetSpecializedSkills;
+    private Sheet sheet;
 
-    @Basic
+    @Id
     @Column(name = "sheet_id", nullable = false)
     public int getSheetId() {
         return sheetId;
@@ -50,42 +53,42 @@ public class SheetSkill {
     }
 
     @Basic
-    @Column(name = "skill_ranks", nullable = true)
-    public Integer getSkillRanks() {
+    @Column(name = "skill_ranks", nullable = false)
+    public int getSkillRanks() {
         return skillRanks;
     }
 
-    public void setSkillRanks(Integer skillRanks) {
+    public void setSkillRanks(int skillRanks) {
         this.skillRanks = skillRanks;
     }
 
     @Basic
-    @Column(name = "skill_misc", nullable = true)
-    public Integer getSkillMisc() {
+    @Column(name = "is_class_skill", nullable = false)
+    public boolean isClassSkill() {
+        return isClassSkill;
+    }
+
+    public void setClassSkill(boolean classSkill) {
+        isClassSkill = classSkill;
+    }
+
+    @Basic
+    @Column(name = "skill_misc", nullable = false)
+    public int getSkillMisc() {
         return skillMisc;
     }
 
-    public void setSkillMisc(Integer skillMisc) {
+    public void setSkillMisc(int skillMisc) {
         this.skillMisc = skillMisc;
     }
 
     @Basic
-    @Column(name = "is_class_skill", nullable = true)
-    public Byte getIsClassSkill() {
-        return isClassSkill;
-    }
-
-    public void setIsClassSkill(Byte isClassSkill) {
-        this.isClassSkill = isClassSkill;
-    }
-
-    @Basic
-    @Column(name = "req_trained", nullable = true)
-    public Byte getReqTrained() {
+    @Column(name = "req_trained", nullable = false)
+    public boolean isReqTrained() {
         return reqTrained;
     }
 
-    public void setReqTrained(Byte reqTrained) {
+    public void setReqTrained(boolean reqTrained) {
         this.reqTrained = reqTrained;
     }
 
@@ -97,12 +100,12 @@ public class SheetSkill {
         SheetSkill that = (SheetSkill) o;
 
         if (sheetId != that.sheetId) return false;
+        if (skillRanks != that.skillRanks) return false;
+        if (isClassSkill != that.isClassSkill) return false;
+        if (skillMisc != that.skillMisc) return false;
+        if (reqTrained != that.reqTrained) return false;
         if (skillName != null ? !skillName.equals(that.skillName) : that.skillName != null) return false;
         if (skillAbility != null ? !skillAbility.equals(that.skillAbility) : that.skillAbility != null) return false;
-        if (skillRanks != null ? !skillRanks.equals(that.skillRanks) : that.skillRanks != null) return false;
-        if (skillMisc != null ? !skillMisc.equals(that.skillMisc) : that.skillMisc != null) return false;
-        if (isClassSkill != null ? !isClassSkill.equals(that.isClassSkill) : that.isClassSkill != null) return false;
-        if (reqTrained != null ? !reqTrained.equals(that.reqTrained) : that.reqTrained != null) return false;
 
         return true;
     }
@@ -112,11 +115,20 @@ public class SheetSkill {
         int result = sheetId;
         result = 31 * result + (skillName != null ? skillName.hashCode() : 0);
         result = 31 * result + (skillAbility != null ? skillAbility.hashCode() : 0);
-        result = 31 * result + (skillRanks != null ? skillRanks.hashCode() : 0);
-        result = 31 * result + (skillMisc != null ? skillMisc.hashCode() : 0);
-        result = 31 * result + (isClassSkill != null ? isClassSkill.hashCode() : 0);
-        result = 31 * result + (reqTrained != null ? reqTrained.hashCode() : 0);
+        result = 31 * result + skillRanks;
+        result = 31 * result + (isClassSkill ? 1 : 0);
+        result = 31 * result + skillMisc;
+        result = 31 * result + (reqTrained ? 1 : 0);
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
     @OneToMany(mappedBy = "sheetSkill")
@@ -129,13 +141,4 @@ public class SheetSkill {
     }
 
 
-    @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
-    }
-
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

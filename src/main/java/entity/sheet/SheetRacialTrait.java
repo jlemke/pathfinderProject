@@ -1,9 +1,11 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_racial_traits", schema = "pathfinderdb", catalog = "")
@@ -13,7 +15,7 @@ public class SheetRacialTrait {
     private int traitId;
     private String traitName;
     private String traitDescription;
-    private Sheet sheetBySheetId;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -81,12 +83,12 @@ public class SheetRacialTrait {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

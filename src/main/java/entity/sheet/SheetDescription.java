@@ -1,9 +1,13 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_description", schema = "pathfinderdb", catalog = "")
@@ -12,13 +16,13 @@ public class SheetDescription {
     private String gender;
     private String alignment;
     private String deity;
-    private Integer age;
+    private String age;
     private String height;
     private String weight;
     private String visualDescription;
     private String biography;
     private String languages;
-    private Sheet sheetBySheetId;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -61,12 +65,12 @@ public class SheetDescription {
     }
 
     @Basic
-    @Column(name = "age", nullable = true)
-    public Integer getAge() {
+    @Column(name = "age", nullable = true, length = 30)
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -158,12 +162,12 @@ public class SheetDescription {
     }
 
     @OneToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheetId = sheet.getSheetId();
+        this.sheet = sheet;
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

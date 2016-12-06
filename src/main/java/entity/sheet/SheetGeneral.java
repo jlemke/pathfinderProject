@@ -1,20 +1,24 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_general", schema = "pathfinderdb", catalog = "")
 public class SheetGeneral {
     private int sheetId;
-    private Integer hpCurrent;
-    private Integer initMisc;
-    private Integer fortMisc;
-    private Integer refMisc;
-    private Integer willMisc;
-    private Sheet sheetBySheetId;
+    private int hpCurrent;
+    private int initMisc;
+    private int fortMisc;
+    private int refMisc;
+    private int willMisc;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -27,52 +31,52 @@ public class SheetGeneral {
     }
 
     @Basic
-    @Column(name = "hp_current", nullable = true)
-    public Integer getHpCurrent() {
+    @Column(name = "hp_current", nullable = false)
+    public int getHpCurrent() {
         return hpCurrent;
     }
 
-    public void setHpCurrent(Integer hpCurrent) {
+    public void setHpCurrent(int hpCurrent) {
         this.hpCurrent = hpCurrent;
     }
 
     @Basic
-    @Column(name = "init_misc", nullable = true)
-    public Integer getInitMisc() {
+    @Column(name = "init_misc", nullable = false)
+    public int getInitMisc() {
         return initMisc;
     }
 
-    public void setInitMisc(Integer initMisc) {
+    public void setInitMisc(int initMisc) {
         this.initMisc = initMisc;
     }
 
     @Basic
-    @Column(name = "fort_misc", nullable = true)
-    public Integer getFortMisc() {
+    @Column(name = "fort_misc", nullable = false)
+    public int getFortMisc() {
         return fortMisc;
     }
 
-    public void setFortMisc(Integer fortMisc) {
+    public void setFortMisc(int fortMisc) {
         this.fortMisc = fortMisc;
     }
 
     @Basic
-    @Column(name = "ref_misc", nullable = true)
-    public Integer getRefMisc() {
+    @Column(name = "ref_misc", nullable = false)
+    public int getRefMisc() {
         return refMisc;
     }
 
-    public void setRefMisc(Integer refMisc) {
+    public void setRefMisc(int refMisc) {
         this.refMisc = refMisc;
     }
 
     @Basic
-    @Column(name = "will_misc", nullable = true)
-    public Integer getWillMisc() {
+    @Column(name = "will_misc", nullable = false)
+    public int getWillMisc() {
         return willMisc;
     }
 
-    public void setWillMisc(Integer willMisc) {
+    public void setWillMisc(int willMisc) {
         this.willMisc = willMisc;
     }
 
@@ -84,11 +88,11 @@ public class SheetGeneral {
         SheetGeneral that = (SheetGeneral) o;
 
         if (sheetId != that.sheetId) return false;
-        if (hpCurrent != null ? !hpCurrent.equals(that.hpCurrent) : that.hpCurrent != null) return false;
-        if (initMisc != null ? !initMisc.equals(that.initMisc) : that.initMisc != null) return false;
-        if (fortMisc != null ? !fortMisc.equals(that.fortMisc) : that.fortMisc != null) return false;
-        if (refMisc != null ? !refMisc.equals(that.refMisc) : that.refMisc != null) return false;
-        if (willMisc != null ? !willMisc.equals(that.willMisc) : that.willMisc != null) return false;
+        if (hpCurrent != that.hpCurrent) return false;
+        if (initMisc != that.initMisc) return false;
+        if (fortMisc != that.fortMisc) return false;
+        if (refMisc != that.refMisc) return false;
+        if (willMisc != that.willMisc) return false;
 
         return true;
     }
@@ -96,21 +100,21 @@ public class SheetGeneral {
     @Override
     public int hashCode() {
         int result = sheetId;
-        result = 31 * result + (hpCurrent != null ? hpCurrent.hashCode() : 0);
-        result = 31 * result + (initMisc != null ? initMisc.hashCode() : 0);
-        result = 31 * result + (fortMisc != null ? fortMisc.hashCode() : 0);
-        result = 31 * result + (refMisc != null ? refMisc.hashCode() : 0);
-        result = 31 * result + (willMisc != null ? willMisc.hashCode() : 0);
+        result = 31 * result + hpCurrent;
+        result = 31 * result + initMisc;
+        result = 31 * result + fortMisc;
+        result = 31 * result + refMisc;
+        result = 31 * result + willMisc;
         return result;
     }
 
     @OneToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

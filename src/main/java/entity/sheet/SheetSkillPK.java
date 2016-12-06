@@ -7,9 +7,9 @@ import java.io.Serializable;
 /**
  * Created by Joe on 12/5/2016.
  */
-public class SheetWeaponPK implements Serializable {
+public class SheetSkillPK implements Serializable {
     private int sheetId;
-    private int weaponId;
+    private String skillName;
 
     @Column(name = "sheet_id", nullable = false)
     @Id
@@ -21,14 +21,14 @@ public class SheetWeaponPK implements Serializable {
         this.sheetId = sheetId;
     }
 
-    @Column(name = "weapon_id", nullable = false)
+    @Column(name = "skill_name", nullable = false, length = 30)
     @Id
-    public int getWeaponId() {
-        return weaponId;
+    public String getSkillName() {
+        return skillName;
     }
 
-    public void setWeaponId(int weaponId) {
-        this.weaponId = weaponId;
+    public void setSkillName(String skillName) {
+        this.skillName = skillName;
     }
 
     @Override
@@ -36,10 +36,10 @@ public class SheetWeaponPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        SheetWeaponPK that = (SheetWeaponPK) o;
+        SheetSkillPK that = (SheetSkillPK) o;
 
         if (sheetId != that.sheetId) return false;
-        if (weaponId != that.weaponId) return false;
+        if (skillName != null ? !skillName.equals(that.skillName) : that.skillName != null) return false;
 
         return true;
     }
@@ -47,7 +47,7 @@ public class SheetWeaponPK implements Serializable {
     @Override
     public int hashCode() {
         int result = sheetId;
-        result = 31 * result + weaponId;
+        result = 31 * result + (skillName != null ? skillName.hashCode() : 0);
         return result;
     }
 }

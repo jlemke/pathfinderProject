@@ -1,20 +1,18 @@
 package entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
-@Entity
-@Table(name = "user_roles", schema = "pathfinderdb", catalog = "")
-@IdClass(UserRolesPK.class)
-public class UserRoles {
+public class UserRolePK implements Serializable {
     private String username;
     private String roleName;
-    private User usersByUsername;
 
-    @Id
     @Column(name = "username", nullable = false, length = 30)
+    @Id
     public String getUsername() {
         return username;
     }
@@ -23,8 +21,8 @@ public class UserRoles {
         this.username = username;
     }
 
-    @Id
     @Column(name = "role_name", nullable = false, length = 15)
+    @Id
     public String getRoleName() {
         return roleName;
     }
@@ -38,10 +36,10 @@ public class UserRoles {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserRoles userRoles = (UserRoles) o;
+        UserRolePK that = (UserRolePK) o;
 
-        if (username != null ? !username.equals(userRoles.username) : userRoles.username != null) return false;
-        if (roleName != null ? !roleName.equals(userRoles.roleName) : userRoles.roleName != null) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        if (roleName != null ? !roleName.equals(that.roleName) : that.roleName != null) return false;
 
         return true;
     }
@@ -51,15 +49,5 @@ public class UserRoles {
         int result = username != null ? username.hashCode() : 0;
         result = 31 * result + (roleName != null ? roleName.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "username", referencedColumnName = "username", insertable = false, updatable = false)
-    public User getUsersByUsername() {
-        return usersByUsername;
-    }
-
-    public void setUsersByUsername(User usersByUsername) {
-        this.usersByUsername = usersByUsername;
     }
 }

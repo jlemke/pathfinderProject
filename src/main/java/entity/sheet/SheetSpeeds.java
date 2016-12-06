@@ -1,21 +1,23 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_speeds", schema = "pathfinderdb", catalog = "")
 public class SheetSpeeds {
     private int sheetId;
-    private Integer speedBase;
-    private Integer speedFly;
-    private Integer speedSwim;
-    private Integer speedClimb;
-    private Integer speedBurrow;
+    private int speedBase;
+    private int speedFly;
+    private int speedSwim;
+    private int speedClimb;
+    private int speedBurrow;
     private String calculateBy;
-    private Sheet sheetBySheetId;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -28,52 +30,52 @@ public class SheetSpeeds {
     }
 
     @Basic
-    @Column(name = "speed_base", nullable = true)
-    public Integer getSpeedBase() {
+    @Column(name = "speed_base", nullable = false)
+    public int getSpeedBase() {
         return speedBase;
     }
 
-    public void setSpeedBase(Integer speedBase) {
+    public void setSpeedBase(int speedBase) {
         this.speedBase = speedBase;
     }
 
     @Basic
-    @Column(name = "speed_fly", nullable = true)
-    public Integer getSpeedFly() {
+    @Column(name = "speed_fly", nullable = false)
+    public int getSpeedFly() {
         return speedFly;
     }
 
-    public void setSpeedFly(Integer speedFly) {
+    public void setSpeedFly(int speedFly) {
         this.speedFly = speedFly;
     }
 
     @Basic
-    @Column(name = "speed_swim", nullable = true)
-    public Integer getSpeedSwim() {
+    @Column(name = "speed_swim", nullable = false)
+    public int getSpeedSwim() {
         return speedSwim;
     }
 
-    public void setSpeedSwim(Integer speedSwim) {
+    public void setSpeedSwim(int speedSwim) {
         this.speedSwim = speedSwim;
     }
 
     @Basic
-    @Column(name = "speed_climb", nullable = true)
-    public Integer getSpeedClimb() {
+    @Column(name = "speed_climb", nullable = false)
+    public int getSpeedClimb() {
         return speedClimb;
     }
 
-    public void setSpeedClimb(Integer speedClimb) {
+    public void setSpeedClimb(int speedClimb) {
         this.speedClimb = speedClimb;
     }
 
     @Basic
-    @Column(name = "speed_burrow", nullable = true)
-    public Integer getSpeedBurrow() {
+    @Column(name = "speed_burrow", nullable = false)
+    public int getSpeedBurrow() {
         return speedBurrow;
     }
 
-    public void setSpeedBurrow(Integer speedBurrow) {
+    public void setSpeedBurrow(int speedBurrow) {
         this.speedBurrow = speedBurrow;
     }
 
@@ -95,11 +97,11 @@ public class SheetSpeeds {
         SheetSpeeds that = (SheetSpeeds) o;
 
         if (sheetId != that.sheetId) return false;
-        if (speedBase != null ? !speedBase.equals(that.speedBase) : that.speedBase != null) return false;
-        if (speedFly != null ? !speedFly.equals(that.speedFly) : that.speedFly != null) return false;
-        if (speedSwim != null ? !speedSwim.equals(that.speedSwim) : that.speedSwim != null) return false;
-        if (speedClimb != null ? !speedClimb.equals(that.speedClimb) : that.speedClimb != null) return false;
-        if (speedBurrow != null ? !speedBurrow.equals(that.speedBurrow) : that.speedBurrow != null) return false;
+        if (speedBase != that.speedBase) return false;
+        if (speedFly != that.speedFly) return false;
+        if (speedSwim != that.speedSwim) return false;
+        if (speedClimb != that.speedClimb) return false;
+        if (speedBurrow != that.speedBurrow) return false;
         if (calculateBy != null ? !calculateBy.equals(that.calculateBy) : that.calculateBy != null) return false;
 
         return true;
@@ -108,22 +110,22 @@ public class SheetSpeeds {
     @Override
     public int hashCode() {
         int result = sheetId;
-        result = 31 * result + (speedBase != null ? speedBase.hashCode() : 0);
-        result = 31 * result + (speedFly != null ? speedFly.hashCode() : 0);
-        result = 31 * result + (speedSwim != null ? speedSwim.hashCode() : 0);
-        result = 31 * result + (speedClimb != null ? speedClimb.hashCode() : 0);
-        result = 31 * result + (speedBurrow != null ? speedBurrow.hashCode() : 0);
+        result = 31 * result + speedBase;
+        result = 31 * result + speedFly;
+        result = 31 * result + speedSwim;
+        result = 31 * result + speedClimb;
+        result = 31 * result + speedBurrow;
         result = 31 * result + (calculateBy != null ? calculateBy.hashCode() : 0);
         return result;
     }
 
-    @OneToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

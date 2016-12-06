@@ -1,19 +1,21 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_money", schema = "pathfinderdb", catalog = "")
 public class SheetMoney {
     private int sheetId;
-    private Integer pp;
-    private Integer gp;
-    private Integer sp;
-    private Integer cp;
-    private Sheet sheetBySheetId;
+    private int pp;
+    private int gp;
+    private int sp;
+    private int cp;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -26,42 +28,42 @@ public class SheetMoney {
     }
 
     @Basic
-    @Column(name = "pp", nullable = true)
-    public Integer getPp() {
+    @Column(name = "pp", nullable = false)
+    public int getPp() {
         return pp;
     }
 
-    public void setPp(Integer pp) {
+    public void setPp(int pp) {
         this.pp = pp;
     }
 
     @Basic
-    @Column(name = "gp", nullable = true)
-    public Integer getGp() {
+    @Column(name = "gp", nullable = false)
+    public int getGp() {
         return gp;
     }
 
-    public void setGp(Integer gp) {
+    public void setGp(int gp) {
         this.gp = gp;
     }
 
     @Basic
-    @Column(name = "sp", nullable = true)
-    public Integer getSp() {
+    @Column(name = "sp", nullable = false)
+    public int getSp() {
         return sp;
     }
 
-    public void setSp(Integer sp) {
+    public void setSp(int sp) {
         this.sp = sp;
     }
 
     @Basic
-    @Column(name = "cp", nullable = true)
-    public Integer getCp() {
+    @Column(name = "cp", nullable = false)
+    public int getCp() {
         return cp;
     }
 
-    public void setCp(Integer cp) {
+    public void setCp(int cp) {
         this.cp = cp;
     }
 
@@ -73,10 +75,10 @@ public class SheetMoney {
         SheetMoney that = (SheetMoney) o;
 
         if (sheetId != that.sheetId) return false;
-        if (pp != null ? !pp.equals(that.pp) : that.pp != null) return false;
-        if (gp != null ? !gp.equals(that.gp) : that.gp != null) return false;
-        if (sp != null ? !sp.equals(that.sp) : that.sp != null) return false;
-        if (cp != null ? !cp.equals(that.cp) : that.cp != null) return false;
+        if (pp != that.pp) return false;
+        if (gp != that.gp) return false;
+        if (sp != that.sp) return false;
+        if (cp != that.cp) return false;
 
         return true;
     }
@@ -84,20 +86,20 @@ public class SheetMoney {
     @Override
     public int hashCode() {
         int result = sheetId;
-        result = 31 * result + (pp != null ? pp.hashCode() : 0);
-        result = 31 * result + (gp != null ? gp.hashCode() : 0);
-        result = 31 * result + (sp != null ? sp.hashCode() : 0);
-        result = 31 * result + (cp != null ? cp.hashCode() : 0);
+        result = 31 * result + pp;
+        result = 31 * result + gp;
+        result = 31 * result + sp;
+        result = 31 * result + cp;
         return result;
     }
 
     @OneToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", nullable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

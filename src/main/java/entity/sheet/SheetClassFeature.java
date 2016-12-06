@@ -1,9 +1,11 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_class_features", schema = "pathfinderdb", catalog = "")
@@ -14,8 +16,8 @@ public class SheetClassFeature {
     private int featureId;
     private String featureName;
     private String featureDescription;
-    private SheetClass sheetClasses;
-    private Sheet sheetBySheetId;
+    private SheetClass sheetClass;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -95,22 +97,21 @@ public class SheetClassFeature {
     }
 
     @ManyToOne
-    @JoinColumns({@JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false), @JoinColumn(name = "class_name", referencedColumnName = "class_name", insertable = false, updatable = false)})
-    public SheetClass getSheetClasses() {
-        return sheetClasses;
-    }
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
 
-    public void setSheetClasses(SheetClass sheetClasses) {
-        this.sheetClasses = sheetClasses;
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
-    }
+    @JoinColumns({
+            @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false),
+            @JoinColumn(name = "class_name", nullable = false, insertable = false, updatable = false)
+    })
+    public SheetClass getSheetClass() { return sheetClass; }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
+    public void setSheetClass(SheetClass sheetClass) { this.sheetClass = sheetClass; }
+
 }

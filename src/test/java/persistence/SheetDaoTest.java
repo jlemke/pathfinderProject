@@ -1,9 +1,15 @@
 package persistence;
 
+import entity.sheet.Sheet;
+import entity.sheet.SheetAbilityScoreColumn;
 import entity.sheet.SheetInfo;
+import org.apache.log4j.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -13,18 +19,73 @@ import static org.junit.Assert.*;
  */
 public class SheetDaoTest {
 
-    SheetDao dao;
+    private SheetDao dao;
+    private UserDao userDao;
+    private String USERNAME = "test_user";
+    private final Logger logger = Logger.getLogger("logger");
+    private Collection<Sheet> testSheets;
 
     @Before
     public void setUp() throws Exception {
         dao = new SheetDao();
+        userDao = new UserDao();
+        testSheets = new ArrayList<>();
     }
+
+    @After
+    public void tearDown() throws Exception {
+        for (Sheet testSheet : testSheets) {
+            dao.deleteSheet(testSheet);
+        }
+    }
+
 
     @Test
     public void getListOfSheets() throws Exception {
-        List<SheetInfo> sheets = dao.getListOfSheets("jlemke");
+        List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
 
-        assertEquals("failed", sheets.get(0).getCharacterClassString(), "Undead Lord Cleric 3/Fighter 1");
+        assertEquals("failed", "Fighter 1", sheets.get(0).getCharacterClassString());
+    }
+
+    @Test
+    public void createBlankSheet() throws Exception {
+        int newId = dao.createBlankSheet(USERNAME);
+        List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
+
+        SheetInfo temp;
+        for (int i = 0; i < sheets.size(); i++) {
+            temp = sheets.get(i);
+            logger.info(temp.getSheetId());
+            logger.info(temp.getCharacterClassString());
+            logger.info(temp.getCharacterName());
+            logger.info(temp.getCharacterRace());
+            logger.info(temp.getOwner());
+        }
+        testSheets.add(dao.getSheet(newId));
+        assertEquals("failed", newId, sheets.get(sheets.size() - 1).getSheetId());
+    }
+
+    @Test
+    public void saveSheet() throws Exception {
+        int id = dao.createBlankSheet(USERNAME);
+        Sheet sheet = new Sheet();
+        sheet.setSheetId(id);
+        sheet.setOwner(userDao.getUser(USERNAME));
+        List<SheetAbilityScoreColumn> columns = new ArrayList<>();
+        SheetAbilityScoreColumn column;
+        for (int i = 0; i < 4; i++) {
+            column = new SheetAbilityScoreColumn();
+            column.setSheet(sheet);
+            column.setColumnId(i);
+            column.setColumnName("Column " + i);
+            columns.add(column);
+        }
+        sheet.setSheetAbilityScoreColumns(columns);
+        dao.saveSheet(sheet);
+
+        Sheet newSheet = dao.getSheet(id);
+        testSheets.add(newSheet);
+        assertEquals("fail", newSheet, sheet);
     }
 
 }

@@ -1,9 +1,11 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_armors", schema = "pathfinderdb", catalog = "")
@@ -12,17 +14,17 @@ public class SheetArmor {
     private int sheetId;
     private int armorId;
     private String armorName;
-    private Byte masterwork;
-    private Integer acBonus;
+    private boolean masterwork;
+    private int acBonus;
     private Integer maxDexBonus;
-    private Integer skillPenalty;
+    private int skillPenalty;
+    private boolean equipped;
+    private int spellFailureChance;
+    private int weight;
+    private boolean proficient;
     private String type;
-    private Integer spellFailureChance;
-    private Integer weight;
-    private Byte proficient;
-    private Byte equipped;
-    private Integer value;
-    private Sheet sheetBySheetId;
+    private int value;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -55,22 +57,22 @@ public class SheetArmor {
     }
 
     @Basic
-    @Column(name = "masterwork", nullable = true)
-    public Byte getMasterwork() {
+    @Column(name = "masterwork", nullable = false)
+    public boolean isMasterwork() {
         return masterwork;
     }
 
-    public void setMasterwork(Byte masterwork) {
+    public void setMasterwork(boolean masterwork) {
         this.masterwork = masterwork;
     }
 
     @Basic
-    @Column(name = "ac_bonus", nullable = true)
-    public Integer getAcBonus() {
+    @Column(name = "ac_bonus", nullable = false)
+    public int getAcBonus() {
         return acBonus;
     }
 
-    public void setAcBonus(Integer acBonus) {
+    public void setAcBonus(int acBonus) {
         this.acBonus = acBonus;
     }
 
@@ -85,13 +87,53 @@ public class SheetArmor {
     }
 
     @Basic
-    @Column(name = "skill_penalty", nullable = true)
-    public Integer getSkillPenalty() {
+    @Column(name = "skill_penalty", nullable = false)
+    public int getSkillPenalty() {
         return skillPenalty;
     }
 
-    public void setSkillPenalty(Integer skillPenalty) {
+    public void setSkillPenalty(int skillPenalty) {
         this.skillPenalty = skillPenalty;
+    }
+
+    @Basic
+    @Column(name = "equipped", nullable = false)
+    public boolean isEquipped() {
+        return equipped;
+    }
+
+    public void setEquipped(boolean equipped) {
+        this.equipped = equipped;
+    }
+
+    @Basic
+    @Column(name = "spell_failure_chance", nullable = false)
+    public int getSpellFailureChance() {
+        return spellFailureChance;
+    }
+
+    public void setSpellFailureChance(int spellFailureChance) {
+        this.spellFailureChance = spellFailureChance;
+    }
+
+    @Basic
+    @Column(name = "weight", nullable = false)
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    @Basic
+    @Column(name = "proficient", nullable = false)
+    public boolean isProficient() {
+        return proficient;
+    }
+
+    public void setProficient(boolean proficient) {
+        this.proficient = proficient;
     }
 
     @Basic
@@ -105,52 +147,12 @@ public class SheetArmor {
     }
 
     @Basic
-    @Column(name = "spell_failure_chance", nullable = true)
-    public Integer getSpellFailureChance() {
-        return spellFailureChance;
-    }
-
-    public void setSpellFailureChance(Integer spellFailureChance) {
-        this.spellFailureChance = spellFailureChance;
-    }
-
-    @Basic
-    @Column(name = "weight", nullable = true)
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
-    @Basic
-    @Column(name = "proficient", nullable = true)
-    public Byte getProficient() {
-        return proficient;
-    }
-
-    public void setProficient(Byte proficient) {
-        this.proficient = proficient;
-    }
-
-    @Basic
-    @Column(name = "equipped", nullable = true)
-    public Byte getEquipped() {
-        return equipped;
-    }
-
-    public void setEquipped(Byte equipped) {
-        this.equipped = equipped;
-    }
-
-    @Basic
-    @Column(name = "value", nullable = true)
-    public Integer getValue() {
+    @Column(name = "value", nullable = false)
+    public int getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
@@ -163,18 +165,17 @@ public class SheetArmor {
 
         if (sheetId != that.sheetId) return false;
         if (armorId != that.armorId) return false;
+        if (masterwork != that.masterwork) return false;
+        if (acBonus != that.acBonus) return false;
+        if (skillPenalty != that.skillPenalty) return false;
+        if (equipped != that.equipped) return false;
+        if (spellFailureChance != that.spellFailureChance) return false;
+        if (weight != that.weight) return false;
+        if (proficient != that.proficient) return false;
+        if (value != that.value) return false;
         if (armorName != null ? !armorName.equals(that.armorName) : that.armorName != null) return false;
-        if (masterwork != null ? !masterwork.equals(that.masterwork) : that.masterwork != null) return false;
-        if (acBonus != null ? !acBonus.equals(that.acBonus) : that.acBonus != null) return false;
         if (maxDexBonus != null ? !maxDexBonus.equals(that.maxDexBonus) : that.maxDexBonus != null) return false;
-        if (skillPenalty != null ? !skillPenalty.equals(that.skillPenalty) : that.skillPenalty != null) return false;
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
-        if (spellFailureChance != null ? !spellFailureChance.equals(that.spellFailureChance) : that.spellFailureChance != null)
-            return false;
-        if (weight != null ? !weight.equals(that.weight) : that.weight != null) return false;
-        if (proficient != null ? !proficient.equals(that.proficient) : that.proficient != null) return false;
-        if (equipped != null ? !equipped.equals(that.equipped) : that.equipped != null) return false;
-        if (value != null ? !value.equals(that.value) : that.value != null) return false;
 
         return true;
     }
@@ -184,26 +185,26 @@ public class SheetArmor {
         int result = sheetId;
         result = 31 * result + armorId;
         result = 31 * result + (armorName != null ? armorName.hashCode() : 0);
-        result = 31 * result + (masterwork != null ? masterwork.hashCode() : 0);
-        result = 31 * result + (acBonus != null ? acBonus.hashCode() : 0);
+        result = 31 * result + (masterwork ? 1 : 0);
+        result = 31 * result + acBonus;
         result = 31 * result + (maxDexBonus != null ? maxDexBonus.hashCode() : 0);
-        result = 31 * result + (skillPenalty != null ? skillPenalty.hashCode() : 0);
+        result = 31 * result + skillPenalty;
+        result = 31 * result + (equipped ? 1 : 0);
+        result = 31 * result + spellFailureChance;
+        result = 31 * result + weight;
+        result = 31 * result + (proficient ? 1 : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (spellFailureChance != null ? spellFailureChance.hashCode() : 0);
-        result = 31 * result + (weight != null ? weight.hashCode() : 0);
-        result = 31 * result + (proficient != null ? proficient.hashCode() : 0);
-        result = 31 * result + (equipped != null ? equipped.hashCode() : 0);
-        result = 31 * result + (value != null ? value.hashCode() : 0);
+        result = 31 * result + value;
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }

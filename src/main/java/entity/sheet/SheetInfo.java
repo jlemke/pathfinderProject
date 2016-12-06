@@ -10,6 +10,7 @@ import java.sql.Timestamp;
  */
 public class SheetInfo {
 
+    private int sheetId;
     private String owner;
     private String characterName;
     private String characterRace;
@@ -18,9 +19,10 @@ public class SheetInfo {
     private Timestamp lastAccessed;
     private String campaign;
 
-    public SheetInfo(String owner, String characterName, String characterRace,
+    public SheetInfo(int sheetId, String owner, String characterName, String characterRace,
                      String characterClassString, Timestamp dateCreated, Timestamp lastAccessed,
                      String campaign) {
+        this.sheetId = sheetId;
         this.owner = owner;
         this.characterName = characterName;
         this.characterRace = characterRace;
@@ -28,6 +30,14 @@ public class SheetInfo {
         this.dateCreated = dateCreated;
         this.lastAccessed = lastAccessed;
         this.campaign = campaign;
+    }
+
+    public int getSheetId() {
+        return sheetId;
+    }
+
+    public void setSheetId(int sheetId) {
+        this.sheetId = sheetId;
     }
 
     public String getOwner() {

@@ -1,43 +1,57 @@
 package entity.sheet;
 
 import entity.User;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_main", schema = "pathfinderdb", catalog = "")
 public class Sheet {
     private int sheetId;
-    private String owner;
+    private User owner;
     private String characterName;
     private String characterRace;
     private Timestamp dateCreated;
     private Timestamp lastAccessed;
     private String campaign;
-    private User usersByOwner;
-    private Collection<SheetClass> sheetClassesBySheetId;
-    private SheetDescription sheetDescriptionBySheetId;
-    private SheetGeneral sheetGeneralBySheetId;
-    private Collection<SheetArmor> sheetArmorsBySheetId;
-    private Collection<SheetSkill> sheetSkillsBySheetId;
-    private SheetSpeeds sheetSpeedsBySheetId;
-    private Collection<SheetAbility> sheetAbilitiesBySheetId;
-    private Collection<SheetFeat> sheetFeatsBySheetId;
-    private Collection<SheetItem> sheetItemsBySheetId;
-    private SheetMoney sheetMoneyBySheetId;
-    private Collection<SheetRacialTrait> sheetRacialTraitsBySheetId;
-    private Collection<SheetSpell> sheetSpellsBySheetId;
-    private Collection<SheetWeapon> sheetWeaponsBySheetId;
-    private Collection<SheetClassFeature> sheetClassFeaturesBySheetId;
-    private Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumnsBySheetId;
-    private Collection<SheetSpecializedSkill> sheetSpecializedSkillsBySheetId;
+    private Collection<SheetClass> sheetClasses;
+    private SheetDescription sheetDescription;
+    private SheetGeneral sheetGeneral;
+    private Collection<SheetArmor> sheetArmors;
+    private Collection<SheetSkill> sheetSkills;
+    private SheetSpeeds sheetSpeeds;
+    private Collection<SheetAbility> sheetAbilities;
+    private Collection<SheetFeat> sheetFeats;
+    private Collection<SheetItem> sheetItems;
+    private SheetMoney sheetMoney;
+    private Collection<SheetRacialTrait> sheetRacialTraits;
+    private Collection<SheetWeapon> sheetWeapons;
+    private Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumns;
+    private Collection<SheetSpecializedSkill> sheetSpecializedSkills;
+
+
+    public Sheet() {
+        sheetClasses = new ArrayList<>();
+        sheetArmors = new ArrayList<>();
+        sheetSkills = new ArrayList<>();
+        sheetAbilities = new ArrayList<>();
+        sheetFeats = new ArrayList<>();
+        sheetItems = new ArrayList<>();
+        sheetRacialTraits = new ArrayList<>();
+        sheetWeapons = new ArrayList<>();
+        sheetAbilityScoreColumns = new ArrayList<>();
+        sheetSpecializedSkills = new ArrayList<>();
+    }
 
     @Id
+    @GeneratedValue
     @Column(name = "sheet_id", nullable = false)
     public int getSheetId() {
         return sheetId;
@@ -47,15 +61,11 @@ public class Sheet {
         this.sheetId = sheetId;
     }
 
-    @Basic
-    @Column(name = "owner", nullable = false, length = 30)
-    public String getOwner() {
-        return owner;
-    }
+    @ManyToOne
+    @JoinColumn(name = "owner")
+    public User getOwner() { return owner; }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
+    public void setOwner(User owner) { this.owner = owner; }
 
     @Basic
     @Column(name = "character_name", nullable = true, length = 50)
@@ -120,10 +130,8 @@ public class Sheet {
             return false;
         if (characterRace != null ? !characterRace.equals(sheet.characterRace) : sheet.characterRace != null)
             return false;
-        if (dateCreated != null ? !dateCreated.equals(sheet.dateCreated) : sheet.dateCreated != null)
-            return false;
-        if (lastAccessed != null ? !lastAccessed.equals(sheet.lastAccessed) : sheet.lastAccessed != null)
-            return false;
+        if (dateCreated != null ? !dateCreated.equals(sheet.dateCreated) : sheet.dateCreated != null) return false;
+        if (lastAccessed != null ? !lastAccessed.equals(sheet.lastAccessed) : sheet.lastAccessed != null) return false;
         if (campaign != null ? !campaign.equals(sheet.campaign) : sheet.campaign != null) return false;
 
         return true;
@@ -141,157 +149,129 @@ public class Sheet {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "owner", referencedColumnName = "username", insertable = false, updatable = false)
-    public User getUsersByOwner() {
-        return usersByOwner;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetClass> getSheetClasses() {
+        return sheetClasses;
     }
 
-    public void setUsersByOwner(User usersByOwner) {
-        this.usersByOwner = usersByOwner;
+    public void setSheetClasses(Collection<SheetClass> sheetClasses) {
+        this.sheetClasses = sheetClasses;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetClass> getSheetClassesBySheetId() {
-        return sheetClassesBySheetId;
+    @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
+    public SheetDescription getSheetDescription() {
+        return sheetDescription;
     }
 
-    public void setSheetClassesBySheetId(Collection<SheetClass> sheetClassesBySheetId) {
-        this.sheetClassesBySheetId = sheetClassesBySheetId;
+    public void setSheetDescription(SheetDescription sheetDescription) {
+        this.sheetDescription = sheetDescription;
     }
 
-    @OneToOne(mappedBy = "sheetBySheetId")
-    public SheetDescription getSheetDescriptionBySheetId() {
-        return sheetDescriptionBySheetId;
+    @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
+    public SheetGeneral getSheetGeneral() {
+        return sheetGeneral;
     }
 
-    public void setSheetDescriptionBySheetId(SheetDescription sheetDescriptionBySheetId) {
-        this.sheetDescriptionBySheetId = sheetDescriptionBySheetId;
+    public void setSheetGeneral(SheetGeneral sheetGeneral) {
+        this.sheetGeneral = sheetGeneral;
     }
 
-    @OneToOne(mappedBy = "sheetBySheetId")
-    public SheetGeneral getSheetGeneralBySheetId() {
-        return sheetGeneralBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetArmor> getSheetArmors() {
+        return sheetArmors;
     }
 
-    public void setSheetGeneralBySheetId(SheetGeneral sheetGeneralBySheetId) {
-        this.sheetGeneralBySheetId = sheetGeneralBySheetId;
+    public void setSheetArmors(Collection<SheetArmor> sheetArmors) {
+        this.sheetArmors = sheetArmors;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetArmor> getSheetArmorsBySheetId() {
-        return sheetArmorsBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetSkill> getSheetSkills() {
+        return sheetSkills;
     }
 
-    public void setSheetArmorsBySheetId(Collection<SheetArmor> sheetArmorsesBySheetId) {
-        this.sheetArmorsBySheetId = sheetArmorsesBySheetId;
+    public void setSheetSkills(Collection<SheetSkill> sheetSkills) {
+        this.sheetSkills = sheetSkills;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetSkill> getSheetSkillsBySheetId() {
-        return sheetSkillsBySheetId;
+    @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
+    public SheetSpeeds getSheetSpeeds() {
+        return sheetSpeeds;
     }
 
-    public void setSheetSkillsBySheetId(Collection<SheetSkill> sheetSkillsesBySheetId) {
-        this.sheetSkillsBySheetId = sheetSkillsesBySheetId;
+    public void setSheetSpeeds(SheetSpeeds sheetSpeeds) {
+        this.sheetSpeeds = sheetSpeeds;
     }
 
-    @OneToOne(mappedBy = "sheetBySheetId")
-    public SheetSpeeds getSheetSpeedsBySheetId() {
-        return sheetSpeedsBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetAbility> getSheetAbilities() {
+        return sheetAbilities;
     }
 
-    public void setSheetSpeedsBySheetId(SheetSpeeds sheetSpeedsBySheetId) {
-        this.sheetSpeedsBySheetId = sheetSpeedsBySheetId;
+    public void setSheetAbilities(Collection<SheetAbility> sheetAbilities) {
+        this.sheetAbilities = sheetAbilities;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetAbility> getSheetAbilitiesBySheetId() {
-        return sheetAbilitiesBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetFeat> getSheetFeats() {
+        return sheetFeats;
     }
 
-    public void setSheetAbilitiesBySheetId(Collection<SheetAbility> sheetAbilitiesBySheetId) {
-        this.sheetAbilitiesBySheetId = sheetAbilitiesBySheetId;
+    public void setSheetFeats(Collection<SheetFeat> sheetFeats) {
+        this.sheetFeats = sheetFeats;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetFeat> getSheetFeatsBySheetId() {
-        return sheetFeatsBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetItem> getSheetItems() {
+        return sheetItems;
     }
 
-    public void setSheetFeatsBySheetId(Collection<SheetFeat> sheetFeatsesBySheetId) {
-        this.sheetFeatsBySheetId = sheetFeatsesBySheetId;
+    public void setSheetItems(Collection<SheetItem> sheetItems) {
+        this.sheetItems = sheetItems;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetItem> getSheetItemsBySheetId() {
-        return sheetItemsBySheetId;
+    @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
+    public SheetMoney getSheetMoney() {
+        return sheetMoney;
     }
 
-    public void setSheetItemsBySheetId(Collection<SheetItem> sheetItemsesBySheetId) {
-        this.sheetItemsBySheetId = sheetItemsesBySheetId;
+    public void setSheetMoney(SheetMoney sheetMoney) {
+        this.sheetMoney = sheetMoney;
     }
 
-    @OneToOne(mappedBy = "sheetBySheetId")
-    public SheetMoney getSheetMoneyBySheetId() {
-        return sheetMoneyBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetRacialTrait> getSheetRacialTraits() {
+        return sheetRacialTraits;
     }
 
-    public void setSheetMoneyBySheetId(SheetMoney sheetMoneyBySheetId) {
-        this.sheetMoneyBySheetId = sheetMoneyBySheetId;
+    public void setSheetRacialTraits(Collection<SheetRacialTrait> sheetRacialTraits) {
+        this.sheetRacialTraits = sheetRacialTraits;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetRacialTrait> getSheetRacialTraitsBySheetId() {
-        return sheetRacialTraitsBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetWeapon> getSheetWeapons() {
+        return sheetWeapons;
     }
 
-    public void setSheetRacialTraitsBySheetId(Collection<SheetRacialTrait> sheetRacialTraitsesBySheetId) {
-        this.sheetRacialTraitsBySheetId = sheetRacialTraitsesBySheetId;
+    public void setSheetWeapons(Collection<SheetWeapon> sheetWeapons) {
+        this.sheetWeapons = sheetWeapons;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetSpell> getSheetSpellsBySheetId() {
-        return sheetSpellsBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
+        return sheetAbilityScoreColumns;
     }
 
-    public void setSheetSpellsBySheetId(Collection<SheetSpell> sheetSpellsBySheetId) {
-        this.sheetSpellsBySheetId = sheetSpellsBySheetId;
+    public void setSheetAbilityScoreColumns(Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
+        this.sheetAbilityScoreColumns = sheetAbilityScoreColumns;
     }
 
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetWeapon> getSheetWeaponsBySheetId() {
-        return sheetWeaponsBySheetId;
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Collection<SheetSpecializedSkill> getSheetSpecializedSkills() {
+        return sheetSpecializedSkills;
     }
 
-    public void setSheetWeaponsBySheetId(Collection<SheetWeapon> sheetWeaponsBySheetId) {
-        this.sheetWeaponsBySheetId = sheetWeaponsBySheetId;
-    }
-
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetClassFeature> getSheetClassFeaturesBySheetId() {
-        return sheetClassFeaturesBySheetId;
-    }
-
-    public void setSheetClassFeaturesBySheetId(Collection<SheetClassFeature> sheetClassFeaturesBySheetId) {
-        this.sheetClassFeaturesBySheetId = sheetClassFeaturesBySheetId;
-    }
-
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetAbilityScoreColumn> getSheetAbilityScoreColumnsBySheetId() {
-        return sheetAbilityScoreColumnsBySheetId;
-    }
-
-    public void setSheetAbilityScoreColumnsBySheetId(Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumnsBySheetId) {
-        this.sheetAbilityScoreColumnsBySheetId = sheetAbilityScoreColumnsBySheetId;
-    }
-
-    @OneToMany(mappedBy = "sheetBySheetId")
-    public Collection<SheetSpecializedSkill> getSheetSpecializedSkillsBySheetId() {
-        return sheetSpecializedSkillsBySheetId;
-    }
-
-    public void setSheetSpecializedSkillsBySheetId(Collection<SheetSpecializedSkill> sheetSpecializedSkillsBySheetId) {
-        this.sheetSpecializedSkillsBySheetId = sheetSpecializedSkillsBySheetId;
+    public void setSheetSpecializedSkills(Collection<SheetSpecializedSkill> sheetSpecializedSkills) {
+        this.sheetSpecializedSkills = sheetSpecializedSkills;
     }
 }

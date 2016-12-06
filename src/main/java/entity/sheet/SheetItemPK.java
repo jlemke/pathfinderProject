@@ -1,11 +1,13 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 public class SheetItemPK implements Serializable {
     private int sheetId;
@@ -13,6 +15,8 @@ public class SheetItemPK implements Serializable {
 
     @Column(name = "sheet_id", nullable = false)
     @Id
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
     public int getSheetId() {
         return sheetId;
     }

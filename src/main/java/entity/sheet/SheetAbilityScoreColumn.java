@@ -1,9 +1,11 @@
 package entity.sheet;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
- * Created by Joe on 12/3/2016.
+ * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_ability_score_columns", schema = "pathfinderdb", catalog = "")
@@ -12,13 +14,13 @@ public class SheetAbilityScoreColumn {
     private int sheetId;
     private int columnId;
     private String columnName;
-    private Integer strColumn;
-    private Integer dexColumn;
-    private Integer conColumn;
-    private Integer intColumn;
-    private Integer wisColumn;
-    private Integer chaColumn;
-    private Sheet sheetBySheetId;
+    private int strColumn;
+    private int dexColumn;
+    private int conColumn;
+    private int intColumn;
+    private int wisColumn;
+    private int chaColumn;
+    private Sheet sheet;
 
     @Id
     @Column(name = "sheet_id", nullable = false)
@@ -51,62 +53,62 @@ public class SheetAbilityScoreColumn {
     }
 
     @Basic
-    @Column(name = "str_column", nullable = true)
-    public Integer getStrColumn() {
+    @Column(name = "str_column", nullable = false)
+    public int getStrColumn() {
         return strColumn;
     }
 
-    public void setStrColumn(Integer strColumn) {
+    public void setStrColumn(int strColumn) {
         this.strColumn = strColumn;
     }
 
     @Basic
-    @Column(name = "dex_column", nullable = true)
-    public Integer getDexColumn() {
+    @Column(name = "dex_column", nullable = false)
+    public int getDexColumn() {
         return dexColumn;
     }
 
-    public void setDexColumn(Integer dexColumn) {
+    public void setDexColumn(int dexColumn) {
         this.dexColumn = dexColumn;
     }
 
     @Basic
-    @Column(name = "con_column", nullable = true)
-    public Integer getConColumn() {
+    @Column(name = "con_column", nullable = false)
+    public int getConColumn() {
         return conColumn;
     }
 
-    public void setConColumn(Integer conColumn) {
+    public void setConColumn(int conColumn) {
         this.conColumn = conColumn;
     }
 
     @Basic
-    @Column(name = "int_column", nullable = true)
-    public Integer getIntColumn() {
+    @Column(name = "int_column", nullable = false)
+    public int getIntColumn() {
         return intColumn;
     }
 
-    public void setIntColumn(Integer intColumn) {
+    public void setIntColumn(int intColumn) {
         this.intColumn = intColumn;
     }
 
     @Basic
-    @Column(name = "wis_column", nullable = true)
-    public Integer getWisColumn() {
+    @Column(name = "wis_column", nullable = false)
+    public int getWisColumn() {
         return wisColumn;
     }
 
-    public void setWisColumn(Integer wisColumn) {
+    public void setWisColumn(int wisColumn) {
         this.wisColumn = wisColumn;
     }
 
     @Basic
-    @Column(name = "cha_column", nullable = true)
-    public Integer getChaColumn() {
+    @Column(name = "cha_column", nullable = false)
+    public int getChaColumn() {
         return chaColumn;
     }
 
-    public void setChaColumn(Integer chaColumn) {
+    public void setChaColumn(int chaColumn) {
         this.chaColumn = chaColumn;
     }
 
@@ -119,13 +121,13 @@ public class SheetAbilityScoreColumn {
 
         if (sheetId != that.sheetId) return false;
         if (columnId != that.columnId) return false;
+        if (strColumn != that.strColumn) return false;
+        if (dexColumn != that.dexColumn) return false;
+        if (conColumn != that.conColumn) return false;
+        if (intColumn != that.intColumn) return false;
+        if (wisColumn != that.wisColumn) return false;
+        if (chaColumn != that.chaColumn) return false;
         if (columnName != null ? !columnName.equals(that.columnName) : that.columnName != null) return false;
-        if (strColumn != null ? !strColumn.equals(that.strColumn) : that.strColumn != null) return false;
-        if (dexColumn != null ? !dexColumn.equals(that.dexColumn) : that.dexColumn != null) return false;
-        if (conColumn != null ? !conColumn.equals(that.conColumn) : that.conColumn != null) return false;
-        if (intColumn != null ? !intColumn.equals(that.intColumn) : that.intColumn != null) return false;
-        if (wisColumn != null ? !wisColumn.equals(that.wisColumn) : that.wisColumn != null) return false;
-        if (chaColumn != null ? !chaColumn.equals(that.chaColumn) : that.chaColumn != null) return false;
 
         return true;
     }
@@ -135,22 +137,22 @@ public class SheetAbilityScoreColumn {
         int result = sheetId;
         result = 31 * result + columnId;
         result = 31 * result + (columnName != null ? columnName.hashCode() : 0);
-        result = 31 * result + (strColumn != null ? strColumn.hashCode() : 0);
-        result = 31 * result + (dexColumn != null ? dexColumn.hashCode() : 0);
-        result = 31 * result + (conColumn != null ? conColumn.hashCode() : 0);
-        result = 31 * result + (intColumn != null ? intColumn.hashCode() : 0);
-        result = 31 * result + (wisColumn != null ? wisColumn.hashCode() : 0);
-        result = 31 * result + (chaColumn != null ? chaColumn.hashCode() : 0);
+        result = 31 * result + strColumn;
+        result = 31 * result + dexColumn;
+        result = 31 * result + conColumn;
+        result = 31 * result + intColumn;
+        result = 31 * result + wisColumn;
+        result = 31 * result + chaColumn;
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "sheet_id", referencedColumnName = "sheet_id", insertable = false, updatable = false)
-    public Sheet getSheetBySheetId() {
-        return sheetBySheetId;
+    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    public Sheet getSheet() { return sheet; }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+        this.sheetId = sheet.getSheetId();
     }
 
-    public void setSheetBySheetId(Sheet sheetBySheetId) {
-        this.sheetBySheetId = sheetBySheetId;
-    }
 }
