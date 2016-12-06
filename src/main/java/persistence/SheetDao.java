@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Joe on 11/23/2016.
@@ -156,12 +157,11 @@ public class SheetDao {
     }
 
     private void setBaseAbilityScoreColumns(Sheet sheet) {
-        Collection<SheetAbilityScoreColumn> columns = sheet.getSheetAbilityScoreColumns();
+        Set<SheetAbilityScoreColumn> columns = sheet.getSheetAbilityScoreColumns();
         SheetAbilityScoreColumn temp;
         for (int i = 0; i < DEFAULT_COLUMN_NAMES.length; i++) {
             temp = new SheetAbilityScoreColumn();
             logger.info("adding ability column " + DEFAULT_COLUMN_NAMES[i] + " with id = " + i);
-            temp.setColumnId(i);
             temp.setSheet(sheet);
             temp.setColumnName(DEFAULT_COLUMN_NAMES[i]);
             if (DEFAULT_COLUMN_NAMES[i].equals("BASE")) {
@@ -177,13 +177,17 @@ public class SheetDao {
     }
 
     private void setBaseSkills(Sheet sheet) {
-        Collection<SheetSkill> skills = sheet.getSheetSkills();
+        Set<SheetSkill> skills = sheet.getSheetSkills();
         SheetSkill temp;
-        for (String[] defaultSkill : DEFAULT_SKILLS) {
+        String[] defaultSkill;
+        for (int i = 0; i < DEFAULT_SKILLS.length; i++) {
+            defaultSkill = DEFAULT_SKILLS[i];
             temp = new SheetSkill();
             temp.setSheet(sheet);
+            temp.setOrder(i + 1);
             temp.setSkillName(defaultSkill[0]);
             temp.setSkillAbility(defaultSkill[1]);
+            temp.setSpecialization("");
             if (defaultSkill[2].equals("t"))
                 temp.setReqTrained(true);
             else temp.setReqTrained(false);

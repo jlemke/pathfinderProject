@@ -1,34 +1,38 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.io.Serializable;
+import java.util.TreeSet;
+import java.util.Set;
 
 /**
  * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_classes", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetClassPK.class)
-public class SheetClass {
+public class SheetClass implements Serializable {
     private int sheetId;
+    private int classId;
     private String className;
-    private String archetype;
-    private int level;
-    private int hitPoints;
-    private int hitDie;
-    private String babProgression;
-    private String fortProgression;
-    private String refProgression;
-    private int skillsPerLevel;
-    private String willProgression;
-    private String casterAbility;
-    private Collection<SheetSpell> sheetSpells;
-    private Collection<SheetClassFeature> sheetClassFeatures;
+    private String archetype = "";
+    private int level = 1;
+    private int hitPoints = 6;
+    private int hitDie = 6;
+    private String babProgression = "full";
+    private String fortProgression = "slow";
+    private String refProgression = "slow";
+    private int skillsPerLevel = 0;
+    private String willProgression = "slow'";
+    private String casterAbility = "---";
+    private Set<SheetSpell> sheetSpells = new TreeSet<>();
+    private Set<SheetClassFeature> sheetClassFeatures = new TreeSet<>();
     private Sheet sheet;
 
-    @Id
+    @GeneratedValue(generator="gen")
     @Column(name = "sheet_id", nullable = false)
     public int getSheetId() {
         return sheetId;
@@ -39,7 +43,18 @@ public class SheetClass {
     }
 
     @Id
-    @Column(name = "class_name", nullable = false, length = 25)
+    @GeneratedValue
+    @Column(name = "class_id", nullable = false)
+    public int getClassId() {
+        return classId;
+    }
+
+    public void setClassId(int classId) {
+        this.classId = classId;
+    }
+
+    @Basic
+    @Column(name = "class_name", nullable = true, length = 25)
     public String getClassName() {
         return className;
     }
@@ -156,6 +171,7 @@ public class SheetClass {
         SheetClass that = (SheetClass) o;
 
         if (sheetId != that.sheetId) return false;
+        if (classId != that.classId) return false;
         if (level != that.level) return false;
         if (hitPoints != that.hitPoints) return false;
         if (hitDie != that.hitDie) return false;
@@ -178,7 +194,8 @@ public class SheetClass {
 
     @Override
     public int hashCode() {
-        int result = sheetId;
+        int result = classId;
+        result = 31 * result + sheetId;
         result = 31 * result + (className != null ? className.hashCode() : 0);
         result = 31 * result + (archetype != null ? archetype.hashCode() : 0);
         result = 31 * result + level;
@@ -193,24 +210,27 @@ public class SheetClass {
         return result;
     }
 
-    @OneToMany(mappedBy = "sheetClass")
-    public Collection<SheetSpell> getSheetSpells() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public Set<SheetSpell> getSheetSpells() {
         return sheetSpells;
     }
 
-    public void setSheetSpells(Collection<SheetSpell> sheetSpells) {
+    public void setSheetSpells(Set<SheetSpell> sheetSpells) {
         this.sheetSpells = sheetSpells;
     }
 
-    @OneToMany(mappedBy = "sheetClass")
-    public Collection<SheetClassFeature> getSheetClassFeatures() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public Set<SheetClassFeature> getSheetClassFeatures() {
         return sheetClassFeatures;
     }
 
-    public void setSheetClassFeatures(Collection<SheetClassFeature> sheetClassFeatures) {
+    public void setSheetClassFeatures(Set<SheetClassFeature> sheetClassFeatures) {
         this.sheetClassFeatures = sheetClassFeatures;
     }
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
     public Sheet getSheet() { return sheet; }

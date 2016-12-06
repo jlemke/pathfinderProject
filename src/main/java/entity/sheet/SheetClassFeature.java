@@ -1,5 +1,6 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,37 +10,26 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "sheet_class_features", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetClassFeaturePK.class)
 public class SheetClassFeature {
-    private int sheetId;
-    private String className;
+    private int classId;
     private int featureId;
     private String featureName;
     private String featureDescription;
     private SheetClass sheetClass;
-    private Sheet sheet;
 
-    @Id
-    @Column(name = "sheet_id", nullable = false)
-    public int getSheetId() {
-        return sheetId;
+    @Column(name = "class_id", nullable = false, length = 25)
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheetClass"))
+    public int getClassId() {
+        return classId;
     }
 
-    public void setSheetId(int sheetId) {
-        this.sheetId = sheetId;
-    }
-
-    @Id
-    @Column(name = "class_name", nullable = false, length = 25)
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
+    public void setClassId(int classId) {
+        this.classId = classId;
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "feature_id", nullable = false)
     public int getFeatureId() {
         return featureId;
@@ -76,9 +66,8 @@ public class SheetClassFeature {
 
         SheetClassFeature that = (SheetClassFeature) o;
 
-        if (sheetId != that.sheetId) return false;
         if (featureId != that.featureId) return false;
-        if (className != null ? !className.equals(that.className) : that.className != null) return false;
+        if (classId != that.classId) return false;
         if (featureName != null ? !featureName.equals(that.featureName) : that.featureName != null) return false;
         if (featureDescription != null ? !featureDescription.equals(that.featureDescription) : that.featureDescription != null)
             return false;
@@ -88,28 +77,16 @@ public class SheetClassFeature {
 
     @Override
     public int hashCode() {
-        int result = sheetId;
-        result = 31 * result + (className != null ? className.hashCode() : 0);
+        int result = classId;
         result = 31 * result + featureId;
         result = 31 * result + (featureName != null ? featureName.hashCode() : 0);
         result = 31 * result + (featureDescription != null ? featureDescription.hashCode() : 0);
         return result;
     }
 
+    @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
-    public Sheet getSheet() { return sheet; }
-
-    public void setSheet(Sheet sheet) {
-        this.sheet = sheet;
-        this.sheetId = sheet.getSheetId();
-    }
-
-    @ManyToOne
-    @JoinColumns({
-            @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false),
-            @JoinColumn(name = "class_name", nullable = false, insertable = false, updatable = false)
-    })
+    @JoinColumn(name = "class_id", nullable = false, insertable = false, updatable = false)
     public SheetClass getSheetClass() { return sheetClass; }
 
     public void setSheetClass(SheetClass sheetClass) { this.sheetClass = sheetClass; }

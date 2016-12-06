@@ -1,5 +1,6 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import entity.sheet.Sheet;
 
 import javax.persistence.*;
@@ -69,7 +70,8 @@ public class User {
         return result;
     }
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Collection<Sheet> getSheetsByUsername() {
         return sheetsByUsername;
     }

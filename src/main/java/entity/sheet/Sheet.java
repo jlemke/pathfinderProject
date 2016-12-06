@@ -1,13 +1,15 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import entity.User;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by Joe on 12/5/2016.
@@ -17,39 +19,24 @@ import java.util.Collection;
 public class Sheet implements Serializable {
     private int sheetId;
     private User owner;
-    private String characterName;
-    private String characterRace;
+    private String characterName = "";
+    private String characterRace = "";
     private Timestamp dateCreated;
     private Timestamp lastAccessed;
-    private String campaign;
-    private Collection<SheetClass> sheetClasses;
+    private String campaign = "";
+    private Set<SheetClass> sheetClasses = new TreeSet<>();
     private SheetDescription sheetDescription;
     private SheetGeneral sheetGeneral;
-    private Collection<SheetArmor> sheetArmors;
-    private Collection<SheetSkill> sheetSkills;
+    private Set<SheetArmor> sheetArmors = new TreeSet<>();
+    private Set<SheetSkill> sheetSkills = new TreeSet<>();
     private SheetSpeeds sheetSpeeds;
-    private Collection<SheetAbility> sheetAbilities;
-    private Collection<SheetFeat> sheetFeats;
-    private Collection<SheetItem> sheetItems;
+    private Set<SheetAbility> sheetAbilities = new TreeSet<>();
+    private Set<SheetFeat> sheetFeats = new TreeSet<>();
+    private Set<SheetItem> sheetItems = new TreeSet<>();
     private SheetMoney sheetMoney;
-    private Collection<SheetRacialTrait> sheetRacialTraits;
-    private Collection<SheetWeapon> sheetWeapons;
-    private Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumns;
-    private Collection<SheetSpecializedSkill> sheetSpecializedSkills;
-
-
-    public Sheet() {
-        sheetClasses = new ArrayList<>();
-        sheetArmors = new ArrayList<>();
-        sheetSkills = new ArrayList<>();
-        sheetAbilities = new ArrayList<>();
-        sheetFeats = new ArrayList<>();
-        sheetItems = new ArrayList<>();
-        sheetRacialTraits = new ArrayList<>();
-        sheetWeapons = new ArrayList<>();
-        sheetAbilityScoreColumns = new ArrayList<>();
-        sheetSpecializedSkills = new ArrayList<>();
-    }
+    private Set<SheetRacialTrait> sheetRacialTraits = new TreeSet<>();
+    private Set<SheetWeapon> sheetWeapons = new TreeSet<>();
+    private Set<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new TreeSet<>();
 
     @Id
     @GeneratedValue
@@ -62,6 +49,7 @@ public class Sheet implements Serializable {
         this.sheetId = sheetId;
     }
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "owner")
     public User getOwner() { return owner; }
@@ -150,15 +138,17 @@ public class Sheet implements Serializable {
         return result;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetClass> getSheetClasses() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetClass> getSheetClasses() {
         return sheetClasses;
     }
 
-    public void setSheetClasses(Collection<SheetClass> sheetClasses) {
+    public void setSheetClasses(Set<SheetClass> sheetClasses) {
         this.sheetClasses = sheetClasses;
     }
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
     public SheetDescription getSheetDescription() {
         return sheetDescription;
@@ -168,6 +158,7 @@ public class Sheet implements Serializable {
         this.sheetDescription = sheetDescription;
     }
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
     public SheetGeneral getSheetGeneral() {
         return sheetGeneral;
@@ -177,24 +168,27 @@ public class Sheet implements Serializable {
         this.sheetGeneral = sheetGeneral;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetArmor> getSheetArmors() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetArmor> getSheetArmors() {
         return sheetArmors;
     }
 
-    public void setSheetArmors(Collection<SheetArmor> sheetArmors) {
+    public void setSheetArmors(Set<SheetArmor> sheetArmors) {
         this.sheetArmors = sheetArmors;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetSkill> getSheetSkills() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetSkill> getSheetSkills() {
         return sheetSkills;
     }
 
-    public void setSheetSkills(Collection<SheetSkill> sheetSkills) {
+    public void setSheetSkills(Set<SheetSkill> sheetSkills) {
         this.sheetSkills = sheetSkills;
     }
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
     public SheetSpeeds getSheetSpeeds() {
         return sheetSpeeds;
@@ -204,33 +198,37 @@ public class Sheet implements Serializable {
         this.sheetSpeeds = sheetSpeeds;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetAbility> getSheetAbilities() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetAbility> getSheetAbilities() {
         return sheetAbilities;
     }
 
-    public void setSheetAbilities(Collection<SheetAbility> sheetAbilities) {
+    public void setSheetAbilities(Set<SheetAbility> sheetAbilities) {
         this.sheetAbilities = sheetAbilities;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetFeat> getSheetFeats() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetFeat> getSheetFeats() {
         return sheetFeats;
     }
 
-    public void setSheetFeats(Collection<SheetFeat> sheetFeats) {
+    public void setSheetFeats(Set<SheetFeat> sheetFeats) {
         this.sheetFeats = sheetFeats;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetItem> getSheetItems() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetItem> getSheetItems() {
         return sheetItems;
     }
 
-    public void setSheetItems(Collection<SheetItem> sheetItems) {
+    public void setSheetItems(Set<SheetItem> sheetItems) {
         this.sheetItems = sheetItems;
     }
 
+    @JsonManagedReference
     @OneToOne(mappedBy = "sheet", cascade = CascadeType.ALL)
     public SheetMoney getSheetMoney() {
         return sheetMoney;
@@ -240,39 +238,34 @@ public class Sheet implements Serializable {
         this.sheetMoney = sheetMoney;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetRacialTrait> getSheetRacialTraits() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetRacialTrait> getSheetRacialTraits() {
         return sheetRacialTraits;
     }
 
-    public void setSheetRacialTraits(Collection<SheetRacialTrait> sheetRacialTraits) {
+    public void setSheetRacialTraits(Set<SheetRacialTrait> sheetRacialTraits) {
         this.sheetRacialTraits = sheetRacialTraits;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetWeapon> getSheetWeapons() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetWeapon> getSheetWeapons() {
         return sheetWeapons;
     }
 
-    public void setSheetWeapons(Collection<SheetWeapon> sheetWeapons) {
+    public void setSheetWeapons(Set<SheetWeapon> sheetWeapons) {
         this.sheetWeapons = sheetWeapons;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
+    @JsonManagedReference
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
         return sheetAbilityScoreColumns;
     }
 
-    public void setSheetAbilityScoreColumns(Collection<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
+    public void setSheetAbilityScoreColumns(Set<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
         this.sheetAbilityScoreColumns = sheetAbilityScoreColumns;
     }
 
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Collection<SheetSpecializedSkill> getSheetSpecializedSkills() {
-        return sheetSpecializedSkills;
-    }
-
-    public void setSheetSpecializedSkills(Collection<SheetSpecializedSkill> sheetSpecializedSkills) {
-        this.sheetSpecializedSkills = sheetSpecializedSkills;
-    }
 }

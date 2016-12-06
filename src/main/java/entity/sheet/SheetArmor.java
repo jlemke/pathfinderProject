@@ -1,5 +1,6 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,25 +10,25 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "sheet_armors", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetArmorPK.class)
 public class SheetArmor {
     private int sheetId;
     private int armorId;
-    private String armorName;
-    private boolean masterwork;
-    private int acBonus;
-    private Integer maxDexBonus;
-    private int skillPenalty;
-    private boolean equipped;
-    private int spellFailureChance;
-    private int weight;
-    private boolean proficient;
-    private String type;
-    private int value;
+    private String armorName = "";
+    private boolean masterwork = false;
+    private int acBonus = 0;
+    private int maxDexBonus = 0;
+    private int skillPenalty = 0;
+    private boolean equipped = false;
+    private int spellFailureChance = 0;
+    private int weight = 0;
+    private boolean proficient = true;
+    private String type = "";
+    private int value = 0;
     private Sheet sheet;
 
-    @Id
     @Column(name = "sheet_id", nullable = false)
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
     public int getSheetId() {
         return sheetId;
     }
@@ -37,6 +38,7 @@ public class SheetArmor {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "armor_id", nullable = false)
     public int getArmorId() {
         return armorId;
@@ -77,12 +79,12 @@ public class SheetArmor {
     }
 
     @Basic
-    @Column(name = "max_dex_bonus", nullable = true)
-    public Integer getMaxDexBonus() {
+    @Column(name = "max_dex_bonus", nullable = false)
+    public int getMaxDexBonus() {
         return maxDexBonus;
     }
 
-    public void setMaxDexBonus(Integer maxDexBonus) {
+    public void setMaxDexBonus(int maxDexBonus) {
         this.maxDexBonus = maxDexBonus;
     }
 
@@ -174,7 +176,7 @@ public class SheetArmor {
         if (proficient != that.proficient) return false;
         if (value != that.value) return false;
         if (armorName != null ? !armorName.equals(that.armorName) : that.armorName != null) return false;
-        if (maxDexBonus != null ? !maxDexBonus.equals(that.maxDexBonus) : that.maxDexBonus != null) return false;
+        if (maxDexBonus != that.maxDexBonus) return false;
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
 
         return true;
@@ -187,7 +189,7 @@ public class SheetArmor {
         result = 31 * result + (armorName != null ? armorName.hashCode() : 0);
         result = 31 * result + (masterwork ? 1 : 0);
         result = 31 * result + acBonus;
-        result = 31 * result + (maxDexBonus != null ? maxDexBonus.hashCode() : 0);
+        result = 31 * result + maxDexBonus;
         result = 31 * result + skillPenalty;
         result = 31 * result + (equipped ? 1 : 0);
         result = 31 * result + spellFailureChance;
@@ -198,6 +200,7 @@ public class SheetArmor {
         return result;
     }
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
     public Sheet getSheet() { return sheet; }

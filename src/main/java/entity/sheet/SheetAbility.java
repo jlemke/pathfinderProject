@@ -1,5 +1,6 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,16 +10,17 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "sheet_abilities", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetAbilityPK.class)
 public class SheetAbility {
     private int sheetId;
     private int abilityId;
-    private String abilityName;
-    private String abilityDescription;
+    private String abilityName = "";
+    private String abilityDescription = "";
     private Sheet sheet;
 
-    @Id
     @Column(name = "sheet_id", nullable = false)
+    @GeneratedValue(generator="gen")
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
     public int getSheetId() {
         return sheetId;
     }
@@ -28,6 +30,7 @@ public class SheetAbility {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "ability_id", nullable = false)
     public int getAbilityId() {
         return abilityId;
@@ -82,6 +85,7 @@ public class SheetAbility {
         return result;
     }
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
     public Sheet getSheet() { return sheet; }

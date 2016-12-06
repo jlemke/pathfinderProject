@@ -15,3 +15,14 @@ the GM.
 I plan on making a sketch of the website layout.  I still have to figure out how to have
 the character sheets update in the GM's view while the player is updating it.
 
+
+
+#Week ?
+12/2 - 12/5
+
+Tasks Completed:
+	* Database fully created
+	* Added hibernate
+	* Modified database and hibernate
+	* 
+	

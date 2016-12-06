@@ -1,29 +1,33 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.Set;
 
 /**
  * Created by Joe on 12/5/2016.
  */
 @Entity
 @Table(name = "sheet_skills", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetSkillPK.class)
 public class SheetSkill {
     private int sheetId;
+    private int skillId;
+    private int order;
     private String skillName;
-    private String skillAbility;
-    private int skillRanks;
-    private boolean isClassSkill;
-    private int skillMisc;
-    private boolean reqTrained;
-    private Collection<SheetSpecializedSkill> sheetSpecializedSkills;
+    private String skillAbility = "";
+    private String specialization = "";
+    private int skillRanks = 0;
+    private boolean isClassSkill = false;
+    private int skillMisc = 0;
+    private boolean reqTrained = false;
     private Sheet sheet;
 
-    @Id
     @Column(name = "sheet_id", nullable = false)
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
     public int getSheetId() {
         return sheetId;
     }
@@ -33,6 +37,22 @@ public class SheetSkill {
     }
 
     @Id
+    @GeneratedValue
+    @Column(name = "skill_id", nullable = false)
+    public int getSkillId() {
+        return skillId;
+    }
+
+    public void setSkillId(int skillId) {
+        this.skillId = skillId;
+    }
+
+    @Basic
+    @Column(name = "skill_order", nullable = false)
+    public int getOrder() { return order; }
+
+    public void setOrder(int order) { this.order = order; }
+
     @Column(name = "skill_name", nullable = false, length = 30)
     public String getSkillName() {
         return skillName;
@@ -51,6 +71,12 @@ public class SheetSkill {
     public void setSkillAbility(String skillAbility) {
         this.skillAbility = skillAbility;
     }
+
+    @Basic
+    @Column(name = "specialization")
+    public String getSpecialization() { return specialization; }
+
+    public void setSpecialization(String specialization) { this.specialization = specialization; }
 
     @Basic
     @Column(name = "skill_ranks", nullable = false)
@@ -100,12 +126,15 @@ public class SheetSkill {
         SheetSkill that = (SheetSkill) o;
 
         if (sheetId != that.sheetId) return false;
+        if (skillId != that.skillId) return false;
+        if (order != that.order) return false;
         if (skillRanks != that.skillRanks) return false;
         if (isClassSkill != that.isClassSkill) return false;
         if (skillMisc != that.skillMisc) return false;
         if (reqTrained != that.reqTrained) return false;
         if (skillName != null ? !skillName.equals(that.skillName) : that.skillName != null) return false;
         if (skillAbility != null ? !skillAbility.equals(that.skillAbility) : that.skillAbility != null) return false;
+        if (specialization != null ? !specialization.equals(that.specialization) : that.specialization != null) return false;
 
         return true;
     }
@@ -113,8 +142,11 @@ public class SheetSkill {
     @Override
     public int hashCode() {
         int result = sheetId;
+        result = 31 * result + skillId;
+        result = 31 * result + order;
         result = 31 * result + (skillName != null ? skillName.hashCode() : 0);
         result = 31 * result + (skillAbility != null ? skillAbility.hashCode() : 0);
+        result = 31 * result + (specialization != null ? specialization.hashCode() : 0);
         result = 31 * result + skillRanks;
         result = 31 * result + (isClassSkill ? 1 : 0);
         result = 31 * result + skillMisc;
@@ -122,6 +154,7 @@ public class SheetSkill {
         return result;
     }
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
     public Sheet getSheet() { return sheet; }
@@ -130,15 +163,5 @@ public class SheetSkill {
         this.sheet = sheet;
         this.sheetId = sheet.getSheetId();
     }
-
-    @OneToMany(mappedBy = "sheetSkill")
-    public Collection<SheetSpecializedSkill> getSheetSpecializedSkills() {
-        return sheetSpecializedSkills;
-    }
-
-    public void setSheetSpecializedSkills(Collection<SheetSpecializedSkill> sheetSpecializedSkills) {
-        this.sheetSpecializedSkills = sheetSpecializedSkills;
-    }
-
 
 }

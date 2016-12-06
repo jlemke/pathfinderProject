@@ -8,9 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -66,17 +64,24 @@ public class SheetDaoTest {
     }
 
     @Test
+    public void getSheet() throws Exception {
+        int id = 3;
+        Sheet sheet = dao.getSheet(id);
+
+        assertEquals(2, sheet.getSheetClasses().size());
+    }
+
+    @Test
     public void saveSheet() throws Exception {
         int id = dao.createBlankSheet(USERNAME);
         Sheet sheet = new Sheet();
         sheet.setSheetId(id);
         sheet.setOwner(userDao.getUser(USERNAME));
-        List<SheetAbilityScoreColumn> columns = new ArrayList<>();
+        Set<SheetAbilityScoreColumn> columns = new TreeSet<>();
         SheetAbilityScoreColumn column;
         for (int i = 0; i < 4; i++) {
             column = new SheetAbilityScoreColumn();
             column.setSheet(sheet);
-            column.setColumnId(i);
             column.setColumnName("Column " + i);
             columns.add(column);
         }

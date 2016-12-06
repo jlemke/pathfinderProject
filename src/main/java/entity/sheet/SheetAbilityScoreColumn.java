@@ -1,5 +1,6 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,21 +10,21 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "sheet_ability_score_columns", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetAbilityScoreColumnPK.class)
 public class SheetAbilityScoreColumn {
     private int sheetId;
     private int columnId;
-    private String columnName;
-    private int strColumn;
-    private int dexColumn;
-    private int conColumn;
-    private int intColumn;
-    private int wisColumn;
-    private int chaColumn;
+    private String columnName = "";
+    private int strColumn = 0;
+    private int dexColumn = 0;
+    private int conColumn = 0;
+    private int intColumn = 0;
+    private int wisColumn = 0;
+    private int chaColumn = 0;
     private Sheet sheet;
 
-    @Id
     @Column(name = "sheet_id", nullable = false)
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
     public int getSheetId() {
         return sheetId;
     }
@@ -33,6 +34,7 @@ public class SheetAbilityScoreColumn {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "column_id", nullable = false)
     public int getColumnId() {
         return columnId;
@@ -146,6 +148,7 @@ public class SheetAbilityScoreColumn {
         return result;
     }
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
     public Sheet getSheet() { return sheet; }

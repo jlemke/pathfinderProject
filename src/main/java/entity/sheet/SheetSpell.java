@@ -1,5 +1,6 @@
 package entity.sheet;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,10 +10,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "sheet_spells", schema = "pathfinderdb", catalog = "")
-@IdClass(SheetSpellPK.class)
 public class SheetSpell {
-    private int sheetId;
-    private String className;
+    private int classId;
     private int spellId;
     private int spellLevel;
     private String spellName;
@@ -33,32 +32,21 @@ public class SheetSpell {
     private boolean divineFocus;
     private boolean prepared;
     private SheetClass sheetClass;
-    private Sheet sheet;
 
-    @Id
-    @Column(name = "sheet_id", nullable = false)
+    @Column(name = "class_id", nullable = false, length = 25)
     @GeneratedValue(generator="gen")
     @GenericGenerator(name = "gen", strategy = "foreign",
-            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
-    public int getSheetId() {
-        return sheetId;
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheetClass"))
+    public int getClassId() {
+        return classId;
     }
 
-    public void setSheetId(int sheetId) {
-        this.sheetId = sheetId;
-    }
-
-    @Id
-    @Column(name = "class_name", nullable = false, length = 25)
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
+    public void setClassId(int classId) {
+        this.classId = classId;
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "spell_id", nullable = false)
     public int getSpellId() {
         return spellId;
@@ -255,7 +243,6 @@ public class SheetSpell {
 
         SheetSpell that = (SheetSpell) o;
 
-        if (sheetId != that.sheetId) return false;
         if (spellId != that.spellId) return false;
         if (spellLevel != that.spellLevel) return false;
         if (verbal != that.verbal) return false;
@@ -264,7 +251,7 @@ public class SheetSpell {
         if (focus != that.focus) return false;
         if (divineFocus != that.divineFocus) return false;
         if (prepared != that.prepared) return false;
-        if (className != null ? !className.equals(that.className) : that.className != null) return false;
+        if (classId != that.classId) return false;
         if (spellName != null ? !spellName.equals(that.spellName) : that.spellName != null) return false;
         if (school != null ? !school.equals(that.school) : that.school != null) return false;
         if (subschool != null ? !subschool.equals(that.subschool) : that.subschool != null) return false;
@@ -283,8 +270,7 @@ public class SheetSpell {
 
     @Override
     public int hashCode() {
-        int result = sheetId;
-        result = 31 * result + (className != null ? className.hashCode() : 0);
+        int result = classId;
         result = 31 * result + spellId;
         result = 31 * result + spellLevel;
         result = 31 * result + (spellName != null ? spellName.hashCode() : 0);
@@ -307,20 +293,11 @@ public class SheetSpell {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
-    public Sheet getSheet() { return sheet; }
 
-    public void setSheet(Sheet sheet) {
-        this.sheet = sheet;
-        this.sheetId = sheet.getSheetId();
-    }
-
+    @JsonBackReference
     @ManyToOne
-    @JoinColumns({
-            @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false),
-            @JoinColumn(name = "class_name", nullable = false, insertable = false, updatable = false)
-    })
+    @JoinColumn(name = "class_id", nullable = false, insertable = false, updatable = false)
+
     public SheetClass getSheetClass() { return sheetClass; }
 
     public void setSheetClass(SheetClass sheetClass) { this.sheetClass = sheetClass; }

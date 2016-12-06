@@ -39,7 +39,6 @@
         <mapping class="entity.sheet.SheetWeapon"/>
         <mapping class="entity.sheet.SheetClassFeature"/>
         <mapping class="entity.sheet.SheetAbilityScoreColumn"/>
-        <mapping class="entity.sheet.SheetSpecializedSkill"/>
 
     </session-factory>
 
