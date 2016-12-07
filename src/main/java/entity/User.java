@@ -72,7 +72,7 @@ public class User {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     public Set<Sheet> getSheets() {
         return sheets;
     }

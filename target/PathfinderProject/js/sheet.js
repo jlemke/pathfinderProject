@@ -5,20 +5,52 @@
 var sheet;
 var saveInProgress = false;
 
+var app = angular.module('sheetApp', []);
+
+app.controller('SheetController', function($scope) {
+    sheet = this;
+    sheet.data = {};
+
+    this.loadSheet = function () {
+        var url = window.location.href;
+        var id = url.substring(url.lastIndexOf("=") + 1);
+        console.log("/sheet?id=" + id);
+        $.get("/sheet", {"id": id}, function (response) {
+            console.log("data received");
+            $scope.$apply(function () {
+                sheet.data = response;
+            });
+            console.log(sheet.data);
+            //initialize fields in fieldObjects.js, then create sheet
+            //initializeFields();
+            //createSheet();
+        }, "json");
+    }
+});
+
 $(document).ready(function() {
-    var url = window.location.href;
-    var id = url.substring(url.lastIndexOf("=") + 1);
-    console.log("/sheet?id=" + id);
-    $.get("/sheet", { "id" : id }, function(data) {
-        console.log("data received");
-        sheet = data;
-        console.log(sheet);
-        createSheet();
-    }, "json");
+    sheet.loadSheet();
 });
 
 function saveSheet() {
-
+    console.log("saving sheet " + sheet.data);
+    saveInProgress = true;
+    $.ajax({
+        type: "POST",
+        url: "/saveSheet",
+        //contentType: "application/json",
+        data: {"sheet" : JSON.stringify(sheet.data)},
+        success: function(response) {
+            saveInProgress = false;
+            var message = $('<div id="alert">');
+            if (response == "success")
+                message.text("Sheet data saved");
+            else
+                message.text("Error: sheet data not saved");
+            $('#messages').append(message);
+            message.delay(1000).fadeOut(700);
+        }
+    });
 }
 
 
@@ -27,6 +59,7 @@ function createSheet() {
     console.log("created sheetPage");
     sheetPage.append(createMainInfo());
     sheetPage.prepend(createNavbar());
+    sheetPage.append("<div>" + JSON.stringify(sheet) + "</div>");
     $("#content").append(sheetPage);
 }
 
@@ -35,15 +68,7 @@ function createNavbar() {
 
     var saveButton = $("<input type='button' value='Save' />");
     saveButton.click(function() {
-        console.log("saving sheet " + sheet);
-        saveInProgress = true;
-        $.post("/saveSheet", sheet, function(success) {
-            saveInProgress = false;
-            if (success == "success")
-                console.log("sheet saved");
-            else
-                console.log("error occurred on sheet save");
-        });
+
     });
 
     navbar.append(saveButton);

@@ -115,22 +115,94 @@ I have chosen this project because the current services are either designed for 
 				}
 
 			DEPENDENCY
-				STRENGTH SCORE
-					STR MODIFIER
-						CMB
-						CMD
-				DEXTERITY SCORE
-					DEX MODIFIER
-						AC
-						CMD
-				INTELLIGENCE SCORE
-					INT MODIFIER
-						int-based skills
-				WISDOM SCORE
-					WIS MODIFIER
-						wis-based skills
-			
-			
+				strRow[]
+					strScore
+						strMod
+							cmb
+							cmd
+							weapon-attack where:attack-ability=this
+							weapon-damage where:damage-ability=this
+							skill-bonus where:skill-ability=this
+				dexRow[]
+					dexScore
+						dexMod
+							ref-save
+							AC
+							flat-footed
+							touch
+							cmd
+							weapon-attack where:attack-ability=this
+							weapon-damage where:damage-ability=this
+							skill-bonus where:skill-ability=this
+				conRow[]
+					conScore
+						conMod
+							maxHealth
+							fort-save
+							skill-bonus where:skill-ability=this
+							
+				intRow[]
+					intScore
+						spellDC where:caster-ability=this
+						maxSpellLevel where:caster-ability=this
+						intMod
+							bonusSpellsPerDay classes[].spells[] where:caster-ability=this
+							skillBonus where:skill-ability=this
+							maxSkillRanks
+				wisRow[]
+					wisScore
+						spellDC where:caster-ability=this
+						maxSpellLevel where:caster-ability=this
+						wisMod
+							willSave
+							bonusSpellsPerDay classes[].spells[] where:caster-ability=this
+								
+							skillBonus where:skill-ability=this
+				chaRow[]
+					chaScore
+						spellDC where:caster-ability=this
+						maxSpellLevel where:caster-ability=this
+						chaMod
+							bonusSpellsPerDay classes[].spells[] where:caster-ability=this
+							skillBonus where:skill-ability=this
+				classes[]
+					level
+						maxHealth
+						casterLevel
+						maxSkillRanks
+						bab
+							cmb
+							cmd
+						this.fortBonus
+							fortSave
+						this.refBonus
+							refSave
+						this.willBonus
+							willSave
+						this.spellsKnown
+						this.spellsPerDay
+					hitPoints
+						maxHealth
+					casterAbility
+						this.spellsKnown
+					spellCap
+						this.spellsKnown
+						this.spellsPerDay
+					preparedCaster
+						this.spells[].spellFailureChance
+					babProgression
+						this.babBonus
+							bab
+					fortProgression
+						this.fortBonus
+							fortSave
+					refProgression
+						this.refBonus
+							refSave
+					willProgression
+						this.willBonus
+							willSave
+					
 		
 	JSP -> SERVLET NOTES
 		use angularjs or jQuery to note which tables will be changed
@@ -650,180 +722,4 @@ TODO
 		Problems to solve with game page:
 			how to show each player a different version
 			how to show the gm the sheets as the values are changing
-
 			
-SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, GROUP_CONCAT(TRIM(CONCAT(sc.archetype, CONCAT(' ', CONCAT(sc.class_name, CONCAT(' ', CONCAT(sc.level)))))) SEPARATOR '/') 
-FROM sheet_main sm JOIN sheet_classes sc ON sm.sheet_id = sc.sheet_id GROUP BY sc.sheet_id;
-			
-			
-		select group_concat(CONCAT(first_name, CONCAT(' ', CONCAT(last_name))) SEPARATOR ', ') from user;
-			
-select sm.sheet_id, sm.owner, sm.character_name, sm.character_race, group_concat(trim(concat(sc.archetype, concat(' ', concat(sc.class_name, concat(' ', sc.level))))) SEPARATOR '/')
-from sheet_main sm JOIN sheet_classes sc on sm.sheet_id = sc.sheet_id group by sc.sheet_id;
-			
-			
-			
-			
-			temp sheet main save (just in case):
-			
-package entity.sheet;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
-import java.util.Date;
-
-/**
- * Created by Joe on 10/26/2016.
- */
-
-@Entity
-@Table(name = "sheet_main")
-public class Sheet {
-
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name="increment", strategy="increment")
-    @Column(name="sheet_id")
-    private int sheetId;
-
-    @Column(name="owner")
-    private String username;
-
-    @Column(name="character_name")
-    private String characterName;
-
-    @Column(name="character_race")
-    private String characterRace;
-
-    @Column(name = "date_created", columnDefinition="DATETIME")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateCreated;
-
-    @Column(name = "last_accessed", columnDefinition="DATETIME")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastAccessed;
-
-    @Column(name="campaign")
-    private String campaign;
-
-
-    public int getSheetId() {
-        return sheetId;
-    }
-
-    public void setSheetId(int sheetId) {
-        this.sheetId = sheetId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getCharacterName() {
-        return characterName;
-    }
-
-    public void setCharacterName(String characterName) {
-        this.characterName = characterName;
-    }
-
-    public String getCharacterRace() {
-        return characterRace;
-    }
-
-    public void setCharacterRace(String characterRace) {
-        this.characterRace = characterRace;
-    }
-
-    public Date getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
-    public Date getLastAccessed() {
-        return lastAccessed;
-    }
-
-    public void setLastAccessed(Date lastAccessed) {
-        this.lastAccessed = lastAccessed;
-    }
-
-    public String getCampaign() {
-        return campaign;
-    }
-
-    public void setCampaign(String campaign) {
-        this.campaign = campaign;
-    }
-
-}
-
-
-
-
-
-
-package entity;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
-
-/**
- * Created by Joe on 10/23/2016.
- */
-
-@Entity
-@Table(name = "user")
-public class User {
-
-    @Id
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "email")
-    private String email;
-
-    public User(){}
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-}
-

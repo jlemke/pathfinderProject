@@ -18,8 +18,6 @@ public class SheetClassFeature {
     private SheetClass sheetClass;
 
     @Column(name = "class_id", nullable = false, length = 25)
-    @GenericGenerator(name = "gen", strategy = "foreign",
-            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheetClass"))
     public int getClassId() {
         return classId;
     }

@@ -124,12 +124,12 @@ public class SheetDao {
         Transaction transaction = session.beginTransaction();
 
         User owner = (User) session.get(User.class, username);
-
         Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 
         logger.info("creating sheet");
         Sheet sheet = new Sheet();
         sheet.setOwner(owner);
+        sheet.setOwnerUsername(username);
         sheet.setDateCreated(currentTime);
         sheet.setLastAccessed(currentTime);
         session.save(sheet);
@@ -175,12 +175,12 @@ public class SheetDao {
             temp.setSheet(sheet);
             temp.setColumnName(DEFAULT_COLUMN_NAMES[i]);
             if (DEFAULT_COLUMN_NAMES[i].equals("BASE")) {
-                temp.setStrColumn(BASE_COLUMN_VALUE);
-                temp.setDexColumn(BASE_COLUMN_VALUE);
-                temp.setConColumn(BASE_COLUMN_VALUE);
-                temp.setIntColumn(BASE_COLUMN_VALUE);
-                temp.setWisColumn(BASE_COLUMN_VALUE);
-                temp.setChaColumn(BASE_COLUMN_VALUE);
+                temp.setStrRow(BASE_COLUMN_VALUE);
+                temp.setDexRow(BASE_COLUMN_VALUE);
+                temp.setConRow(BASE_COLUMN_VALUE);
+                temp.setIntRow(BASE_COLUMN_VALUE);
+                temp.setWisRow(BASE_COLUMN_VALUE);
+                temp.setChaRow(BASE_COLUMN_VALUE);
             }
             columns.add(temp);
         }
@@ -211,6 +211,7 @@ public class SheetDao {
         //force session to fetch all collections
         Sheet sheet = (Sheet) session.get(Sheet.class, id);
         sheet.getSheetAbilityScoreColumns().size();
+        sheet.getSheetClasses().size();
         for (SheetClass sheetClass : sheet.getSheetClasses()) {
             sheetClass.getSheetSpells().size();
             sheetClass.getSheetClassFeatures().size();

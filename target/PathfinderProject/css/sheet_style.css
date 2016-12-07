@@ -1,4 +1,7 @@
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 .number-box {
     width: 25px;
     text-align: center;
@@ -13,11 +16,42 @@
 }
 
 .string-field {
+    display: block;
     border: 0;
     border-bottom: solid 1px #000;
     outline: none; /* prevents textbox highlight in chrome */
-    width: 100px;
-    margins: 10px;
+    width: 150px;
+    text-align: center;
+    margin: 5px;
+}
+
+.inline-field {
+    display: inline;
+}
+
+.class-box {
+    margin: 5px;
+}
+
+.class-field {
+    padding: 3px;
+}
+
+.class-divider {
+    font-size: 125%;
+    height: 80%;
+    margin-bottom: 0;
+}
+
+.field-box {
+    display: inline-block;
+}
+
+.field-label {
+    width: 100%;
+    font-size: 10px;
+    display: inline-block;
+    text-align: center;
 }
 
 .centered {

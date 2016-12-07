@@ -34,13 +34,16 @@ public class SaveSheet extends HttpServlet {
         String message = "success";
 
         logger.info("saving sheet...");
+        String json = String.valueOf(request.getParameter("sheet"));
 
-        String json = request.getAttribute("sheet").toString();
+        logger.info("json created");
         logger.info("sheet value: " + json);
 
         ObjectMapper mapper = new ObjectMapper();
         //JSON to Sheet object
         Sheet sheet = mapper.readValue(json, Sheet.class);
+
+        logger.info(sheet.getCharacterName());
 
         SheetDao dao = new SheetDao();
         try {

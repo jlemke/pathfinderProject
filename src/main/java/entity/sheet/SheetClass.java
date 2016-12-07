@@ -28,12 +28,18 @@ public class SheetClass implements Serializable {
     private int skillsPerLevel = 0;
     private String willProgression = "slow'";
     private String casterAbility = "---";
+    private String spellCap = "None";
+    private String castingType = "None";
+    private boolean preparedCaster = false;
+    private int casterBonusMisc = 0;
     private Set<SheetSpell> sheetSpells = new TreeSet<>();
     private Set<SheetClassFeature> sheetClassFeatures = new TreeSet<>();
     private Sheet sheet;
 
+    @Column(name = "sheet_id")
     @GeneratedValue(generator="gen")
-    @Column(name = "sheet_id", nullable = false)
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheetClass"))
     public int getSheetId() {
         return sheetId;
     }
@@ -163,6 +169,46 @@ public class SheetClass implements Serializable {
         this.casterAbility = casterAbility;
     }
 
+    @Basic
+    @Column(name = "spell_cap", nullable = false)
+    public String getSpellCap() {
+        return spellCap;
+    }
+
+    public void setSpellCap(String spellCap) {
+        this.spellCap = spellCap;
+    }
+
+    @Basic
+    @Column(name = "casting_type", nullable = false)
+    public String getCastingType() {
+        return castingType;
+    }
+
+    public void setCastingType(String castingType) {
+        this.castingType = castingType;
+    }
+
+    @Basic
+    @Column(name = "prepared_caster", nullable = false)
+    public boolean isPreparedCaster() {
+        return preparedCaster;
+    }
+
+    public void setPreparedCaster(boolean preparedCaster) {
+        this.preparedCaster = preparedCaster;
+    }
+
+    @Basic
+    @Column(name = "caster_bonus_misc", nullable = false)
+    public int getCasterBonusMisc() {
+        return casterBonusMisc;
+    }
+
+    public void setCasterBonusMisc(int casterBonusMisc) {
+        this.casterBonusMisc = casterBonusMisc;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -188,6 +234,13 @@ public class SheetClass implements Serializable {
             return false;
         if (casterAbility != null ? !casterAbility.equals(that.casterAbility) : that.casterAbility != null)
             return false;
+        if (spellCap != null ? !spellCap.equals(that.spellCap) : that.spellCap != null)
+            return false;
+        if (castingType != null ? !castingType.equals(that.castingType) : that.castingType != null)
+            return false;
+        if (preparedCaster != that.preparedCaster) return false;
+        if (casterBonusMisc != that.casterBonusMisc) return false;
+
 
         return true;
     }
@@ -207,6 +260,10 @@ public class SheetClass implements Serializable {
         result = 31 * result + skillsPerLevel;
         result = 31 * result + (willProgression != null ? willProgression.hashCode() : 0);
         result = 31 * result + (casterAbility != null ? casterAbility.hashCode() : 0);
+        result = 31 * result + (spellCap != null ? spellCap.hashCode() : 0);
+        result = 31 * result + (castingType != null ? castingType.hashCode() : 0);
+        result = 31 * result + (preparedCaster ? 1 : 0);
+        result = 31 * result + casterBonusMisc;
         return result;
     }
 

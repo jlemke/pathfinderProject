@@ -1,6 +1,7 @@
 package entity.sheet;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import entity.User;
 import org.hibernate.annotations.GenericGenerator;
@@ -19,6 +20,7 @@ import java.util.TreeSet;
 public class Sheet implements Serializable {
     private int sheetId;
     private User owner;
+    private String ownerUsername;
     private String characterName = "";
     private String characterRace = "";
     private Timestamp dateCreated;
@@ -51,10 +53,16 @@ public class Sheet implements Serializable {
 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "owner")
+    @JoinColumn(name = "owner", referencedColumnName = "username", insertable = false, updatable = false)
     public User getOwner() { return owner; }
 
     public void setOwner(User owner) { this.owner = owner; }
+
+    @Basic
+    @Column(name = "owner", nullable = false)
+    public String getOwnerUsername() { return ownerUsername; }
+
+    public void setOwnerUsername(String ownerUsername) { this.ownerUsername = ownerUsername; }
 
     @Basic
     @Column(name = "character_name", nullable = true, length = 50)
@@ -139,7 +147,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<SheetClass> getSheetClasses() {
         return sheetClasses;
     }
