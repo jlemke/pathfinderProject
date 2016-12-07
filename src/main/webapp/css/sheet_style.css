@@ -8,10 +8,20 @@
     font-size: 12px;
 }
 
-.underline {
+.content {
+    margin-top: 10%;
+}
+
+.string-field {
     border: 0;
     border-bottom: solid 1px #000;
     outline: none; /* prevents textbox highlight in chrome */
+    width: 100px;
+    margins: 10px;
+}
+
+.centered {
+    text-align: center;
 }
 
 .score-table {
@@ -20,4 +30,12 @@
 
 .score-table td {
     border: 2px solid black;
+}
+
+.fixedElement {
+    background-color: #c0c0c0;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
 }

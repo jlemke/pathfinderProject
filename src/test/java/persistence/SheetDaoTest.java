@@ -42,7 +42,7 @@ public class SheetDaoTest {
     public void getListOfSheets() throws Exception {
         List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
 
-        assertEquals("failed", "Fighter 1", sheets.get(0).getCharacterClassString());
+        assertEquals("failed", "Rogue 2/Fighter 1", sheets.get(0).getCharacterClassString());
     }
 
     @Test

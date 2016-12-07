@@ -8,10 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Joe on 11/23/2016.
@@ -77,27 +74,40 @@ public class SheetDao {
         logger.info("in getListOfSheets");
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-
-        //TODO add 'as' statements and figure out how to access object
-        String sql = "SELECT sm.sheet_id, sm.owner, sm.character_name, sm.character_race, " +
-                "GROUP_CONCAT(TRIM(CONCAT(sc.archetype, CONCAT(' ', CONCAT(sc.class_name, " +
-                "CONCAT(' ', CONCAT(sc.level)))))) SEPARATOR '/'), sm.date_created, sm.last_accessed, sm.campaign " +
-                "FROM sheet_main AS sm LEFT JOIN sheet_classes AS sc ON sm.sheet_id = sc.sheet_id " +
-                "WHERE sm.owner = '" + username + "' GROUP BY sm.sheet_id ORDER BY sm.sheet_id ASC";
-        Query query = session.createSQLQuery(sql);
+        User owner = (User) session.get(User.class, username);
+        Set<Sheet> sheets = (Set) owner.getSheets();
 
         List<SheetInfo> thisUsersSheets = new ArrayList<>();
         SheetInfo temp;
-        for(Object o : query.list()) {
-            Object[] fields = (Object[]) o;
-            for (int i = 0; i < fields.length; i++) {
-                logger.info("before = " + fields[i]);
-                if (fields[i] == null)
-                    fields[i] = "";
-                logger.info("after = " + fields[i]);
+        String classString;
+
+        for (Sheet sheet : sheets) {
+            temp = new SheetInfo();
+            temp.setSheetId(sheet.getSheetId());
+            temp.setCharacterName(sheet.getCharacterName());
+            temp.setCharacterRace(sheet.getCharacterRace());
+            temp.setOwner(username);
+            temp.setCampaign(sheet.getCampaign());
+            temp.setDateCreated(sheet.getDateCreated());
+            temp.setLastAccessed(sheet.getLastAccessed());
+
+            //Create a string of this sheet's classes
+            //Format : Archetype1 Class1 Level1/Archetype2 Class2 Level2 ...
+            classString = "";
+            List<SheetClass> classes = new ArrayList<>(sheet.getSheetClasses());
+            //sort classes by level
+            Collections.sort(classes, Comparator.comparing(SheetClass::getLevel).reversed());
+            //create the string, ignoring blank archetypes
+            for (SheetClass sheetClass : classes) {
+                if (sheetClass.getArchetype() != null && !sheetClass.getArchetype().equals(""))
+                    classString += sheetClass.getArchetype() + " ";
+                classString += sheetClass.getClassName() + " " + sheetClass.getLevel() + "/";
             }
-            temp = new SheetInfo((int) fields[0], (String) fields[1], (String) fields[2], (String) fields[3],
-                    (String) fields[4], (Timestamp) fields[5], (Timestamp) fields[6], (String) fields[7]);
+            if (classString.length() != 0)
+                classString = classString.substring(0, classString.length() - 1);
+            else classString = "";
+            temp.setCharacterClassString(classString);
+
             thisUsersSheets.add(temp);
         }
 
@@ -198,7 +208,20 @@ public class SheetDao {
     public Sheet getSheet(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
+        //force session to fetch all collections
         Sheet sheet = (Sheet) session.get(Sheet.class, id);
+        sheet.getSheetAbilityScoreColumns().size();
+        for (SheetClass sheetClass : sheet.getSheetClasses()) {
+            sheetClass.getSheetSpells().size();
+            sheetClass.getSheetClassFeatures().size();
+        }
+        sheet.getSheetAbilities().size();
+        sheet.getSheetArmors().size();
+        sheet.getSheetFeats().size();
+        sheet.getSheetItems().size();
+        sheet.getSheetRacialTraits().size();
+        sheet.getSheetSkills().size();
+        sheet.getSheetWeapons().size();
 
         session.close();
         return sheet;

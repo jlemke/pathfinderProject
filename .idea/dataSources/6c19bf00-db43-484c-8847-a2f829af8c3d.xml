@@ -138,14 +138,17 @@ role_name</columns>
     <column id="52" parent="12" name="bab_progression">
       <mandatory>1</mandatory>
       <data-type>enum(&apos;full&apos;, &apos;1/2&apos;, &apos;1/4&apos;)|0</data-type>
+      <default-expression>&apos;full&apos;</default-expression>
     </column>
     <column id="53" parent="12" name="fort_progression">
       <mandatory>1</mandatory>
       <data-type>enum(&apos;fast&apos;, &apos;slow&apos;)|0</data-type>
+      <default-expression>&apos;fast&apos;</default-expression>
     </column>
     <column id="54" parent="12" name="ref_progression">
       <mandatory>1</mandatory>
       <data-type>enum(&apos;fast&apos;, &apos;slow&apos;)|0</data-type>
+      <default-expression>&apos;fast&apos;</default-expression>
     </column>
     <column id="55" parent="12" name="skills_per_level">
       <mandatory>1</mandatory>
@@ -155,10 +158,12 @@ role_name</columns>
     <column id="56" parent="12" name="will_progression">
       <mandatory>1</mandatory>
       <data-type>enum(&apos;fast&apos;, &apos;slow&apos;)|0</data-type>
+      <default-expression>&apos;fast&apos;</default-expression>
     </column>
     <column id="57" parent="12" name="caster_ability">
       <mandatory>1</mandatory>
       <data-type>enum(&apos;---&apos;, &apos;int&apos;, &apos;wis&apos;, &apos;cha&apos;)|0</data-type>
+      <default-expression>&apos;---&apos;</default-expression>
     </column>
     <index id="58" parent="12" name="sheet_classes_sheet_main_sheet_id_fk">
       <columns>sheet_id</columns>
@@ -826,32 +831,32 @@ role_name</columns>
     <column id="210" parent="26" name="column_name">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="211" parent="26" name="str_column">
+    <column id="211" parent="26" name="str_row">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="212" parent="26" name="dex_column">
+    <column id="212" parent="26" name="dex_row">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="213" parent="26" name="con_column">
+    <column id="213" parent="26" name="con_row">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="214" parent="26" name="int_column">
+    <column id="214" parent="26" name="int_row">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="215" parent="26" name="wis_column">
+    <column id="215" parent="26" name="wis_row">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="216" parent="26" name="cha_column">
+    <column id="216" parent="26" name="cha_row">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>

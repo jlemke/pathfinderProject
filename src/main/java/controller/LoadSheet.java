@@ -40,7 +40,9 @@ public class LoadSheet extends HttpServlet {
 
         logger.info("mapping object");
         ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new Hibernate4Module());
+        Hibernate4Module hbm = new Hibernate4Module();
+        hbm.enable(Hibernate4Module.Feature.FORCE_LAZY_LOADING);
+        mapper.registerModule(hbm);
 
         String output = null;
         try {

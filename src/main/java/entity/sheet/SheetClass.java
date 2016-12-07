@@ -211,7 +211,7 @@ public class SheetClass implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL)
     public Set<SheetSpell> getSheetSpells() {
         return sheetSpells;
     }
@@ -221,7 +221,7 @@ public class SheetClass implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL)
     public Set<SheetClassFeature> getSheetClassFeatures() {
         return sheetClassFeatures;
     }

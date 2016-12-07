@@ -5,6 +5,7 @@ import entity.sheet.Sheet;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * Created by Joe on 12/5/2016.
@@ -15,7 +16,7 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Collection<Sheet> sheetsByUsername;
+    private Set<Sheet> sheets;
     private Collection<UserRole> userRolesByUsername;
 
     @Id
@@ -72,12 +73,12 @@ public class User {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public Collection<Sheet> getSheetsByUsername() {
-        return sheetsByUsername;
+    public Set<Sheet> getSheets() {
+        return sheets;
     }
 
-    public void setSheetsByUsername(Collection<Sheet> sheetsByUsername) {
-        this.sheetsByUsername = sheetsByUsername;
+    public void setSheets(Set<Sheet> sheets) {
+        this.sheets = sheets;
     }
 
     @OneToMany(mappedBy = "user")

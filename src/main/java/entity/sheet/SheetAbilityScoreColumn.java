@@ -14,12 +14,12 @@ public class SheetAbilityScoreColumn {
     private int sheetId;
     private int columnId;
     private String columnName = "";
-    private int strColumn = 0;
-    private int dexColumn = 0;
-    private int conColumn = 0;
-    private int intColumn = 0;
-    private int wisColumn = 0;
-    private int chaColumn = 0;
+    private int strRow = 0;
+    private int dexRow = 0;
+    private int conRow = 0;
+    private int intRow = 0;
+    private int wisRow = 0;
+    private int chaRow = 0;
     private Sheet sheet;
 
     @Column(name = "sheet_id", nullable = false)
@@ -55,63 +55,63 @@ public class SheetAbilityScoreColumn {
     }
 
     @Basic
-    @Column(name = "str_column", nullable = false)
-    public int getStrColumn() {
-        return strColumn;
+    @Column(name = "str_row", nullable = false)
+    public int getStrRow() {
+        return strRow;
     }
 
-    public void setStrColumn(int strColumn) {
-        this.strColumn = strColumn;
-    }
-
-    @Basic
-    @Column(name = "dex_column", nullable = false)
-    public int getDexColumn() {
-        return dexColumn;
-    }
-
-    public void setDexColumn(int dexColumn) {
-        this.dexColumn = dexColumn;
+    public void setStrRow(int strRow) {
+        this.strRow = strRow;
     }
 
     @Basic
-    @Column(name = "con_column", nullable = false)
-    public int getConColumn() {
-        return conColumn;
+    @Column(name = "dex_row", nullable = false)
+    public int getDexRow() {
+        return dexRow;
     }
 
-    public void setConColumn(int conColumn) {
-        this.conColumn = conColumn;
-    }
-
-    @Basic
-    @Column(name = "int_column", nullable = false)
-    public int getIntColumn() {
-        return intColumn;
-    }
-
-    public void setIntColumn(int intColumn) {
-        this.intColumn = intColumn;
+    public void setDexRow(int dexRow) {
+        this.dexRow = dexRow;
     }
 
     @Basic
-    @Column(name = "wis_column", nullable = false)
-    public int getWisColumn() {
-        return wisColumn;
+    @Column(name = "con_row", nullable = false)
+    public int getConRow() {
+        return conRow;
     }
 
-    public void setWisColumn(int wisColumn) {
-        this.wisColumn = wisColumn;
+    public void setConRow(int conRow) {
+        this.conRow = conRow;
     }
 
     @Basic
-    @Column(name = "cha_column", nullable = false)
-    public int getChaColumn() {
-        return chaColumn;
+    @Column(name = "int_row", nullable = false)
+    public int getIntRow() {
+        return intRow;
     }
 
-    public void setChaColumn(int chaColumn) {
-        this.chaColumn = chaColumn;
+    public void setIntRow(int intRow) {
+        this.intRow = intRow;
+    }
+
+    @Basic
+    @Column(name = "wis_row", nullable = false)
+    public int getWisRow() {
+        return wisRow;
+    }
+
+    public void setWisRow(int wisRow) {
+        this.wisRow = wisRow;
+    }
+
+    @Basic
+    @Column(name = "cha_row", nullable = false)
+    public int getChaRow() {
+        return chaRow;
+    }
+
+    public void setChaRow(int chaRow) {
+        this.chaRow = chaRow;
     }
 
     @Override
@@ -123,12 +123,12 @@ public class SheetAbilityScoreColumn {
 
         if (sheetId != that.sheetId) return false;
         if (columnId != that.columnId) return false;
-        if (strColumn != that.strColumn) return false;
-        if (dexColumn != that.dexColumn) return false;
-        if (conColumn != that.conColumn) return false;
-        if (intColumn != that.intColumn) return false;
-        if (wisColumn != that.wisColumn) return false;
-        if (chaColumn != that.chaColumn) return false;
+        if (strRow != that.strRow) return false;
+        if (dexRow != that.dexRow) return false;
+        if (conRow != that.conRow) return false;
+        if (intRow != that.intRow) return false;
+        if (wisRow != that.wisRow) return false;
+        if (chaRow != that.chaRow) return false;
         if (columnName != null ? !columnName.equals(that.columnName) : that.columnName != null) return false;
 
         return true;
@@ -139,12 +139,12 @@ public class SheetAbilityScoreColumn {
         int result = sheetId;
         result = 31 * result + columnId;
         result = 31 * result + (columnName != null ? columnName.hashCode() : 0);
-        result = 31 * result + strColumn;
-        result = 31 * result + dexColumn;
-        result = 31 * result + conColumn;
-        result = 31 * result + intColumn;
-        result = 31 * result + wisColumn;
-        result = 31 * result + chaColumn;
+        result = 31 * result + strRow;
+        result = 31 * result + dexRow;
+        result = 31 * result + conRow;
+        result = 31 * result + intRow;
+        result = 31 * result + wisRow;
+        result = 31 * result + chaRow;
         return result;
     }
 

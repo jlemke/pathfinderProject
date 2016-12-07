@@ -19,6 +19,10 @@ public class SheetInfo {
     private Timestamp lastAccessed;
     private String campaign;
 
+    public SheetInfo() {
+
+    }
+
     public SheetInfo(int sheetId, String owner, String characterName, String characterRace,
                      String characterClassString, Timestamp dateCreated, Timestamp lastAccessed,
                      String campaign) {

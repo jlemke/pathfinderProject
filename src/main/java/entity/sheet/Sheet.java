@@ -169,7 +169,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetArmor> getSheetArmors() {
         return sheetArmors;
     }
@@ -179,7 +179,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetSkill> getSheetSkills() {
         return sheetSkills;
     }
@@ -199,7 +199,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetAbility> getSheetAbilities() {
         return sheetAbilities;
     }
@@ -209,7 +209,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetFeat> getSheetFeats() {
         return sheetFeats;
     }
@@ -219,7 +219,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetItem> getSheetItems() {
         return sheetItems;
     }
@@ -239,7 +239,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetRacialTrait> getSheetRacialTraits() {
         return sheetRacialTraits;
     }
@@ -249,7 +249,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetWeapon> getSheetWeapons() {
         return sheetWeapons;
     }
@@ -259,7 +259,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     public Set<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
         return sheetAbilityScoreColumns;
     }
