@@ -137,7 +137,7 @@ role_name</columns>
     </column>
     <column id="52" parent="12" name="bab_progression">
       <mandatory>1</mandatory>
-      <data-type>enum(&apos;full&apos;, &apos;1/2&apos;, &apos;1/4&apos;)|0</data-type>
+      <data-type>enum(&apos;full&apos;, &apos;3/4&apos;, &apos;1/2&apos;)|0</data-type>
       <default-expression>&apos;full&apos;</default-expression>
     </column>
     <column id="53" parent="12" name="fort_progression">

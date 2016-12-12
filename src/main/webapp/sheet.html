@@ -8,6 +8,8 @@
 
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!-- AngularJS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
 
         <!-- Latest compiled and minified CSS -->
@@ -24,28 +26,40 @@
         <script type="text/javascript" src="js/sheet.js"></script>
     </head>
 <body>
-<div ng-controller="SheetController as s" class="container">
+<div ng-controller="sheetController as s" class="container">
     <div id="header">
-        <input type="button" value="Save" onclick="saveSheet()"/>
+        <input type="button" value="Save" ng-click="saveSheet()"/>
         <div id="messages"></div>
     </div>
     <div id="content" class="content">
         <div class="field-box">
-            <input id="characterName" class="string-field" type="text" ng-model="s.data.characterName"/>
+            <input id="characterName" class="string-field" type="text" ng-model="sheet.characterName"/>
             <label for="characterName" class="field-label">Character Name</label>
         </div>
         <div class="field-box">
-            <input id="characterRace" class="string-field" type="text" ng-model="s.data.characterRace"/>
+            <input id="characterRace" class="string-field" type="text" ng-model="sheet.characterRace"/>
             <label for="characterRace" class="field-label">Character Race</label>
         </div>
         <div class="field-box">
-            <div id="characterClasses" class="class-box">
-                <div ng-repeat="class in s.data.sheetClasses" class="inline-field"><div class="inline-field class-field">{{class.archetype}}{{class.archetype != "" ? ' ' : ''}}{{class.className}} {{class.level}}</div>
-                    <div class="class-divider inline-field" ng-if="!$last">/</div>
-                </div>
-            </div>
+            <div id="characterClasses" class="class-box" ng-bind="classesString()"></div>
             <label for="characterClasses" class="field-label">Character Classes</label>
         </div>
+        <div class="field-box">
+            <div id="bab" class="number-box" ng-bind="bab()"></div>
+            <label for="bab" class="field-label">BAB</label>
+        </div>
+        <table>
+            <tr>
+                <th>Class</th><td>Level</td>
+            </tr>
+            <tr ng-repeat="c in sheet.sheetClasses">
+                <td><input type="text" class="string-field" ng-model="c.className" /></td>
+                <td><div class="field-box">
+                    <input ng-attr-id="{{c.className + 'level'}}" class="string-field" type="text" ng-model="c.level"/>
+                    <label ng-attr-for="{{c.className + 'level'}}" class="field-label">Level</label>
+                </div></td>
+            </tr>
+        </table>
     </div>
 </div>
 

@@ -100,47 +100,47 @@ I have chosen this project because the current services are either designed for 
 			
 		Using commands in feats and abilities
 			skill.intimidate+str
-			
-		object structure for fields
-			FIELD
-				dependentFields[]
-				
-				.update() {
-					update this field based on other fields
-					call .update() on dependentFields[]
-				}
-				
-				.updateAbility(String newAbility) {
-					
-				}
+		Sheet interface:
+			Attacks, Spells
+			<tab>
+			</tab>
+		
+		Modularity:
+			allow user to add div's containing fields and add tabs
 
-			DEPENDENCY
+		GM interface:
+			Notes
+			Encouters
+				Create encounters using monster stats from a database
+			
+			
+
+			SHEET DEPENDENCIES
 				strRow[]
 					strScore
 						strMod
 							cmb
 							cmd
-							weapon-attack where:attack-ability=this
-							weapon-damage where:damage-ability=this
-							skill-bonus where:skill-ability=this
+							weaponAttackBonus where:attack-ability=this
+							weaponDamageBonus where:damage-ability=this
+							skillBonus where:skill-ability=this
 				dexRow[]
 					dexScore
 						dexMod
-							ref-save
-							AC
-							flat-footed
+							refSave
+							aC
+							flatFooted
 							touch
 							cmd
-							weapon-attack where:attack-ability=this
-							weapon-damage where:damage-ability=this
-							skill-bonus where:skill-ability=this
+							weaponAttackBonus where:attack-ability=this
+							weaponDamageBonus where:damage-ability=this
+							skillBonus where:skill-ability=this
 				conRow[]
 					conScore
 						conMod
 							maxHealth
-							fort-save
+							fortSave
 							skill-bonus where:skill-ability=this
-							
 				intRow[]
 					intScore
 						spellDC where:caster-ability=this
@@ -168,7 +168,7 @@ I have chosen this project because the current services are either designed for 
 				classes[]
 					level
 						maxHealth
-						casterLevel
+						this.casterLevel
 						maxSkillRanks
 						bab
 							cmb
@@ -190,6 +190,8 @@ I have chosen this project because the current services are either designed for 
 						this.spellsPerDay
 					preparedCaster
 						this.spells[].spellFailureChance
+					casterBonusMisc
+						this.casterLevel
 					babProgression
 						this.babBonus
 							bab
