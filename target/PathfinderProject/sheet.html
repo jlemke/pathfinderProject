@@ -48,18 +48,115 @@
             <div id="bab" class="number-box" ng-bind="bab()"></div>
             <label for="bab" class="field-label">BAB</label>
         </div>
-        <table>
-            <tr>
-                <th>Class</th><td>Level</td>
-            </tr>
-            <tr ng-repeat="c in sheet.sheetClasses">
-                <td><input type="text" class="string-field" ng-model="c.className" /></td>
-                <td><div class="field-box">
-                    <input ng-attr-id="{{c.className + 'level'}}" class="string-field" type="text" ng-model="c.level"/>
-                    <label ng-attr-for="{{c.className + 'level'}}" class="field-label">Level</label>
-                </div></td>
-            </tr>
-        </table>
+        <div class="ability-scores">
+            <table>
+                <tr>
+                    <th>ABI</th>
+                    <th>SUM</th>
+                    <th>MOD</th>
+                    <th ng-repeat="col in sheet.sheetAbilityScoreColumns">{{col.columnName}}</th>
+                </tr>
+                <tr>
+                    <th>STR</th>
+                    <th ng-bind="abilityScoreSum('str')"></th>
+                    <th ng-bind="abilityMod('str', true)"></th>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="text" class="number-box" ng-model="col.strRow" only-digits /></td>
+                </tr>
+                <tr>
+                    <th>DEX</th>
+                    <th ng-bind="abilityScoreSum('dex')"></th>
+                    <th ng-bind="abilityMod('dex', true)"></th>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="text" class="number-box" ng-model="col.dexRow" only-digits /></td>
+                </tr>
+                <tr>
+                    <th>CON</th>
+                    <th ng-bind="abilityScoreSum('con')"></th>
+                    <th ng-bind="abilityMod('con', true)"></th>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="text" class="number-box" ng-model="col.conRow" only-digits /></td>
+                </tr>
+                <tr>
+                    <th>INT</th>
+                    <th ng-bind="abilityScoreSum('int')"></th>
+                    <th ng-bind="abilityMod('int', true)"></th>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="text" class="number-box" ng-model="col.intRow" only-digits /></td>
+                </tr>
+                <tr>
+                    <th>WIS</th>
+                    <th ng-bind="abilityScoreSum('wis')"></th>
+                    <th ng-bind="abilityMod('wis', true)"></th>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="text" class="number-box" ng-model="col.wisRow" only-digits /></td>
+                </tr>
+                <tr>
+                    <th>CHA</th>
+                    <th ng-bind="abilityScoreSum('cha')"></th>
+                    <th ng-bind="abilityMod('cha', true)"></th>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="text" class="number-box" ng-model="col.chaRow" only-digits /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="class-area">
+            <div ng-repeat="c in sheet.sheetClasses">
+                <div class="field-box">
+                    <input id="{{c.classId + 'Archetype'}}"type="text" class="string-field" ng-model="c.archetype" />
+                    <label for="{{c.classId + 'Archetype'}}" class="field-label">Archetype</label></div>
+                <div class="field-box">
+                    <input id="{{c.classId + 'ClassName'}}"type="text" class="string-field" ng-model="c.className" />
+                    <label for="{{c.classId + 'ClassName'}}" class="field-label">Class</label></div>
+                <div class="field-box">
+                    <input id="{{c.classId + 'Level'}}" class="string-field" type="text" ng-model="c.level"/>
+                    <label for="{{c.classId + 'Level'}}" class="field-label">Level</label></div>
+                <div class="field-box">
+                    <select ng-model="c.babProgression" id="{{c.classId + 'BabProgression'}}">
+                        <option value="full">Full</option>
+                        <option value="3/4">3/4</option>
+                        <option value="1/2">1/2</option>
+                    </select>
+                    <label for="{{c.classId + 'BabProgression'}}" class="field-label">BAB Progression</label></div>
+                <div class="field-box">
+                    <label for="{{c.classId + 'CasterAbility'}}">Casting Ability</label>
+                    <select ng-model="c.casterAbility" id="{{c.classId + 'CasterAbility'}}">
+                        <option value="---">---</option>
+                        <option value="int">INT</option>
+                        <option value="wis">WIS</option>
+                        <option value="cha">CHA</option>
+                    </select></div>
+                <div ng-if="c.casterAbility != '---'">
+                    <div>
+                        <label for="{{c.classId + 'SpellCap'}}">Spell Limit</label>
+                        <select id="{{c.classId + 'SpellCap'}}" ng-model="c.spellCap">
+                            <option value="None">None</option>
+                            <option value="4th">4th</option>
+                            <option value="6th">6th</option>
+                            <option value="9th">9th</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="{{c.classId + 'PreparedCaster'}}">Prepared Caster</label>
+                        <input id="{{c.classId + 'PreparedCaster'}}" type="checkbox" ng-model="c.preparedCaster" />
+                    </div>
+                    <div>
+                        <label for="{{c.classId + 'CastingType'}}">Casting Type</label>
+                        <select id="{{c.classId + 'CastingType'}}" ng-model="c.castingType">
+                            <option value="None">None</option>
+                            <option value="Arcane">Arcane</option>
+                            <option value="Divine">Divine</option>
+                        </select>
+                    </div>
+                    <div class="field-box">
+                        <div id="{{c.classId + 'CasterLevel'}}" class="number-box" ng-bind="casterLevel(c)"></div>
+                        <label for="{{c.classId + 'CasterLevel'}}" class="field-label">CASTER LEVEL</label></div>
+                    <div class="field-box">
+                        <input id="{{c.classId + 'CasterBonusMisc'}}" class="string-field" type="text" ng-model="c.casterBonusMisc"/>
+                        <label for="{{c.classId + 'CasterBonusMisc'}}" class="field-label">MISC</label></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

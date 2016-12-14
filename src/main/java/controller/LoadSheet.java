@@ -33,8 +33,9 @@ public class LoadSheet extends HttpServlet {
             throws ServletException, IOException {
 
         SheetDao dao = new SheetDao();
+        logger.info("getting id");
         int sheetId = Integer.parseInt(request.getParameter("id"));
-
+        logger.info("sheet id requested: " + sheetId);
         logger.info("getting sheet");
         Sheet sheet = dao.getSheet(sheetId);
 

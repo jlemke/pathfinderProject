@@ -6,29 +6,32 @@ var saveInProgress = false;
 
 var app = angular.module('sheetApp', []);
 
-app.controller('sheetController', function($scope) {
+app.controller('sheetController', function($scope, $http, $location) {
 
-    $scope.sheet = {};
-
+    /**
+     * on page load retrieve sheet information for given id
+     */
     angular.element(document).ready(function() {
-        var url = window.location.href;
+        var url = $location.absUrl();
+        console.log(url);
         var id = url.substring(url.lastIndexOf("=") + 1);
-        console.log("/sheet?id=" + id);
-        $.get("/sheet", {"id": id}, function (response) {
-            console.log("data received");
-            $scope.$apply(function () {
-                $scope.sheet = response;
-            });
+        console.log("sending sheet request to /sheet?id=" + id);
+        $http({
+            method : "GET",
+            url : "sheet?id=" + id,
+        }).then(function(response) {
+            $scope.sheet = response.data;
+            console.log("sheet retrieved");
             console.log($scope.sheet);
-            //initialize fields in fieldObjects.js, then create sheet
-            //initializeFields();
-            //createSheet();
-        }, "json");
+        });
     });
 
-
-
+    /**
+     * calculate the base attack bonus using class information
+     * @returns {*}
+     */
     $scope.bab = function() {
+        if ($scope.sheet == undefined) return "";
         var bonus = 0;
         var thisClass;
         var prog = {};
@@ -45,72 +48,107 @@ app.controller('sheetController', function($scope) {
         return "+" + bonus;
     };
 
+    /**
+     * get the total ability score using the ability score columns
+     * @param ability the 3-letter string representation of the ability
+     * @returns {number} the totaled score
+     */
+    $scope.abilityScoreSum = function(ability) {
+        if ($scope.sheet == undefined) return 0;
+        var sum = 0;
+        var cols = $scope.sheet.sheetAbilityScoreColumns;
+        for (var i = 0; i < cols.length; i++) {
+            sum += Number(cols[i][ability + "Row"]);
+        }
+        return sum;
+    };
+
+    /**
+     * calculates the ability modifier of a given ability score
+     * @param ability the 3-letter representation of the ability
+     * @param displayPosNeg if true then it adds on a "+" to the number when positive
+     * @returns {*} returns a string when displayPosNeg is true, otherwise a number
+     */
+    $scope.abilityMod = function(ability, displayPosNeg) {
+        if ($scope.sheet == undefined) return 0;
+        var mod = Math.floor(($scope.abilityScoreSum(ability) - 10) / 2);
+        if (displayPosNeg && mod >= 0)
+            return "+" + mod;
+        else return mod;
+    };
+
+    /**
+     * returns the sheet's classes formatted into one string
+     * format : archetype1 class1 level1/archetype2 class2 level2/ ...
+     * @returns {*} returns the formatted string
+     */
     $scope.classesString = function() {
+        if ($scope.sheet == undefined) return "";
         var outputString = "";
         var thisClass;
         for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
             thisClass = $scope.sheet.sheetClasses[i];
-            if (thisClass.archetype != "" && thisClass.archetype != null)
-                outputString += thisClass.archtype + " ";
-            outputString += thisClass.className + "/";
+            if (thisClass.archetype != undefined && thisClass.archetype != "")
+                outputString += thisClass.archetype + " ";
+            outputString += thisClass.className + " " + thisClass.level + "/";
         }
         return outputString.substring(0, outputString.length - 1);
     };
 
+    /**
+     * returns the caster level for a class using the misc bonus and the class level
+     * @param c the class object
+     * @returns {*} the caster level
+     */
+    $scope.casterLevel = function(c) {
+        if ($scope.sheet == undefined) return "";
+        if (c.spellCap == "6th" || c.spellCap == "9th")
+            return Number(c.level) + Number(c.casterBonusMisc);
+        if (c.spellCap == "4th" && c.level > 3)
+            return Number(c.level) - 3 + Number(c.casterBonusMisc);
+        else return c.casterBonusMisc;
+    };
+
+    /**
+     * sends the sheet object to the save servlet
+     */
     $scope.saveSheet = function() {
-        console.log("saving sheet " + $scope.sheet);
+        console.log("saving sheet ");
+        console.log($scope.sheet);
+        console.log(JSON.stringify($scope.sheet));
         saveInProgress = true;
-        $.ajax({
-            type: "POST",
-            url: "/saveSheet",
-            //contentType: "application/json",
-            data: {"sheet" : JSON.stringify($scope.sheet)},
-            success: function(response) {
-                saveInProgress = false;
-                var message = $('<div id="alert">');
-                if (response == "success")
-                    message.text("Sheet data saved");
-                else
-                    message.text("Error: sheet data not saved");
-                $('#messages').append(message);
-                message.delay(1000).fadeOut(700);
-            }
+        $http({
+            method : "POST",
+            url : "saveSheet",
+            data : {"sheet" : JSON.stringify($scope.sheet)}
+        }).then(function(response) {
+            console.log(response);
         });
     };
 
 });
 
-function createSheet() {
-    var sheetPage = $("<div class='sheet-page' id='sheetPage'>");
-    console.log("created sheetPage");
-    sheetPage.append(createMainInfo());
-    sheetPage.prepend(createNavbar());
-    sheetPage.append("<div>" + JSON.stringify(sheet) + "</div>");
-    $("#content").append(sheetPage);
-}
-
-function createNavbar() {
-    var navbar = $("<div class='fixedElement' id='navbar'>");
-
-    var saveButton = $("<input type='button' value='Save' />");
-    saveButton.click(function() {
-
-    });
-
-    navbar.append(saveButton);
-    return navbar;
-}
-
-function createMainInfo() {
-    var mainInfo = $("<div class='main-info' id='mainInfo'>");
-
-    console.log("adding " + sheet.characterName);
-    var temp = $("<input class='centered string-field character-name' id='characterName' spellcheck='false'>").val(sheet.characterName);
-    mainInfo.append(temp);
-
-    temp = $("<input class='centered string-field character-name' id='characterRace' spellcheck='false'>").val(sheet.characterRace);
-    mainInfo.append(temp);
-
-    console.log("returning mainInfo");
-    return mainInfo;
-}
+/**
+ * this directive limits all inputs to digits
+ */
+app.directive('onlyDigits', function() {
+    return {
+        require : "ngModel",
+        restrict : "A",
+        link : function(scope, element, attr, ctrl) {
+            function inputValue(val) {
+                console.log("change");
+                console.log(val);
+                console.log(Number(val));
+                val = "0" + val;
+                var digits = Number(val.replace(/[^0-9]/g, ""));
+                if (digits !== val) {
+                    ctrl.$setViewValue(digits);
+                    ctrl.$render();
+                }
+                return parseInt(digits, 10);
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
+});

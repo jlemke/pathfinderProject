@@ -32,8 +32,9 @@ public class SaveSheet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String message = "success";
-
+        logger.info(request.getParameter("sheet"));
         logger.info("saving sheet...");
+        //put in json parser
         String json = String.valueOf(request.getParameter("sheet"));
 
         logger.info("json created");
