@@ -233,7 +233,8 @@ public class SheetDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(sheet);
+        session.merge(sheet);
+        session.flush();
         transaction.commit();
         session.close();
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import entity.User;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,6 +12,8 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
 import java.util.TreeSet;
+
+import static org.hibernate.engine.spi.CascadeStyles.DELETE_ORPHAN;
 
 /**
  * Created by Joe on 12/5/2016.
@@ -268,6 +271,7 @@ public class Sheet implements Serializable {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     public Set<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
         return sheetAbilityScoreColumns;
     }

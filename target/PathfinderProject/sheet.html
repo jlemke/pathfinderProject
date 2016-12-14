@@ -54,7 +54,9 @@
                     <th>ABI</th>
                     <th>SUM</th>
                     <th>MOD</th>
-                    <th ng-repeat="col in sheet.sheetAbilityScoreColumns">{{col.columnName}}</th>
+                    <th ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input class="ability-column-header" type="text" ng-model="col.columnName" /></th>
+                    <th rowspan="8"><input type="button" value="+" ng-click="addCol()" /></th>
                 </tr>
                 <tr>
                     <th>STR</th>
@@ -67,7 +69,7 @@
                     <th>DEX</th>
                     <th ng-bind="abilityScoreSum('dex')"></th>
                     <th ng-bind="abilityMod('dex', true)"></th>
-                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns | orderBy : 'columnId'">
                         <input type="text" class="number-box" ng-model="col.dexRow" only-digits /></td>
                 </tr>
                 <tr>
@@ -97,6 +99,13 @@
                     <th ng-bind="abilityMod('cha', true)"></th>
                     <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
                         <input type="text" class="number-box" ng-model="col.chaRow" only-digits /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td ></td>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="button" value="{{col.columnId}}" ng-click="deleteCol($index)" /></td>
                 </tr>
             </table>
         </div>

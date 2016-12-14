@@ -62,3 +62,21 @@ new TaskList :
 #Week 2 12/11 - 12/17
 
 12/11
+
+12/14
+
+Work Done:
+	* Switched all js to AngularJS
+	* Some field inputs added in
+	* Some calculated fields added
+
+Current Work:
+	* AngularJS model
+	* Need to fix orphan destruction.
+
+TaskList :
+	* Add in rest of fields
+	* Organize fields
+	* Add tabs
+	* Add in new ideas
+	* Character creation

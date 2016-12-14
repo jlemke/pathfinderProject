@@ -13826,3 +13826,181 @@
 2016-12-13 18:58:46,829 157246 [http-nio-8080-exec-6] INFO  logger  - dao created
 2016-12-13 18:59:31,757 202174 [http-nio-8080-exec-2] INFO  logger  - dao created
 2016-12-13 19:00:10,901 241318 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 22:10:21,444 0    [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 22:10:23,088 1644 [http-nio-8080-exec-3] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-13 22:10:23,170 1726 [http-nio-8080-exec-3] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-13 22:10:23,185 1741 [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-13 22:10:23,191 1747 [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-13 22:10:23,537 2093 [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-13 22:10:23,537 2093 [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-13 22:10:24,013 2569 [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-13 22:10:24,520 3076 [http-nio-8080-exec-3] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-13 22:10:24,679 3235 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-13 22:10:24,680 3236 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-13 22:10:24,680 3236 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-13 22:10:24,686 3242 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-13 22:10:25,477 4033 [http-nio-8080-exec-3] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-13 22:10:27,970 6526 [http-nio-8080-exec-3] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-13 22:10:28,150 6706 [http-nio-8080-exec-3] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-13 22:24:08,137 0    [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 22:24:08,712 575  [http-nio-8080-exec-10] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-13 22:24:08,737 600  [http-nio-8080-exec-10] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-13 22:24:08,744 607  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-13 22:24:08,748 611  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-13 22:24:08,860 723  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-13 22:24:08,860 723  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-13 22:24:09,132 995  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-13 22:24:09,717 1580 [http-nio-8080-exec-10] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-13 22:24:09,731 1594 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-13 22:24:09,732 1595 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-13 22:24:09,732 1595 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-13 22:24:09,737 1600 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-13 22:24:10,377 2240 [http-nio-8080-exec-10] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-13 22:24:11,478 3341 [http-nio-8080-exec-10] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-13 22:24:11,499 3362 [http-nio-8080-exec-10] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-13 22:27:16,854 188717 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 22:27:19,246 191109 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 22:27:36,778 208641 [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-13 22:34:29,315 621178 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 22:35:12,035 663898 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 22:35:14,517 666380 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 22:35:23,334 675197 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 22:40:38,016 989879 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 22:41:02,469 1014332 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 22:44:21,068 1212931 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 22:44:31,718 1223581 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 22:49:48,682 1540545 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 22:50:06,597 1558460 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 22:51:46,429 1658292 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 22:52:54,968 1726831 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 22:53:20,351 1752214 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 22:53:30,397 1762260 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 22:53:33,166 1765029 [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-13 22:53:36,545 1768408 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 22:55:12,477 1864340 [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-13 22:55:20,087 1871950 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 22:55:31,068 1882931 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 22:55:35,605 1887468 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:00:11,284 2163147 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:00:28,357 2180220 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:00:32,421 2184284 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:00:36,453 2188316 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:00:41,044 2192907 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:00:44,472 2196335 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:01:45,685 2257548 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:02:59,388 2331251 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:03:09,138 2341001 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:03:11,666 2343529 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 23:03:27,077 2358940 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:03:39,015 2370878 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:03:45,432 2377295 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:04:24,655 2416518 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:04:27,897 2419760 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:04:43,540 2435403 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:04:46,299 2438162 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:05:01,284 2453147 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:05:03,462 2455325 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:05:08,806 2460669 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:08:48,051 2679914 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:08:51,500 2683363 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:09:05,249 2697112 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:09:09,821 2701684 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 23:09:19,374 2711237 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:09:23,754 2715617 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:09:46,146 2738009 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:09:49,954 2741817 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:09:59,199 2751062 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:10:02,167 2754030 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:10:06,444 2758307 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:10:17,785 2769648 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:10:46,530 2798393 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:10:52,716 2804579 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:11:01,055 2812918 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:11:07,035 2818898 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:11:12,509 2824372 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:11:15,969 2827832 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:11:26,417 2838280 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:12:12,019 2883882 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:12:17,527 2889390 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:12:49,832 2921695 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:13:59,063 2990926 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:16:20,040 3131903 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:16:22,237 3134100 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:16:26,162 3138025 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:16:28,355 3140218 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:16:41,593 3153456 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 23:16:47,570 3159433 [http-nio-8080-exec-1] INFO  logger  - dao created
+2016-12-13 23:17:07,860 3179723 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:17:46,835 3218698 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:19:44,347 3336210 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:20:05,672 3357535 [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-13 23:20:07,597 3359460 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:20:12,976 3364839 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:20:40,566 3392429 [http-nio-8080-exec-9] INFO  logger  - dao created
+2016-12-13 23:21:31,761 3443624 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 23:22:36,703 3508566 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:22:43,088 3514951 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:22:45,111 3516974 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:22:53,738 3525601 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:22:57,229 3529092 [http-nio-8080-exec-6] INFO  logger  - dao created
+2016-12-13 23:23:08,782 3540645 [http-nio-8080-exec-5] INFO  logger  - dao created
+2016-12-13 23:23:23,578 3555441 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:23:30,128 3561991 [http-nio-8080-exec-10] INFO  logger  - dao created
+2016-12-13 23:23:41,473 3573336 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:23:43,794 3575657 [http-nio-8080-exec-4] INFO  logger  - dao created
+2016-12-13 23:30:53,709 0    [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:30:54,436 727  [http-nio-8080-exec-2] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-13 23:30:54,537 828  [http-nio-8080-exec-2] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-13 23:30:54,544 835  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-13 23:30:54,548 839  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-13 23:30:54,649 940  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-13 23:30:54,649 940  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-13 23:30:55,034 1325 [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-13 23:30:55,932 2223 [http-nio-8080-exec-2] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-13 23:30:55,945 2236 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-13 23:30:55,945 2236 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-13 23:30:55,945 2236 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-13 23:30:55,951 2242 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-13 23:30:56,494 2785 [http-nio-8080-exec-2] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-13 23:30:57,660 3951 [http-nio-8080-exec-2] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-13 23:30:57,697 3988 [http-nio-8080-exec-2] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-13 23:31:06,177 12468 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:31:08,792 15083 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:31:11,633 17924 [http-nio-8080-exec-8] INFO  logger  - dao created
+2016-12-13 23:31:13,658 19949 [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:33:24,453 0    [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:33:25,070 617  [http-nio-8080-exec-2] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-13 23:33:25,102 649  [http-nio-8080-exec-2] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-13 23:33:25,111 658  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-13 23:33:25,116 663  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-13 23:33:25,234 781  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-13 23:33:25,235 782  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-13 23:33:25,478 1025 [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-13 23:33:25,958 1505 [http-nio-8080-exec-2] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-13 23:33:25,973 1520 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-13 23:33:25,973 1520 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-13 23:33:25,973 1520 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-13 23:33:25,981 1528 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-13 23:33:26,686 2233 [http-nio-8080-exec-2] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-13 23:33:27,720 3267 [http-nio-8080-exec-2] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-13 23:33:27,743 3290 [http-nio-8080-exec-2] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-13 23:33:37,139 12686 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:33:39,606 15153 [http-nio-8080-exec-7] INFO  logger  - dao created
+2016-12-13 23:41:01,430 1    [http-nio-8080-exec-2] INFO  logger  - dao created
+2016-12-13 23:41:01,924 495  [http-nio-8080-exec-2] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-13 23:41:01,952 523  [http-nio-8080-exec-2] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2016-12-13 23:41:01,960 531  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-12-13 23:41:01,965 536  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-12-13 23:41:02,067 638  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-12-13 23:41:02,068 639  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-12-13 23:41:02,274 845  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-12-13 23:41:02,692 1263 [http-nio-8080-exec-2] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-12-13 23:41:02,707 1278 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2016-12-13 23:41:02,707 1278 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2016-12-13 23:41:02,708 1279 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-12-13 23:41:02,713 1284 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-12-13 23:41:03,277 1848 [http-nio-8080-exec-2] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-12-13 23:41:04,222 2793 [http-nio-8080-exec-2] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-13 23:41:04,244 2815 [http-nio-8080-exec-2] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-13 23:41:10,500 9071 [http-nio-8080-exec-3] INFO  logger  - dao created
+2016-12-13 23:41:12,826 11397 [http-nio-8080-exec-5] INFO  logger  - dao created

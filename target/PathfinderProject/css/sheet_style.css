@@ -58,6 +58,11 @@
     text-align: center;
 }
 
+.ability-column-header {
+    font-size: 12px;
+    width: 40px;
+}
+
 .score-table {
     border: 2px solid black;
 }

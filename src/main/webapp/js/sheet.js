@@ -77,6 +77,26 @@ app.controller('sheetController', function($scope, $http, $location) {
         else return mod;
     };
 
+    $scope.addCol = function() {
+        var newCol = {
+            sheetId : $scope.sheet.sheetId,
+            columnName : "new",
+            strRow : 0,
+            dexRow : 0,
+            conRow : 0,
+            intRow : 0,
+            wisRow : 0,
+            chaRow : 0
+        };
+        $scope.sheet.sheetAbilityScoreColumns.push(newCol);
+    };
+
+    $scope.deleteCol = function(col) {
+        console.log(col);
+        console.log($scope.sheet.sheetAbilityScoreColumns[col]);
+        $scope.sheet.sheetAbilityScoreColumns.splice(col, 1);
+    };
+
     /**
      * returns the sheet's classes formatted into one string
      * format : archetype1 class1 level1/archetype2 class2 level2/ ...
@@ -120,9 +140,10 @@ app.controller('sheetController', function($scope, $http, $location) {
         $http({
             method : "POST",
             url : "saveSheet",
-            data : {"sheet" : JSON.stringify($scope.sheet)}
+            data : angular.toJson($scope.sheet)
         }).then(function(response) {
             console.log(response);
+
         });
     };
 
@@ -137,9 +158,6 @@ app.directive('onlyDigits', function() {
         restrict : "A",
         link : function(scope, element, attr, ctrl) {
             function inputValue(val) {
-                console.log("change");
-                console.log(val);
-                console.log(Number(val));
                 val = "0" + val;
                 var digits = Number(val.replace(/[^0-9]/g, ""));
                 if (digits !== val) {
