@@ -229,14 +229,22 @@ public class SheetDao {
     }
 
 
-    public void saveSheet(Sheet sheet) {
+    public String saveSheet(Sheet sheet) {
+        String message = "Sheet Saved?";
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
-        session.merge(sheet);
+        //TODO Change all collections
+        logger.info("Saving/updating sheet in hibernate...");
+        logger.info(sheet.toString());
+        session.saveOrUpdate(sheet);
+        logger.info(sheet.toString());
         session.flush();
+        logger.info(sheet.toString());
         transaction.commit();
+        logger.info(sheet.toString());
         session.close();
+        return message;
     }
 
     public void deleteSheet(Sheet s) {

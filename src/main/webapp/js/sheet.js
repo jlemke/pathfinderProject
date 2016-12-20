@@ -142,8 +142,7 @@ app.controller('sheetController', function($scope, $http, $location) {
             url : "saveSheet",
             data : angular.toJson($scope.sheet)
         }).then(function(response) {
-            console.log(response);
-
+            console.log(response.message);
         });
     };
 

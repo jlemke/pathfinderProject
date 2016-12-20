@@ -62,7 +62,7 @@ public class SaveSheet extends HttpServlet {
 
         SheetDao dao = new SheetDao();
         try {
-            dao.saveSheet(sheet);
+            message = dao.saveSheet(sheet);
         } catch (Exception e) {
             e.printStackTrace();
             message = "error";

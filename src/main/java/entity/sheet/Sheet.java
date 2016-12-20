@@ -10,6 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -41,7 +42,7 @@ public class Sheet implements Serializable {
     private SheetMoney sheetMoney;
     private Set<SheetRacialTrait> sheetRacialTraits = new TreeSet<>();
     private Set<SheetWeapon> sheetWeapons = new TreeSet<>();
-    private Set<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new TreeSet<>();
+    private Set<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new HashSet<>();
 
     @Id
     @GeneratedValue
@@ -270,8 +271,7 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
         return sheetAbilityScoreColumns;
     }
