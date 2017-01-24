@@ -236,15 +236,14 @@ public class SheetDao {
 
         //TODO Change all collections
         logger.info("Saving/updating sheet in hibernate...");
-        logger.info(sheet.toString());
-        session.saveOrUpdate(sheet);
-        logger.info(sheet.toString());
-        session.flush();
-        logger.info(sheet.toString());
+        session.merge(sheet);
         transaction.commit();
-        logger.info(sheet.toString());
         session.close();
         return message;
+    }
+
+    private Sheet updateCollections(Sheet sheet) {
+        return sheet;
     }
 
     public void deleteSheet(Sheet s) {

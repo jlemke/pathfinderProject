@@ -16,7 +16,6 @@ I plan on making a sketch of the website layout.  I still have to figure out how
 the character sheets update in the GM's view while the player is updating it.
 
 
-
 #Week ??? new Week[]? Week 0
 12/2 - 12/5
 
@@ -27,7 +26,7 @@ Tasks Completed:
 	* Sheet list page works
 	
 Personal accomplishments:
-	* This span of 4 days has been almost entirely spent on this project.
+	* Spent 4 days of work on this project
 	* On 12/5 I worked for almost 14 hours straight (nice)
 	* Learned a ton about hibernate, now I feel smart, so many bugs fixed
 	
@@ -61,8 +60,6 @@ new TaskList :
 	
 #Week 2 12/11 - 12/17
 
-12/11
-
 12/14
 
 Work Done:
@@ -80,3 +77,10 @@ TaskList :
 	* Add tabs
 	* Add in new ideas
 	* Character creation
+	
+
+#Week 1, 1/15 - 1/21
+
+1/17
+
+First day of class, I have already chosen my project.  Need to set up AWS account still.

@@ -22,6 +22,7 @@ public class SheetAbilityScoreColumn {
     private int chaRow = 0;
     private Sheet sheet;
 
+
     @Column(name = "sheet_id", nullable = false)
     @GenericGenerator(name = "gen", strategy = "foreign",
             parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
@@ -32,6 +33,7 @@ public class SheetAbilityScoreColumn {
     public void setSheetId(int sheetId) {
         this.sheetId = sheetId;
     }
+
 
     @Id
     @GeneratedValue
