@@ -6,12 +6,14 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import entity.User;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Sort;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 import static org.hibernate.engine.spi.CascadeStyles.DELETE_ORPHAN;
@@ -30,7 +32,7 @@ public class Sheet implements Serializable {
     private Timestamp dateCreated;
     private Timestamp lastAccessed;
     private String campaign = "";
-    private Set<SheetClass> sheetClasses = new TreeSet<>();
+    private SortedSet<SheetClass> sheetClasses = new TreeSet<>();
     private SheetDescription sheetDescription;
     private SheetGeneral sheetGeneral;
     private Set<SheetArmor> sheetArmors = new TreeSet<>();
@@ -42,7 +44,7 @@ public class Sheet implements Serializable {
     private SheetMoney sheetMoney;
     private Set<SheetRacialTrait> sheetRacialTraits = new TreeSet<>();
     private Set<SheetWeapon> sheetWeapons = new TreeSet<>();
-    private Set<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new HashSet<>();
+    private SortedSet<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new TreeSet<>();
 
     @Id
     @GeneratedValue
@@ -152,11 +154,12 @@ public class Sheet implements Serializable {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Set<SheetClass> getSheetClasses() {
+    @OrderBy("level DESC")
+    public SortedSet<SheetClass> getSheetClasses() {
         return sheetClasses;
     }
 
-    public void setSheetClasses(Set<SheetClass> sheetClasses) {
+    public void setSheetClasses(SortedSet<SheetClass> sheetClasses) {
         this.sheetClasses = sheetClasses;
     }
 
@@ -271,12 +274,13 @@ public class Sheet implements Serializable {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    public Set<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
+    @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("columnId ASC")
+    public SortedSet<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
         return sheetAbilityScoreColumns;
     }
 
-    public void setSheetAbilityScoreColumns(Set<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
+    public void setSheetAbilityScoreColumns(SortedSet<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
         this.sheetAbilityScoreColumns = sheetAbilityScoreColumns;
     }
 

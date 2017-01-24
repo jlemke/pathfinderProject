@@ -77,7 +77,7 @@ public class SheetDaoTest {
         Sheet sheet = new Sheet();
         sheet.setSheetId(id);
         sheet.setOwner(userDao.getUser(USERNAME));
-        Set<SheetAbilityScoreColumn> columns = new TreeSet<>();
+        SortedSet<SheetAbilityScoreColumn> columns = new TreeSet<>();
         SheetAbilityScoreColumn column;
         for (int i = 0; i < 4; i++) {
             column = new SheetAbilityScoreColumn();

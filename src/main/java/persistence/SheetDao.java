@@ -91,6 +91,7 @@ public class SheetDao {
             temp.setDateCreated(sheet.getDateCreated());
             temp.setLastAccessed(sheet.getLastAccessed());
 
+
             //Create a string of this sheet's classes
             //Format : Archetype1 Class1 Level1/Archetype2 Class2 Level2 ...
             classString = "";
@@ -109,7 +110,7 @@ public class SheetDao {
             temp.setCharacterClassString(classString);
 
             thisUsersSheets.add(temp);
-        }
+    }
 
         session.close();
         return thisUsersSheets;
@@ -208,11 +209,18 @@ public class SheetDao {
     public Sheet getSheet(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-        //force session to fetch all collections
+        //force session to fetch all collections by using .size()
+
         Sheet sheet = (Sheet) session.get(Sheet.class, id);
         sheet.getSheetAbilityScoreColumns().size();
+
+        for (SheetAbilityScoreColumn col : sheet.getSheetAbilityScoreColumns()) {
+            logger.info(col.getColumnId());
+        }
+
         sheet.getSheetClasses().size();
         for (SheetClass sheetClass : sheet.getSheetClasses()) {
+            logger.info(sheetClass.getLevel());
             sheetClass.getSheetSpells().size();
             sheetClass.getSheetClassFeatures().size();
         }
@@ -234,7 +242,6 @@ public class SheetDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
-        //TODO Change all collections
         logger.info("Saving/updating sheet in hibernate...");
         session.merge(sheet);
         transaction.commit();

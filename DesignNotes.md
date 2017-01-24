@@ -3,6 +3,8 @@
  * Look up event listeners
  * make database design pictures
  * pictures of pages
+ * Need to speed up sheet load times
+ * Figure out how to 
 	
 ##CURRENT WORK
  * Add rest of fields to sheet

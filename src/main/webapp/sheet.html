@@ -13,13 +13,13 @@
         <script src="js/angular.min.js"></script>
 
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
 
         <link href="css/sheet_style.css" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
                     <th>DEX</th>
                     <th ng-bind="abilityScoreSum('dex')"></th>
                     <th ng-bind="abilityMod('dex', true)"></th>
-                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns | orderBy : 'columnId'">
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
                         <input type="text" class="number-box" ng-model="col.dexRow" only-digits /></td>
                 </tr>
                 <tr>

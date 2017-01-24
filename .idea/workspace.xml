@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d56039-3889-4ba4-b206-ee68505805ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.1.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetAbilityScoreColumn.class" afterPath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetAbilityScoreColumn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/persistence/SheetDao.class" afterPath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/persistence/SheetDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/sheet/SheetAbilityScoreColumn.class" afterPath="$PROJECT_DIR$/target/classes/entity/sheet/SheetAbilityScoreColumn.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/SheetDao.class" afterPath="$PROJECT_DIR$/target/classes/persistence/SheetDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6c19bf00-db43-484c-8847-a2f829af8c3d.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6c19bf00-db43-484c-8847-a2f829af8c3d.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pathfinderProject.iml" afterPath="$PROJECT_DIR$/.idea/pathfinderProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Journal.md" afterPath="$PROJECT_DIR$/Journal.md" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/persistence/SheetDaoTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DesignNotes.md" afterPath="$PROJECT_DIR$/DesignNotes.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/project.log" afterPath="$PROJECT_DIR$/logs/project.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/sheet.html" afterPath="$PROJECT_DIR$/src/main/webapp/sheet.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/sheet.html" afterPath="$PROJECT_DIR$/target/PathfinderProject/sheet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" />
     </list>
     <ignored path="pathfinderProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,6 +33,30 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - pathfinderdb@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - pathfinderdb@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="sheet_classes" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -48,37 +64,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SaveSheet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/SaveSheet.java">
+      <file leaf-file-name="sheet.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/sheet.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="2057">
+              <caret line="121" column="46" lean-forward="false" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SheetDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SheetDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/persistence/SheetDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3298">
-              <caret line="204" column="9" lean-forward="false" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1960#1961#0" expanded="false" />
-                <element signature="e#2002#2003#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SheetAbilityScoreColumn.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="1913">
+              <caret line="225" column="9" lean-forward="true" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -87,83 +87,35 @@
       <file leaf-file-name="Sheet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3298">
-              <caret line="280" column="5" lean-forward="false" selection-start-line="280" selection-start-column="5" selection-end-line="280" selection-end-column="5" />
+            <state relative-caret-position="124">
+              <caret line="165" column="25" lean-forward="true" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1801#1802#0" expanded="false" />
-                <element signature="e#1831#1832#0" expanded="false" />
-                <element signature="e#1874#1875#0" expanded="false" />
-                <element signature="e#1912#1913#0" expanded="false" />
-                <element signature="e#2499#2500#0" expanded="false" />
-                <element signature="e#2535#2536#0" expanded="false" />
-                <element signature="e#2593#2594#0" expanded="false" />
-                <element signature="e#2643#2644#0" expanded="false" />
-                <element signature="e#2761#2762#0" expanded="false" />
-                <element signature="e#2797#2798#0" expanded="false" />
-                <element signature="e#2855#2856#0" expanded="false" />
-                <element signature="e#2905#2906#0" expanded="false" />
-                <element signature="e#3009#3010#0" expanded="false" />
-                <element signature="e#3043#3044#0" expanded="false" />
-                <element signature="e#3100#3101#0" expanded="false" />
-                <element signature="e#3146#3147#0" expanded="false" />
-                <element signature="e#3252#3253#0" expanded="false" />
-                <element signature="e#3287#3288#0" expanded="false" />
-                <element signature="e#3346#3347#0" expanded="false" />
-                <element signature="e#3394#3395#0" expanded="false" />
-                <element signature="e#3501#3502#0" expanded="false" />
-                <element signature="e#3532#3533#0" expanded="false" />
-                <element signature="e#3580#3581#0" expanded="false" />
-                <element signature="e#3620#3621#0" expanded="false" />
-                <element signature="e#5345#5346#0" expanded="false" />
-                <element signature="e#5380#5381#0" expanded="false" />
-                <element signature="e#5445#5446#0" expanded="false" />
-                <element signature="e#5493#5494#0" expanded="false" />
-                <element signature="e#5633#5634#0" expanded="false" />
-                <element signature="e#5672#5673#0" expanded="false" />
-                <element signature="e#5746#5747#0" expanded="false" />
-                <element signature="e#5802#5803#0" expanded="false" />
-                <element signature="e#5934#5935#0" expanded="false" />
-                <element signature="e#5969#5970#0" expanded="false" />
-                <element signature="e#6031#6032#0" expanded="false" />
-                <element signature="e#6079#6080#0" expanded="false" />
-                <element signature="e#6260#6261#0" expanded="false" />
-                <element signature="e#6294#6295#0" expanded="false" />
-                <element signature="e#6357#6358#0" expanded="false" />
-                <element signature="e#6403#6404#0" expanded="false" />
-                <element signature="e#6584#6585#0" expanded="false" />
-                <element signature="e#6618#6619#0" expanded="false" />
-                <element signature="e#6681#6682#0" expanded="false" />
-                <element signature="e#6727#6728#0" expanded="false" />
-                <element signature="e#6857#6858#0" expanded="false" />
-                <element signature="e#6891#6892#0" expanded="false" />
-                <element signature="e#6950#6951#0" expanded="false" />
-                <element signature="e#6996#6997#0" expanded="false" />
-                <element signature="e#7182#7183#0" expanded="false" />
-                <element signature="e#7219#7220#0" expanded="false" />
-                <element signature="e#7290#7291#0" expanded="false" />
-                <element signature="e#7342#7343#0" expanded="false" />
-                <element signature="e#7521#7522#0" expanded="false" />
-                <element signature="e#7554#7555#0" expanded="false" />
-                <element signature="e#7614#7615#0" expanded="false" />
-                <element signature="e#7658#7659#0" expanded="false" />
-                <element signature="e#7837#7838#0" expanded="false" />
-                <element signature="e#7870#7871#0" expanded="false" />
-                <element signature="e#7930#7931#0" expanded="false" />
-                <element signature="e#7974#7975#0" expanded="false" />
-                <element signature="e#8102#8103#0" expanded="false" />
-                <element signature="e#8135#8136#0" expanded="false" />
-                <element signature="e#8191#8192#0" expanded="false" />
-                <element signature="e#8235#8236#0" expanded="false" />
-                <element signature="e#8428#8429#0" expanded="false" />
-                <element signature="e#8468#8469#0" expanded="false" />
-                <element signature="e#8790#8791#0" expanded="false" />
-                <element signature="e#8825#8826#0" expanded="false" />
-                <element signature="e#8891#8892#0" expanded="false" />
-                <element signature="e#8939#8940#0" expanded="false" />
-                <element signature="e#9147#9148#0" expanded="false" />
-                <element signature="e#9194#9195#0" expanded="false" />
+                <element signature="e#8908#8909#0" expanded="true" />
+                <element signature="e#8943#8944#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SheetClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="272" column="20" lean-forward="false" selection-start-line="272" selection-start-column="20" selection-end-line="272" selection-end-column="20" />
+              <folding>
+                <element signature="e#8486#8487#0" expanded="true" />
+                <element signature="e#8533#8534#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SheetAbilityScoreColumn.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="149" column="22" lean-forward="true" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/entity/OldSheetMain.java" />
         <option value="$PROJECT_DIR$/ProjectPlan.md" />
         <option value="$PROJECT_DIR$/src/main/java/entity/UserRoles.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/UserRole.java" />
@@ -220,28 +171,29 @@
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetMoney.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetSkill.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetInfo.java" />
-        <option value="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/loadSheet.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/saveSheet.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/Field.js" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6c19bf00-db43-484c-8847-a2f829af8c3d/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetGeneral.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClassFeature.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetSpell.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/controller/LoadSheet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/fieldObjects.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/sheet_style.css" />
         <option value="$PROJECT_DIR$/src/main/java/controller/SaveSheet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/sheet.js" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sheet.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/logs/project.log" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" />
+        <option value="$PROJECT_DIR$/DesignNotes.md" />
+        <option value="$PROJECT_DIR$/src/main/webapp/sheet.html" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java" />
+        <option value="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6c19bf00-db43-484c-8847-a2f829af8c3d/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" />
       </list>
     </option>
   </component>
@@ -458,6 +410,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-3.3.7-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathfinderProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathfinderProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-3.3.7-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathfinderProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathfinderProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -627,10 +635,6 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Joe\Documents\GitHub\pathfinderProject\src\main\webapp" />
-      <recent name="C:\Users\Joe\Documents\GitHub\pathfinderProject\src\main\webapp\jsp" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="entity.sheet" />
       <recent name="entity" />
@@ -638,6 +642,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Joe\Documents\GitHub\pathfinderProject\src\main\webapp\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Joe\Documents\GitHub\pathfinderProject\src\main\webapp" />
+      <recent name="C:\Users\Joe\Documents\GitHub\pathfinderProject\src\main\webapp\jsp" />
     </key>
   </component>
   <component name="RunManager" selected="TomEE Server.Tomee">
@@ -1325,7 +1333,7 @@
       <workItem from="1484679148164" duration="1211000" />
       <workItem from="1484852755883" duration="143000" />
       <workItem from="1484853588346" duration="3447000" />
-      <workItem from="1485282632116" duration="591000" />
+      <workItem from="1485282632116" duration="4564000" />
     </task>
     <servers />
   </component>
@@ -1362,10 +1370,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204197000" />
+    <option name="totallyTimeSpent" value="208170000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1377,19 +1385,20 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30441642" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24132492" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3422713" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24743025" sideWeight="0.35962147" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24670571" sideWeight="0.64037853" order="0" side_tool="false" content_ui="combo" />
@@ -1402,7 +1411,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30757096" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2807571" sideWeight="0.4956076" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33280757" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1433,8 +1441,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetSkillPK.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClassPK.java" />
     <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_spells">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1569,28 +1575,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/saveSheet.js" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6c19bf00-db43-484c-8847-a2f829af8c3d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetArmor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="196" column="8" lean-forward="false" selection-start-line="196" selection-start-column="8" selection-end-line="196" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1672,13 +1665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_abilities">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1714,22 +1700,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="36" column="67" lean-forward="false" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/fieldObjects.js" />
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_classes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1746,13 +1721,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/sheet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1777,13 +1745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sheet.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1801,112 +1762,110 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/SaveSheet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="87">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/sheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/bootstrap-3.3.7-dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DesignNotes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="78" column="24" lean-forward="false" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/sheet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="121" column="46" lean-forward="false" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_classes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6c19bf00-db43-484c-8847-a2f829af8c3d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="149" column="22" lean-forward="true" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="272" column="20" lean-forward="false" selection-start-line="272" selection-start-column="20" selection-end-line="272" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#8486#8487#0" expanded="true" />
+            <element signature="e#8533#8534#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3298">
-          <caret line="280" column="5" lean-forward="false" selection-start-line="280" selection-start-column="5" selection-end-line="280" selection-end-column="5" />
+        <state relative-caret-position="124">
+          <caret line="165" column="25" lean-forward="true" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1801#1802#0" expanded="false" />
-            <element signature="e#1831#1832#0" expanded="false" />
-            <element signature="e#1874#1875#0" expanded="false" />
-            <element signature="e#1912#1913#0" expanded="false" />
-            <element signature="e#2499#2500#0" expanded="false" />
-            <element signature="e#2535#2536#0" expanded="false" />
-            <element signature="e#2593#2594#0" expanded="false" />
-            <element signature="e#2643#2644#0" expanded="false" />
-            <element signature="e#2761#2762#0" expanded="false" />
-            <element signature="e#2797#2798#0" expanded="false" />
-            <element signature="e#2855#2856#0" expanded="false" />
-            <element signature="e#2905#2906#0" expanded="false" />
-            <element signature="e#3009#3010#0" expanded="false" />
-            <element signature="e#3043#3044#0" expanded="false" />
-            <element signature="e#3100#3101#0" expanded="false" />
-            <element signature="e#3146#3147#0" expanded="false" />
-            <element signature="e#3252#3253#0" expanded="false" />
-            <element signature="e#3287#3288#0" expanded="false" />
-            <element signature="e#3346#3347#0" expanded="false" />
-            <element signature="e#3394#3395#0" expanded="false" />
-            <element signature="e#3501#3502#0" expanded="false" />
-            <element signature="e#3532#3533#0" expanded="false" />
-            <element signature="e#3580#3581#0" expanded="false" />
-            <element signature="e#3620#3621#0" expanded="false" />
-            <element signature="e#5345#5346#0" expanded="false" />
-            <element signature="e#5380#5381#0" expanded="false" />
-            <element signature="e#5445#5446#0" expanded="false" />
-            <element signature="e#5493#5494#0" expanded="false" />
-            <element signature="e#5633#5634#0" expanded="false" />
-            <element signature="e#5672#5673#0" expanded="false" />
-            <element signature="e#5746#5747#0" expanded="false" />
-            <element signature="e#5802#5803#0" expanded="false" />
-            <element signature="e#5934#5935#0" expanded="false" />
-            <element signature="e#5969#5970#0" expanded="false" />
-            <element signature="e#6031#6032#0" expanded="false" />
-            <element signature="e#6079#6080#0" expanded="false" />
-            <element signature="e#6260#6261#0" expanded="false" />
-            <element signature="e#6294#6295#0" expanded="false" />
-            <element signature="e#6357#6358#0" expanded="false" />
-            <element signature="e#6403#6404#0" expanded="false" />
-            <element signature="e#6584#6585#0" expanded="false" />
-            <element signature="e#6618#6619#0" expanded="false" />
-            <element signature="e#6681#6682#0" expanded="false" />
-            <element signature="e#6727#6728#0" expanded="false" />
-            <element signature="e#6857#6858#0" expanded="false" />
-            <element signature="e#6891#6892#0" expanded="false" />
-            <element signature="e#6950#6951#0" expanded="false" />
-            <element signature="e#6996#6997#0" expanded="false" />
-            <element signature="e#7182#7183#0" expanded="false" />
-            <element signature="e#7219#7220#0" expanded="false" />
-            <element signature="e#7290#7291#0" expanded="false" />
-            <element signature="e#7342#7343#0" expanded="false" />
-            <element signature="e#7521#7522#0" expanded="false" />
-            <element signature="e#7554#7555#0" expanded="false" />
-            <element signature="e#7614#7615#0" expanded="false" />
-            <element signature="e#7658#7659#0" expanded="false" />
-            <element signature="e#7837#7838#0" expanded="false" />
-            <element signature="e#7870#7871#0" expanded="false" />
-            <element signature="e#7930#7931#0" expanded="false" />
-            <element signature="e#7974#7975#0" expanded="false" />
-            <element signature="e#8102#8103#0" expanded="false" />
-            <element signature="e#8135#8136#0" expanded="false" />
-            <element signature="e#8191#8192#0" expanded="false" />
-            <element signature="e#8235#8236#0" expanded="false" />
-            <element signature="e#8428#8429#0" expanded="false" />
-            <element signature="e#8468#8469#0" expanded="false" />
-            <element signature="e#8790#8791#0" expanded="false" />
-            <element signature="e#8825#8826#0" expanded="false" />
-            <element signature="e#8891#8892#0" expanded="false" />
-            <element signature="e#8939#8940#0" expanded="false" />
-            <element signature="e#9147#9148#0" expanded="false" />
-            <element signature="e#9194#9195#0" expanded="false" />
+            <element signature="e#8908#8909#0" expanded="true" />
+            <element signature="e#8943#8944#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/persistence/SheetDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3298">
-          <caret line="204" column="9" lean-forward="false" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1960#1961#0" expanded="false" />
-            <element signature="e#2002#2003#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="1913">
+          <caret line="225" column="9" lean-forward="true" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
           <folding />
         </state>
       </provider>

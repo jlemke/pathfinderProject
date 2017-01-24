@@ -84,3 +84,10 @@ TaskList :
 1/17
 
 First day of class, I have already chosen my project.  Need to set up AWS account still.
+
+
+#Week 2, 1/22 - 1/28
+
+1/24
+
+Figured out how to sort the sheet objects' collections

@@ -14,7 +14,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "sheet_classes", schema = "pathfinderdb", catalog = "")
-public class SheetClass implements Serializable {
+public class SheetClass implements Comparable<SheetClass> {
     private int sheetId;
     private int classId;
     private String className;
@@ -266,6 +266,13 @@ public class SheetClass implements Serializable {
         result = 31 * result + casterBonusMisc;
         return result;
     }
+
+
+    @Override
+    public int compareTo(SheetClass other) {
+        return other.level - this.level;
+    }
+
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL)

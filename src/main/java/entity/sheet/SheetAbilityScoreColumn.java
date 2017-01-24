@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "sheet_ability_score_columns", schema = "pathfinderdb", catalog = "")
-public class SheetAbilityScoreColumn {
+public class SheetAbilityScoreColumn implements Comparable<SheetAbilityScoreColumn> {
     private int sheetId;
     private int columnId;
     private String columnName = "";
@@ -148,6 +148,11 @@ public class SheetAbilityScoreColumn {
         result = 31 * result + wisRow;
         result = 31 * result + chaRow;
         return result;
+    }
+
+    @Override
+    public int compareTo(SheetAbilityScoreColumn other) {
+        return this.columnId - other.columnId;
     }
 
     @JsonBackReference
