@@ -28,9 +28,11 @@ app.controller('sheetController', function($scope, $http, $location) {
 
     /**
      * calculate the base attack bonus using class information
-     * @returns {*}
+     * @param displayPosNeg boolean option to add "+"
+     * @return {*} returns a string with "+" attached if displayPosNeg
+     *  is given, otherwise returns the bonus as an int
      */
-    $scope.bab = function() {
+    $scope.bab = function(displayPosNeg) {
         if ($scope.sheet == undefined) return "";
         var bonus = 0;
         var thisClass;
@@ -45,13 +47,16 @@ app.controller('sheetController', function($scope, $http, $location) {
             else
                 bonus += Math.floor(Number(thisClass.level) * 0.5);
         }
-        return "+" + bonus;
+
+        if (displayPosNeg)
+            return "+" + bonus;
+        else return bonus;
     };
 
     /**
      * get the total ability score using the ability score columns
      * @param ability the 3-letter string representation of the ability
-     * @returns {number} the totaled score
+     * @return int the totaled score
      */
     $scope.abilityScoreSum = function(ability) {
         if ($scope.sheet == undefined) return 0;
@@ -67,7 +72,7 @@ app.controller('sheetController', function($scope, $http, $location) {
      * calculates the ability modifier of a given ability score
      * @param ability the 3-letter representation of the ability
      * @param displayPosNeg if true then it adds on a "+" to the number when positive
-     * @returns {*} returns a string when displayPosNeg is true, otherwise a number
+     * @return string returns a string when displayPosNeg is true, otherwise a number
      */
     $scope.abilityMod = function(ability, displayPosNeg) {
         if ($scope.sheet == undefined) return 0;
@@ -100,7 +105,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     /**
      * returns the sheet's classes formatted into one string
      * format : archetype1 class1 level1/archetype2 class2 level2/ ...
-     * @returns {*} returns the formatted string
+     * @return string returns the formatted string
      */
     $scope.classesString = function() {
         if ($scope.sheet == undefined) return "";
@@ -118,7 +123,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     /**
      * returns the caster level for a class using the misc bonus and the class level
      * @param c the class object
-     * @returns {*} the caster level
+     * @return int the caster level
      */
     $scope.casterLevel = function(c) {
         if ($scope.sheet == undefined) return "";
@@ -127,6 +132,38 @@ app.controller('sheetController', function($scope, $http, $location) {
         if (c.spellCap == "4th" && c.level > 3)
             return Number(c.level) - 3 + Number(c.casterBonusMisc);
         else return c.casterBonusMisc;
+    };
+
+
+    /**
+     * returns the sum of skill modifiers for a skill
+     */
+    $scope.skillMod = function(skill) {
+        var total = 0;
+        total += $scope.abilityMod(skill.skillAbility);
+        total += skill.skillRanks;
+        if (skill.classSkill && skill.skillRanks > 0)
+            total += 3;
+        total += skill.skillMisc;
+        total += $scope.armorCheckPenalty(skill);
+        return total;
+    };
+
+    /**
+     * returns the penalty from armor on dex and str based checks
+     * @return int total armor check penalty
+     */
+    $scope.armorCheckPenalty = function(skill) {
+        var acp = 0;
+        for (var i = 0; i < $scope.sheet.sheetArmors.length; i++) {
+            acp += Math.abs(Number($scope.sheet.sheetArmors[i].skillPenalty));
+            if ($scope.sheet.sheetArmors[i].masterwork && Number($scope.sheet.sheetArmors[i].skillPenalty) < 0)
+                acp--;
+        }
+
+        if (["con", "int", "wis", "cha"].indexOf(skill.skillAbility) != -1)
+            return 0;
+        return -1 * acp;
     };
 
     /**
