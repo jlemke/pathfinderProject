@@ -168,49 +168,66 @@
         </div>
         <div class="skill-area">
             <table>
-                <tr ng-repeat="skill in sheet.sheetSkills | filter:{skill.specializedSkill : false} | orderBy:'order'">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Ability</th>
+                        <th>Bonus</th>
+                        <th>Ability</th>
+                        <th>Rank</th>
+                        <th>Misc</th>
+                        <th>ACP</th>
+                    </tr>
+                </tbody>
+                <tbody ng-repeat="skill in sheet.sheetSkills | filter:{specializedSkill : 'false'} | orderBy:'order'">
 
                     <!-- this creates a normal skill row -->
-                    <td ng-if-start="skill.skillAbility != null"><input type="checkbox" ng-model="skill.classSkill" /></td>
-                    <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
-                    <td><select ng-model="skill.skillAbility">
-                        <option value="str">STR</option>
-                        <option value="dex">DEX</option>
-                        <option value="con">CON</option>
-                        <option value="int">INT</option>
-                        <option value="wis">WIS</option>
-                        <option value="cha">CHA</option>
-                    </select></td>
-                    <td><div class="number-box inline-field" ng-bind="skillMod(skill)"></div>=</td>
-                    <td><input class="number-box" type="text" ng-model="skill.skillRanks" only-digits />+</td>
-                    <td><input class="number-box" type="text" ng-model="skill.skillMisc" only-digits />+</td>
-                    <td ng-if-end><div class="number-box" ng-bind="armorCheckPenalty(skill)"></div></td>
+                    <tr ng-if="skill.skillAbility != null">
+                        <td><input type="checkbox" ng-model="skill.classSkill" /></td>
+                        <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
+                        <td><select ng-model="skill.skillAbility">
+                            <option value="str">STR</option>
+                            <option value="dex">DEX</option>
+                            <option value="con">CON</option>
+                            <option value="int">INT</option>
+                            <option value="wis">WIS</option>
+                            <option value="cha">CHA</option>
+                        </select></td>
+                        <td><div class="number-box inline-field" ng-bind="skillMod(skill)"></div>=</td>
+                        <td><div class="inline-field" ng-bind="abilityMod(skill.skillAbility)"></div>+</td>
+                        <td><input class="number-box" type="text" ng-model="skill.skillRanks" only-digits />+</td>
+                        <td><input class="number-box" type="text" ng-model="skill.skillMisc" only-digits />+</td>
+                        <td><div class="number-box" ng-bind="armorCheckPenalty(skill)"></div></td>
+                    </tr>
 
                     <!-- this creates skill rows for craft, perform, and profession -->
-                    <td ng-if-start="skill.skillAbility == null"><input type="checkbox" ng-model="skill.classSkill" /></td>
-                    <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
-                    <td colspan="5"></td>
+                    <tr ng-if="skill.skillAbility == null">
+                        <td></td>
+                        <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
+                        <td colspan="6"></td>
+                    </tr>
 
+                    <!-- TODO figure out whether or not to keep specializations -->
                     <!-- display specialized skills for the parent skill -->
-                    <td ng-repeat-start="special in sheet.sheetSkills | filter:{special.specializedSkill : true} | filter:{special.skillName : skill.skillName}">
-                        <input type="checkbox" ng-model="special.classSkill" />
-                    </td>
-                    <td><input type="text" ng-model="special.specialization" class="string-field"/></td>
-                    <td><select ng-model="skill.skillAbility">
-                        <option value="str">STR</option>
-                        <option value="dex">DEX</option>
-                        <option value="con">CON</option>
-                        <option value="int">INT</option>
-                        <option value="wis">WIS</option>
-                        <option value="cha">CHA</option>
-                    </select></td>
-                    <td><div class="number-box inline-field" ng-bind="skillMod(skill)"></div>=</td>
-                    <td><input class="number-box" type="text" ng-model="skill.skillRanks" only-digits />+</td>
-                    <td><input class="number-box" type="text" ng-model="skill.skillMisc" only-digits />+</td>
-                    <td ng-if-end><div class="number-box" ng-bind="armorCheckPenalty(skill)"></div></td>
-
-
-                </tr>
+                    <tr ng-if="skill.skillAbility == null" ng-repeat="special in sheet.sheetSkills | filter:{specializedSkill : true} | filter:{skillName : skill.skillName}">
+                        <td><input type="checkbox" ng-model="special.classSkill" /></td>
+                        <td><input type="text" ng-model="special.specialization" class="string-field"/></td>
+                        <td><select ng-model="special.skillAbility">
+                            <option value="str">STR</option>
+                            <option value="dex">DEX</option>
+                            <option value="con">CON</option>
+                            <option value="int">INT</option>
+                            <option value="wis">WIS</option>
+                            <option value="cha">CHA</option>
+                        </select></td>
+                        <td><div class="number-box inline-field" ng-bind="skillMod(special)"></div>=</td>
+                        <td><div class="inline-field" ng-bind="abilityMod(special.skillAbility)"></div>+</td>
+                        <td><input class="number-box" type="text" ng-model="special.skillRanks" only-digits />+</td>
+                        <td><input class="number-box" type="text" ng-model="special.skillMisc" only-digits />+</td>
+                        <td><div class="number-box" ng-bind="armorCheckPenalty(special)"></div></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

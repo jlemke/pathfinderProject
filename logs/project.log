@@ -14845,3 +14845,128 @@
 2017-01-26 13:59:44,061 384245 [http-nio-8080-exec-4] INFO  logger  - 50
 2017-01-26 13:59:44,064 384248 [http-nio-8080-exec-4] INFO  logger  - 4
 2017-01-26 13:59:44,068 384252 [http-nio-8080-exec-4] INFO  logger  - 3
+2017-01-26 16:00:27,519 0    [http-nio-8080-exec-2] INFO  logger  - dao created
+2017-01-26 16:00:27,983 464  [http-nio-8080-exec-2] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-26 16:00:28,014 495  [http-nio-8080-exec-2] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-01-26 16:00:28,014 495  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-01-26 16:00:28,014 495  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-01-26 16:00:28,092 573  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-01-26 16:00:28,092 573  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-01-26 16:00:28,332 813  [http-nio-8080-exec-2] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-01-26 16:00:28,649 1130 [http-nio-8080-exec-2] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-01-26 16:00:28,665 1146 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-01-26 16:00:28,665 1146 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-01-26 16:00:28,665 1146 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-01-26 16:00:28,665 1146 [http-nio-8080-exec-2] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-01-26 16:00:29,158 1639 [http-nio-8080-exec-2] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-26 16:00:30,143 2624 [http-nio-8080-exec-2] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-26 16:00:30,162 2643 [http-nio-8080-exec-2] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-26 16:00:31,885 4366 [http-nio-8080-exec-2] INFO  logger  - 4
+2017-01-26 16:00:31,885 4366 [http-nio-8080-exec-2] INFO  logger  - 42
+2017-01-26 16:00:31,901 4382 [http-nio-8080-exec-2] INFO  logger  - 43
+2017-01-26 16:00:31,901 4382 [http-nio-8080-exec-2] INFO  logger  - 50
+2017-01-26 16:00:31,901 4382 [http-nio-8080-exec-2] INFO  logger  - 4
+2017-01-26 16:00:31,901 4382 [http-nio-8080-exec-2] INFO  logger  - 3
+2017-01-26 16:03:05,206 157687 [http-nio-8080-exec-7] INFO  logger  - dao created
+2017-01-26 16:03:05,222 157703 [http-nio-8080-exec-7] INFO  logger  - 4
+2017-01-26 16:03:05,222 157703 [http-nio-8080-exec-7] INFO  logger  - 42
+2017-01-26 16:03:05,222 157703 [http-nio-8080-exec-7] INFO  logger  - 43
+2017-01-26 16:03:05,222 157703 [http-nio-8080-exec-7] INFO  logger  - 50
+2017-01-26 16:03:05,230 157711 [http-nio-8080-exec-7] INFO  logger  - 4
+2017-01-26 16:03:05,234 157715 [http-nio-8080-exec-7] INFO  logger  - 3
+2017-01-26 16:06:11,506 343987 [http-nio-8080-exec-3] INFO  logger  - dao created
+2017-01-26 16:06:11,518 343999 [http-nio-8080-exec-3] INFO  logger  - 4
+2017-01-26 16:06:11,518 343999 [http-nio-8080-exec-3] INFO  logger  - 42
+2017-01-26 16:06:11,518 343999 [http-nio-8080-exec-3] INFO  logger  - 43
+2017-01-26 16:06:11,518 343999 [http-nio-8080-exec-3] INFO  logger  - 50
+2017-01-26 16:06:11,522 344003 [http-nio-8080-exec-3] INFO  logger  - 4
+2017-01-26 16:06:11,526 344007 [http-nio-8080-exec-3] INFO  logger  - 3
+2017-01-26 16:09:54,883 567364 [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-01-26 16:09:54,899 567380 [http-nio-8080-exec-6] INFO  logger  - 4
+2017-01-26 16:09:54,899 567380 [http-nio-8080-exec-6] INFO  logger  - 42
+2017-01-26 16:09:54,899 567380 [http-nio-8080-exec-6] INFO  logger  - 43
+2017-01-26 16:09:54,899 567380 [http-nio-8080-exec-6] INFO  logger  - 50
+2017-01-26 16:09:54,903 567384 [http-nio-8080-exec-6] INFO  logger  - 4
+2017-01-26 16:09:54,907 567388 [http-nio-8080-exec-6] INFO  logger  - 3
+2017-01-26 16:10:11,092 583573 [http-nio-8080-exec-7] INFO  logger  - dao created
+2017-01-26 16:10:11,092 583573 [http-nio-8080-exec-7] INFO  logger  - Saving/updating sheet in hibernate...
+2017-01-26 16:10:13,814 586295 [http-nio-8080-exec-10] INFO  logger  - dao created
+2017-01-26 16:10:13,834 586315 [http-nio-8080-exec-10] INFO  logger  - 4
+2017-01-26 16:10:13,834 586315 [http-nio-8080-exec-10] INFO  logger  - 42
+2017-01-26 16:10:13,834 586315 [http-nio-8080-exec-10] INFO  logger  - 43
+2017-01-26 16:10:13,834 586315 [http-nio-8080-exec-10] INFO  logger  - 50
+2017-01-26 16:10:13,842 586323 [http-nio-8080-exec-10] INFO  logger  - 4
+2017-01-26 16:10:13,846 586327 [http-nio-8080-exec-10] INFO  logger  - 3
+2017-01-26 16:23:08,859 1361340 [http-nio-8080-exec-5] INFO  logger  - dao created
+2017-01-26 16:23:08,867 1361348 [http-nio-8080-exec-5] INFO  logger  - 4
+2017-01-26 16:23:08,867 1361348 [http-nio-8080-exec-5] INFO  logger  - 42
+2017-01-26 16:23:08,867 1361348 [http-nio-8080-exec-5] INFO  logger  - 43
+2017-01-26 16:23:08,867 1361348 [http-nio-8080-exec-5] INFO  logger  - 50
+2017-01-26 16:23:08,871 1361352 [http-nio-8080-exec-5] INFO  logger  - 4
+2017-01-26 16:23:08,875 1361356 [http-nio-8080-exec-5] INFO  logger  - 3
+2017-01-26 16:29:18,296 1730777 [http-nio-8080-exec-9] INFO  logger  - dao created
+2017-01-26 16:29:18,308 1730789 [http-nio-8080-exec-9] INFO  logger  - 4
+2017-01-26 16:29:18,308 1730789 [http-nio-8080-exec-9] INFO  logger  - 42
+2017-01-26 16:29:18,308 1730789 [http-nio-8080-exec-9] INFO  logger  - 43
+2017-01-26 16:29:18,308 1730789 [http-nio-8080-exec-9] INFO  logger  - 50
+2017-01-26 16:29:18,312 1730793 [http-nio-8080-exec-9] INFO  logger  - 4
+2017-01-26 16:29:18,316 1730797 [http-nio-8080-exec-9] INFO  logger  - 3
+2017-01-26 16:30:22,949 1795430 [http-nio-8080-exec-4] INFO  logger  - dao created
+2017-01-26 16:30:22,969 1795450 [http-nio-8080-exec-4] INFO  logger  - 4
+2017-01-26 16:30:22,969 1795450 [http-nio-8080-exec-4] INFO  logger  - 42
+2017-01-26 16:30:22,969 1795450 [http-nio-8080-exec-4] INFO  logger  - 43
+2017-01-26 16:30:22,969 1795450 [http-nio-8080-exec-4] INFO  logger  - 50
+2017-01-26 16:30:22,973 1795454 [http-nio-8080-exec-4] INFO  logger  - 4
+2017-01-26 16:30:22,977 1795458 [http-nio-8080-exec-4] INFO  logger  - 3
+2017-01-26 16:32:41,117 1933598 [http-nio-8080-exec-5] INFO  logger  - dao created
+2017-01-26 16:32:41,117 1933598 [http-nio-8080-exec-5] INFO  logger  - Saving/updating sheet in hibernate...
+2017-01-26 16:32:46,144 1938625 [http-nio-8080-exec-8] INFO  logger  - dao created
+2017-01-26 16:32:46,148 1938629 [http-nio-8080-exec-8] INFO  logger  - 4
+2017-01-26 16:32:46,148 1938629 [http-nio-8080-exec-8] INFO  logger  - 42
+2017-01-26 16:32:46,148 1938629 [http-nio-8080-exec-8] INFO  logger  - 43
+2017-01-26 16:32:46,148 1938629 [http-nio-8080-exec-8] INFO  logger  - 50
+2017-01-26 16:32:46,152 1938633 [http-nio-8080-exec-8] INFO  logger  - 4
+2017-01-26 16:32:46,156 1938637 [http-nio-8080-exec-8] INFO  logger  - 3
+2017-01-26 16:32:51,606 1944087 [http-nio-8080-exec-9] INFO  logger  - dao created
+2017-01-26 16:32:51,606 1944087 [http-nio-8080-exec-9] INFO  logger  - Saving/updating sheet in hibernate...
+2017-01-26 16:32:53,504 1945985 [http-nio-8080-exec-3] INFO  logger  - dao created
+2017-01-26 16:32:53,512 1945993 [http-nio-8080-exec-3] INFO  logger  - 4
+2017-01-26 16:32:53,512 1945993 [http-nio-8080-exec-3] INFO  logger  - 42
+2017-01-26 16:32:53,512 1945993 [http-nio-8080-exec-3] INFO  logger  - 43
+2017-01-26 16:32:53,512 1945993 [http-nio-8080-exec-3] INFO  logger  - 50
+2017-01-26 16:32:53,516 1945997 [http-nio-8080-exec-3] INFO  logger  - 4
+2017-01-26 16:32:53,520 1946001 [http-nio-8080-exec-3] INFO  logger  - 3
+2017-01-26 16:33:01,228 1953709 [http-nio-8080-exec-4] INFO  logger  - dao created
+2017-01-26 16:33:01,228 1953709 [http-nio-8080-exec-4] INFO  logger  - Saving/updating sheet in hibernate...
+2017-01-26 16:33:03,065 1955546 [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-01-26 16:33:03,073 1955554 [http-nio-8080-exec-6] INFO  logger  - 4
+2017-01-26 16:33:03,073 1955554 [http-nio-8080-exec-6] INFO  logger  - 42
+2017-01-26 16:33:03,073 1955554 [http-nio-8080-exec-6] INFO  logger  - 43
+2017-01-26 16:33:03,073 1955554 [http-nio-8080-exec-6] INFO  logger  - 50
+2017-01-26 16:33:03,073 1955554 [http-nio-8080-exec-6] INFO  logger  - 4
+2017-01-26 16:33:03,077 1955558 [http-nio-8080-exec-6] INFO  logger  - 3
+2017-01-26 16:33:26,029 1978510 [http-nio-8080-exec-8] INFO  logger  - dao created
+2017-01-26 16:33:26,029 1978510 [http-nio-8080-exec-8] INFO  logger  - Saving/updating sheet in hibernate...
+2017-01-26 16:33:28,186 1980667 [http-nio-8080-exec-1] INFO  logger  - dao created
+2017-01-26 16:33:28,194 1980675 [http-nio-8080-exec-1] INFO  logger  - 4
+2017-01-26 16:33:28,194 1980675 [http-nio-8080-exec-1] INFO  logger  - 42
+2017-01-26 16:33:28,194 1980675 [http-nio-8080-exec-1] INFO  logger  - 43
+2017-01-26 16:33:28,194 1980675 [http-nio-8080-exec-1] INFO  logger  - 50
+2017-01-26 16:33:28,198 1980679 [http-nio-8080-exec-1] INFO  logger  - 4
+2017-01-26 16:33:28,198 1980679 [http-nio-8080-exec-1] INFO  logger  - 3
+2017-01-26 16:35:05,166 2077647 [http-nio-8080-exec-5] INFO  logger  - dao created
+2017-01-26 16:35:05,170 2077651 [http-nio-8080-exec-5] INFO  logger  - 4
+2017-01-26 16:35:05,170 2077651 [http-nio-8080-exec-5] INFO  logger  - 42
+2017-01-26 16:35:05,170 2077651 [http-nio-8080-exec-5] INFO  logger  - 43
+2017-01-26 16:35:05,170 2077651 [http-nio-8080-exec-5] INFO  logger  - 50
+2017-01-26 16:35:05,178 2077659 [http-nio-8080-exec-5] INFO  logger  - 4
+2017-01-26 16:35:05,182 2077663 [http-nio-8080-exec-5] INFO  logger  - 3
+2017-01-26 16:36:24,947 2157428 [http-nio-8080-exec-7] INFO  logger  - dao created
+2017-01-26 16:36:24,947 2157428 [http-nio-8080-exec-7] INFO  logger  - Saving/updating sheet in hibernate...
+2017-01-26 16:36:27,158 2159639 [http-nio-8080-exec-10] INFO  logger  - dao created
+2017-01-26 16:36:27,162 2159643 [http-nio-8080-exec-10] INFO  logger  - 4
+2017-01-26 16:36:27,162 2159643 [http-nio-8080-exec-10] INFO  logger  - 42
+2017-01-26 16:36:27,162 2159643 [http-nio-8080-exec-10] INFO  logger  - 43
+2017-01-26 16:36:27,162 2159643 [http-nio-8080-exec-10] INFO  logger  - 50
+2017-01-26 16:36:27,166 2159647 [http-nio-8080-exec-10] INFO  logger  - 4
+2017-01-26 16:36:27,170 2159651 [http-nio-8080-exec-10] INFO  logger  - 3
