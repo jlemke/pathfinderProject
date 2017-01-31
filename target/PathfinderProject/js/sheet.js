@@ -12,15 +12,17 @@ app.controller('sheetController', function($scope, $http, $location) {
      * on page load retrieve sheet information for given id
      */
     angular.element(document).ready(function() {
+        $scope.loaded = false;
         var url = $location.absUrl();
         console.log(url);
         var id = url.substring(url.lastIndexOf("=") + 1);
         console.log("sending sheet request to /sheet?id=" + id);
         $http({
             method : "GET",
-            url : "sheet?id=" + id,
+            url : "sheet?id=" + id
         }).then(function(response) {
             $scope.sheet = response.data;
+            $scope.loaded = true;
             console.log("sheet retrieved");
             console.log($scope.sheet);
         });

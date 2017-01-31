@@ -26,12 +26,19 @@
         <script type="text/javascript" src="js/sheet.js"></script>
     </head>
 <body>
+
+<div ng-if="false">
+    <p>Loading</p>
+</div>
+
+
 <div ng-controller="sheetController as s" class="container">
     <div id="header">
         <input type="button" value="Save" ng-click="saveSheet()"/>
         <div id="messages"></div>
     </div>
-    <div id="content" class="content">
+    <div id="content" class="content" ng-show="sheet != null">
+
         <div class="field-box">
             <input id="characterName" class="string-field" type="text" ng-model="sheet.characterName"/>
             <label for="characterName" class="field-label">Character Name</label>
@@ -48,6 +55,7 @@
             <div id="bab" class="number-box" ng-bind="bab(true)"></div>
             <label for="bab" class="field-label">BAB</label>
         </div>
+
         <div class="ability-scores">
             <table>
                 <tr>
@@ -109,6 +117,9 @@
                 </tr>
             </table>
         </div>
+
+
+
         <div class="class-area">
             <div ng-repeat="c in sheet.sheetClasses">
                 <div class="field-box">
@@ -163,9 +174,23 @@
                     <div class="field-box">
                         <input id="{{c.classId + 'CasterBonusMisc'}}" class="string-field" type="text" only-digits ng-model="c.casterBonusMisc"/>
                         <label for="{{c.classId + 'CasterBonusMisc'}}" class="field-label">MISC</label></div>
+
+                    <div class="spells">
+                        <div ng-repeat="spell in c.sheetSpells">
+                            <div class="field-box">
+                                <input class="string-field" type="text" ng-model="spell.spellName"/>
+                                <label class="field-label">Spell Name</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
         </div>
+
+
+
         <div class="skill-area">
             <table>
                 <tbody>
@@ -230,6 +255,7 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 </div>
 
