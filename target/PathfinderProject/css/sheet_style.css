@@ -7,6 +7,14 @@
     text-align: center;
 }
 
+.underline {
+    border: 0;
+    border-bottom: solid 1px #000;
+    outline: none;
+    margin: 5px;
+    display: block;
+}
+
 .score-header {
     font-size: 12px;
 }
@@ -23,7 +31,6 @@
     width: 150px;
     text-align: center;
     margin: 5px;
-    margin-bottom: 2px;
 }
 
 .inline-field {

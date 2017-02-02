@@ -168,6 +168,64 @@ app.controller('sheetController', function($scope, $http, $location) {
         return -1 * acp;
     };
 
+    $scope.removeFrom = function(collection, index) {
+        collection.splice(index, 1);
+    };
+
+    $scope.addItem = function() {
+        console.log("adding item");
+        var newItem = {
+            sheetId : $scope.sheet.sheetId,
+            itemName : "",
+            itemDescription : "",
+            itemQuantity : 0,
+            unitWeight : 0,
+            unitValue : 0
+        };
+        $scope.sheet.sheetItems.push(newItem);
+    };
+
+    $scope.addArmor = function() {
+        var newArmor = {
+            sheetId : $scope.sheet.sheetId,
+            armorName : "",
+            masterwork : false,
+            acBonus : 0,
+            maxDexBonus : 0,
+            skillPenalty : 0,
+            equipped : false,
+            spellFailureChance : 0,
+            weight : 0,
+            proficient : true,
+            type : ""
+        };
+        $scope.sheet.sheetArmors.push(newArmor);
+    };
+
+    $scope.addArmor = function() {
+        var newArmor = {
+            sheetId : $scope.sheet.sheetId,
+            weaponName : "",
+            masterwork : false,
+            enhancementBonus : 0,
+            damageRoll : "1d4",
+            criticalRange : 20,
+            criticalMultiplier : 2,
+            attackAbility : "str",
+            damageAbility : "str",
+            range : 5,
+            twoHand : false,
+            bludgeoning : false,
+            piercing : false,
+            slashing : false,
+            weight : 0,
+            proficient : true,
+            value : 0
+        };
+        $scope.sheet.sheetArmors.push(newArmor);
+    };
+
+
     /**
      * sends the sheet object to the save servlet
      */

@@ -32,12 +32,13 @@
 </div>
 
 
-<div ng-controller="sheetController as s" class="container">
+        <div ng-controller="sheetController as s" class="container">
     <div id="header">
         <input type="button" value="Save" ng-click="saveSheet()"/>
         <div id="messages"></div>
     </div>
     <div id="content" class="content" ng-show="sheet != null">
+        <h1>General</h1>
 
         <div class="field-box">
             <input id="characterName" class="string-field" type="text" ng-model="sheet.characterName"/>
@@ -118,9 +119,10 @@
             </table>
         </div>
 
-
+        <hr />
 
         <div class="class-area">
+            <h1>Classes</h1>
             <div ng-repeat="c in sheet.sheetClasses">
                 <div class="field-box">
                     <input id="{{c.classId + 'Archetype'}}"type="text" class="string-field" ng-model="c.archetype" />
@@ -189,9 +191,10 @@
             </div>
         </div>
 
-
+        <hr />
 
         <div class="skill-area">
+            <h1>Skills</h1>
             <table>
                 <tbody>
                     <tr>
@@ -253,6 +256,141 @@
                         <td><div class="number-box" ng-bind="armorCheckPenalty(special)"></div></td>
                     </tr>
                 </tbody>
+            </table>
+        </div>
+
+        <hr />
+
+        <div class="inventory">
+            <h1>Inventory</h1>
+            <div>
+                <h3>Money</h3>
+                <div class="field-box">
+                    <input type="text" ng-model="sheet.sheetMoney.pp" class="number-box underline" only-digits />
+                    <label class="field-label">PP</label>
+                </div>
+                <div class="field-box">
+                    <input type="text" ng-model="sheet.sheetMoney.gp" class="number-box underline" only-digits />
+                    <label class="field-label">GP</label>
+                </div>
+                <div class="field-box">
+                    <input type="text" ng-model="sheet.sheetMoney.sp" class="number-box underline" only-digits />
+                    <label class="field-label">SP</label>
+                </div>
+                <div class="field-box">
+                    <input type="text" ng-model="sheet.sheetMoney.cp" class="number-box underline" only-digits />
+                    <label class="field-label">CP</label>
+                </div>
+            </div>
+            <h3>Equipment</h3>
+            <div>
+                <h4>Armor</h4>
+                <table>
+                    <tr ng-repeat="armor in sheet.sheetArmors as armors">
+                        <td><input type="text" ng-model="armor.armorName" class="string-field" />
+                            <label class="field-label">Name</label></td>
+                        <td><input type="checkbox" ng-model="armor.masterwork" />
+                            <label class="field-label">MW</label></td>
+                        <td><input type="text" ng-model="armor.acBonus" class="number-box underline" only-digits />
+                            <label class="field-label">AC</label></td>
+                        <td><input type="text" ng-model="armor.maxDexBonus" class="number-box underline" only-digits />
+                            <label class="field-label">Max Dex</label></td>
+                        <td><input type="text" ng-model="armor.skillPenalty" class="number-box underline" only-digits />
+                            <label class="field-label">ACP</label></td>
+                        <td><input type="text" ng-model="armor.spellFailureChance" class="number-box underline" only-digits />
+                            <label class="field-label">ASF</label></td>
+                        <td><input type="checkbox" ng-model="armor.equipped" />
+                            <label class="field-label">Eq.</label></td>
+                        <td><input type="text" ng-model="armor.weight" class="number-box underline" only-digits />
+                            <label class="field-label">Wt.</label></td>
+                        <td><input type="checkbox" ng-model="armor.proficient" />
+                            <label class="field-label">Prof</label></td>
+                        <td><input type="text" ng-model="armor.type" class="string-field" />
+                            <label class="field-label">Type</label></td>
+                        <td><input type="button" value="remove" ng-click="removeFrom(armors, $index)" /></td>
+                    </tr>
+                    <tr><td rowspan="10"><input type="button" value="Add Armor" ng-click="addArmor()"/></td></tr>
+                </table>
+                <h4>Weapons</h4>
+                <table>
+                    <tr ng-repeat="weapon in sheet.sheetWeapons as weapons">
+                        <td><input type="checkbox" ng-model="weapon.masterwork" />
+                            <label class="field-label">MW</label></td>
+                        <td><input type="text" ng-model="weapon.enhancementBonus" class="number-box underline" only-digits />
+                            <label class="field-label">+</label></td>
+                        <td><input type="text" ng-model="weapon.weaponName" class="string-field" />
+                            <label class="field-label">Name</label></td>
+                        <td><input type="text" ng-model="weapon.damageRoll" class="string-field" />
+                            <label class="field-label">Damage Roll</label></td>
+                        <td>
+                            <select ng-model="weapon.criticalRange">
+                                <option value="15">15-20</option>
+                                <option value="16">16-20</option>
+                                <option value="17">17-20</option>
+                                <option value="18">18-20</option>
+                                <option value="19">19-20</option>
+                                <option value="20">20</option>
+                            </select>
+                            <label class="field-label">Critical Range</label></td>
+                        </td>
+                        <td>
+                            <select ng-model="weapon.criticalMultiplier">
+                                <option value="2">x2</option>
+                                <option value="3">x3</option>
+                                <option value="4">x4</option>
+                            </select>
+                            <label class="field-label">Multiplier</label></td>
+                        </td>
+                        <td><select ng-model="weapon.attackAbility">
+                            <option value="str">STR</option>
+                            <option value="dex">DEX</option>
+                        </select>
+                            <label class="field-label">Attack Ability</label></td>
+                        <td><select ng-model="weapon.damageAbility">
+                            <option value="none">NONE</option>
+                            <option value="str">STR</option>
+                            <option value="dex">DEX</option>
+                        </select>
+                            <label class="field-label">Damage Ability</label></td>
+                        <td><input type="text" ng-model="weapon.range" class="number-box underline" only-digits />
+                            <label class="field-label">Range</label></td>
+                        <td><input type="checkbox" ng-model="weapon.twoHand" />
+                            <label class="field-label">2Hand</label></td>
+                        <td><input type="checkbox" ng-model="weapon.bludgeoning" />
+                            <label class="field-label">B</label></td>
+                        <td><input type="checkbox" ng-model="weapon.piercing" />
+                            <label class="field-label">P</label></td>
+                        <td><input type="checkbox" ng-model="weapon.slashing" />
+                            <label class="field-label">S</label></td>
+                        <td><input type="text" ng-model="weapon.weight" class="number-box underline" only-digits />
+                            <label class="field-label">Wt.</label></td>
+                        <td><input type="checkbox" ng-model="weapon.proficient" />
+                            <label class="field-label">prof</label></td>
+                        <td><input type="text" ng-model="weapon.value" class="number-box underline" only-digits />
+                            <label class="field-label">Value</label></td>
+                        <td><input type="button" value="remove" ng-click="removeFrom(weapons, $index)" /></td>
+                    </tr>
+                    <tr>
+                        <td rowspan=""><input type="button" value="Add Weapon" ng-click="addWeapon()" /></td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Items</h3> <!-- TODO create more CSS for different width number fields -->
+            <table>
+                <tr ng-repeat="item in sheet.sheetItems as items">
+                    <td><input type="text" ng-model="item.itemName" class="string-field" />
+                        <label class="field-label">Name</label></td>
+                    <td><input type="text" ng-model="item.itemDescription" class="string-field" />
+                        <label class="field-label">Description</label></td>
+                    <td><input type="text" ng-model="item.itemQuantity" class="number-box underline" only-digits />
+                        <label class="field-label">Qty</label></td>
+                    <td><input type="text" ng-model="item.unitWeight" class="number-box underline" only-digits />
+                        <label class="field-label">lbs</label></td>
+                    <td><input type="text" ng-model="item.unitValue" class="number-box underline" only-digits />
+                        <label class="field-label">Value</label></td>
+                    <td><input type="button" value="Remove" ng-click="removeFrom(items, $index)" /></td>
+                </tr>
+                <tr><td rowspan="6"><input type="button" value="+" ng-click="addItem()" /></td></tr>
             </table>
         </div>
 
