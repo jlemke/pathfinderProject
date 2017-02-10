@@ -45,11 +45,12 @@ public class SheetDaoTest {
         assertEquals("failed", "Rogue 2/Fighter 1", sheets.get(0).getCharacterClassString());
     }
 
+
+    //TODO edit sheet skill to use compare to or whatever
     @Test
     public void createBlankSheet() throws Exception {
         int newId = dao.createBlankSheet(USERNAME);
         List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
-
         SheetInfo temp;
         for (int i = 0; i < sheets.size(); i++) {
             temp = sheets.get(i);

@@ -56,6 +56,13 @@
             <div id="bab" class="number-box" ng-bind="bab(true)"></div>
             <label for="bab" class="field-label">BAB</label>
         </div>
+        <div>
+            <div class="field-box">
+                <input type="text" ng-model="sheet.sheetGeneral.hpCurrent" class="number-box" only-digits />
+                <div ng-bind="maxHp()"></div>
+                <label class="field-lable">HP</label>
+            </div>
+        </div>
 
         <div class="ability-scores">
             <table>
@@ -193,6 +200,7 @@
 
         <hr />
 
+        <!-- TODO figure out why this isn't saving -->
         <div class="skill-area">
             <h1>Skills</h1>
             <table>
@@ -324,20 +332,20 @@
                             <label class="field-label">Damage Roll</label></td>
                         <td>
                             <select ng-model="weapon.criticalRange">
-                                <option value="15">15-20</option>
-                                <option value="16">16-20</option>
-                                <option value="17">17-20</option>
-                                <option value="18">18-20</option>
-                                <option value="19">19-20</option>
+                                <option value="15-20">15-20</option>
+                                <option value="16-20">16-20</option>
+                                <option value="17-20">17-20</option>
+                                <option value="18-20">18-20</option>
+                                <option value="19-20">19-20</option>
                                 <option value="20">20</option>
                             </select>
                             <label class="field-label">Critical Range</label></td>
                         </td>
                         <td>
                             <select ng-model="weapon.criticalMultiplier">
-                                <option value="2">x2</option>
-                                <option value="3">x3</option>
-                                <option value="4">x4</option>
+                                <option value="x2">x2</option>
+                                <option value="x3">x3</option>
+                                <option value="x4">x4</option>
                             </select>
                             <label class="field-label">Multiplier</label></td>
                         </td>

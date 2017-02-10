@@ -17,8 +17,8 @@ public class SheetWeapon {
     private boolean masterwork;
     private int enhancementBonus;
     private String damageRoll;
-    private int criticalRange;
-    private int criticalMultiplier;
+    private String criticalRange;
+    private String criticalMultiplier;
     private String attackAbility;
     private String damageAbility;
     private int range;
@@ -95,21 +95,21 @@ public class SheetWeapon {
 
     @Basic
     @Column(name = "critical_range", nullable = false)
-    public int getCriticalRange() {
+    public String getCriticalRange() {
         return criticalRange;
     }
 
-    public void setCriticalRange(int criticalRange) {
+    public void setCriticalRange(String criticalRange) {
         this.criticalRange = criticalRange;
     }
 
     @Basic
     @Column(name = "critical_multiplier", nullable = false)
-    public int getCriticalMultiplier() {
+    public String getCriticalMultiplier() {
         return criticalMultiplier;
     }
 
-    public void setCriticalMultiplier(int criticalMultiplier) {
+    public void setCriticalMultiplier(String criticalMultiplier) {
         this.criticalMultiplier = criticalMultiplier;
     }
 
@@ -224,8 +224,8 @@ public class SheetWeapon {
         if (weaponId != that.weaponId) return false;
         if (masterwork != that.masterwork) return false;
         if (enhancementBonus != that.enhancementBonus) return false;
-        if (criticalRange != that.criticalRange) return false;
-        if (criticalMultiplier != that.criticalMultiplier) return false;
+        if (criticalRange != null ? !criticalRange.equals(that.criticalRange) : that.criticalRange != null) return false;
+        if (criticalMultiplier != null ? !criticalMultiplier.equals(that.criticalMultiplier) : that.criticalMultiplier != null) return false;
         if (range != that.range) return false;
         if (twoHand != that.twoHand) return false;
         if (bludgeoning != that.bludgeoning) return false;
@@ -252,8 +252,8 @@ public class SheetWeapon {
         result = 31 * result + (masterwork ? 1 : 0);
         result = 31 * result + enhancementBonus;
         result = 31 * result + (damageRoll != null ? damageRoll.hashCode() : 0);
-        result = 31 * result + criticalRange;
-        result = 31 * result + criticalMultiplier;
+        result = 31 * result + (criticalRange != null ? criticalRange.hashCode() : 0);
+        result = 31 * result + (criticalMultiplier != null ? criticalMultiplier.hashCode() : 0);
         result = 31 * result + (attackAbility != null ? attackAbility.hashCode() : 0);
         result = 31 * result + (damageAbility != null ? damageAbility.hashCode() : 0);
         result = 31 * result + range;

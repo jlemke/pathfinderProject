@@ -56,6 +56,19 @@ app.controller('sheetController', function($scope, $http, $location) {
     };
 
     /**
+     * calculate max hp based on classes
+     * @return int returns the maximum hit points
+     */
+    $scope.maxHp = function() {
+        if ($scope.sheet == undefined) return 0;
+        var max = 0;
+        for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
+            max += $scope.sheet.sheetClasses[i].hitPoints;
+        }
+        return max;
+    };
+
+    /**
      * get the total ability score using the ability score columns
      * @param ability the 3-letter string representation of the ability
      * @return int the totaled score
@@ -202,6 +215,28 @@ app.controller('sheetController', function($scope, $http, $location) {
         $scope.sheet.sheetArmors.push(newArmor);
     };
 
+    $scope.addWeapon = function() {
+        var newWeapon = {
+            sheetId : $scope.sheet.sheetId,
+            weaponName : "",
+            masterwork : false,
+            enhancementBonus : 0,
+            damageRoll : "1d4",
+            criticalRange : "20",
+            criticalMultiplier : "x2",
+            attackAbility : "str",
+            damageAbility : "str",
+            range : 5,
+            twoHand : false,
+            bludgeoning : false,
+            piercing : false,
+            slashing : false,
+            weight : 0,
+            proficient : true,
+            value : 0
+        };
+        $scope.sheet.sheetWeapons.push(newWeapon);
+    };
 
 
     /**

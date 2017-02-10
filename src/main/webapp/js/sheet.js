@@ -56,6 +56,32 @@ app.controller('sheetController', function($scope, $http, $location) {
     };
 
     /**
+     * calculate max hp based on classes
+     * @return int returns the maximum hit points
+     */
+    $scope.maxHp = function() {
+        if ($scope.sheet == undefined) return 0;
+        var max = 0;
+        for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
+            max += $scope.sheet.sheetClasses[i].hitPoints;
+        }
+        return max;
+    };
+
+    /**
+     * returns max skill points based on classes and intelligence
+     */
+    $scope.maxSkillPoints = function() {
+        if ($scope.sheet == undefined) return 0;
+        var max = 0;
+        var c;
+        for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
+            c = $scope.sheet.sheetClasses[i];
+            max+= (c.skillsPerLevel + $scope.sheet.) * c.level;
+        }
+    }
+
+    /**
      * get the total ability score using the ability score columns
      * @param ability the 3-letter string representation of the ability
      * @return int the totaled score
@@ -202,15 +228,15 @@ app.controller('sheetController', function($scope, $http, $location) {
         $scope.sheet.sheetArmors.push(newArmor);
     };
 
-    $scope.addArmor = function() {
-        var newArmor = {
+    $scope.addWeapon = function() {
+        var newWeapon = {
             sheetId : $scope.sheet.sheetId,
             weaponName : "",
             masterwork : false,
             enhancementBonus : 0,
             damageRoll : "1d4",
-            criticalRange : 20,
-            criticalMultiplier : 2,
+            criticalRange : "20",
+            criticalMultiplier : "x2",
             attackAbility : "str",
             damageAbility : "str",
             range : 5,
@@ -222,7 +248,7 @@ app.controller('sheetController', function($scope, $http, $location) {
             proficient : true,
             value : 0
         };
-        $scope.sheet.sheetArmors.push(newArmor);
+        $scope.sheet.sheetWeapons.push(newWeapon);
     };
 
 

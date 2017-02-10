@@ -36,7 +36,7 @@ public class Sheet implements Serializable {
     private SheetDescription sheetDescription;
     private SheetGeneral sheetGeneral;
     private Set<SheetArmor> sheetArmors = new TreeSet<>();
-    private Set<SheetSkill> sheetSkills = new TreeSet<>();
+    private SortedSet<SheetSkill> sheetSkills = new TreeSet<>();
     private SheetSpeeds sheetSpeeds;
     private Set<SheetAbility> sheetAbilities = new TreeSet<>();
     private Set<SheetFeat> sheetFeats = new TreeSet<>();
@@ -195,11 +195,12 @@ public class Sheet implements Serializable {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetSkill> getSheetSkills() {
+    @OrderBy("order ASC")
+    public SortedSet<SheetSkill> getSheetSkills() {
         return sheetSkills;
     }
 
-    public void setSheetSkills(Set<SheetSkill> sheetSkills) {
+    public void setSheetSkills(SortedSet<SheetSkill> sheetSkills) {
         this.sheetSkills = sheetSkills;
     }
 

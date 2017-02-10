@@ -56,6 +56,13 @@
             <div id="bab" class="number-box" ng-bind="bab(true)"></div>
             <label for="bab" class="field-label">BAB</label>
         </div>
+        <div>
+            <div class="field-box">
+                <input type="text" ng-model="sheet.sheetGeneral.hpCurrent" class="number-box" only-digits />
+                <div ng-bind="maxHp()"></div>
+                <label class="field-lable">HP</label>
+            </div>
+        </div>
 
         <div class="ability-scores">
             <table>
@@ -310,6 +317,69 @@
                         <td><input type="button" value="remove" ng-click="removeFrom(armors, $index)" /></td>
                     </tr>
                     <tr><td rowspan="10"><input type="button" value="Add Armor" ng-click="addArmor()"/></td></tr>
+                </table>
+                <h4>Weapons</h4>
+                <table>
+                    <tr ng-repeat="weapon in sheet.sheetWeapons as weapons">
+                        <td><input type="checkbox" ng-model="weapon.masterwork" />
+                            <label class="field-label">MW</label></td>
+                        <td><input type="text" ng-model="weapon.enhancementBonus" class="number-box underline" only-digits />
+                            <label class="field-label">+</label></td>
+                        <td><input type="text" ng-model="weapon.weaponName" class="string-field" />
+                            <label class="field-label">Name</label></td>
+                        <td><input type="text" ng-model="weapon.damageRoll" class="string-field" />
+                            <label class="field-label">Damage Roll</label></td>
+                        <td>
+                            <select ng-model="weapon.criticalRange">
+                                <option value="15-20">15-20</option>
+                                <option value="16-20">16-20</option>
+                                <option value="17-20">17-20</option>
+                                <option value="18-20">18-20</option>
+                                <option value="19-20">19-20</option>
+                                <option value="20">20</option>
+                            </select>
+                            <label class="field-label">Critical Range</label></td>
+                        </td>
+                        <td>
+                            <select ng-model="weapon.criticalMultiplier">
+                                <option value="x2">x2</option>
+                                <option value="x3">x3</option>
+                                <option value="x4">x4</option>
+                            </select>
+                            <label class="field-label">Multiplier</label></td>
+                        </td>
+                        <td><select ng-model="weapon.attackAbility">
+                            <option value="str">STR</option>
+                            <option value="dex">DEX</option>
+                        </select>
+                            <label class="field-label">Attack Ability</label></td>
+                        <td><select ng-model="weapon.damageAbility">
+                            <option value="none">NONE</option>
+                            <option value="str">STR</option>
+                            <option value="dex">DEX</option>
+                        </select>
+                            <label class="field-label">Damage Ability</label></td>
+                        <td><input type="text" ng-model="weapon.range" class="number-box underline" only-digits />
+                            <label class="field-label">Range</label></td>
+                        <td><input type="checkbox" ng-model="weapon.twoHand" />
+                            <label class="field-label">2Hand</label></td>
+                        <td><input type="checkbox" ng-model="weapon.bludgeoning" />
+                            <label class="field-label">B</label></td>
+                        <td><input type="checkbox" ng-model="weapon.piercing" />
+                            <label class="field-label">P</label></td>
+                        <td><input type="checkbox" ng-model="weapon.slashing" />
+                            <label class="field-label">S</label></td>
+                        <td><input type="text" ng-model="weapon.weight" class="number-box underline" only-digits />
+                            <label class="field-label">Wt.</label></td>
+                        <td><input type="checkbox" ng-model="weapon.proficient" />
+                            <label class="field-label">prof</label></td>
+                        <td><input type="text" ng-model="weapon.value" class="number-box underline" only-digits />
+                            <label class="field-label">Value</label></td>
+                        <td><input type="button" value="remove" ng-click="removeFrom(weapons, $index)" /></td>
+                    </tr>
+                    <tr>
+                        <td rowspan=""><input type="button" value="Add Weapon" ng-click="addWeapon()" /></td>
+                    </tr>
                 </table>
             </div>
             <h3>Items</h3> <!-- TODO create more CSS for different width number fields -->

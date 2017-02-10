@@ -41,6 +41,24 @@
 			how to show each player a different version
 			how to show the gm the sheets as the values are changing
 
+	FUNCTION TEXT
+	
+		Fighter
+		
+			Bravery (Ex), 2nd Level, Passive
+				add conditional bonus to will saves
+					Will save, willSave + Math.floor((LVL + 2)/4), text="Saves against fear."
+					
+			Armor Training (Ex), 3rd Level, Passive
+				reduces armor check penalty on armor and increases maximum dexterity bonus
+					armor.acp += Math.floor((LVL + 1)/4)
+					armor.maxDex += Math.floor((LVL + 1)/4)
+					
+			
+					
+					
+				
+				
 
 
 PAGES AND COMPONENTS:
@@ -500,42 +518,42 @@ PAGES AND COMPONENTS:
 				(sheet_id, 2, 'MISC', 0, 0, 0, 0, 0, 0),
 				(sheet_id, 3, 'TEMP', 0, 0, 0, 0, 0, 0);
 
-			INSERT INTO sheet_skills VALUES
-				(sheet_id, 'Acrobatics', 'dex', 0, 0, false, false),
-				(sheet_id, 'Appraise', 'int', 0, 0, false, false),
-				(sheet_id, 'Bluff', 'cha', 0, 0, false, false),
-				(sheet_id, 'Climb', 'int', 0, 0, false, false),
-				(sheet_id, 'Craft', null, 0, 0, false, false),
-				(sheet_id, 'Diplomacy', 'int', 0, 0, false, false),
-				(sheet_id, 'Disable Device', 'dex', 0, 0, false, true),
-				(sheet_id, 'Disguise', 'cha', 0, 0, false, false),
-				(sheet_id, 'Escape Artist', 'dex', 0, 0, false, false),
-				(sheet_id, 'Fly', 'dex', 0, 0, false, false),
-				(sheet_id, 'Handle Animal', 'cha', 0, 0, false, true),
-				(sheet_id, 'Heal', 'wis', 0, 0, false, false),
-				(sheet_id, 'Intimidate', 'cha', 0, 0, false, false),
-				(sheet_id, 'Knowledge (Arcana)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Dungeoneering)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Engineering)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Geography)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (History)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Local)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Nature)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Nobility)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Planes)', 'int', 0, 0, false, true),
-				(sheet_id, 'Knowledge (Religion)', 'int', 0, 0, false, true),
-				(sheet_id, 'Linguistics', 'int', 0, 0, false, true),
-				(sheet_id, 'Perception', 'wis', 0, 0, false, false),
-				(sheet_id, 'Perform', null, 0, 0, false, false),
-				(sheet_id, 'Profession', null, 0, 0, false, true),
-				(sheet_id, 'Ride', 'dex', 0, 0, false, false),
-				(sheet_id, 'Sense Motive', 'wis', 0, 0, false, false),
-				(sheet_id, 'Sleight of Hand', 'dex', 0, 0, false, true),
-				(sheet_id, 'Spellcraft', 'int', 0, 0, false, true),
-				(sheet_id, 'Stealth', 'dex', 0, 0, false, false),
-				(sheet_id, 'Survival', 'wis', 0, 0, false, false),
-				(sheet_id, 'Swim', 'str', 0, 0, false, false),
-				(sheet_id, 'Use Magic Device', 'cha', 0, 0, false, true);
+			INSERT INTO sheet_skills (sheet_id, skill_order, skill_name, skill_ability, skill_ranks, skill_misc, is_class_skill, req_trained) VALUES
+  (120, 1, 'Acrobatics', 'dex', 0, 0, false, false),
+  (120, 2, 'Appraise', 'int', 0, 0, false, false),
+  (120, 3, 'Bluff', 'cha', 0, 0, false, false),
+  (120, 4, 'Climb', 'int', 0, 0, false, false),
+  (120, 5, 'Craft', null, 0, 0, false, false),
+  (120, 6, 'Diplomacy', 'int', 0, 0, false, false),
+  (120, 7, 'Disable Device', 'dex', 0, 0, false, true),
+  (120, 8, 'Disguise', 'cha', 0, 0, false, false),
+  (120, 9, 'Escape Artist', 'dex', 0, 0, false, false),
+  (120, 10, 'Fly', 'dex', 0, 0, false, false),
+  (120, 11, 'Handle Animal', 'cha', 0, 0, false, true),
+  (120, 12, 'Heal', 'wis', 0, 0, false, false),
+  (120, 13, 'Intimidate', 'cha', 0, 0, false, false),
+  (120, 14, 'Knowledge (Arcana)', 'int', 0, 0, false, true),
+  (120, 15, 'Knowledge (Dungeoneering)', 'int', 0, 0, false, true),
+  (120, 16, 'Knowledge (Engineering)', 'int', 0, 0, false, true),
+  (120, 17, 'Knowledge (Geography)', 'int', 0, 0, false, true),
+  (120, 18, 'Knowledge (History)', 'int', 0, 0, false, true),
+  (120, 19, 'Knowledge (Local)', 'int', 0, 0, false, true),
+  (120, 20, 'Knowledge (Nature)', 'int', 0, 0, false, true),
+  (120, 21, 'Knowledge (Nobility)', 'int', 0, 0, false, true),
+  (120, 22, 'Knowledge (Planes)', 'int', 0, 0, false, true),
+  (120, 23, 'Knowledge (Religion)', 'int', 0, 0, false, true),
+  (120, 24, 'Linguistics', 'int', 0, 0, false, true),
+  (120, 25, 'Perception', 'wis', 0, 0, false, false),
+  (120, 26, 'Perform', null, 0, 0, false, false),
+  (120, 27, 'Profession', null, 0, 0, false, true),
+  (120, 28, 'Ride', 'dex', 0, 0, false, false),
+  (120, 29, 'Sense Motive', 'wis', 0, 0, false, false),
+  (120, 30, 'Sleight of Hand', 'dex', 0, 0, false, true),
+  (120, 31, 'Spellcraft', 'int', 0, 0, false, true),
+  (120, 32, 'Stealth', 'dex', 0, 0, false, false),
+  (120, 33, 'Survival', 'wis', 0, 0, false, false),
+  (120, 34, 'Swim', 'str', 0, 0, false, false),
+  (120, 35, 'Use Magic Device', 'cha', 0, 0, false, true);
 
 			INSERT INTO sheet_speeds (sheet_id, speed_base) VALUES
 				(sheet_id, 30);
