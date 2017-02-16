@@ -75,9 +75,7 @@ public class SheetDaoTest {
     @Test
     public void saveSheet() throws Exception {
         int id = dao.createBlankSheet(USERNAME);
-        Sheet sheet = new Sheet();
-        sheet.setSheetId(id);
-        sheet.setOwner(userDao.getUser(USERNAME));
+        Sheet sheet = dao.getSheet(id);
         SortedSet<SheetAbilityScoreColumn> columns = new TreeSet<>();
         SheetAbilityScoreColumn column;
         for (int i = 0; i < 4; i++) {

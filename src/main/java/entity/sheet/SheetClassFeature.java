@@ -15,6 +15,9 @@ public class SheetClassFeature {
     private int featureId;
     private String featureName;
     private String featureDescription;
+    private String evalText;
+    private int evalPriority;
+    private int activeLevel;
     private SheetClass sheetClass;
 
     @Column(name = "class_id", nullable = false, length = 25)
@@ -57,6 +60,28 @@ public class SheetClassFeature {
         this.featureDescription = featureDescription;
     }
 
+    @Basic
+    @Column(name = "eval_text", nullable = true, length = -1)
+    public String getEvalText() {
+        return evalText;
+    }
+
+    public void setEvalText(String evalText) {
+        this.evalText = evalText;
+    }
+
+    @Basic
+    @Column(name = "eval_priority", nullable = true)
+    public int getEvalPriority() { return evalPriority; }
+
+    public void setEvalPriority(int evalPriority) { this.evalPriority = evalPriority; }
+
+    @Basic
+    @Column(name = "active_level", nullable = true)
+    public int getActiveLevel() { return activeLevel; }
+
+    public void setActiveLevel(int activeLevel) { this.activeLevel = activeLevel; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,9 +92,10 @@ public class SheetClassFeature {
         if (featureId != that.featureId) return false;
         if (classId != that.classId) return false;
         if (featureName != null ? !featureName.equals(that.featureName) : that.featureName != null) return false;
-        if (featureDescription != null ? !featureDescription.equals(that.featureDescription) : that.featureDescription != null)
-            return false;
-
+        if (featureDescription != null ? !featureDescription.equals(that.featureDescription) : that.featureDescription != null) return false;
+        if (evalText != null ? !evalText.equals(that.evalText) : that.evalText != null) return false;
+        if (evalPriority != that.evalPriority) return false;
+        if (activeLevel != that.activeLevel) return false;
         return true;
     }
 
@@ -79,6 +105,9 @@ public class SheetClassFeature {
         result = 31 * result + featureId;
         result = 31 * result + (featureName != null ? featureName.hashCode() : 0);
         result = 31 * result + (featureDescription != null ? featureDescription.hashCode() : 0);
+        result = 31 * result + (evalText != null ? evalText.hashCode() : 0);
+        result = 31 * result + evalPriority;
+        result = 31 * result + activeLevel;
         return result;
     }
 

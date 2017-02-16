@@ -3,6 +3,7 @@ package controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.sheet.Sheet;
 import entity.sheet.SheetInfo;
+import org.apache.log4j.Logger;
 import persistence.SheetDao;
 
 import javax.faces.context.FacesContext;
@@ -18,8 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by Joe on 12/5/2016.
@@ -39,7 +41,6 @@ public class SaveSheet extends HttpServlet {
 
         logger.info("saving sheet...");
         //put in json parser
-
         StringBuilder jb = new StringBuilder();
         String line = null;
         try {
@@ -51,6 +52,7 @@ public class SaveSheet extends HttpServlet {
         }
         String json = jb.toString();
 
+
         logger.info("json string created");
         logger.info("sheet value: " + json);
 
@@ -59,7 +61,8 @@ public class SaveSheet extends HttpServlet {
         Sheet sheet = mapper.readValue(json, Sheet.class);
 
         logger.info(sheet.getCharacterName());
-
+        Date date = new Date();
+        sheet.setLastAccessed(new Timestamp(date.getTime()));
         SheetDao dao = new SheetDao();
         try {
             message = dao.saveSheet(sheet);

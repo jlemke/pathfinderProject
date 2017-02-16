@@ -130,6 +130,7 @@
 
         <div class="class-area">
             <h1>Classes</h1>
+            <input type="button" value="Add Class" action="addClass()" />
             <div ng-repeat="c in sheet.sheetClasses">
                 <div class="field-box">
                     <input id="{{c.classId + 'Archetype'}}"type="text" class="string-field" ng-model="c.archetype" />
@@ -264,6 +265,15 @@
                         <td><div class="number-box" ng-bind="armorCheckPenalty(special)"></div></td>
                     </tr>
                 </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="3">Total Skill Ranks = </td>
+                        <td><div ng-bind="totalSkillRanks()"></div></td>
+                        <td>/</td>
+                        <td><div ng-bind="maxSkillRanks()"></div></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
@@ -374,7 +384,7 @@
                             <label class="field-label">Wt.</label></td>
                         <td><input type="checkbox" ng-model="weapon.proficient" />
                             <label class="field-label">prof</label></td>
-                        <td><input type="text" ng-model="weapon.value" class="number-box underline" only-digits />
+                        <td><input type="text" ng-model="weapon.worth" class="number-box underline" only-digits />
                             <label class="field-label">Value</label></td>
                         <td><input type="button" value="remove" ng-click="removeFrom(weapons, $index)" /></td>
                     </tr>

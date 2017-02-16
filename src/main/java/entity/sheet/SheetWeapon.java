@@ -28,7 +28,7 @@ public class SheetWeapon {
     private boolean slashing;
     private int weight;
     private boolean proficient;
-    private int value;
+    private int worth;
     private Sheet sheet;
 
     @Column(name = "sheet_id", nullable = false)
@@ -134,7 +134,7 @@ public class SheetWeapon {
     }
 
     @Basic
-    @Column(name = "range", nullable = false)
+    @Column(name = "weapon_range", nullable = false)
     public int getRange() {
         return range;
     }
@@ -204,13 +204,13 @@ public class SheetWeapon {
     }
 
     @Basic
-    @Column(name = "value", nullable = false)
-    public int getValue() {
-        return value;
+    @Column(name = "worth", nullable = false)
+    public int getWorth() {
+        return worth;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setWorth(int worth) {
+        this.worth = worth;
     }
 
     @Override
@@ -233,7 +233,7 @@ public class SheetWeapon {
         if (slashing != that.slashing) return false;
         if (weight != that.weight) return false;
         if (proficient != that.proficient) return false;
-        if (value != that.value) return false;
+        if (worth != that.worth) return false;
         if (weaponName != null ? !weaponName.equals(that.weaponName) : that.weaponName != null) return false;
         if (damageRoll != null ? !damageRoll.equals(that.damageRoll) : that.damageRoll != null) return false;
         if (attackAbility != null ? !attackAbility.equals(that.attackAbility) : that.attackAbility != null)
@@ -263,7 +263,7 @@ public class SheetWeapon {
         result = 31 * result + (slashing ? 1 : 0);
         result = 31 * result + weight;
         result = 31 * result + (proficient ? 1 : 0);
-        result = 31 * result + value;
+        result = 31 * result + worth;
         return result;
     }
 

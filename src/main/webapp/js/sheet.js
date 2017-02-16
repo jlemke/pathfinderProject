@@ -29,6 +29,13 @@ app.controller('sheetController', function($scope, $http, $location) {
     });
 
     /**
+     * returns functions to default settings, called when applying eval()
+     */
+    $scope.resetFunctions = function() {
+
+    };
+
+    /**
      * calculate the base attack bonus using class information
      * @param displayPosNeg boolean option to add "+"
      * @return {*} returns a string with "+" attached if displayPosNeg
@@ -64,6 +71,7 @@ app.controller('sheetController', function($scope, $http, $location) {
         var max = 0;
         for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
             max += $scope.sheet.sheetClasses[i].hitPoints;
+            max += $scope.abilityMod('con', false);
         }
         return max;
     };
@@ -77,9 +85,9 @@ app.controller('sheetController', function($scope, $http, $location) {
         var c;
         for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
             c = $scope.sheet.sheetClasses[i];
-            max+= (c.skillsPerLevel + $scope.sheet.) * c.level;
+            max+= (c.skillsPerLevel + abilityMod("int", false)) * c.level;
         }
-    }
+    };
 
     /**
      * get the total ability score using the ability score columns
@@ -177,6 +185,24 @@ app.controller('sheetController', function($scope, $http, $location) {
         return total;
     };
 
+    $scope.totalSkillRanks = function() {
+        var total = 0;
+        var skills = $scope.sheet.sheetSkills;
+        for (var i = 0; i < skills.length; i++) {
+            total += skills[i].skillRanks;
+        }
+        return total;
+    };
+
+    $scope.maxSkillRanks = function() {
+        var total = 0;
+        var classes = $scope.sheet.sheetClasses;
+        for (var i = 0; i < classes.length; i++) {
+            total += classes[i].level * (classes[i].skillsPerLevel + $scope.abilityMod('int', false));
+        }
+        return total;
+    };
+
     /**
      * returns the penalty from armor on dex and str based checks
      * @return int total armor check penalty
@@ -230,23 +256,23 @@ app.controller('sheetController', function($scope, $http, $location) {
 
     $scope.addWeapon = function() {
         var newWeapon = {
-            sheetId : $scope.sheet.sheetId,
-            weaponName : "",
-            masterwork : false,
-            enhancementBonus : 0,
-            damageRoll : "1d4",
-            criticalRange : "20",
-            criticalMultiplier : "x2",
-            attackAbility : "str",
-            damageAbility : "str",
-            range : 5,
-            twoHand : false,
-            bludgeoning : false,
-            piercing : false,
-            slashing : false,
-            weight : 0,
-            proficient : true,
-            value : 0
+            "sheetId": $scope.sheet.sheetId,
+            "weaponName":"",
+            "masterwork":false,
+            "enhancementBonus":0,
+            "damageRoll":null,
+            "criticalRange":"20",
+            "criticalMultiplier":"x2",
+            "attackAbility":"str",
+            "damageAbility":"none",
+            "range":0,
+            "twoHand":false,
+            "bludgeoning":false,
+            "piercing":false,
+            "slashing":false,
+            "weight":0,
+            "proficient":true,
+            "worth":0
         };
         $scope.sheet.sheetWeapons.push(newWeapon);
     };
@@ -271,7 +297,7 @@ app.controller('sheetController', function($scope, $http, $location) {
 
 });
 
-/**
+/**  TODO replace this with a function that just changes the input into an integer
  * this directive limits all inputs to digits
  */
 app.directive('onlyDigits', function() {

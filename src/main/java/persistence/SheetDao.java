@@ -29,7 +29,7 @@ public class SheetDao {
             {"Bluff","cha","f"},
             {"Climb","str","f"},
             {"Craft",null,"f"},
-            {"Diplomacy","int","f"},
+            {"Diplomacy","cha","f"},
             {"Disable Device","dex","t"},
             {"Disguise","cha","f"},
             {"Escape Artist","dex","f"},
