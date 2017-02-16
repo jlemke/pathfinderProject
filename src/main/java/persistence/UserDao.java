@@ -1,9 +1,10 @@
 package persistence;
 
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
-import entity.User;
+        import entity.ReservedUser;
+        import org.hibernate.Criteria;
+        import org.hibernate.Session;
+        import org.hibernate.criterion.Restrictions;
+        import entity.User;
 
 /**
  * Created by Joe on 10/26/2016.
@@ -34,5 +35,15 @@ public class UserDao {
         User user = (User) session.get(User.class, username);
         session.close();
         return user;
+    }
+
+    public boolean isUsernameAvailable(String username) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        if (session.get(User.class, username) != null)
+            return false;
+        if (session.get(ReservedUser.class, username) != null)
+            return false;
+        return true;
     }
 }
