@@ -24,6 +24,7 @@
         <mapping class="entity.sheet.Sheet"/>
         <mapping class="entity.User"/>
         <mapping class="entity.UserRole"/>
+        <mapping class="entity.ReservedUser"/>
         <mapping class="entity.sheet.SheetClass"/>
         <mapping class="entity.sheet.SheetDescription"/>
         <mapping class="entity.sheet.SheetGeneral"/>

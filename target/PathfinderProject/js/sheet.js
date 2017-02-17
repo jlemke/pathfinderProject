@@ -6,7 +6,7 @@ var saveInProgress = false;
 
 var app = angular.module('sheetApp', []);
 
-app.controller('sheetController', function($scope, $http, $location) {
+app.controller('sheetController', function($scope, $http, $location, $mdDialog) {
 
     /**
      * on page load retrieve sheet information for given id
@@ -27,6 +27,22 @@ app.controller('sheetController', function($scope, $http, $location) {
             console.log($scope.sheet);
         });
     });
+
+    /**
+     * Confirmation pop-up when deleting something
+     */
+    $scope.confirmDelete = function(collection, index) {
+        $mdDialog.show(
+            $mdDialog.confirm()
+                .clickOutsideToClose(true)
+                .title('Confirm deletion')
+                .textContent('Delete this item?')
+                .ok('Delete it!')
+                .cancel('Cancel')
+        ).then(function() {
+            collection.splice(index, 1);
+        });
+    };
 
     /**
      * returns functions to default settings, called when applying eval()

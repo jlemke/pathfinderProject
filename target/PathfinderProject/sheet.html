@@ -121,7 +121,7 @@
                     <td></td>
                     <td ></td>
                     <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                        <input type="button" value="{{col.columnId}}" ng-click="deleteCol($index)" /></td>
+                        <input type="button" value="{{col.columnId}}" ng-click="confirmDelete(sheet.sheetAbilityScoreColumns,$index)" /></td>
                 </tr>
             </table>
         </div>
@@ -325,7 +325,7 @@
                             <label class="field-label">Prof</label></td>
                         <td><input type="text" ng-model="armor.type" class="string-field" />
                             <label class="field-label">Type</label></td>
-                        <td><input type="button" value="remove" ng-click="removeFrom(armors, $index)" /></td>
+                        <td><input type="button" value="remove" ng-click="confirmDelete(armors, $index)" /></td>
                     </tr>
                     <tr><td rowspan="10"><input type="button" value="Add Armor" ng-click="addArmor()"/></td></tr>
                 </table>
@@ -386,7 +386,7 @@
                             <label class="field-label">prof</label></td>
                         <td><input type="text" ng-model="weapon.worth" class="number-box underline" only-digits />
                             <label class="field-label">Value</label></td>
-                        <td><input type="button" value="remove" ng-click="removeFrom(weapons, $index)" /></td>
+                        <td><input type="button" value="remove" ng-click="confirmDelete(weapons, $index)" /></td>
                     </tr>
                     <tr>
                         <td rowspan=""><input type="button" value="Add Weapon" ng-click="addWeapon()" /></td>
@@ -406,7 +406,7 @@
                         <label class="field-label">lbs</label></td>
                     <td><input type="text" ng-model="item.unitValue" class="number-box underline" only-digits />
                         <label class="field-label">Value</label></td>
-                    <td><input type="button" value="Remove" ng-click="removeFrom(items, $index)" /></td>
+                    <td><input type="button" value="Remove" ng-click="confirmDelete(items, $index)" /></td>
                 </tr>
                 <tr><td rowspan="6"><input type="button" value="+" ng-click="addItem()" /></td></tr>
             </table>
