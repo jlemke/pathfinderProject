@@ -7,7 +7,7 @@ var saveInProgress = false;
 var app = angular.module('sheetApp', []);
 
 //TODO figure out why mdDialog is mad
-app.controller('sheetController', function($scope, $http, $location, $mdDialog) {
+app.controller('sheetController', function($scope, $http, $location) {
 
     /**
      * on page load retrieve sheet information for given id
@@ -33,6 +33,7 @@ app.controller('sheetController', function($scope, $http, $location, $mdDialog) 
      * Confirmation pop-up when deleting something
      */
     $scope.confirmDelete = function(collection, index) {
+        /*
         $mdDialog.show(
             $mdDialog.confirm()
                 .clickOutsideToClose(true)
@@ -43,6 +44,8 @@ app.controller('sheetController', function($scope, $http, $location, $mdDialog) 
         ).then(function() {
             collection.splice(index, 1);
         });
+        */
+        collection.splice(index, 1);
     };
 
     /**
@@ -294,6 +297,76 @@ app.controller('sheetController', function($scope, $http, $location, $mdDialog) 
         $scope.sheet.sheetWeapons.push(newWeapon);
     };
 
+    $scope.weaponAttack = function(weapon) {
+        var attack = "";
+
+        //calculate the attack bonus
+        var bonus = weapon.enhancementBonus;
+        if (weapon.attackAbility == 'dex')
+            bonus += $scope.abilityMod('dex');
+        else
+            bonus += $scope.abilityMod('str');
+
+        //add masterwork or enhancement bonus
+        if (weapon.enhancementBonus > 0) {
+            attack += "+" + weapon.enhancementBonus + " ";
+            bonus += weapon.enhancementBonus;
+        } else if (weapon.masterwork) {
+            attack += "mwk ";
+            bonus++;
+        }
+
+        //add the name of the weapon ex: Heavy Mace
+        attack += weapon.weaponName;
+
+        //add attack bonus ex: +12/+7/+2/-3, +3, or no bonus
+        attack += " ";
+        var bonusWithBab;
+        if ($scope.bab(false) > 0)
+            for (var i = $scope.bab(false); i > 0; i-=5) {
+                bonusWithBab = bonus + i;
+                if (bonusWithBab >= 0)
+                    attack += "+" + bonusWithBab;
+                else
+                    attack += bonusWithBab;
+                if (i > 5)
+                    attack += "/";
+            }
+        else {
+            bonusWithBab = bonus + $scope.bab(false);
+            if (bonusWithBab > 0)
+                attack += "+" + bonusWithBab;
+            else if (bonusWithBab < 0)
+                attack += bonusWithBab;
+        }
+
+        //add the damage roll ex: (1d8+5
+        attack += " (" + weapon.damageRoll;
+        var damageBonus;
+        if (weapon.damageAbility != 'None') {
+            if (weapon.twoHand && weapon.damageAbility == 'str') {
+                damageBonus = Math.floor(1.5 * $scope.abilityMod('str'));
+                if (damageBonus < 0)
+                    damageBonus = 0;
+            } else
+                damageBonus = Math.floor($scope.abilityMod(weapon.damageAbility));
+            damageBonus += weapon.enhancementBonus;
+            if (damageBonus > 0)
+                attack += "+" + damageBonus;
+            if (damageBonus < 0)
+                attack += damageBonus;
+        }
+
+        //add critical modifier
+        if (weapon.criticalRange != "20")
+            attack += "/" + weapon.criticalRange;
+        if (weapon.criticalMultiplier != "x2")
+            attack += "/" + weapon.criticalMultiplier;
+        attack += ")";
+
+        return attack;
+    };
+
 
     /**
      * sends the sheet object to the save servlet
@@ -313,6 +386,8 @@ app.controller('sheetController', function($scope, $http, $location, $mdDialog) 
     };
 
 });
+
+
 
 /**  TODO replace this with a function that just changes the input into an integer
  * this directive limits all inputs to digits

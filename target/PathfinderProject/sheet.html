@@ -126,6 +126,12 @@
             </table>
         </div>
 
+        <div class="attacks">
+            <div ng-repeat="weapon in sheet.sheetWeapons">
+                <div ng-bind="weaponAttack(weapon)"></div>
+            </div>
+        </div>
+
         <hr />
 
         <div class="class-area">
