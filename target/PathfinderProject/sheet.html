@@ -117,14 +117,39 @@
                         <input type="text" class="number-box" ng-model="col.chaRow" only-digits /></td>
                 </tr>
                 <tr>
+                    <th>USE</th>
+                    <td></td>
+                    <td></td>
+                    <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                        <input type="checkbox" ng-model="col.enabled" /></td>
+                </tr>
+                <tr>
                     <td></td>
                     <td></td>
                     <td ></td>
                     <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                        <input type="button" value="{{col.columnId}}" ng-click="confirmDelete(sheet.sheetAbilityScoreColumns,$index)" /></td>
+                        <input type="button" value="del" ng-click="confirmDelete(sheet.sheetAbilityScoreColumns,$index)" /></td>
                 </tr>
             </table>
         </div>
+
+        <table>
+            <tr>
+                <th colspan="2">Saving Throws</th>
+            </tr>
+            <tr>
+                <th>Fortitude</th>
+                <td ng-bind="savingThrow('fort')"></td>
+            </tr>
+            <tr>
+                <th>Reflex</th>
+                <td ng-bind="savingThrow('ref')"></td>
+            </tr>
+            <tr>
+                <th>Will</th>
+                <td ng-bind="savingThrow('will')"></td>
+            </tr>
+        </table>
 
         <div class="attacks">
             <div ng-repeat="weapon in sheet.sheetWeapons">
@@ -136,36 +161,72 @@
 
         <div class="class-area">
             <h1>Classes</h1>
-            <input type="button" value="Add Class" action="addClass()" />
-            <div ng-repeat="c in sheet.sheetClasses">
+            <input type="button" value="Add Class" ng-click="addClass()" />
+            <div ng-repeat="c in sheet.sheetClasses as classes">
                 <div class="field-box">
-                    <input id="{{c.classId + 'Archetype'}}"type="text" class="string-field" ng-model="c.archetype" />
-                    <label for="{{c.classId + 'Archetype'}}" class="field-label">Archetype</label></div>
+                    <input type="text" class="string-field" ng-model="c.archetype" />
+                    <label class="field-label">Archetype</label></div>
                 <div class="field-box">
-                    <input id="{{c.classId + 'ClassName'}}"type="text" class="string-field" ng-model="c.className" />
-                    <label for="{{c.classId + 'ClassName'}}" class="field-label">Class</label></div>
+                    <input type="text" class="string-field" ng-model="c.className" />
+                    <label class="field-label">Class</label></div>
                 <div class="field-box">
-                    <input id="{{c.classId + 'Level'}}" class="string-field" type="text" only-digits ng-model="c.level"/>
-                    <label for="{{c.classId + 'Level'}}" class="field-label">Level</label></div>
+                    <input class="string-field" type="text" only-digits ng-model="c.level"/>
+                    <label class="field-label">Level</label></div>
                 <div class="field-box">
-                    <select ng-model="c.babProgression" id="{{c.classId + 'BabProgression'}}">
+                    <label>BAB Progression</label>
+                    <select ng-model="c.babProgression">
                         <option value="full">Full</option>
                         <option value="3/4">3/4</option>
                         <option value="1/2">1/2</option>
-                    </select>
-                    <label for="{{c.classId + 'BabProgression'}}" class="field-label">BAB Progression</label></div>
+                    </select></div>
                 <div class="field-box">
-                    <label for="{{c.classId + 'CasterAbility'}}">Casting Ability</label>
-                    <select ng-model="c.casterAbility" id="{{c.classId + 'CasterAbility'}}">
+                    <label>Fort Progression</label>
+                    <select ng-model="c.fortProgression">
+                        <option value="slow">Slow</option>
+                        <option value="fast">Fast</option>
+                    </select>
+                </div>
+                <div class="field-box">
+                    <label>Ref Progression</label>
+                    <select ng-model="c.refProgression">
+                        <option value="slow">Slow</option>
+                        <option value="fast">Fast</option>
+                    </select>
+                </div>
+                <div class="field-box">
+                    <label>Will Progression</label>
+                    <select ng-model="c.willProgression">
+                        <option value="slow">Slow</option>
+                        <option value="fast">Fast</option>
+                    </select>
+                </div>
+                <div class="field-box">
+                    <label>Casting Ability</label>
+                    <select ng-model="c.casterAbility">
                         <option value="---">---</option>
                         <option value="int">INT</option>
                         <option value="wis">WIS</option>
                         <option value="cha">CHA</option>
-                    </select></div>
+                    </select>
+                </div>
+                <div>
+                    <label>Hit Points :</label>
+                    <input type="text" class="number-box" ng-model="c.hitPoints"  only-digits />
+                </div>
+                <div>
+                    <label>Hit Die: d</label>
+                    <input type="text" class="number-box" ng-model="c.hitDie"  only-digits />
+                </div>
+                <div>
+                    <input type="text" class="number-box" ng-model="c.skillsPerLevel" only-digits />
+                    <label>+ INT Skills Per Level ({{c.skillsPerLevel + abilityMod('int')}})</label>
+                </div>
+                <input type="button" value="Delete Class" ng-click="confirmDelete(classes, $index)"  />
+
                 <div ng-if="c.casterAbility != '---'">
                     <div>
-                        <label for="{{c.classId + 'SpellCap'}}">Spell Limit</label>
-                        <select id="{{c.classId + 'SpellCap'}}" ng-model="c.spellCap">
+                        <label>Spell Limit</label>
+                        <select ng-model="c.spellCap">
                             <option value="None">None</option>
                             <option value="4th">4th</option>
                             <option value="6th">6th</option>
@@ -173,23 +234,24 @@
                         </select>
                     </div>
                     <div>
-                        <label for="{{c.classId + 'PreparedCaster'}}">Prepared Caster</label>
-                        <input id="{{c.classId + 'PreparedCaster'}}" type="checkbox" ng-model="c.preparedCaster" />
+                        <label>Prepared Caster</label>
+                        <input type="checkbox" ng-model="c.preparedCaster" />
                     </div>
                     <div>
-                        <label for="{{c.classId + 'CastingType'}}">Casting Type</label>
-                        <select id="{{c.classId + 'CastingType'}}" ng-model="c.castingType">
+                        <label>Casting Type</label>
+                        <select ng-model="c.castingType">
                             <option value="None">None</option>
                             <option value="Arcane">Arcane</option>
                             <option value="Divine">Divine</option>
                         </select>
                     </div>
+                    <div>
+                        <label>CASTER LEVEL</label>
+                        <div class="number-box" ng-bind="casterLevel(c)"></div>
+                    </div>
                     <div class="field-box">
-                        <div id="{{c.classId + 'CasterLevel'}}" class="number-box" ng-bind="casterLevel(c)"></div>
-                        <label for="{{c.classId + 'CasterLevel'}}" class="field-label">CASTER LEVEL</label></div>
-                    <div class="field-box">
-                        <input id="{{c.classId + 'CasterBonusMisc'}}" class="string-field" type="text" only-digits ng-model="c.casterBonusMisc"/>
-                        <label for="{{c.classId + 'CasterBonusMisc'}}" class="field-label">MISC</label></div>
+                        <input class="string-field" type="text" only-digits ng-model="c.casterBonusMisc"/>
+                        <label class="field-label">MISC CASTER LEVEL BONUS</label></div>
 
                     <div class="spells">
                         <div ng-repeat="spell in c.sheetSpells">
@@ -200,8 +262,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -223,10 +283,8 @@
                         <th>ACP</th>
                     </tr>
                 </tbody>
-                <tbody ng-repeat="skill in sheet.sheetSkills | filter:{specializedSkill : 'false'} | orderBy:'order'">
-
-                    <!-- this creates a normal skill row -->
-                    <tr ng-if="skill.skillAbility != null">
+                <tbody>
+                    <tr ng-repeat="skill in sheet.sheetSkills | orderBy:'order'">
                         <td><input type="checkbox" ng-model="skill.classSkill" /></td>
                         <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
                         <td><select ng-model="skill.skillAbility">
@@ -242,33 +300,6 @@
                         <td><input class="number-box" type="text" ng-model="skill.skillRanks" only-digits />+</td>
                         <td><input class="number-box" type="text" ng-model="skill.skillMisc" only-digits />+</td>
                         <td><div class="number-box" ng-bind="armorCheckPenalty(skill)"></div></td>
-                    </tr>
-
-                    <!-- this creates skill rows for craft, perform, and profession -->
-                    <tr ng-if="skill.skillAbility == null">
-                        <td></td>
-                        <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
-                        <td colspan="6"></td>
-                    </tr>
-
-                    <!-- TODO figure out whether or not to keep specializations -->
-                    <!-- display specialized skills for the parent skill -->
-                    <tr ng-if="skill.skillAbility == null" ng-repeat="special in sheet.sheetSkills | filter:{specializedSkill : true} | filter:{skillName : skill.skillName}">
-                        <td><input type="checkbox" ng-model="special.classSkill" /></td>
-                        <td><input type="text" ng-model="special.specialization" class="string-field"/></td>
-                        <td><select ng-model="special.skillAbility">
-                            <option value="str">STR</option>
-                            <option value="dex">DEX</option>
-                            <option value="con">CON</option>
-                            <option value="int">INT</option>
-                            <option value="wis">WIS</option>
-                            <option value="cha">CHA</option>
-                        </select></td>
-                        <td><div class="number-box inline-field" ng-bind="skillMod(special)"></div>=</td>
-                        <td><div class="inline-field" ng-bind="abilityMod(special.skillAbility)"></div>+</td>
-                        <td><input class="number-box" type="text" ng-model="special.skillRanks" only-digits />+</td>
-                        <td><input class="number-box" type="text" ng-model="special.skillMisc" only-digits />+</td>
-                        <td><div class="number-box" ng-bind="armorCheckPenalty(special)"></div></td>
                     </tr>
                 </tbody>
                 <tbody>

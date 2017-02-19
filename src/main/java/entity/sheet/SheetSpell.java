@@ -157,7 +157,7 @@ public class SheetSpell {
     }
 
     @Basic
-    @Column(name = "range", nullable = true, length = 60)
+    @Column(name = "spell_range", nullable = true, length = 60)
     public String getRange() {
         return range;
     }

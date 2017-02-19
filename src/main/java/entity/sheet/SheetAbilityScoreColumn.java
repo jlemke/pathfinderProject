@@ -20,6 +20,7 @@ public class SheetAbilityScoreColumn implements Comparable<SheetAbilityScoreColu
     private int intRow = 0;
     private int wisRow = 0;
     private int chaRow = 0;
+    private boolean enabled = true;
     private Sheet sheet;
 
 
@@ -116,6 +117,12 @@ public class SheetAbilityScoreColumn implements Comparable<SheetAbilityScoreColu
         this.chaRow = chaRow;
     }
 
+    @Basic
+    @Column(name = "enabled", nullable = true)
+    public boolean isEnabled() { return enabled; }
+
+    public void setEnabled(boolean enabled) { this.enabled = enabled; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -131,6 +138,7 @@ public class SheetAbilityScoreColumn implements Comparable<SheetAbilityScoreColu
         if (intRow != that.intRow) return false;
         if (wisRow != that.wisRow) return false;
         if (chaRow != that.chaRow) return false;
+        if (enabled != that.enabled) return false;
         if (columnName != null ? !columnName.equals(that.columnName) : that.columnName != null) return false;
 
         return true;
@@ -147,6 +155,7 @@ public class SheetAbilityScoreColumn implements Comparable<SheetAbilityScoreColu
         result = 31 * result + intRow;
         result = 31 * result + wisRow;
         result = 31 * result + chaRow;
+        result = 31 * result + (enabled ? 1 : 0);
         return result;
     }
 

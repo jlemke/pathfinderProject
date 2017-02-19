@@ -18,6 +18,7 @@ public class SheetClassFeature {
     private String evalText;
     private int evalPriority;
     private int activeLevel;
+    private boolean enabled;
     private SheetClass sheetClass;
 
     @Column(name = "class_id", nullable = false, length = 25)
@@ -82,6 +83,12 @@ public class SheetClassFeature {
 
     public void setActiveLevel(int activeLevel) { this.activeLevel = activeLevel; }
 
+    @Basic
+    @Column(name = "enabled", nullable = true)
+    public boolean isEnabled() { return enabled; }
+
+    public void setEnabled(boolean enabled) { this.enabled = enabled; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -96,6 +103,7 @@ public class SheetClassFeature {
         if (evalText != null ? !evalText.equals(that.evalText) : that.evalText != null) return false;
         if (evalPriority != that.evalPriority) return false;
         if (activeLevel != that.activeLevel) return false;
+        if (enabled != that.enabled) return false;
         return true;
     }
 
@@ -108,6 +116,7 @@ public class SheetClassFeature {
         result = 31 * result + (evalText != null ? evalText.hashCode() : 0);
         result = 31 * result + evalPriority;
         result = 31 * result + activeLevel;
+        result = 31 * result + (enabled ? 1 : 0);
         return result;
     }
 

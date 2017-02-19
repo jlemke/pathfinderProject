@@ -119,7 +119,8 @@ app.controller('sheetController', function($scope, $http, $location) {
         var sum = 0;
         var cols = $scope.sheet.sheetAbilityScoreColumns;
         for (var i = 0; i < cols.length; i++) {
-            sum += Number(cols[i][ability + "Row"]);
+            if (cols[i].enabled)
+                sum += Number(cols[i][ability + "Row"]);
         }
         return sum;
     };
@@ -138,6 +139,26 @@ app.controller('sheetController', function($scope, $http, $location) {
         else return mod;
     };
 
+    $scope.savingThrow = function(save) {
+        var value = 0;
+        if (save == 'fort')
+            value += $scope.abilityMod('con');
+        else if (save == 'ref')
+            value += $scope.abilityMod('dex');
+        else
+            value += $scope.abilityMod('wis');
+
+        var classes = $scope.sheet.sheetClasses;
+        for (var i = 0; i < classes.length; i++) {
+            if (classes[i][save + 'Progression'] == 'fast')
+                value += Math.floor((classes[i].level + 4)/2);
+            else if (classes[i][save + 'Progression'] == 'slow')
+                value += Math.floor(classes[i].level/3);
+        }
+
+        return value;
+    };
+
     $scope.addCol = function() {
         var newCol = {
             sheetId : $scope.sheet.sheetId,
@@ -150,12 +171,6 @@ app.controller('sheetController', function($scope, $http, $location) {
             chaRow : 0
         };
         $scope.sheet.sheetAbilityScoreColumns.push(newCol);
-    };
-
-    $scope.deleteCol = function(col) {
-        console.log(col);
-        console.log($scope.sheet.sheetAbilityScoreColumns[col]);
-        $scope.sheet.sheetAbilityScoreColumns.splice(col, 1);
     };
 
     /**
@@ -190,6 +205,49 @@ app.controller('sheetController', function($scope, $http, $location) {
         else return c.casterBonusMisc;
     };
 
+    //TODO figure out if this is useful?
+    $scope.spellsPerDay = function(thisClas, spellLevel) {
+        var spells = 0;
+
+        if (thisClass.spellCap == "4th" && spellLevel < 5) {
+
+        } else if (thisClass.spellCap == "6th" && spellLevel < 7) {
+
+        } else if (thisClass.spellCap == "9th") {
+            if (spellLevel == 0) {
+                if (thisClass.level == 1)
+                    spells = 3;
+                else
+                    spells = 4;
+            } else {
+                //return 0 if they can't cast this level yet
+                if (Math.floor((thisClass.level + 1) / 2) < spellLevel)
+                    return 0;
+
+                var caster9th = [1, 2, 2, 3, 3, 3, 4];
+                if (thisClass.level == 20 || thisClass.level >= 2 * spellLevel + 5)
+                    spells = 4;
+                else if (spellLevel == 9)
+                    spells = thisClass.level - 16;
+                else
+                    spells = caster9th[thisClass.level + 1 - 2 * spellLevel]
+            }
+        } else
+            return 0;
+
+        //bonus spells per day = 2 + spell level + abilityMod / 4 rounded down
+        var bonusSpells = Math.floor(($scope.abilityMod(thisClass.casterAbility) + spellLevel + 2)/4);
+        if (bonusSpells > 0)
+            spells += bonusSpells;
+
+        return spells;
+
+    };
+
+    //TODO figure out if this is useful...
+    $scope.spellsKnown = function(thisClass, spellLevel) {
+
+    };
 
     /**
      * returns the sum of skill modifiers for a skill
@@ -276,25 +334,47 @@ app.controller('sheetController', function($scope, $http, $location) {
 
     $scope.addWeapon = function() {
         var newWeapon = {
-            "sheetId": $scope.sheet.sheetId,
-            "weaponName":"",
-            "masterwork":false,
-            "enhancementBonus":0,
-            "damageRoll":null,
-            "criticalRange":"20",
-            "criticalMultiplier":"x2",
-            "attackAbility":"str",
-            "damageAbility":"none",
-            "range":0,
-            "twoHand":false,
-            "bludgeoning":false,
-            "piercing":false,
-            "slashing":false,
-            "weight":0,
-            "proficient":true,
-            "worth":0
+            sheetId : $scope.sheet.sheetId,
+            weaponName : "",
+            masterwork : false,
+            enhancementBonus : 0,
+            damageRoll : null,
+            criticalRange : "20",
+            criticalMultiplier : "x2",
+            attackAbility : "str",
+            damageAbility : "none",
+            range : 0,
+            twoHand : false,
+            bludgeoning : false,
+            piercing : false,
+            slashing : false,
+            weight : 0,
+            proficient : true,
+            worth : 0
         };
         $scope.sheet.sheetWeapons.push(newWeapon);
+    };
+
+    $scope.addClass = function() {
+        var newClass = {
+            sheetId : $scope.sheet.sheetId,
+            className : "New Class",
+            archetype : "",
+            level : 1,
+            hitPoints : 0,
+            hitDie : 6,
+            babProgression : "1/2",
+            fortProgression : "slow",
+            refProgression : "slow",
+            willProgression : "slow",
+            skillsPerLevel : 0,
+            casterAbility : "---",
+            spellCap : "None",
+            castingType : "None",
+            preparedCaster : false,
+            casterBonusMisc : 0
+        };
+        $scope.sheet.sheetClasses.push(newClass);
     };
 
     $scope.weaponAttack = function(weapon) {

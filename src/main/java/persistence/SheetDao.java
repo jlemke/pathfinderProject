@@ -28,11 +28,12 @@ public class SheetDao {
             {"Appraise","int","f"},
             {"Bluff","cha","f"},
             {"Climb","str","f"},
-            {"Craft",null,"f"},
+            {"Craft","int","f"},
             {"Diplomacy","cha","f"},
             {"Disable Device","dex","t"},
             {"Disguise","cha","f"},
             {"Escape Artist","dex","f"},
+            {"Fly", "dex", "f"},
             {"Handle Animal","cha","t"},
             {"Heal","wis","f"},
             {"Intimidate","cha","f"},
@@ -48,8 +49,8 @@ public class SheetDao {
             {"Knowledge (Religion)","int","t"},
             {"Linguistics","int","t"},
             {"Perception","wis","f"},
-            {"Perform",null,"f"},
-            {"Profession",null,"t"},
+            {"Perform","cha","f"},
+            {"Profession","wis","t"},
             {"Ride","dex","f"},
             {"Sense Motive","wis","f"},
             {"Sleight of Hand","dex","t"},
@@ -198,7 +199,6 @@ public class SheetDao {
             temp.setOrder(i + 1);
             temp.setSkillName(defaultSkill[0]);
             temp.setSkillAbility(defaultSkill[1]);
-            temp.setSpecialization("");
             if (defaultSkill[2].equals("t"))
                 temp.setReqTrained(true);
             else temp.setReqTrained(false);

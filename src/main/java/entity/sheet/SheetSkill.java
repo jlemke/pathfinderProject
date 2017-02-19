@@ -18,12 +18,10 @@ public class SheetSkill implements Comparable<SheetSkill> {
     private int order;
     private String skillName;
     private String skillAbility = "";
-    private String specialization = "";
     private int skillRanks = 0;
     private boolean isClassSkill = false;
     private int skillMisc = 0;
     private boolean reqTrained = false;
-    private boolean isSpecializedSkill = false;
     private Sheet sheet;
 
     @Column(name = "sheet_id", nullable = false)
@@ -74,12 +72,6 @@ public class SheetSkill implements Comparable<SheetSkill> {
     }
 
     @Basic
-    @Column(name = "specialization")
-    public String getSpecialization() { return specialization; }
-
-    public void setSpecialization(String specialization) { this.specialization = specialization; }
-
-    @Basic
     @Column(name = "skill_ranks", nullable = false)
     public int getSkillRanks() {
         return skillRanks;
@@ -119,16 +111,6 @@ public class SheetSkill implements Comparable<SheetSkill> {
         this.reqTrained = reqTrained;
     }
 
-    @Basic
-    @Column(name = "is_specialized_skill", nullable = false)
-    public boolean isSpecializedSkill() {
-        return isSpecializedSkill;
-    }
-
-    public void setSpecializedSkill(boolean isSpecializedSkill) {
-        this.isSpecializedSkill = isSpecializedSkill;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -143,11 +125,8 @@ public class SheetSkill implements Comparable<SheetSkill> {
         if (isClassSkill != that.isClassSkill) return false;
         if (skillMisc != that.skillMisc) return false;
         if (reqTrained != that.reqTrained) return false;
-        if (isSpecializedSkill != that.isSpecializedSkill) return false;
         if (skillName != null ? !skillName.equals(that.skillName) : that.skillName != null) return false;
         if (skillAbility != null ? !skillAbility.equals(that.skillAbility) : that.skillAbility != null) return false;
-        if (specialization != null ? !specialization.equals(that.specialization) : that.specialization != null) return false;
-
         return true;
     }
 
@@ -158,12 +137,10 @@ public class SheetSkill implements Comparable<SheetSkill> {
         result = 31 * result + order;
         result = 31 * result + (skillName != null ? skillName.hashCode() : 0);
         result = 31 * result + (skillAbility != null ? skillAbility.hashCode() : 0);
-        result = 31 * result + (specialization != null ? specialization.hashCode() : 0);
         result = 31 * result + skillRanks;
         result = 31 * result + (isClassSkill ? 1 : 0);
         result = 31 * result + skillMisc;
         result = 31 * result + (reqTrained ? 1 : 0);
-        result = 31 * result + (isSpecializedSkill ? 1 : 0);
         return result;
     }
 
