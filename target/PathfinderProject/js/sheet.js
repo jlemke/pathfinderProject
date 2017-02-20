@@ -91,7 +91,7 @@ app.controller('sheetController', function($scope, $http, $location) {
         var max = 0;
         for (var i = 0; i < $scope.sheet.sheetClasses.length; i++) {
             max += $scope.sheet.sheetClasses[i].hitPoints;
-            max += $scope.abilityMod('con', false);
+            max += $scope.abilityMod('con', false) * $scope.sheet.sheetClasses[i].level;
         }
         return max;
     };
@@ -469,7 +469,7 @@ app.controller('sheetController', function($scope, $http, $location) {
 
 
 
-/**  TODO replace this with a function that just changes the input into an integer
+/**  TODO possibly get rid of this unused directive
  * this directive limits all inputs to digits
  */
 app.directive('onlyDigits', function() {
@@ -489,4 +489,40 @@ app.directive('onlyDigits', function() {
             ctrl.$parsers.push(inputValue);
         }
     };
+});
+
+/**
+ * when unfocusing from an input field, forces the value to become an integer
+ *      optionally forces it to become positive or negative
+ */
+app.directive('forceInteger', function() {
+    return {
+        require : "ngModel",
+        restrict: "A",
+        scope : {forceInteger : "="},
+        link : function(scope, element, attr, ctrl) {
+            var savedValue;
+
+            element.on('focus', function() {
+                savedValue = element.val();
+            });
+
+            element.on('blur', function() {
+                var newValue = parseInt(element.val());
+                if (newValue == element.val()) {
+                    if (attr.forceInteger == 'pos')
+                        savedValue = Math.abs(newValue);
+                    else if (attr.forceInteger == 'neg')
+                        savedValue = -1 * Math.abs(newValue);
+                    else
+                        savedValue = newValue;
+                    ctrl.$setViewValue(savedValue);
+                    element.val(savedValue);
+                } else {
+                    ctrl.$setViewValue(savedValue);
+                    element.val(savedValue);
+                }
+            });
+        }
+    }
 });
