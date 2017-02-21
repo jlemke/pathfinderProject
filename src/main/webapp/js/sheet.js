@@ -140,6 +140,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     };
 
     $scope.savingThrow = function(save) {
+        if ($scope.sheet == undefined) return 0;
         var value = 0;
         if (save == 'fort')
             value += $scope.abilityMod('con');
@@ -157,6 +158,28 @@ app.controller('sheetController', function($scope, $http, $location) {
         }
 
         return value;
+    };
+
+    $scope.armorClass = function(type) {
+        if ($scope.sheet == undefined) return 0;
+        var base = 10;
+        var armorBonus = 0;
+        var maxDex = 99;
+        var armors = $scope.sheet.sheetArmors
+        for (var i = 0; i < armors.length; i++) {
+            armorBonus += Number(armors[i].acBonus);
+            if (Number(armors[i].maxDexBonus) < maxDex)
+                maxDex = Number(armors[i].maxDexBonus);
+        }
+
+        var dexMod = $scope.abilityMod('dex');
+        var dexBonus = dexMod <= maxDex ? dexMod : maxDex;
+
+        if (type == 'flat-footed')
+            return base + armorBonus;
+        if (type == 'touch')
+            return base + dexBonus;
+        else return base + armorBonus + dexBonus;
     };
 
     $scope.addCol = function() {
@@ -253,26 +276,29 @@ app.controller('sheetController', function($scope, $http, $location) {
      * returns the sum of skill modifiers for a skill
      */
     $scope.skillMod = function(skill) {
+        if ($scope.sheet == undefined) return 0;
         var total = 0;
         total += $scope.abilityMod(skill.skillAbility);
-        total += skill.skillRanks;
+        total += Number(skill.skillRanks);
         if (skill.classSkill && skill.skillRanks > 0)
             total += 3;
-        total += skill.skillMisc;
+        total += Number(skill.skillMisc);
         total += $scope.armorCheckPenalty(skill);
         return total;
     };
 
     $scope.totalSkillRanks = function() {
+        if ($scope.sheet == undefined) return 0;
         var total = 0;
         var skills = $scope.sheet.sheetSkills;
         for (var i = 0; i < skills.length; i++) {
-            total += skills[i].skillRanks;
+            total += Number(skills[i].skillRanks);
         }
         return total;
     };
 
     $scope.maxSkillRanks = function() {
+        if ($scope.sheet == undefined) return 0;
         var total = 0;
         var classes = $scope.sheet.sheetClasses;
         for (var i = 0; i < classes.length; i++) {
@@ -286,6 +312,7 @@ app.controller('sheetController', function($scope, $http, $location) {
      * @return int total armor check penalty
      */
     $scope.armorCheckPenalty = function(skill) {
+        if ($scope.sheet == undefined) return 0;
         var acp = 0;
         for (var i = 0; i < $scope.sheet.sheetArmors.length; i++) {
             acp += Math.abs(Number($scope.sheet.sheetArmors[i].skillPenalty));
@@ -377,7 +404,31 @@ app.controller('sheetController', function($scope, $http, $location) {
         $scope.sheet.sheetClasses.push(newClass);
     };
 
+    $scope.addSpell = function(thisClass) {
+        var newSpell = {
+            classId : thisClass.classId,
+            spellLevel : 0,
+            spellName : "New Spell",
+            school : "",
+            subschool : "",
+            bloodline : "",
+            patron : "",
+            spellDescription : "",
+            target : "",
+            range : "",
+            castingTime : "",
+            verbal : false,
+            somatic : false,
+            material : false,
+            focus : false,
+            divineFocus : false,
+            prepared : false
+        };
+        thisClass.sheetSpells.push(newSpell);
+    };
+
     $scope.weaponAttack = function(weapon) {
+        if ($scope.sheet == undefined) return "";
         var attack = "";
 
         //calculate the attack bonus
@@ -454,7 +505,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     $scope.saveSheet = function() {
         console.log("saving sheet ");
         console.log($scope.sheet);
-        console.log(JSON.stringify($scope.sheet));
+        //console.log(JSON.stringify($scope.sheet));
         saveInProgress = true;
         $http({
             method : "POST",
@@ -504,7 +555,7 @@ app.directive('forceInteger', function() {
             var savedValue;
 
             element.on('focus', function() {
-                savedValue = element.val();
+                savedValue = Number(element.val());
             });
 
             element.on('blur', function() {
@@ -515,7 +566,7 @@ app.directive('forceInteger', function() {
                     else if (attr.forceInteger == 'neg')
                         savedValue = -1 * Math.abs(newValue);
                     else
-                        savedValue = newValue;
+                        savedValue = Number(newValue);
                     ctrl.$setViewValue(savedValue);
                     element.val(savedValue);
                 } else {

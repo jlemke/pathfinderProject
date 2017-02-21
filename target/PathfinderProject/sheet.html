@@ -34,18 +34,18 @@
 
         <div ng-controller="sheetController as s" class="container">
     <div id="header">
-        <input type="button" value="Save" ng-click="saveSheet()"/>
+        <input class="fixed-element" type="button" value="Save" ng-click="saveSheet()"/>
         <div id="messages"></div>
     </div>
     <div id="content" class="content" ng-show="sheet != null">
         <h1>General</h1>
 
         <div class="field-box">
-            <input id="characterName" class="string-field" type="text" ng-model="sheet.characterName"/>
+            <input id="characterName" class="string-field-medium" type="text" ng-model="sheet.characterName"/>
             <label for="characterName" class="field-label">Character Name</label>
         </div>
         <div class="field-box">
-            <input id="characterRace" class="string-field" type="text" ng-model="sheet.characterRace"/>
+            <input id="characterRace" class="string-field-medium" type="text" ng-model="sheet.characterRace"/>
             <label for="characterRace" class="field-label">Character Race</label>
         </div>
         <div class="field-box">
@@ -135,7 +135,7 @@
 
         <table>
             <tr>
-                <th colspan="2">Saving Throws</th>
+                <td colspan="2">Saving Throws</td>
             </tr>
             <tr>
                 <th>Fortitude</th>
@@ -156,6 +156,14 @@
                 <div ng-bind="weaponAttack(weapon)"></div>
             </div>
         </div>
+        <div class="ac">
+            <table>
+                <tr><th colspan="2">Armor Class</th></tr>
+                <tr><th>AC</th><td ng-bind="armorClass('')"></td></tr>
+                <tr><th>Flat-Footed</th><td ng-bind="armorClass('flat-footed')"></td></tr>
+                <tr><th>Touch</th><td ng-bind="armorClass('touch')"></td></tr>
+            </table>
+        </div>
 
         <hr />
 
@@ -164,13 +172,13 @@
             <input type="button" value="Add Class" ng-click="addClass()" />
             <div ng-repeat="c in sheet.sheetClasses as classes">
                 <div class="field-box">
-                    <input type="text" class="string-field" ng-model="c.archetype" />
+                    <input type="text" class="string-field-medium" ng-model="c.archetype" />
                     <label class="field-label">Archetype</label></div>
                 <div class="field-box">
-                    <input type="text" class="string-field" ng-model="c.className" />
+                    <input type="text" class="string-field-medium" ng-model="c.className" />
                     <label class="field-label">Class</label></div>
                 <div class="field-box">
-                    <input class="string-field" type="text" force-integer="pos" ng-model="c.level"/>
+                    <input class="string-field-medium" type="text" force-integer="pos" ng-model="c.level"/>
                     <label class="field-label">Level</label></div>
                 <div class="field-box">
                     <label>BAB Progression</label>
@@ -250,15 +258,27 @@
                         <div class="number-box" ng-bind="casterLevel(c)"></div>
                     </div>
                     <div class="field-box">
-                        <input class="string-field" type="text" force-integer ng-model="c.casterBonusMisc"/>
+                        <input class="string-field-medium" type="text" force-integer ng-model="c.casterBonusMisc"/>
                         <label class="field-label">MISC CASTER LEVEL BONUS</label></div>
 
+                    <div class="classFeatures">
+
+                    </div>
+
                     <div class="spells">
-                        <div ng-repeat="spell in c.sheetSpells">
+                        <div ng-repeat="spell in c.sheetSpells | orderBy:'spellLevel'">
+                            <input type="button" value="Remove" ng-click="confirmDelete(c.sheetSpells, $index)" />
+                            <label>Spell Level</label><input class="number-box" type="text" ng-model="spell.spellLevel" force-integer="pos" />
                             <div class="field-box">
-                                <input class="string-field" type="text" ng-model="spell.spellName"/>
+                                <input class="string-field-long" type="text" ng-model="spell.spellName"/>
                                 <label class="field-label">Spell Name</label>
                             </div>
+                            <div>
+                                <textarea class="description" ng-model="spell.spellDescription"></textarea>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="button" value="Add Spell" ng-click="addSpell(c)" />
                         </div>
                     </div>
                 </div>
@@ -286,7 +306,7 @@
                 <tbody>
                     <tr ng-repeat="skill in sheet.sheetSkills | orderBy:'order'">
                         <td><input type="checkbox" ng-model="skill.classSkill" /></td>
-                        <td><input type="text" ng-model="skill.skillName" class="string-field" /></td>
+                        <td><input type="text" ng-model="skill.skillName" class="string-field-long text-left" /></td>
                         <td><select ng-model="skill.skillAbility">
                             <option value="str">STR</option>
                             <option value="dex">DEX</option>
@@ -321,19 +341,19 @@
             <div>
                 <h3>Money</h3>
                 <div class="field-box">
-                    <input type="text" ng-model="sheet.sheetMoney.pp" class="number-box underline" force-integer />
+                    <input type="text" ng-model="sheet.sheetMoney.pp" class="number-box-md underline" force-integer />
                     <label class="field-label">PP</label>
                 </div>
                 <div class="field-box">
-                    <input type="text" ng-model="sheet.sheetMoney.gp" class="number-box underline" force-integer />
+                    <input type="text" ng-model="sheet.sheetMoney.gp" class="number-box-md underline" force-integer />
                     <label class="field-label">GP</label>
                 </div>
                 <div class="field-box">
-                    <input type="text" ng-model="sheet.sheetMoney.sp" class="number-box underline" force-integer />
+                    <input type="text" ng-model="sheet.sheetMoney.sp" class="number-box-md underline" force-integer />
                     <label class="field-label">SP</label>
                 </div>
                 <div class="field-box">
-                    <input type="text" ng-model="sheet.sheetMoney.cp" class="number-box underline" force-integer />
+                    <input type="text" ng-model="sheet.sheetMoney.cp" class="number-box-md underline" force-integer />
                     <label class="field-label">CP</label>
                 </div>
             </div>
@@ -342,7 +362,7 @@
                 <h4>Armor</h4>
                 <table>
                     <tr ng-repeat="armor in sheet.sheetArmors as armors">
-                        <td><input type="text" ng-model="armor.armorName" class="string-field" />
+                        <td><input type="text" ng-model="armor.armorName" class="string-field-medium" />
                             <label class="field-label">Name</label></td>
                         <td><input type="checkbox" ng-model="armor.masterwork" />
                             <label class="field-label">MW</label></td>
@@ -360,7 +380,7 @@
                             <label class="field-label">Wt.</label></td>
                         <td><input type="checkbox" ng-model="armor.proficient" />
                             <label class="field-label">Prof</label></td>
-                        <td><input type="text" ng-model="armor.type" class="string-field" />
+                        <td><input type="text" ng-model="armor.type" class="string-field-medium" />
                             <label class="field-label">Type</label></td>
                         <td><input type="button" value="remove" ng-click="confirmDelete(armors, $index)" /></td>
                     </tr>
@@ -373,9 +393,9 @@
                             <label class="field-label">MW</label></td>
                         <td><input type="text" ng-model="weapon.enhancementBonus" class="number-box underline" force-integer="pos" />
                             <label class="field-label">+</label></td>
-                        <td><input type="text" ng-model="weapon.weaponName" class="string-field" />
+                        <td><input type="text" ng-model="weapon.weaponName" class="string-field-medium" />
                             <label class="field-label">Name</label></td>
-                        <td><input type="text" ng-model="weapon.damageRoll" class="string-field" />
+                        <td><input type="text" ng-model="weapon.damageRoll" class="string-field-medium" />
                             <label class="field-label">Damage Roll</label></td>
                         <td>
                             <select ng-model="weapon.criticalRange">
@@ -433,9 +453,9 @@
             <h3>Items</h3> <!-- TODO create more CSS for different width number fields -->
             <table>
                 <tr ng-repeat="item in sheet.sheetItems as items">
-                    <td><input type="text" ng-model="item.itemName" class="string-field" />
+                    <td><input type="text" ng-model="item.itemName" class="string-field-medium" />
                         <label class="field-label">Name</label></td>
-                    <td><input type="text" ng-model="item.itemDescription" class="string-field" />
+                    <td><input type="text" ng-model="item.itemDescription" class="string-field-medium" />
                         <label class="field-label">Description</label></td>
                     <td><input type="text" ng-model="item.itemQuantity" class="number-box underline" force-integer="pos" />
                         <label class="field-label">Qty</label></td>

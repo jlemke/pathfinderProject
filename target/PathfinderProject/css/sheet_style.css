@@ -7,6 +7,11 @@
     text-align: center;
 }
 
+.number-box-md {
+    width: 35px;
+    text-align: center;
+}
+
 .underline {
     border: 0;
     border-bottom: solid 1px #000;
@@ -23,7 +28,17 @@
     margin-top: 10%;
 }
 
-.string-field {
+.string-field-small {
+    display: block;
+    border: 0;
+    border-bottom: solid 1px #000;
+    outline: none; /* prevents textbox highlight in chrome */
+    width: 50px;
+    text-align: center;
+    margin: 5px;
+}
+
+.string-field-medium {
     display: block;
     border: 0;
     border-bottom: solid 1px #000;
@@ -31,6 +46,21 @@
     width: 150px;
     text-align: center;
     margin: 5px;
+}
+
+.string-field-long {
+    display: block;
+    border: 0;
+    border-bottom: solid 1px #000;
+    outline: none; /* prevents textbox highlight in chrome */
+    width: 250px;
+    text-align: center;
+    margin: 5px;
+}
+
+.description {
+    width: 500px;
+    height: 200px;
 }
 
 .inline-field {
@@ -62,8 +92,12 @@
     text-align: center;
 }
 
-.centered {
+.text-centered {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .ability-column-header {
@@ -79,10 +113,9 @@
     border: 2px solid black;
 }
 
-.fixedElement {
+.fixed-element {
     background-color: #c0c0c0;
     position:fixed;
     top:0;
-    width:100%;
     z-index:100;
 }
