@@ -262,10 +262,38 @@
                         <label class="field-label">MISC CASTER LEVEL BONUS</label></div>
 
                     <div class="classFeatures">
-
+                        <h2>Class Features</h2>
+                        <input type="button" value="Evaluate" ng-click="evalCode()" />
+                        <div ng-repeat="feature in c.sheetClassFeatures as features">
+                            <div>
+                                <input type="button" value="Remove" ng-click="confirmDelete(features, $index)" />
+                            </div>
+                            <div class="field-box">
+                                <input class="string-field-long" ng-model="feature.featureName" />
+                                <label class="field-label">Name</label>
+                            </div>
+                            <div class="field-box">
+                                <label>Active Level : </label>
+                                <input class="number-box-md underline" type="text" ng-model="feature.activeLevel" force-integer="pos"/>
+                            </div>
+                            <div class="field-box">
+                                <label>Enabled : </label><input type="checkbox" ng-model="feature.enabled" />
+                            </div>
+                            <div>
+                                <textarea class="description" ng-model="feature.featureDescription"></textarea>
+                            </div>
+                            <div><label>Code Priority : </label><input type="text" class="number-box-md underline" ng-model="feature.evalPriority" force-integer /></div>
+                            <div>
+                                <textarea class="description" ng-model="feature.evalText"></textarea>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="button" value="Add Feature" ng-click="addFeature(c)" />
+                        </div>
                     </div>
 
                     <div class="spells">
+                        <h2>Spells</h2>
                         <div ng-repeat="spell in c.sheetSpells | orderBy:'spellLevel'">
                             <input type="button" value="Remove" ng-click="confirmDelete(c.sheetSpells, $index)" />
                             <label>Spell Level</label><input class="number-box" type="text" ng-model="spell.spellLevel" force-integer="pos" />

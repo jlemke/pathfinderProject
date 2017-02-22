@@ -55,9 +55,67 @@
 					armor.maxDex += Math.floor((LVL + 1)/4)
 					
 			
+	class features and other user js stuff
+	
+	1. reset all functions to their original js
+	
+	2. loop through list of features/racial traits/spells
+	    eval() the code
+	    
+	    
+	$scope.evalCode() {
+	    var codeArray = [];
+	    
+	    var classes = $scope.sheet.sheetClasses;
+	    var classFeatures;
+	    var code;
+	    var tempString;
+	    for (var i = 0; i < classes.length; i++) {
+	        classFeatures = classes[i].sheetClassFeatures;
+	        for (var j = 0; j < classFeatures.length; j++) {
+	            if (classFeatures[j].enabled) {
+	                //replace keywords thisClass, activeLevel, and enabled with
+	                //corresponding scope values
+	                tempString = '$scope.sheet.sheetClasses[' + i + ']';
+	                code = classFeatures.evalText.replace('thisClass', tempString));
+	                tempString = tempString + '.sheetClassFeatures[' + j + ']';
+	                code = code.replace('activeLevel', tempString + '.activeLevel');
+                    code = code.replace('enabled', tempString + '.enabled');
+                    codeArray.push({
+                        priority : classFeatures[j].evalPriority,
+                        evalText : code
+                    };
+                }
+	        }
+	    }
+	    
+	    for (var i = 0;
+	    
+	    codeArray.sort(function(a,b) {
+	        return a.priority - b.priority;
+	    });
+	    
+	    for (var i = 0; i < codeArray.length; i++) {
+	        eval(codeArray[i]);
+	    }
+	}
+	    
+    example code
 					
-					
-				
+		$scope.skillMod = (function(skill) {
+		    var orignal_skillMod = $scope.skillMod;
+		    
+		    //need to add this modification to the hover-popup
+		    // "Stern Gaze : (
+		    
+		    if (thisClass.level >= activeLevel && enabled &&
+		           (skill.skillName.toLowerCase() == 'intimidate' || skill.skillName.toLowerCase() == 'sense motive")) {
+		        var bonus = (thisClass.level == 1 ? 1 : Math.floor(1/2 * thisClass.level);
+		        return original_skillMod(skill) + bonus;
+		            
+		    } else
+		        return original_skillMod(skill);
+		})();
 				
 
 

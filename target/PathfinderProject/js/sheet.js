@@ -49,13 +49,6 @@ app.controller('sheetController', function($scope, $http, $location) {
     };
 
     /**
-     * returns functions to default settings, called when applying eval()
-     */
-    $scope.resetFunctions = function() {
-
-    };
-
-    /**
      * calculate the base attack bonus using class information
      * @param displayPosNeg boolean option to add "+"
      * @return {*} returns a string with "+" attached if displayPosNeg
@@ -427,6 +420,24 @@ app.controller('sheetController', function($scope, $http, $location) {
         thisClass.sheetSpells.push(newSpell);
     };
 
+    $scope.addClassFeature = function(thisClass) {
+        var newClassFeature = {
+            classId : thisClass.classId,
+            featureName : "New Feature",
+            featureDescription : "",
+            activeLevel : 1,
+            evalText : "/**" +
+                        "* the following keywords will be replaced with their " +
+                        "* values in the model: " +
+                        "*      thisClass : replaced with the parent class of the feature" +
+                        "*      this : replaced with the feature object for this feature" +
+                        "**/",
+            evalPriority : 0,
+            enabled : false
+        };
+        thisClass.sheetClassFeatures.push(newClassFeature);
+    };
+
     $scope.weaponAttack = function(weapon) {
         if ($scope.sheet == undefined) return "";
         var attack = "";
@@ -498,6 +509,74 @@ app.controller('sheetController', function($scope, $http, $location) {
         return attack;
     };
 
+    $scope.originalFunctions = {
+        bab : angular.copy($scope.bab),
+        skillMod : angular.copy($scope.skillMod),
+        abilityMod : angular.copy($scope.abilityMod)
+    };
+
+    /**
+     * resets all functions to their original values
+     */
+    $scope.resetFunctions = function() {
+        $scope.bab = angular.copy($scope.originalFunctions.bab);
+        $scope.skillMod = angular.copy($scope.originalFunctions.skillMod);
+        $scope.abilityMod = angular.copy($scope.originalFunctions.abilityMod);
+    };
+
+    $scope.makeSafe = function(code) {
+        code = code.replace('makeSafe', '')
+            .replace(/\$http/g, 'DONT')
+            .replace(/evalCode/g, 'DONT')
+            .replace(/\$location/g, 'DONT')
+            .replace(/eval/g, 'DONT');
+        return code;
+    };
+
+    /**
+     *  TODO add regex for comments i guess?
+     */
+    $scope.evalCode = function() {
+        $scope.resetFunctions();
+        var codeArray = [];
+        var classes = $scope.sheet.sheetClasses;
+        var classFeatures;
+        var code;
+        var tempString;
+        for (var i = 0; i < classes.length; i++) {
+            classFeatures = classes[i].sheetClassFeatures;
+            for (var j = 0; j < classFeatures.length; j++) {
+                //replace keywords thisClass and this with
+                //corresponding scope values
+                code = classFeatures[j].evalText;
+                if (code != "" && code != undefined) {
+                    tempString = '$scope.sheet.sheetClasses[' + i + ']';
+                    code = code.replace(/thisClass/g, tempString);
+                    tempString = tempString + '.sheetClassFeatures[' + j + ']';
+                    code = code.replace(/thisFeature/g, tempString);
+                    code = $scope.makeSafe(code);
+                    codeArray.push({
+                        priority: classFeatures[j].evalPriority,
+                        evalText: code
+                    });
+                    //TODO need to add hover-notes
+                }
+            }
+        }
+
+        //TODO add in feats, racial traits, traits, spells, and abilities
+        //for (var i = 0;
+
+        //sort the array in order of priority
+         codeArray.sort(function(a,b) {
+             return a.priority - b.priority;
+         });
+
+        //run the code
+        for (var k = 0; k < codeArray.length; k++) {
+            eval(codeArray[k].evalText);
+        }
+    };
 
     /**
      * sends the sheet object to the save servlet
@@ -549,7 +628,7 @@ app.directive('onlyDigits', function() {
 app.directive('forceInteger', function() {
     return {
         require : "ngModel",
-        restrict: "A",
+        restrict : "A",
         scope : {forceInteger : "="},
         link : function(scope, element, attr, ctrl) {
             var savedValue;
@@ -573,6 +652,19 @@ app.directive('forceInteger', function() {
                     ctrl.$setViewValue(savedValue);
                     element.val(savedValue);
                 }
+            });
+        }
+    }
+});
+
+app.directive('infoHover', function() {
+    return {
+        require : "ngModel",
+        restrict : "A",
+        scope : {},
+        link : function(scope, element, attr, ctrl) {
+            element.on('hover', function() {
+                //need to display a tiny pop-up of modifiers
             });
         }
     }
