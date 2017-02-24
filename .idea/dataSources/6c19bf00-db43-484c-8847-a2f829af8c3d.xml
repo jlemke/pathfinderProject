@@ -689,27 +689,27 @@
     </column>
     <column id="154" parent="21" name="pp">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>decimal(18,2)|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
     <column id="155" parent="21" name="gp">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>decimal(18,2)|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
     <column id="156" parent="21" name="sp">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>decimal(18,2)|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
     <column id="157" parent="21" name="cp">
       <Position>5</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>decimal(18,2)|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
     </column>
     <key id="158" parent="21" name="PRIMARY">
       <ColNames>sheet_id</ColNames>

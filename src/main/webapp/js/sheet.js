@@ -26,6 +26,7 @@ app.controller('sheetController', function($scope, $http, $location) {
             $scope.loaded = true;
             console.log("sheet retrieved");
             console.log($scope.sheet);
+            $scope.evalCode();
         });
     });
 
@@ -75,6 +76,14 @@ app.controller('sheetController', function($scope, $http, $location) {
         else return bonus;
     };
 
+    $scope.initiative = function(displayPosNeg) {
+        if ($scope.sheet == undefined) return "";
+        var bonus = $scope.abilityMod('dex') + $scope.sheet.sheetGeneral.initMisc;
+        if (displayPosNeg && bonus >= 0)
+            return "+" + bonus;
+        return bonus;
+    };
+
     /**
      * calculate max hp based on classes
      * @return int returns the maximum hit points
@@ -92,7 +101,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     /**
      * returns max skill points based on classes and intelligence
      */
-    $scope.maxSkillPoints = function() {
+    $scope.maxSkillRanks = function() {
         if ($scope.sheet == undefined) return 0;
         var max = 0;
         var c;
@@ -132,7 +141,7 @@ app.controller('sheetController', function($scope, $http, $location) {
         else return mod;
     };
 
-    $scope.savingThrow = function(save) {
+    $scope.savingThrow = function(save, displayPosNeg) {
         if ($scope.sheet == undefined) return 0;
         var value = 0;
         if (save == 'fort')
@@ -145,11 +154,13 @@ app.controller('sheetController', function($scope, $http, $location) {
         var classes = $scope.sheet.sheetClasses;
         for (var i = 0; i < classes.length; i++) {
             if (classes[i][save + 'Progression'] == 'fast')
-                value += Math.floor((classes[i].level + 4)/2);
+                value += Math.floor((Number(classes[i].level) + 4)/2);
             else if (classes[i][save + 'Progression'] == 'slow')
-                value += Math.floor(classes[i].level/3);
+                value += Math.floor(Number(classes[i].level)/3);
         }
 
+        if (displayPosNeg && value >= 0)
+            return "+" + value;
         return value;
     };
 
@@ -209,16 +220,16 @@ app.controller('sheetController', function($scope, $http, $location) {
 
     /**
      * returns the caster level for a class using the misc bonus and the class level
-     * @param c the class object
+     * @param thisClass the class object
      * @return int the caster level
      */
-    $scope.casterLevel = function(c) {
+    $scope.casterLevel = function(thisClass) {
         if ($scope.sheet == undefined) return "";
-        if (c.spellCap == "6th" || c.spellCap == "9th")
-            return Number(c.level) + Number(c.casterBonusMisc);
-        if (c.spellCap == "4th" && c.level > 3)
-            return Number(c.level) - 3 + Number(c.casterBonusMisc);
-        else return c.casterBonusMisc;
+        if (thisClass.spellCap == "6th" || thisClass.spellCap == "9th")
+            return Number(thisClass.level) + Number(thisClass.casterBonusMisc);
+        if (thisClass.spellCap == "4th" && thisClass.level > 3)
+            return Number(thisClass.level) - 3 + Number(thisClass.casterBonusMisc);
+        else return thisClass.casterBonusMisc;
     };
 
     //TODO figure out if this is useful?
@@ -280,6 +291,10 @@ app.controller('sheetController', function($scope, $http, $location) {
         return total;
     };
 
+    /**
+     * Returns the skillsPerLevel + INT multiplied by class levels
+     * @returns {number} max number of skill ranks
+     */
     $scope.totalSkillRanks = function() {
         if ($scope.sheet == undefined) return 0;
         var total = 0;
@@ -295,7 +310,7 @@ app.controller('sheetController', function($scope, $http, $location) {
         var total = 0;
         var classes = $scope.sheet.sheetClasses;
         for (var i = 0; i < classes.length; i++) {
-            total += classes[i].level * (classes[i].skillsPerLevel + $scope.abilityMod('int', false));
+            total += classes[i].level * (Number(classes[i].skillsPerLevel) + $scope.abilityMod('int', false));
         }
         return total;
     };
@@ -308,14 +323,42 @@ app.controller('sheetController', function($scope, $http, $location) {
         if ($scope.sheet == undefined) return 0;
         var acp = 0;
         for (var i = 0; i < $scope.sheet.sheetArmors.length; i++) {
-            acp += Math.abs(Number($scope.sheet.sheetArmors[i].skillPenalty));
-            if ($scope.sheet.sheetArmors[i].masterwork && Number($scope.sheet.sheetArmors[i].skillPenalty) < 0)
-                acp--;
+            if ($scope.sheet.sheetArmors[i].equipped) {
+                acp += Math.abs(Number($scope.sheet.sheetArmors[i].skillPenalty));
+                if ($scope.sheet.sheetArmors[i].masterwork && Number($scope.sheet.sheetArmors[i].skillPenalty) < 0)
+                    acp--;
+            }
         }
 
         if (["con", "int", "wis", "cha"].indexOf(skill.skillAbility) != -1)
             return 0;
         return -1 * acp;
+    };
+
+    /**
+     * returns a gold piece value of platinum, gold, silver, and copper pieces
+     * @returns {number} rounded to 2 decimal places
+     */
+    $scope.amountOfGold = function() {
+        if ($scope.sheet == undefined) return 0;
+        return $scope.sheet.sheetMoney.pp * 10
+            + Number($scope.sheet.sheetMoney.gp)
+            + $scope.sheet.sheetMoney.sp * 0.1
+            + $scope.sheet.sheetMoney.cp * 0.01;
+    };
+
+    /**
+     * returns the total of all item values (in gold)
+     * @returns {number} rounded to 2 decimal places
+     */
+    $scope.totalItemValue = function() {
+        if ($scope.sheet == undefined) return 0;
+        var items = $scope.sheet.sheetItems;
+        var total = 0;
+        for (var i = 0; i < items.length; i++) {
+            total += Number(items[i].itemQuantity) * Number(items[i].unitValue);
+        }
+        return Number(parseFloat(total).toFixed(2));
     };
 
     $scope.removeFrom = function(collection, index) {
@@ -426,16 +469,57 @@ app.controller('sheetController', function($scope, $http, $location) {
             featureName : "New Feature",
             featureDescription : "",
             activeLevel : 1,
-            evalText : "/**" +
-                        "* the following keywords will be replaced with their " +
-                        "* values in the model: " +
-                        "*      thisClass : replaced with the parent class of the feature" +
-                        "*      this : replaced with the feature object for this feature" +
-                        "**/",
+            evalText : "",
             evalPriority : 0,
             enabled : false
         };
         thisClass.sheetClassFeatures.push(newClassFeature);
+        /*      TODO do regex so you can put this as default!
+        "/**" +
+        "* the following keywords will be replaced with their " +
+        "* values in the model: " +
+        "*      thisClass : replaced with the parent class of the feature" +
+        "*      this : replaced with the feature object for this feature" +
+        "**" */
+    };
+
+    $scope.weaponAttackBonus = function(weapon) {
+        //calculate the attack bonus of the weapon
+        var bonus = weapon.enhancementBonus;
+        if (weapon.attackAbility == 'dex')
+            bonus += $scope.abilityMod('dex');
+        else
+            bonus += $scope.abilityMod('str');
+
+        //add enhancement or masterwork bonus
+        if (weapon.enhancementBonus > 0)
+            bonus += weapon.enhancementBonus;
+        else if (weapon.masterwork)
+            bonus++;
+        return bonus;
+    };
+
+    $scope.weaponDamageBonus = function(weapon) {
+        var damageBonus = 0;
+        if (weapon.damageAbility != 'none') {
+            if (weapon.twoHand && weapon.damageAbility == 'str') {
+                damageBonus = Math.floor(1.5 * $scope.abilityMod('str'));
+                if (damageBonus < 0)
+                    damageBonus = 0;
+            } else
+                damageBonus = Math.floor($scope.abilityMod(weapon.damageAbility));
+        }
+        damageBonus += Number(weapon.enhancementBonus);
+        return damageBonus;
+    };
+
+    $scope.weaponCritical = function(weapon) {
+        var critical = "";
+        if (weapon.criticalRange != "20")
+            critical += "/" + weapon.criticalRange;
+        if (weapon.criticalMultiplier != "x2")
+            critical += "/" + weapon.criticalMultiplier;
+        return critical;
     };
 
     $scope.weaponAttack = function(weapon) {
@@ -443,19 +527,13 @@ app.controller('sheetController', function($scope, $http, $location) {
         var attack = "";
 
         //calculate the attack bonus
-        var bonus = weapon.enhancementBonus;
-        if (weapon.attackAbility == 'dex')
-            bonus += $scope.abilityMod('dex');
-        else
-            bonus += $scope.abilityMod('str');
+        var bonus = $scope.weaponAttackBonus(weapon);
 
-        //add masterwork or enhancement bonus
+        //add masterwork or enhancement bonus to front of string
         if (weapon.enhancementBonus > 0) {
             attack += "+" + weapon.enhancementBonus + " ";
-            bonus += weapon.enhancementBonus;
         } else if (weapon.masterwork) {
             attack += "mwk ";
-            bonus++;
         }
 
         //add the name of the weapon ex: Heavy Mace
@@ -482,28 +560,18 @@ app.controller('sheetController', function($scope, $http, $location) {
                 attack += bonusWithBab;
         }
 
-        //add the damage roll ex: (1d8+5
+        //add the damage roll ex: ( '1d8'
         attack += " (" + weapon.damageRoll;
-        var damageBonus;
-        if (weapon.damageAbility != 'None') {
-            if (weapon.twoHand && weapon.damageAbility == 'str') {
-                damageBonus = Math.floor(1.5 * $scope.abilityMod('str'));
-                if (damageBonus < 0)
-                    damageBonus = 0;
-            } else
-                damageBonus = Math.floor($scope.abilityMod(weapon.damageAbility));
-            damageBonus += weapon.enhancementBonus;
-            if (damageBonus > 0)
-                attack += "+" + damageBonus;
-            if (damageBonus < 0)
-                attack += damageBonus;
-        }
+
+        //get the damage bonus (1d8 '+5'
+        var damageBonus = $scope.weaponDamageBonus(weapon);
+        if (damageBonus > 0)
+            attack += "+" + damageBonus;
+        if (damageBonus < 0)
+            attack += damageBonus;
 
         //add critical modifier
-        if (weapon.criticalRange != "20")
-            attack += "/" + weapon.criticalRange;
-        if (weapon.criticalMultiplier != "x2")
-            attack += "/" + weapon.criticalMultiplier;
+        attack += $scope.weaponCritical(weapon);
         attack += ")";
 
         return attack;
@@ -512,7 +580,12 @@ app.controller('sheetController', function($scope, $http, $location) {
     $scope.originalFunctions = {
         bab : angular.copy($scope.bab),
         skillMod : angular.copy($scope.skillMod),
-        abilityMod : angular.copy($scope.abilityMod)
+        maxSkillRanks: angular.copy($scope.maxSkillRanks),
+        abilityMod : angular.copy($scope.abilityMod),
+        savingThrow : angular.copy($scope.savingThrow),
+        weaponAttackBonus : angular.copy($scope.weaponAttackBonus),
+        weaponDamageBonus : angular.copy($scope.weaponDamageBonus),
+        initiative : angular.copy($scope.initiative)
     };
 
     /**
@@ -521,13 +594,17 @@ app.controller('sheetController', function($scope, $http, $location) {
     $scope.resetFunctions = function() {
         $scope.bab = angular.copy($scope.originalFunctions.bab);
         $scope.skillMod = angular.copy($scope.originalFunctions.skillMod);
+        $scope.maxSkillRanks = angular.copy($scope.originalFunctions.maxSkillRanks);
         $scope.abilityMod = angular.copy($scope.originalFunctions.abilityMod);
+        $scope.savingThrow = angular.copy($scope.originalFunctions.savingThrow);
+        $scope.weaponAttackBonus = angular.copy($scope.originalFunctions.weaponAttackBonus);
+        $scope.weaponDamageBonus = angular.copy($scope.originalFunctions.weaponDamageBonus);
+        $scope.initiative = angular.copy($scope.originalFunctions.initiative);
     };
 
     $scope.makeSafe = function(code) {
         code = code.replace('makeSafe', '')
             .replace(/\$http/g, 'DONT')
-            .replace(/evalCode/g, 'DONT')
             .replace(/\$location/g, 'DONT')
             .replace(/eval/g, 'DONT');
         return code;
@@ -549,7 +626,7 @@ app.controller('sheetController', function($scope, $http, $location) {
                 //replace keywords thisClass and this with
                 //corresponding scope values
                 code = classFeatures[j].evalText;
-                if (code != "" && code != undefined) {
+                if (code != "" && code != undefined && classFeatures[j].enabled) {
                     tempString = '$scope.sheet.sheetClasses[' + i + ']';
                     code = code.replace(/thisClass/g, tempString);
                     tempString = tempString + '.sheetClassFeatures[' + j + ']';
@@ -644,6 +721,36 @@ app.directive('forceInteger', function() {
                         savedValue = Math.abs(newValue);
                     else if (attr.forceInteger == 'neg')
                         savedValue = -1 * Math.abs(newValue);
+                    else
+                        savedValue = Number(newValue);
+                    ctrl.$setViewValue(savedValue);
+                    element.val(savedValue);
+                } else {
+                    ctrl.$setViewValue(savedValue);
+                    element.val(savedValue);
+                }
+            });
+        }
+    }
+});
+
+app.directive('forceDecimal', function() {
+    return {
+        require : "ngModel",
+        restrict : "A",
+        scope : {forceDecimal : "="},
+        link : function(scope, element, attr, ctrl) {
+            var savedValue;
+
+            element.on('focus', function() {
+                savedValue = Number(element.val());
+            });
+
+            element.on('blur', function() {
+                var newValue = parseFloat(element.val());
+                if (newValue == element.val()) {
+                    if (attr.forceDecimal != '')
+                        savedValue = Number(newValue.toFixed(Number(attr.forceDecimal)));
                     else
                         savedValue = Number(newValue);
                     ctrl.$setViewValue(savedValue);

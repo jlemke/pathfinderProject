@@ -135,19 +135,26 @@
 
         <table>
             <tr>
+                <td><h2>Initiative:  </h2></td>
+                <td><h2 class="field-box" ng-bind="initiative(true)"></h2></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
                 <td colspan="2">Saving Throws</td>
             </tr>
             <tr>
                 <th>Fortitude</th>
-                <td ng-bind="savingThrow('fort')"></td>
+                <td ng-bind="savingThrow('fort', true)"></td>
             </tr>
             <tr>
                 <th>Reflex</th>
-                <td ng-bind="savingThrow('ref')"></td>
+                <td ng-bind="savingThrow('ref', true)"></td>
             </tr>
             <tr>
                 <th>Will</th>
-                <td ng-bind="savingThrow('will')"></td>
+                <td ng-bind="savingThrow('will', true)"></td>
             </tr>
         </table>
 
@@ -220,6 +227,7 @@
                 <div>
                     <label>Hit Points :</label>
                     <input type="text" class="number-box" ng-model="c.hitPoints" force-integer="pos" />
+                    <label>(Maximum {{c.level * c.hitDie}})</label>
                 </div>
                 <div>
                     <label>Hit Die: d</label>
@@ -230,6 +238,37 @@
                     <label>+ INT Skills Per Level ({{c.skillsPerLevel + abilityMod('int')}})</label>
                 </div>
                 <input type="button" value="Delete Class" ng-click="confirmDelete(classes, $index)"  />
+
+                <div class="classFeatures">
+                    <h2>Class Features</h2>
+                    <input type="button" value="Evaluate" ng-click="evalCode()" />
+                    <div ng-repeat="feature in c.sheetClassFeatures as features">
+                        <div>
+                            <input type="button" value="Remove" ng-click="confirmDelete(features, $index)" />
+                        </div>
+                        <div class="field-box">
+                            <input class="string-field-long" ng-model="feature.featureName" />
+                            <label class="field-label">Name</label>
+                        </div>
+                        <div class="field-box">
+                            <label>Active Level : </label>
+                            <input class="number-box-md underline" type="text" ng-model="feature.activeLevel" force-integer="pos"/>
+                        </div>
+                        <div class="field-box">
+                            <label>Enabled : </label><input type="checkbox" ng-model="feature.enabled" />
+                        </div>
+                        <div>
+                            <textarea class="description" ng-model="feature.featureDescription"></textarea>
+                        </div>
+                        <div><label>Code Priority : </label><input type="text" class="number-box-md underline" ng-model="feature.evalPriority" force-integer /></div>
+                        <div>
+                            <textarea class="description" ng-model="feature.evalText"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="button" value="Add Feature" ng-click="addClassFeature(c)" />
+                    </div>
+                </div>
 
                 <div ng-if="c.casterAbility != '---'">
                     <div>
@@ -260,37 +299,6 @@
                     <div class="field-box">
                         <input class="string-field-medium" type="text" force-integer ng-model="c.casterBonusMisc"/>
                         <label class="field-label">MISC CASTER LEVEL BONUS</label></div>
-
-                    <div class="classFeatures">
-                        <h2>Class Features</h2>
-                        <input type="button" value="Evaluate" ng-click="evalCode()" />
-                        <div ng-repeat="feature in c.sheetClassFeatures as features">
-                            <div>
-                                <input type="button" value="Remove" ng-click="confirmDelete(features, $index)" />
-                            </div>
-                            <div class="field-box">
-                                <input class="string-field-long" ng-model="feature.featureName" />
-                                <label class="field-label">Name</label>
-                            </div>
-                            <div class="field-box">
-                                <label>Active Level : </label>
-                                <input class="number-box-md underline" type="text" ng-model="feature.activeLevel" force-integer="pos"/>
-                            </div>
-                            <div class="field-box">
-                                <label>Enabled : </label><input type="checkbox" ng-model="feature.enabled" />
-                            </div>
-                            <div>
-                                <textarea class="description" ng-model="feature.featureDescription"></textarea>
-                            </div>
-                            <div><label>Code Priority : </label><input type="text" class="number-box-md underline" ng-model="feature.evalPriority" force-integer /></div>
-                            <div>
-                                <textarea class="description" ng-model="feature.evalText"></textarea>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="button" value="Add Feature" ng-click="addFeature(c)" />
-                        </div>
-                    </div>
 
                     <div class="spells">
                         <h2>Spells</h2>
@@ -343,7 +351,7 @@
                             <option value="wis">WIS</option>
                             <option value="cha">CHA</option>
                         </select></td>
-                        <td><div class="number-box inline-field" ng-bind="skillMod(skill)"></div>=</td>
+                        <td><div data-popover-trigger="mouseenter" popover-template="popups/skill.html" class="number-box inline-field" ng-bind="skillMod(skill)"></div>=</td>
                         <td><div class="inline-field" ng-bind="abilityMod(skill.skillAbility)"></div>+</td>
                         <td><input class="number-box" type="text" ng-model="skill.skillRanks" force-integer="pos" />+</td>
                         <td><input class="number-box" type="text" ng-model="skill.skillMisc" force-integer />+</td>
@@ -383,6 +391,9 @@
                 <div class="field-box">
                     <input type="text" ng-model="sheet.sheetMoney.cp" class="number-box-md underline" force-integer />
                     <label class="field-label">CP</label>
+                </div>
+                <div class="field-box">
+                    <h4>({{amountOfGold()}} Gold)</h4>
                 </div>
             </div>
             <h3>Equipment</h3>
@@ -469,7 +480,7 @@
                             <label class="field-label">Wt.</label></td>
                         <td><input type="checkbox" ng-model="weapon.proficient" />
                             <label class="field-label">prof</label></td>
-                        <td><input type="text" ng-model="weapon.worth" class="number-box underline" force-integer="pos" />
+                        <td><input type="text" ng-model="weapon.worth" class="number-box underline" force-decimal="2" />
                             <label class="field-label">Value</label></td>
                         <td><input type="button" value="remove" ng-click="confirmDelete(weapons, $index)" /></td>
                     </tr>
@@ -489,9 +500,14 @@
                         <label class="field-label">Qty</label></td>
                     <td><input type="text" ng-model="item.unitWeight" class="number-box underline" force-integer="pos" />
                         <label class="field-label">lbs</label></td>
-                    <td><input type="text" ng-model="item.unitValue" class="number-box underline" force-integer />
-                        <label class="field-label">Value</label></td>
+                    <td><input type="text" ng-model="item.unitValue" class="string-field-small underline" force-decimal="2" />
+                        <label class="field-label">u.Val</label></td>
                     <td><input type="button" value="Remove" ng-click="confirmDelete(items, $index)" /></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td></td>
+                    <td><h4 class="text-centered">{{totalItemValue()}}gp</h4></td>
                 </tr>
                 <tr><td rowspan="6"><input type="button" value="+" ng-click="addItem()" /></td></tr>
             </table>

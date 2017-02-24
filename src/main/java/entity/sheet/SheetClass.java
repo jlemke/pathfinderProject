@@ -275,7 +275,7 @@ public class SheetClass implements Comparable<SheetClass> {
 
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<SheetSpell> getSheetSpells() {
         return sheetSpells;
     }
@@ -285,7 +285,7 @@ public class SheetClass implements Comparable<SheetClass> {
     }
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<SheetClassFeature> getSheetClassFeatures() {
         return sheetClassFeatures;
     }
