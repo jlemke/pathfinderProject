@@ -134,6 +134,7 @@ public class SheetDao {
         sheet.setOwnerUsername(username);
         sheet.setDateCreated(currentTime);
         sheet.setLastAccessed(currentTime);
+        sheet.setCharacterName("New Sheet");
         session.save(sheet);
         int id = sheet.getSheetId();
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * Created by Joe on 12/5/2016.
@@ -17,7 +18,7 @@ public class SheetItem {
     private String itemDescription;
     private int itemQuantity;
     private int unitWeight;
-    private int unitValue;
+    private BigDecimal unitValue;
     private Sheet sheet;
 
     @Column(name = "sheet_id", nullable = false)
@@ -84,11 +85,11 @@ public class SheetItem {
 
     @Basic
     @Column(name = "unit_value", nullable = false)
-    public int getUnitValue() {
+    public BigDecimal getUnitValue() {
         return unitValue;
     }
 
-    public void setUnitValue(int unitValue) {
+    public void setUnitValue(BigDecimal unitValue) {
         this.unitValue = unitValue;
     }
 
@@ -119,7 +120,7 @@ public class SheetItem {
         result = 31 * result + (itemDescription != null ? itemDescription.hashCode() : 0);
         result = 31 * result + itemQuantity;
         result = 31 * result + unitWeight;
-        result = 31 * result + unitValue;
+        result = 31 * result + ((unitValue == null) ? 0 : unitValue.hashCode());
         return result;
     }
 

@@ -4,10 +4,10 @@
 
 var saveInProgress = false;
 
-var app = angular.module('sheetApp', []);
+var app = angular.module('sheetApp', ['ui.bootstrap']);
 
 //TODO figure out why mdDialog is mad
-app.controller('sheetController', function($scope, $http, $location) {
+app.controller('sheetController', function($scope, $http, $location, $timeout) {
 
     /**
      * on page load retrieve sheet information for given id
@@ -33,7 +33,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     /**
      * Confirmation pop-up when deleting something
      */
-    $scope.confirmDelete = function(collection, index) {
+    $scope.confirmDelete = function(collection, object) {
         /*
         $mdDialog.show(
             $mdDialog.confirm()
@@ -46,6 +46,7 @@ app.controller('sheetController', function($scope, $http, $location) {
             collection.splice(index, 1);
         });
         */
+        var index = collection.indexOf(object);
         collection.splice(index, 1);
     };
 
@@ -195,9 +196,27 @@ app.controller('sheetController', function($scope, $http, $location) {
             conRow : 0,
             intRow : 0,
             wisRow : 0,
-            chaRow : 0
+            chaRow : 0,
+            enabled : false
         };
         $scope.sheet.sheetAbilityScoreColumns.push(newCol);
+    };
+
+    /**
+     * Used for labeling class tabs
+     * @param c class object
+     */
+    $scope.classHeading = function(c) {
+        if ($scope.sheet == undefined) return "";
+        if (c.className == "")
+            return "Class " + ($scope.sheet.sheetClasses.indexOf(c) + 1);
+        else {
+            var heading = "";
+            if (c.archetype != "")
+                heading = c.archetype + " ";
+            heading += c.className + " " + c.level;
+            return heading;
+        }
     };
 
     /**
@@ -218,6 +237,8 @@ app.controller('sheetController', function($scope, $http, $location) {
         return outputString.substring(0, outputString.length - 1);
     };
 
+    $scope.selectedClass = 0;
+
     /**
      * returns the caster level for a class using the misc bonus and the class level
      * @param thisClass the class object
@@ -230,6 +251,20 @@ app.controller('sheetController', function($scope, $http, $location) {
         if (thisClass.spellCap == "4th" && thisClass.level > 3)
             return Number(thisClass.level) - 3 + Number(thisClass.casterBonusMisc);
         else return thisClass.casterBonusMisc;
+    };
+
+    /**
+     * Returns an array containing all spells from all classes
+     */
+    $scope.allSpells = function() {
+        if ($scope.sheet == undefined) return [];
+        var spells = [];
+        var classes = $scope.sheet.sheetClasses;
+        for (var i = 0; i < classes.length; i++) {
+            if (classes[i].sheetSpells != undefined)
+                spells = spells.concat(classes[i].sheetSpells);
+        }
+        return spells;
     };
 
     //TODO figure out if this is useful?
@@ -361,7 +396,9 @@ app.controller('sheetController', function($scope, $http, $location) {
         return Number(parseFloat(total).toFixed(2));
     };
 
-    $scope.removeFrom = function(collection, index) {
+    $scope.removeFrom = function(collection, object) {
+        var index = collection.indexOf(object);
+        console.log(index);
         collection.splice(index, 1);
     };
 
@@ -419,6 +456,7 @@ app.controller('sheetController', function($scope, $http, $location) {
     };
 
     $scope.addClass = function() {
+        var classes = $scope.sheet.sheetClasses;
         var newClass = {
             sheetId : $scope.sheet.sheetId,
             className : "New Class",
@@ -437,7 +475,8 @@ app.controller('sheetController', function($scope, $http, $location) {
             preparedCaster : false,
             casterBonusMisc : 0
         };
-        $scope.sheet.sheetClasses.push(newClass);
+        classes.push(newClass);
+        $scope.selectedClass = classes.length - 1;
     };
 
     $scope.addSpell = function(thisClass) {
@@ -483,6 +522,21 @@ app.controller('sheetController', function($scope, $http, $location) {
         "**" */
     };
 
+    $scope.addAbility = function() {
+        console.log("works");
+        var newAbility = {
+            sheetId : $scope.sheet.sheetId,
+            abilityName : "New Ability",
+            abilityDescription : "",
+            type : "feat",
+            evalText : "",
+            evalPriority : 0,
+            activeLevel : 1,
+            enabled : false
+        };
+        $scope.sheet.sheetAbilities.push(newAbility);
+    };
+
     $scope.weaponAttackBonus = function(weapon) {
         //calculate the attack bonus of the weapon
         var bonus = weapon.enhancementBonus;
@@ -496,6 +550,9 @@ app.controller('sheetController', function($scope, $http, $location) {
             bonus += weapon.enhancementBonus;
         else if (weapon.masterwork)
             bonus++;
+
+        if (!weapon.proficient)
+            bonus -= 4;
         return bonus;
     };
 
@@ -503,9 +560,9 @@ app.controller('sheetController', function($scope, $http, $location) {
         var damageBonus = 0;
         if (weapon.damageAbility != 'none') {
             if (weapon.twoHand && weapon.damageAbility == 'str') {
-                damageBonus = Math.floor(1.5 * $scope.abilityMod('str'));
-                if (damageBonus < 0)
-                    damageBonus = 0;
+                if ($scope.abilityMod('str') < 0)
+                    damageBonus = Math.floor($scope.abilityMod('str') / 2);
+                else damageBonus = Math.floor(1.5 * $scope.abilityMod('str'));
             } else
                 damageBonus = Math.floor($scope.abilityMod(weapon.damageAbility));
         }
@@ -620,8 +677,10 @@ app.controller('sheetController', function($scope, $http, $location) {
         var classFeatures;
         var code;
         var tempString;
+        var characterLevel = 0;
         for (var i = 0; i < classes.length; i++) {
             classFeatures = classes[i].sheetClassFeatures;
+            characterLevel += classes[i].level;
             for (var j = 0; j < classFeatures.length; j++) {
                 //replace keywords thisClass and this with
                 //corresponding scope values
@@ -639,6 +698,20 @@ app.controller('sheetController', function($scope, $http, $location) {
                     //TODO need to add hover-notes
                 }
             }
+        }
+
+        var abilities = $scope.sheet.sheetAbilities;
+        for (i = 0; i < abilities.length; i++) {
+            code = abilities[i].evalText;
+            if (code != "" && code != undefined && abilities[i].enabled) {
+                code = code.replace(/characterLevel/g, characterLevel);
+            }
+            code = $scope.makeSafe(code);
+            codeArray.push({
+                priority: abilities[i].evalPriority,
+                evalText: code
+            });
+            //TODO add hover-notes!
         }
 
         //TODO add in feats, racial traits, traits, spells, and abilities

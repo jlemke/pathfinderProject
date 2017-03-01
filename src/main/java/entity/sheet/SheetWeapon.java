@@ -29,6 +29,7 @@ public class SheetWeapon {
     private int weight;
     private boolean proficient;
     private int worth;
+    private boolean offHand;
     private Sheet sheet;
 
     @Column(name = "sheet_id", nullable = false)
@@ -213,6 +214,16 @@ public class SheetWeapon {
         this.worth = worth;
     }
 
+    @Basic
+    @Column(name = "off_hand", nullable = false)
+    public boolean isOffHand() {
+        return offHand;
+    }
+
+    public void setOffHand(boolean offHand) {
+        this.offHand = offHand;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -233,6 +244,7 @@ public class SheetWeapon {
         if (slashing != that.slashing) return false;
         if (weight != that.weight) return false;
         if (proficient != that.proficient) return false;
+        if (offHand != that.offHand) return false;
         if (worth != that.worth) return false;
         if (weaponName != null ? !weaponName.equals(that.weaponName) : that.weaponName != null) return false;
         if (damageRoll != null ? !damageRoll.equals(that.damageRoll) : that.damageRoll != null) return false;
@@ -264,6 +276,7 @@ public class SheetWeapon {
         result = 31 * result + weight;
         result = 31 * result + (proficient ? 1 : 0);
         result = 31 * result + worth;
+        result = 31 * result + (offHand ? 1 : 0);
         return result;
     }
 

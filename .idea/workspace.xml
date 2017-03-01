@@ -2,13 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d56039-3889-4ba4-b206-ee68505805ef" name="Default" comment="added stat-block styling for weapon attacks">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/popups/skill.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/newSheet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/edit-windows/class-feature.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetAbility.class" afterPath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetAbility.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetItem.class" afterPath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetWeapon.class" afterPath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/entity/sheet/SheetWeapon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/persistence/SheetDao.class" afterPath="$PROJECT_DIR$/target/PathfinderProject/WEB-INF/classes/persistence/SheetDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/sheet/SheetAbility.class" afterPath="$PROJECT_DIR$/target/classes/entity/sheet/SheetAbility.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/sheet/SheetItem.class" afterPath="$PROJECT_DIR$/target/classes/entity/sheet/SheetItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/sheet/SheetWeapon.class" afterPath="$PROJECT_DIR$/target/classes/entity/sheet/SheetWeapon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/SheetDao.class" afterPath="$PROJECT_DIR$/target/classes/persistence/SheetDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/persistence/SheetDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/persistence/SheetDaoTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6c19bf00-db43-484c-8847-a2f829af8c3d.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6c19bf00-db43-484c-8847-a2f829af8c3d.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/project.log" afterPath="$PROJECT_DIR$/logs/project.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetItem.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetWeapon.java" afterPath="$PROJECT_DIR$/src/main/java/entity/sheet/SheetWeapon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/sheet_style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/sheet_style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/sheet.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/sheet.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/sheet.html" afterPath="$PROJECT_DIR$/src/main/webapp/sheet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/sheets.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/sheets.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/css/sheet_style.css" afterPath="$PROJECT_DIR$/target/PathfinderProject/css/sheet_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/js/sheet.js" afterPath="$PROJECT_DIR$/target/PathfinderProject/js/sheet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/sheet.html" afterPath="$PROJECT_DIR$/target/PathfinderProject/sheet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PathfinderProject/sheets.jsp" afterPath="$PROJECT_DIR$/target/PathfinderProject/sheets.jsp" />
     </list>
     <ignored path="pathfinderProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +75,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="sheet_items" />
+        <option name="myItemId" value="sheet_weapons" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -68,8 +89,18 @@
       <file leaf-file-name="sheet.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/sheet.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-833">
-              <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+            <state relative-caret-position="216">
+              <caret line="337" column="98" lean-forward="true" selection-start-line="337" selection-start-column="98" selection-end-line="337" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class-feature.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/edit-windows/class-feature.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,18 +109,8 @@
       <file leaf-file-name="sheet.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/sheet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="231" column="46" lean-forward="true" selection-start-line="231" selection-start-column="46" selection-end-line="231" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SheetClassFeature.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClassFeature.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="398">
+              <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,8 +119,8 @@
       <file leaf-file-name="sheet_style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/sheet_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="561">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -139,6 +160,14 @@
       <find>Points</find>
       <find>max</find>
       <find>acp</find>
+      <find>int</find>
+      <find>abilityid</find>
+      <find>evalpriority</find>
+      <find>abilityDescription</find>
+      <find>abilityId</find>
+      <find>abilt</find>
+      <find>$index</find>
+      <find>confirm</find>
     </findStrings>
     <replaceStrings>
       <replace>'120'</replace>
@@ -151,6 +180,19 @@
       <replace>thisClass</replace>
       <replace>string-field-medium</replace>
       <replace>Ranks</replace>
+      <replace>evalText</replace>
+      <replace>activeLevel</replace>
+      <replace>enabled</replace>
+      <replace>type</replace>
+      <replace>evalPriority</replace>
+      <replace>item</replace>
+      <replace>col</replace>
+      <replace>ability</replace>
+      <replace>c</replace>
+      <replace>feature</replace>
+      <replace>spell</replace>
+      <replace>armor</replace>
+      <replace>weapon</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -169,13 +211,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetSkillPK.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClassPK.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetArmor.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetDescription.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetFeat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetRacialTrait.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetSpeeds.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetMoney.java" />
@@ -195,10 +233,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/sheet.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/Sheet.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/SaveSheet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetWeapon.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6c19bf00-db43-484c-8847-a2f829af8c3d/console.sql" />
         <option value="$PROJECT_DIR$/logs/project.log" />
         <option value="$PROJECT_DIR$/src/main/webapp/forbidden.html" />
@@ -209,16 +245,22 @@
         <option value="$PROJECT_DIR$/src/main/java/controller/activateUsername.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/reserveUsername.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/sheets.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClassFeature.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" />
         <option value="$PROJECT_DIR$/DesignNotes.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/popups/skill.html" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" />
+        <option value="$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/sheets.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/SheetDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/newSheet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetWeapon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/sheet_style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/sheet.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/edit-windows/class-feature.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/sheet.js" />
       </list>
     </option>
@@ -267,7 +309,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -413,6 +454,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathfinderProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathfinderProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="edit-windows" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,6 +669,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
@@ -1255,8 +1323,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.saveSheet" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.createBlankSheet" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.createBlankSheet" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.saveSheet" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.testCollectionUpdate" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.getSheet" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.SheetDaoTest.getListOfSheets" />
@@ -1358,18 +1426,17 @@
       <workItem from="1487640467678" duration="7183000" />
       <workItem from="1487719774088" duration="11515000" />
       <workItem from="1487874627205" duration="17391000" />
+      <workItem from="1488219243213" duration="16168000" />
+      <workItem from="1488319235896" duration="9451000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SheetDaoTest_createBlankSheet - 2017.02.12 at 20h 17m 27s.xml">
+    <history-entry file="SheetDaoTest_createBlankSheet - 2017.02.27 at 13h 14m 13s.xml">
       <configuration name="SheetDaoTest.createBlankSheet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SheetDaoTest_getSheet - 2017.02.09 at 13h 42m 05s.xml">
-      <configuration name="SheetDaoTest.getSheet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SheetDaoTest_saveSheet - 2017.02.09 at 13h 42m 19s.xml">
-      <configuration name="SheetDaoTest.saveSheet" configurationId="JUnit" />
+    <history-entry file="SheetDaoTest_createBlankSheet - 2017.02.27 at 13h 16m 12s.xml">
+      <configuration name="SheetDaoTest.createBlankSheet" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SheetDaoTest_saveSheet - 2017.02.09 at 13h 48m 44s.xml">
       <configuration name="SheetDaoTest.saveSheet" configurationId="JUnit" />
@@ -1389,12 +1456,15 @@
     <history-entry file="SheetDaoTest_saveSheet - 2017.02.12 at 20h 22m 01s.xml">
       <configuration name="SheetDaoTest.saveSheet" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SheetDaoTest_saveSheet - 2017.02.27 at 13h 14m 36s.xml">
+      <configuration name="SheetDaoTest.saveSheet" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="SheetDaoTest_testCollectionUpdate - 2017.02.09 at 13h 45m 20s.xml">
       <configuration name="SheetDaoTest.testCollectionUpdate" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388339000" />
+    <option name="totallyTimeSpent" value="413958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1409,7 +1479,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23352855" sideWeight="0.4924406" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18594436" sideWeight="0.4924406" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1422,10 +1492,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1214511" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16719243" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19912152" sideWeight="0.55415165" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19912152" sideWeight="0.44665462" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19692533" sideWeight="0.44665462" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1440,6 +1510,47 @@
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2807571" sideWeight="0.49267936" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33280757" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24921136" sideWeight="0.511713" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13880126" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18594436" sideWeight="0.4924406" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30441642" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16719243" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23352855" sideWeight="0.5075594" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19912152" sideWeight="0.55415165" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2807571" sideWeight="0.49267936" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19692533" sideWeight="0.44665462" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33280757" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1470,94 +1581,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetSpell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_ability_score_columns">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_speeds">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_items">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_general">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_description">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/SaveSheet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
@@ -1569,13 +1592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetWeapon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1649,28 +1665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LoadSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="73" column="9" lean-forward="false" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sheets.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GetSheetList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="51" column="50" lean-forward="false" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/persistence/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -1730,25 +1724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="140" column="50" lean-forward="true" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_main">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_skills">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1765,13 +1740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="151" column="22" lean-forward="true" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/SheetDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="200" column="50" lean-forward="false" selection-start-line="200" selection-start-column="50" selection-end-line="200" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1795,31 +1763,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_spells">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_feats">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_abilities">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1848,25 +1792,8 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1836">
             <caret line="108" column="30" lean-forward="false" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
-            <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/popups/skill.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="268" column="0" lean-forward="true" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1874,23 +1801,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2812">
           <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/sheet_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClassFeature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
+        <state relative-caret-position="1445">
           <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1903,22 +1820,206 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/SheetDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LoadSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/GetSheetList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="51" column="50" lean-forward="false" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_main">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/SheetDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="139" column="0" lean-forward="true" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/sheets.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/newSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_ability_score_columns">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_spells">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_items">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c70df2ae/6c19bf00-db43-484c-8847-a2f829af8c3d/pathfinderdb.sheet_abilities">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbilityScoreColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="157" column="49" lean-forward="true" selection-start-line="157" selection-start-column="49" selection-end-line="157" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/ui-bootstrap-tpls-2.5.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/sheet/SheetClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/sheet_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/popups/skill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/sheet.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-833">
-          <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+        <state relative-caret-position="216">
+          <caret line="337" column="98" lean-forward="true" selection-start-line="337" selection-start-column="98" selection-end-line="337" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/edit-windows/class-feature.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/sheet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="231" column="46" lean-forward="true" selection-start-line="231" selection-start-column="46" selection-end-line="231" selection-end-column="46" />
+        <state relative-caret-position="398">
+          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
           <folding />
         </state>
       </provider>

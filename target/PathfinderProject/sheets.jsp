@@ -16,6 +16,7 @@
 </head>
 <body>
 
+<a href="/newSheet">Add Blank Sheet</a>
 <table class="table" id="sheetList">
     <tr>
         <th>Name</th>

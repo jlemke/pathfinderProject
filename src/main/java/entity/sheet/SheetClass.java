@@ -32,6 +32,7 @@ public class SheetClass implements Comparable<SheetClass> {
     private String castingType = "None";
     private boolean preparedCaster = false;
     private int casterBonusMisc = 0;
+    private String description;
     private Set<SheetSpell> sheetSpells = new TreeSet<>();
     private Set<SheetClassFeature> sheetClassFeatures = new TreeSet<>();
     private Sheet sheet;
@@ -209,6 +210,12 @@ public class SheetClass implements Comparable<SheetClass> {
         this.casterBonusMisc = casterBonusMisc;
     }
 
+    @Basic
+    @Column(name = "description")
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -240,7 +247,7 @@ public class SheetClass implements Comparable<SheetClass> {
             return false;
         if (preparedCaster != that.preparedCaster) return false;
         if (casterBonusMisc != that.casterBonusMisc) return false;
-
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
 
         return true;
     }
@@ -264,6 +271,7 @@ public class SheetClass implements Comparable<SheetClass> {
         result = 31 * result + (castingType != null ? castingType.hashCode() : 0);
         result = 31 * result + (preparedCaster ? 1 : 0);
         result = 31 * result + casterBonusMisc;
+        result = 31 * result + (description != null ? className.hashCode() : 0);
         return result;
     }
 

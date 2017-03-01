@@ -33,7 +33,7 @@ public class SheetDaoTest {
     @After
     public void tearDown() throws Exception {
         for (Sheet testSheet : testSheets) {
-            dao.deleteSheet(testSheet);
+            //dao.deleteSheet(testSheet);
         }
     }
 
