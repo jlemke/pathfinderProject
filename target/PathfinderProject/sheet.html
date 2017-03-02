@@ -333,6 +333,7 @@
                                 <h2>Class Features</h2>
                                 <input type="button" value="Evaluate" ng-click="evalCode()" />
                                 <div ng-repeat="feature in c.sheetClassFeatures as features">
+                                    <button type="button" class="btn btn-default" ng-click="editWindow('feature', feature)">Edit</button>
                                     <div>
                                         <input type="button" value="Remove" ng-click="confirmDelete(features, feature)" />
                                     </div>

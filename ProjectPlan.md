@@ -33,4 +33,3 @@ I have chosen this project because the current services are either designed for 
   * Some sort of way to let users create code that affects sheet fields Ex: SET STRSCORE TO STRSCORE + 2
   * A way to update the GM View when the player updates their sheet
 
-			

@@ -25,14 +25,14 @@ public class newSheet extends HttpServlet {
             throws ServletException, IOException {
 
         //TODO replace with j_security_check
-        String username = "jlemke"; //request.getUserPrincipal().getName();
+        String username = request.getUserPrincipal().getName();
 
         if (!username.equals("")) {
             SheetDao dao = new SheetDao();
 
             dao.createBlankSheet(username);
             response.setStatus(200);
-            response.sendRedirect("/sheets");
+            response.sendRedirect("sheets");
         } else
             response.setStatus(403);
     }

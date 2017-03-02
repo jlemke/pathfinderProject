@@ -17,6 +17,7 @@
         <tr><td>Password: <input type="password" name="j_password"></td></tr>
         <tr><td><input type="SUBMIT" value="Log In"></td></tr>
     </table>
+    <a href="${pageContext.request.contextPath}/signup.jsp">Create Account</a>
 </form>
 </body>
 </html>

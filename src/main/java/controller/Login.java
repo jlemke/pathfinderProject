@@ -36,11 +36,11 @@ public class Login extends HttpServlet {
         if (userDao.authenticateUser(username, password)) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request, response);
         } else {
             request.setAttribute("errorMessage", "Your username and password didn't match.  Please try again.");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.forward(request, response);
         }
 

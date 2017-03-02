@@ -33,7 +33,7 @@ public class SheetDaoTest {
     @After
     public void tearDown() throws Exception {
         for (Sheet testSheet : testSheets) {
-            //dao.deleteSheet(testSheet);
+            dao.deleteSheet(testSheet);
         }
     }
 
@@ -42,7 +42,7 @@ public class SheetDaoTest {
     public void getListOfSheets() throws Exception {
         List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
 
-        assertEquals("failed", "Rogue 2/Fighter 1", sheets.get(0).getCharacterClassString());
+        assertEquals("failed", 126, sheets.get(0).getSheetId());
     }
 
 
@@ -50,18 +50,9 @@ public class SheetDaoTest {
     @Test
     public void createBlankSheet() throws Exception {
         int newId = dao.createBlankSheet(USERNAME);
-        List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
-        SheetInfo temp;
-        for (int i = 0; i < sheets.size(); i++) {
-            temp = sheets.get(i);
-            logger.info(temp.getSheetId());
-            logger.info(temp.getCharacterClassString());
-            logger.info(temp.getCharacterName());
-            logger.info(temp.getCharacterRace());
-            logger.info(temp.getOwner());
-        }
-        testSheets.add(dao.getSheet(newId));
-        assertEquals("failed", newId, sheets.get(sheets.size() - 1).getSheetId());
+        Sheet tempSheet = dao.getSheet(newId);
+        testSheets.add(tempSheet);
+        assertEquals("failed", newId, tempSheet.getSheetId());
     }
 
     @Test

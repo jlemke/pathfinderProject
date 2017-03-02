@@ -28,7 +28,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>sheets</web-resource-name>
-            <url-pattern>/sheets.jsp</url-pattern>
+            <url-pattern>/sheets</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>registeredUser</role-name>

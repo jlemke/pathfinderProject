@@ -32,8 +32,7 @@ public class LoadSheet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //TODO replace with j_security_check
-        String username = "jlemke"; //request.getUserPrincipal().getName();
+        String username = request.getUserPrincipal().getName();
 
         SheetDao dao = new SheetDao();
 

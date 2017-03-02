@@ -7,7 +7,7 @@ var saveInProgress = false;
 var app = angular.module('sheetApp', ['ui.bootstrap']);
 
 //TODO figure out why mdDialog is mad
-app.controller('sheetController', function($scope, $http, $location, $timeout) {
+app.controller('sheetController', function($scope, $http, $location, $uibModal) {
 
     /**
      * on page load retrieve sheet information for given id
@@ -197,7 +197,7 @@ app.controller('sheetController', function($scope, $http, $location, $timeout) {
             intRow : 0,
             wisRow : 0,
             chaRow : 0,
-            enabled : false
+            enabled : true
         };
         $scope.sheet.sheetAbilityScoreColumns.push(newCol);
     };
@@ -632,6 +632,36 @@ app.controller('sheetController', function($scope, $http, $location, $timeout) {
         attack += ")";
 
         return attack;
+    };
+
+    $scope.editWindow = function(type, object) {
+        var template;
+        if (type == "feature")
+            template = "class-feature.html";
+
+        $ctrl.open = function (size, parentSelector) {
+            var modalInstance = $uibModal.open({
+                animation: $ctrl.animationsEnabled,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'myModalContent.html',
+                controller: 'ModalInstanceCtrl',
+                controllerAs: '$ctrl',
+                size: '',
+                resolve: {
+                    items: function () {
+
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $ctrl.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
     };
 
     $scope.originalFunctions = {

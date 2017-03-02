@@ -1,10 +1,14 @@
 package persistence;
 
         import entity.ReservedUser;
+        import entity.UserRole;
         import org.hibernate.Criteria;
         import org.hibernate.Session;
+        import org.hibernate.Transaction;
         import org.hibernate.criterion.Restrictions;
         import entity.User;
+
+        import java.util.ArrayList;
 
 /**
  * Created by Joe on 10/26/2016.
@@ -46,4 +50,26 @@ public class UserDao {
             return false;
         return true;
     }
+
+    public void createRegisteredUser(User user) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.save(user);
+
+        UserRole newRole = new UserRole();
+        newRole.setUsername(user.getUsername());
+        newRole.setRoleName("registeredUser");
+        newRole.setUser(user);
+
+        ArrayList<UserRole> roles = new ArrayList<UserRole>();
+        roles.add(newRole);
+        user.setUserRoles(roles);
+
+        session.save(newRole);
+        session.update(user);
+        transaction.commit();
+        session.close();
+    }
+
 }

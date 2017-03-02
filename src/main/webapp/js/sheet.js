@@ -197,7 +197,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
             intRow : 0,
             wisRow : 0,
             chaRow : 0,
-            enabled : false
+            enabled : true
         };
         $scope.sheet.sheetAbilityScoreColumns.push(newCol);
     };

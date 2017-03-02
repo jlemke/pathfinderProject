@@ -35,22 +35,17 @@ public class GetSheetList extends HttpServlet {
         //String username = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
         logger.info("in getSheetList servlet");
 
-        String username = "jlemke";
+        String username = request.getUserPrincipal().getName();
 
-        //if user isn't logged in then don't list any pages
-        if (username == null || username == "") {
+        //get sheets for this user
+        List<SheetInfo> sheets;
+        SheetDao dao = new SheetDao();
+        sheets = dao.getListOfSheets(username);
 
-        } else {
-            //get sheets for this user
-            List<SheetInfo> sheets;
-            SheetDao dao = new SheetDao();
-            sheets = dao.getListOfSheets(username);
-
-            request.setAttribute("sheets", sheets);
-            request.setAttribute("user", username);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/sheets.jsp");
-            dispatcher.forward(request, response);
-        }
+        request.setAttribute("sheets", sheets);
+        request.setAttribute("user", username);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("sheets.jsp");
+        dispatcher.forward(request, response);
 
     }
 

@@ -17,7 +17,7 @@ public class User {
     private String password;
     private String email;
     private Set<Sheet> sheets;
-    private Collection<UserRole> userRolesByUsername;
+    private Collection<UserRole> userRoles;
 
     @Id
     @Column(name = "username", nullable = false, length = 30)
@@ -82,11 +82,11 @@ public class User {
     }
 
     @OneToMany(mappedBy = "user")
-    public Collection<UserRole> getUserRolesByUsername() {
-        return userRolesByUsername;
+    public Collection<UserRole> getUserRoles() {
+        return userRoles;
     }
 
-    public void setUserRolesByUsername(Collection<UserRole> userRolesByUsername) {
-        this.userRolesByUsername = userRolesByUsername;
+    public void setUserRoles(Collection<UserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }
