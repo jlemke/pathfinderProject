@@ -6,6 +6,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 import java.util.Set;
 
@@ -33,14 +35,14 @@ public class SheetClass implements Comparable<SheetClass> {
     private boolean preparedCaster = false;
     private int casterBonusMisc = 0;
     private String description;
-    private Set<SheetSpell> sheetSpells = new TreeSet<>();
-    private Set<SheetClassFeature> sheetClassFeatures = new TreeSet<>();
+    private List<SheetSpell> sheetSpells = new ArrayList<>();
+    private List<SheetClassFeature> sheetClassFeatures = new ArrayList<>();
     private Sheet sheet;
 
     @Column(name = "sheet_id")
     @GeneratedValue(generator="gen")
     @GenericGenerator(name = "gen", strategy = "foreign",
-            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheetClass"))
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheet"))
     public int getSheetId() {
         return sheetId;
     }
@@ -271,7 +273,7 @@ public class SheetClass implements Comparable<SheetClass> {
         result = 31 * result + (castingType != null ? castingType.hashCode() : 0);
         result = 31 * result + (preparedCaster ? 1 : 0);
         result = 31 * result + casterBonusMisc;
-        result = 31 * result + (description != null ? className.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
         return result;
     }
 
@@ -284,21 +286,21 @@ public class SheetClass implements Comparable<SheetClass> {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Set<SheetSpell> getSheetSpells() {
+    public List<SheetSpell> getSheetSpells() {
         return sheetSpells;
     }
 
-    public void setSheetSpells(Set<SheetSpell> sheetSpells) {
+    public void setSheetSpells(List<SheetSpell> sheetSpells) {
         this.sheetSpells = sheetSpells;
     }
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheetClass", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Set<SheetClassFeature> getSheetClassFeatures() {
+    public List<SheetClassFeature> getSheetClassFeatures() {
         return sheetClassFeatures;
     }
 
-    public void setSheetClassFeatures(Set<SheetClassFeature> sheetClassFeatures) {
+    public void setSheetClassFeatures(List<SheetClassFeature> sheetClassFeatures) {
         this.sheetClassFeatures = sheetClassFeatures;
     }
 

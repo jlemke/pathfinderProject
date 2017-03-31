@@ -5,6 +5,7 @@ import entity.sheet.Sheet;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,8 +17,8 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Set<Sheet> sheets;
-    private Collection<UserRole> userRoles;
+    private List<Sheet> sheets;
+    private List<UserRole> userRoles;
 
     @Id
     @Column(name = "username", nullable = false, length = 30)
@@ -73,20 +74,20 @@ public class User {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    public Set<Sheet> getSheets() {
+    public List<Sheet> getSheets() {
         return sheets;
     }
 
-    public void setSheets(Set<Sheet> sheets) {
+    public void setSheets(List<Sheet> sheets) {
         this.sheets = sheets;
     }
 
     @OneToMany(mappedBy = "user")
-    public Collection<UserRole> getUserRoles() {
+    public List<UserRole> getUserRoles() {
         return userRoles;
     }
 
-    public void setUserRoles(Collection<UserRole> userRoles) {
+    public void setUserRoles(List<UserRole> userRoles) {
         this.userRoles = userRoles;
     }
 }

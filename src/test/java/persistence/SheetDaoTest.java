@@ -64,10 +64,15 @@ public class SheetDaoTest {
     }
 
     @Test
+    public void deleteSheet() throws Exception {
+
+    }
+
+    @Test
     public void saveSheet() throws Exception {
         int id = dao.createBlankSheet(USERNAME);
         Sheet sheet = dao.getSheet(id);
-        SortedSet<SheetAbilityScoreColumn> columns = new TreeSet<>();
+        ArrayList<SheetAbilityScoreColumn> columns = new ArrayList<>();
         SheetAbilityScoreColumn column;
         for (int i = 0; i < 4; i++) {
             column = new SheetAbilityScoreColumn();

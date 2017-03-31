@@ -76,7 +76,7 @@ public class SheetDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         User owner = (User) session.get(User.class, username);
-        Set<Sheet> sheets = (Set) owner.getSheets();
+        List<Sheet> sheets = owner.getSheets();
 
         List<SheetInfo> thisUsersSheets = new ArrayList<>();
         SheetInfo temp;
@@ -170,7 +170,7 @@ public class SheetDao {
     }
 
     private void setBaseAbilityScoreColumns(Sheet sheet) {
-        Set<SheetAbilityScoreColumn> columns = sheet.getSheetAbilityScoreColumns();
+        ArrayList<SheetAbilityScoreColumn> columns = (ArrayList<SheetAbilityScoreColumn>) sheet.getSheetAbilityScoreColumns();
         SheetAbilityScoreColumn temp;
         for (int i = 0; i < DEFAULT_COLUMN_NAMES.length; i++) {
             temp = new SheetAbilityScoreColumn();
@@ -190,7 +190,7 @@ public class SheetDao {
     }
 
     private void setBaseSkills(Sheet sheet) {
-        Set<SheetSkill> skills = sheet.getSheetSkills();
+        ArrayList<SheetSkill> skills = (ArrayList<SheetSkill>) sheet.getSheetSkills();
         SheetSkill temp;
         String[] defaultSkill;
         for (int i = 0; i < DEFAULT_SKILLS.length; i++) {
@@ -239,18 +239,46 @@ public class SheetDao {
 
 
     public String saveSheet(Sheet sheet) {
+        //TODO possibly implement error handling using string return type
         String message = "Sheet Saved?";
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         logger.info("Saving/updating sheet in hibernate...");
+
+        //save or update all children
+        //sheet = updateCollections(sheet, session);
+
         session.merge(sheet);
         transaction.commit();
         session.close();
         return message;
     }
 
-    private Sheet updateCollections(Sheet sheet) {
+    private Sheet updateCollections(Sheet sheet, Session session) {
+        for (SheetAbility sheetAbility : sheet.getSheetAbilities()) {
+            sheetAbility.setSheet(sheet);
+            session.saveOrUpdate(sheetAbility);
+        }
+
+        for (SheetArmor sheetArmor : sheet.getSheetArmors()) {
+            sheetArmor.setSheet(sheet);
+            session.saveOrUpdate(sheetArmor);
+        }
+
+        //Save or update all class spells and features
+        for (SheetClass sheetClass : sheet.getSheetClasses()) {
+            sheetClass.setSheet(sheet);
+            session.save(sheetClass);
+            for (SheetClassFeature sheetClassFeature : sheetClass.getSheetClassFeatures()) {
+                sheetClassFeature.setSheetClass(sheetClass);
+                session.saveOrUpdate(sheetClassFeature);
+            }
+            for (SheetSpell sheetSpell : sheetClass.getSheetSpells()) {
+                sheetSpell.setSheetClass(sheetClass);
+                session.saveOrUpdate(sheetSpell);
+            }
+        }
         return sheet;
     }
 

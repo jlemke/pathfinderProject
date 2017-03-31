@@ -4,30 +4,70 @@
 
 var saveInProgress = false;
 
+function unsavedPrompt() {
+    return "You have unsaved changes. Leave anyway?";
+}
+
 var app = angular.module('sheetApp', ['ui.bootstrap']);
 
 //TODO figure out why mdDialog is mad
 app.controller('sheetController', function($scope, $http, $location, $uibModal) {
 
+    console.log("Loading...");
+    $scope.loaded = false;
+
     /**
      * on page load retrieve sheet information for given id
+     * user being logged in is assumed because /sheet.html is restricted
      */
     angular.element(document).ready(function() {
-        $scope.loaded = false;
+        //get sheet id
         var url = $location.absUrl();
         console.log(url);
         var id = url.substring(url.lastIndexOf("=") + 1);
-        console.log("sending sheet request to /sheet?id=" + id);
-        $http({
-            method : "GET",
-            url : "sheet?id=" + id
-        }).then(function(response) {
-            $scope.sheet = response.data;
-            $scope.loaded = true;
-            console.log("sheet retrieved");
-            console.log($scope.sheet);
-            $scope.evalCode();
-        });
+
+        //check if there is data saved in localstorage
+        var localSheetString = localStorage.getItem("sheet");
+        if (localSheetString != undefined && localSheetString != "undefined") {
+            var localSheet = angular.fromJson(localSheetString);
+            //check that the id's match
+            if (localSheet.sheetId == id) {
+                $scope.loaded = true;
+                $scope.sheet = " ";
+                //load the sheet info from localstorage
+                $scope.sheet = localSheet;
+                console.log("Sheet loaded from local storage.");
+                console.log($scope.sheet);
+                $scope.$apply();
+                $scope.evalCode();
+                setTimeout(function() {
+                }, 5);
+            }
+        } else {
+            //retrieve sheet info from servlet
+            console.log("Sending sheet request to server...");
+            $http({
+                method: "GET",
+                url: "sheet?id=" + id
+            }).then(function(response) {
+                //successfully got info from servlet
+                $scope.sheet = response.data;
+                console.log("Sheet retrieved from server.");
+                console.log($scope.sheet);
+                $scope.evalCode();
+                setTimeout(function() {
+                    $scope.loaded = true;
+                }, 5);
+            }, function(response) {
+                //user doesn't own the sheet
+                if (response == 403) {
+
+                }
+            });
+        }
+        //remove the data from localstorage once loaded
+        console.log("Removing sheet from localstorage.");
+        localStorage.removeItem('sheet');
     });
 
     /**
@@ -473,6 +513,8 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
             spellCap : "None",
             castingType : "None",
             preparedCaster : false,
+            sheetClassFeatures : [],
+            sheetSpells : [],
             casterBonusMisc : 0
         };
         classes.push(newClass);
@@ -758,8 +800,45 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
         }
     };
 
+    $scope.saved = true;
+
+    /**
+     * Indicates when the page has unsaved data
+     */
+    $scope.$watch('sheet', function() {
+        if ($scope.loaded) {
+            console.log("sheet changed");
+            $scope.saved = false;
+            window.onbeforeunload = function() {
+                localStorage.setItem("sheet", angular.toJson($scope.sheet));
+                console.log(localStorage.getItem("sheet"));
+                return "You will lose any unsaved changes.  Continue?";
+            };
+        }
+    }, true);
+
+
+    /**
+     * Warns the user if there is unsaved data
+     *
+    $scope.$on('$locationChangeStart', function(event, next, current) {
+        //if they are refreshing the page or need to log in
+        if (next == current) {
+            //save the sheet object in local storage
+            console.log($scope.sheet);
+            if ($scope.sheet != undefined && $scope.sheet != "undefined" && !saved) {
+                alert("Saving in local storage.");
+                localStorage.setItem('sheet', angular.toJson($scope.sheet));
+                console.log("Saved sheet info in localStorage.");
+            }
+        }
+    });
+     */
+
     /**
      * sends the sheet object to the save servlet
+     * returns errors and redirects if user isn't logged in
+     * or if the user doesn't own the sheet
      */
     $scope.saveSheet = function() {
         console.log("saving sheet ");
@@ -771,12 +850,28 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
             url : "saveSheet",
             data : angular.toJson($scope.sheet)
         }).then(function(response) {
+            //successfully saved changes
             console.log(response.message);
+            $scope.saved = true;
+            window.onbeforeunload = null;
+            window.onunload = null;
+        }, function(response, status) {
+            console.log(response.message);
+            console.log(status);
+            //if user isn't logged in
+            if (status == 401) {
+                //refresh the page to trigger j_security_check
+                alert("You are logged out, please log in to save changes.");
+                location.reload();
+            }
+            //if user doesn't own this sheet
+            if (status == 403) {
+                //TODO need to make a forbidden page or something
+            }
         });
     };
 
 });
-
 
 
 /**  TODO possibly get rid of this unused directive
@@ -800,6 +895,7 @@ app.directive('onlyDigits', function() {
         }
     };
 });
+
 
 /**
  * when unfocusing from an input field, forces the value to become an integer
@@ -837,6 +933,7 @@ app.directive('forceInteger', function() {
     }
 });
 
+
 app.directive('forceDecimal', function() {
     return {
         require : "ngModel",
@@ -866,6 +963,7 @@ app.directive('forceDecimal', function() {
         }
     }
 });
+
 
 app.directive('infoHover', function() {
     return {

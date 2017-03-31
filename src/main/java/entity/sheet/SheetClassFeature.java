@@ -21,7 +21,10 @@ public class SheetClassFeature {
     private boolean enabled;
     private SheetClass sheetClass;
 
-    @Column(name = "class_id", nullable = false, length = 25)
+    @Column(name = "class_id", nullable = false)
+    @GeneratedValue(generator="gen")
+    @GenericGenerator(name = "gen", strategy = "foreign",
+            parameters = @org.hibernate.annotations.Parameter(name = "property", value = "sheetClass"))
     public int getClassId() {
         return classId;
     }
@@ -125,6 +128,9 @@ public class SheetClassFeature {
     @JoinColumn(name = "class_id", nullable = false, insertable = false, updatable = false)
     public SheetClass getSheetClass() { return sheetClass; }
 
-    public void setSheetClass(SheetClass sheetClass) { this.sheetClass = sheetClass; }
+    public void setSheetClass(SheetClass sheetClass) {
+        this.sheetClass = sheetClass;
+        this.classId = sheetClass.getClassId();
+    }
 
 }

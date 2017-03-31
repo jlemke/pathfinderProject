@@ -151,7 +151,7 @@ public class SheetAbility {
 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "sheet_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "sheet_id", insertable = false, updatable = false)
     public Sheet getSheet() { return sheet; }
 
     public void setSheet(Sheet sheet) {

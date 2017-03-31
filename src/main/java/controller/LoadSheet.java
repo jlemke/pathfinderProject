@@ -32,6 +32,7 @@ public class LoadSheet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //get username if they are logged in
         String username = request.getUserPrincipal().getName();
 
         SheetDao dao = new SheetDao();
@@ -42,34 +43,34 @@ public class LoadSheet extends HttpServlet {
         logger.info("sheet id requested: " + sheetId);
         logger.info("getting sheet");
 
-
         Sheet sheet = dao.getSheet(sheetId);
 
         logger.info("confirming ownership of sheet");
 
+        //check that user owns this sheet
         if (username.equals(sheet.getOwner().getUsername())) {
+            //get sheet object and turn it into a json string
 
-        logger.info("mapping object");
-        ObjectMapper mapper = new ObjectMapper();
-        Hibernate4Module hbm = new Hibernate4Module();
-        hbm.enable(Hibernate4Module.Feature.FORCE_LAZY_LOADING);
-        mapper.registerModule(hbm);
+            logger.info("mapping object");
+            ObjectMapper mapper = new ObjectMapper();
+            Hibernate4Module hbm = new Hibernate4Module();
+            hbm.enable(Hibernate4Module.Feature.FORCE_LAZY_LOADING);
+            mapper.registerModule(hbm);
 
-        String output = null;
-        try {
-            output = mapper.writeValueAsString(sheet);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+            String output = null;
+            try {
+                output = mapper.writeValueAsString(sheet);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
 
-        logger.info("json output : " + output);
-        response.setContentType("application/json");
-        PrintWriter out = response.getWriter();
-        out.print(output);
+            logger.info("json output : " + output);
+            response.setContentType("application/json");
+            PrintWriter out = response.getWriter();
+            out.print(output);
         } else {
-            //need to send forbidden page!
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.sendRedirect("forbidden.html");
+            //user does not own this sheet!
+            response.sendError(HttpServletResponse.SC_FORBIDDEN);
         }
 
     }

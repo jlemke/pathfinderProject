@@ -11,10 +11,7 @@ import org.hibernate.annotations.Sort;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 import static org.hibernate.engine.spi.CascadeStyles.DELETE_ORPHAN;
 
@@ -32,19 +29,19 @@ public class Sheet implements Serializable {
     private Timestamp dateCreated;
     private Timestamp lastAccessed;
     private String campaign = "";
-    private SortedSet<SheetClass> sheetClasses = new TreeSet<>();
+    private List<SheetClass> sheetClasses = new ArrayList<>();
     private SheetDescription sheetDescription;
     private SheetGeneral sheetGeneral;
-    private Set<SheetArmor> sheetArmors = new TreeSet<>();
-    private SortedSet<SheetSkill> sheetSkills = new TreeSet<>();
+    private List<SheetArmor> sheetArmors = new ArrayList<>();
+    private List<SheetSkill> sheetSkills = new ArrayList<>();
     private SheetSpeeds sheetSpeeds;
-    private Set<SheetAbility> sheetAbilities = new TreeSet<>();
-    private Set<SheetFeat> sheetFeats = new TreeSet<>();
-    private Set<SheetItem> sheetItems = new TreeSet<>();
+    private List<SheetAbility> sheetAbilities = new ArrayList<>();
+    private List<SheetFeat> sheetFeats = new ArrayList<>();
+    private List<SheetItem> sheetItems = new ArrayList<>();
     private SheetMoney sheetMoney;
-    private Set<SheetRacialTrait> sheetRacialTraits = new TreeSet<>();
-    private Set<SheetWeapon> sheetWeapons = new TreeSet<>();
-    private SortedSet<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new TreeSet<>();
+    private List<SheetRacialTrait> sheetRacialTraits = new ArrayList<>();
+    private List<SheetWeapon> sheetWeapons = new ArrayList<>();
+    private List<SheetAbilityScoreColumn> sheetAbilityScoreColumns = new ArrayList<>();
 
     @Id
     @GeneratedValue
@@ -155,11 +152,11 @@ public class Sheet implements Serializable {
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("level DESC")
-    public SortedSet<SheetClass> getSheetClasses() {
+    public List<SheetClass> getSheetClasses() {
         return sheetClasses;
     }
 
-    public void setSheetClasses(SortedSet<SheetClass> sheetClasses) {
+    public void setSheetClasses(List<SheetClass> sheetClasses) {
         this.sheetClasses = sheetClasses;
     }
 
@@ -185,22 +182,22 @@ public class Sheet implements Serializable {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetArmor> getSheetArmors() {
+    public List<SheetArmor> getSheetArmors() {
         return sheetArmors;
     }
 
-    public void setSheetArmors(Set<SheetArmor> sheetArmors) {
+    public void setSheetArmors(List<SheetArmor> sheetArmors) {
         this.sheetArmors = sheetArmors;
     }
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @OrderBy("order ASC")
-    public SortedSet<SheetSkill> getSheetSkills() {
+    public List<SheetSkill> getSheetSkills() {
         return sheetSkills;
     }
 
-    public void setSheetSkills(SortedSet<SheetSkill> sheetSkills) {
+    public void setSheetSkills(List<SheetSkill> sheetSkills) {
         this.sheetSkills = sheetSkills;
     }
 
@@ -216,31 +213,31 @@ public class Sheet implements Serializable {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetAbility> getSheetAbilities() {
+    public List<SheetAbility> getSheetAbilities() {
         return sheetAbilities;
     }
 
-    public void setSheetAbilities(Set<SheetAbility> sheetAbilities) {
+    public void setSheetAbilities(List<SheetAbility> sheetAbilities) {
         this.sheetAbilities = sheetAbilities;
     }
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetFeat> getSheetFeats() {
+    public List<SheetFeat> getSheetFeats() {
         return sheetFeats;
     }
 
-    public void setSheetFeats(Set<SheetFeat> sheetFeats) {
+    public void setSheetFeats(List<SheetFeat> sheetFeats) {
         this.sheetFeats = sheetFeats;
     }
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetItem> getSheetItems() {
+    public List<SheetItem> getSheetItems() {
         return sheetItems;
     }
 
-    public void setSheetItems(Set<SheetItem> sheetItems) {
+    public void setSheetItems(List<SheetItem> sheetItems) {
         this.sheetItems = sheetItems;
     }
 
@@ -256,32 +253,32 @@ public class Sheet implements Serializable {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetRacialTrait> getSheetRacialTraits() {
+    public List<SheetRacialTrait> getSheetRacialTraits() {
         return sheetRacialTraits;
     }
 
-    public void setSheetRacialTraits(Set<SheetRacialTrait> sheetRacialTraits) {
+    public void setSheetRacialTraits(List<SheetRacialTrait> sheetRacialTraits) {
         this.sheetRacialTraits = sheetRacialTraits;
     }
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    public Set<SheetWeapon> getSheetWeapons() {
+    public List<SheetWeapon> getSheetWeapons() {
         return sheetWeapons;
     }
 
-    public void setSheetWeapons(Set<SheetWeapon> sheetWeapons) {
+    public void setSheetWeapons(List<SheetWeapon> sheetWeapons) {
         this.sheetWeapons = sheetWeapons;
     }
 
     @JsonManagedReference
     @OneToMany(mappedBy = "sheet", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("columnId ASC")
-    public SortedSet<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
+    public List<SheetAbilityScoreColumn> getSheetAbilityScoreColumns() {
         return sheetAbilityScoreColumns;
     }
 
-    public void setSheetAbilityScoreColumns(SortedSet<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
+    public void setSheetAbilityScoreColumns(List<SheetAbilityScoreColumn> sheetAbilityScoreColumns) {
         this.sheetAbilityScoreColumns = sheetAbilityScoreColumns;
     }
 

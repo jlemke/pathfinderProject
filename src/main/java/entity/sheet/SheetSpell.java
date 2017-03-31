@@ -300,6 +300,9 @@ public class SheetSpell {
 
     public SheetClass getSheetClass() { return sheetClass; }
 
-    public void setSheetClass(SheetClass sheetClass) { this.sheetClass = sheetClass; }
+    public void setSheetClass(SheetClass sheetClass) {
+        this.sheetClass = sheetClass;
+        this.classId = sheetClass.getClassId();
+    }
 
 }

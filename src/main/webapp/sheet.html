@@ -49,7 +49,7 @@
                     General
                 </uib-tab-heading>
                 <div class="field-box">
-                    <input id="characterName" class="string-field-medium" type="text" ng-model="sheet.characterName"/>
+                    <input id="characterName" class="string-field-long" type="text" ng-model="sheet.characterName"/>
                     <label for="characterName" class="field-label">Character Name</label>
                 </div>
                 <div class="field-box">
@@ -61,8 +61,8 @@
                     <label for="characterClasses" class="field-label">Character Classes</label>
                 </div>
                 <div class="field-box">
-                    <div id="bab" class="number-box" ng-bind="bab(true)"></div>
-                    <label for="bab" class="field-label">BAB</label>
+                    <input id="campaign" class="string-field-long"  type="text" ng-model="sheet.campaign" />
+                    <label for="campaign" class="field-label">Campaign</label>
                 </div>
                 <div>
                     <div class="field-box">

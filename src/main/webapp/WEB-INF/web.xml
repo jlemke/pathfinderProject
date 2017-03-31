@@ -36,6 +36,17 @@
         </auth-constraint>
     </security-constraint>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>sheet</web-resource-name>
+            <url-pattern>/sheet.html</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>registeredUser</role-name>
+            <role-name>administrator</role-name>
+        </auth-constraint>
+    </security-constraint>
+
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
