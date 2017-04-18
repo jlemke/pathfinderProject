@@ -6,6 +6,7 @@ import entity.sheet.SheetInfo;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.*;
@@ -18,15 +19,13 @@ import static org.junit.Assert.*;
 public class SheetDaoTest {
 
     private SheetDao dao;
-    private UserDao userDao;
-    private String USERNAME = "test_user";
+    private String USERNAME = "testUser3";
     private final Logger logger = Logger.getLogger("logger");
     private Collection<Sheet> testSheets;
 
     @Before
     public void setUp() throws Exception {
         dao = new SheetDao();
-        userDao = new UserDao();
         testSheets = new ArrayList<>();
     }
 
@@ -37,12 +36,11 @@ public class SheetDaoTest {
         }
     }
 
-
     @Test
     public void getListOfSheets() throws Exception {
         List<SheetInfo> sheets = dao.getListOfSheets(USERNAME);
 
-        assertEquals("failed", 126, sheets.get(0).getSheetId());
+        assertEquals("failed", 141, sheets.get(0).getSheetId());
     }
 
 

@@ -37,7 +37,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
                 //load the sheet info from localstorage
                 $scope.sheet = localSheet;
                 console.log("Sheet loaded from local storage.");
-                console.log($scope.sheet);
+                //console.log($scope.sheet);
                 $scope.$apply();
                 $scope.evalCode();
                 setTimeout(function() {
@@ -405,6 +405,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
             }
         }
 
+        //armor check penalties only apply to dexterity and strength based skills
         if (["con", "int", "wis", "cha"].indexOf(skill.skillAbility) != -1)
             return 0;
         return -1 * acp;
@@ -676,34 +677,55 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
         return attack;
     };
 
-    $scope.editWindow = function(type, object) {
-        var template;
-        if (type == "feature")
-            template = "class-feature.html";
-
-        $ctrl.open = function (size, parentSelector) {
-            var modalInstance = $uibModal.open({
-                animation: $ctrl.animationsEnabled,
-                ariaLabelledBy: 'modal-title',
-                ariaDescribedBy: 'modal-body',
-                templateUrl: 'myModalContent.html',
-                controller: 'ModalInstanceCtrl',
-                controllerAs: '$ctrl',
-                size: '',
-                resolve: {
-                    items: function () {
-
-                    }
+    /**
+     * Used to edit values of an ability using a pop-up
+     */
+    $scope.editAbility = function(ability) {
+        var modalInstance = $uibModal.open({
+            templateUrl: "edit-windows/ability.html",
+            controller: 'EditWindowController',
+            resolve: {
+                data: function() {
+                    return ability;
                 }
-            });
+            }
+        });
 
-            modalInstance.result.then(function (selectedItem) {
-                $ctrl.selected = selectedItem;
-            }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
-            });
-        };
+        modalInstance.result.then(function(newData) {
+            ability.abilityName = newData.abilityName;
+            ability.abilityDescription = newData.abilityDescription;
+            ability.type = newData.type;
+            ability.evalText = newData.evalText;
+            ability.evalPriority = newData.evalPriority;
+            ability.activeLevel = newData.activeLevel;
+            ability.enabled = newData.enabled;
+            $scope.evalCode();
+        });
+    };
 
+    /**
+     * Used to edit values of a class feature a pop-up
+     */
+    $scope.editClassFeature = function(classFeature) {
+        var modalInstance = $uibModal.open({
+            templateUrl: "edit-windows/class-feature.html",
+            controller: 'EditWindowController',
+            resolve: {
+                data: function() {
+                    return classFeature;
+                }
+            }
+        });
+
+        modalInstance.result.then(function(newData) {
+            classFeature.featureName = newData.featureName;
+            classFeature.featureDescription = newData.featureDescription;
+            classFeature.evalText = newData.evalText;
+            classFeature.evalPriority = newData.evalPriority;
+            classFeature.activeLevel = newData.activeLevel;
+            classFeature.enabled = newData.enabled;
+            $scope.evalCode();
+        });
     };
 
     $scope.originalFunctions = {
@@ -820,6 +842,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
 
     /**
      * Warns the user if there is unsaved data
+     * NOTE : DOESN'T WORK, can't know where the user is going/whether they are refreshing
      *
     $scope.$on('$locationChangeStart', function(event, next, current) {
         //if they are refreshing the page or need to log in
@@ -856,16 +879,19 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
             window.onbeforeunload = null;
             window.onunload = null;
         }, function(response, status) {
-            console.log(response.message);
-            console.log(status);
+            console.log(response.status);
             //if user isn't logged in
-            if (status == 401) {
+            if (response.status == 401) {
                 //refresh the page to trigger j_security_check
                 alert("You are logged out, please log in to save changes.");
+                //save sheet data to localStorage
+                localStorage.setItem("sheet", angular.toJson($scope.sheet));
+                window.onbeforeunload = null;
+                window.onunload = null;
                 location.reload();
             }
             //if user doesn't own this sheet
-            if (status == 403) {
+            if (response.status == 403) {
                 //TODO need to make a forbidden page or something
             }
         });
@@ -962,6 +988,22 @@ app.directive('forceDecimal', function() {
             });
         }
     }
+});
+
+/**
+ * Controller for Edit Window, when editing class features or abilities
+ */
+app.controller('EditWindowController', function($scope, $uibModalInstance, data) {
+
+    $scope.newData = angular.copy(data);
+
+    $scope.ok = function() {
+        $uibModalInstance.close($scope.newData);
+    };
+
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    };
 });
 
 

@@ -170,7 +170,7 @@ public class SheetDao {
     }
 
     private void setBaseAbilityScoreColumns(Sheet sheet) {
-        ArrayList<SheetAbilityScoreColumn> columns = (ArrayList<SheetAbilityScoreColumn>) sheet.getSheetAbilityScoreColumns();
+        List<SheetAbilityScoreColumn> columns = sheet.getSheetAbilityScoreColumns();
         SheetAbilityScoreColumn temp;
         for (int i = 0; i < DEFAULT_COLUMN_NAMES.length; i++) {
             temp = new SheetAbilityScoreColumn();
@@ -190,7 +190,7 @@ public class SheetDao {
     }
 
     private void setBaseSkills(Sheet sheet) {
-        ArrayList<SheetSkill> skills = (ArrayList<SheetSkill>) sheet.getSheetSkills();
+        List<SheetSkill> skills = sheet.getSheetSkills();
         SheetSkill temp;
         String[] defaultSkill;
         for (int i = 0; i < DEFAULT_SKILLS.length; i++) {

@@ -191,6 +191,7 @@
                     <uib-accordion close-others="false">
                         <div ui-accordion-group class="panel-default" ng-repeat="ability in sheet.sheetAbilities as abilities">
                             <div class="panel-heading">
+                                <input type="button" value="Edit" ng-click="editAbility(ability)"/>
                                 <div class="field-box">
                                     <input class="number-box underline" type="text" ng-model="ability.activeLevel" force-integer="pos"/>
                                     <label class="field-label">Level</label>
@@ -205,16 +206,10 @@
                                         <option value="racialTrait">Racial Trait</option>
                                     </select>
                                 </div>
-                                <div class="field-box">
-                                </div>
                                 <label>Enabled : </label><input type="checkbox" ng-model="ability.enabled" />
                             </div>
                             <div>
-                                <textarea class="description" ng-model="ability.abilityDescription"></textarea>
-                            </div>
-                            <div><label>Code Priority : </label><input type="text" class="number-box-md underline" ng-model="ability.evalPriority" force-integer /></div>
-                            <div>
-                                <textarea class="description" ng-model="ability.evalText"></textarea>
+                                <p ng-bind="ability.abilityDescription"></p>
                             </div>
                             <input type="button" value="Remove" ng-click="confirmDelete(abilities, ability)" />
                         </div>

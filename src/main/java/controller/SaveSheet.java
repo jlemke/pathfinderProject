@@ -39,9 +39,23 @@ public class SaveSheet extends HttpServlet {
             throws ServletException, IOException {
 
         String message = "success";
+
         //TODO, test if session expiring works
         //check that user is logged in
-        String username = request.getUserPrincipal().getName();
+        String username = "";
+
+        try {
+            username = request.getUserPrincipal().getName();
+        } catch (Exception e) {
+            //username can't be accessed; user is not logged in
+            logger.info("User attempted to save but isn't logged in.");
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            message = "logged_out";
+            //send response
+            response.setContentType("text");
+            PrintWriter out = response.getWriter();
+            out.print(message);
+        }
 
         logger.info(username);
 

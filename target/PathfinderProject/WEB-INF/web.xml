@@ -58,7 +58,7 @@
     <error-page>
         <!-- Forbidden directory listing -->
         <error-code>403</error-code>
-        <location>/please-login.jsp</location>
+        <location>/forbidden.html</location>
     </error-page>
 
 </web-app>

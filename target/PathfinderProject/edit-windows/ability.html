@@ -1,0 +1,32 @@
+<div class="modal-header">
+    Edit Ability
+</div>
+<div class="modal-body">
+    <div class="field-box">
+        <input type="text" class="string-field-long" ng-model="newData.abilityName" />
+        <label class="field-label">Name</label></div>
+    <div class="field-box">
+        <input type="text" class="string-field-small" ng-model="newData.activeLevel" />
+        <label class="field-label">Active Level</label>
+    </div>
+    <div class="field-box">
+        <select ng-model="newData.type">
+            <option value="feat">Feat</option>
+            <option value="trait">Trait</option>
+            <option value="racialTrait">Racial Trait</option>
+        </select>
+    </div>
+    <label>Enabled : </label><input type="checkbox" ng-model="newData.enabled" />
+    <div>
+        <textarea class="description" ng-model="newData.abilityDescription"></textarea>
+    </div>
+    <div><label>Code Priority : </label><input type="text" class="number-box-md underline" ng-model="newData.evalPriority" force-integer /></div>
+    <div>
+        <textarea class="description" ng-model="newData.evalText"></textarea>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="delete()">Delete</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" ng-click="ok()">Save</button>
+</div>
