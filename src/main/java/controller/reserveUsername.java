@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Logger;
+import org.apache.catalina.realm.RealmBase;
 
 /**
  * Created by Joe on 10/26/2016.
@@ -76,7 +77,9 @@ public class reserveUsername extends HttpServlet {
             logger.info(errorString(errors));
             User newUser = new User();
             newUser.setUsername(username);
-            newUser.setPassword(password1);
+
+            String encryptedPassword = RealmBase.Digest(password1,"sha-256", "UTF-8");
+            newUser.setPassword(encryptedPassword);
             newUser.setEmail(email);
 
             dao.createRegisteredUser(newUser);

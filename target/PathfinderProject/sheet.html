@@ -68,7 +68,24 @@
                     <div class="field-box">
                         <input type="text" ng-model="sheet.sheetGeneral.hpCurrent" class="number-box" force-integer />
                         <div ng-bind="maxHp()"></div>
-                        <label class="field-lable">HP</label>
+                        <label class="field-label">HP</label>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="field-box">
+                        <label class="field-label">Size</label>
+                        <select ng-model="sheet.sheetGeneral.characterSize">
+                            <option value="fine">Fine</option>
+                            <option value="diminutive">Diminutive</option>
+                            <option value="tiny">Tiny</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                            <option value="huge">Huge</option>
+                            <option value="gargantuan">Gargantuan</option>
+                            <option value="colossal">Colossal</option>
+                        </select>
                     </div>
                 </div>
 
@@ -211,7 +228,6 @@
                             <div>
                                 <p ng-bind="ability.abilityDescription"></p>
                             </div>
-                            <input type="button" value="Remove" ng-click="confirmDelete(abilities, ability)" />
                         </div>
                     </uib-accordion>
                 </div>
@@ -328,7 +344,7 @@
                                 <h2>Class Features</h2>
                                 <input type="button" value="Evaluate" ng-click="evalCode()" />
                                 <div ng-repeat="feature in c.sheetClassFeatures as features">
-                                    <button type="button" class="btn btn-default" ng-click="editWindow('feature', feature)">Edit</button>
+                                    <button type="button" class="btn btn-default" ng-click="editClassFeature(c, feature)">Edit</button>
                                     <div>
                                         <input type="button" value="Remove" ng-click="confirmDelete(features, feature)" />
                                     </div>

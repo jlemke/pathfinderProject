@@ -692,13 +692,17 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
         });
 
         modalInstance.result.then(function(newData) {
-            ability.abilityName = newData.abilityName;
-            ability.abilityDescription = newData.abilityDescription;
-            ability.type = newData.type;
-            ability.evalText = newData.evalText;
-            ability.evalPriority = newData.evalPriority;
-            ability.activeLevel = newData.activeLevel;
-            ability.enabled = newData.enabled;
+            if (newData == 'delete')
+                $scope.removeFrom($scope.sheet.sheetAbilities, ability);
+            else {
+                ability.abilityName = newData.abilityName;
+                ability.abilityDescription = newData.abilityDescription;
+                ability.type = newData.type;
+                ability.evalText = newData.evalText;
+                ability.evalPriority = newData.evalPriority;
+                ability.activeLevel = newData.activeLevel;
+                ability.enabled = newData.enabled;
+            }
             $scope.evalCode();
         });
     };
@@ -706,7 +710,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
     /**
      * Used to edit values of a class feature a pop-up
      */
-    $scope.editClassFeature = function(classFeature) {
+    $scope.editClassFeature = function(parentClass, classFeature) {
         var modalInstance = $uibModal.open({
             templateUrl: "edit-windows/class-feature.html",
             controller: 'EditWindowController',
@@ -718,12 +722,16 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
         });
 
         modalInstance.result.then(function(newData) {
-            classFeature.featureName = newData.featureName;
-            classFeature.featureDescription = newData.featureDescription;
-            classFeature.evalText = newData.evalText;
-            classFeature.evalPriority = newData.evalPriority;
-            classFeature.activeLevel = newData.activeLevel;
-            classFeature.enabled = newData.enabled;
+            if (newData == 'delete')
+                $scope.removeFrom(parentClass, classFeature);
+            else {
+                classFeature.featureName = newData.featureName;
+                classFeature.featureDescription = newData.featureDescription;
+                classFeature.evalText = newData.evalText;
+                classFeature.evalPriority = newData.evalPriority;
+                classFeature.activeLevel = newData.activeLevel;
+                classFeature.enabled = newData.enabled;
+            }
             $scope.evalCode();
         });
     };
@@ -866,7 +874,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
     $scope.saveSheet = function() {
         console.log("saving sheet ");
         console.log($scope.sheet);
-        //console.log(JSON.stringify($scope.sheet));
+        console.log(JSON.stringify($scope.sheet));
         saveInProgress = true;
         $http({
             method : "POST",
@@ -993,12 +1001,43 @@ app.directive('forceDecimal', function() {
 /**
  * Controller for Edit Window, when editing class features or abilities
  */
-app.controller('EditWindowController', function($scope, $uibModalInstance, data) {
+app.controller('EditWindowController', function($scope, $uibModalInstance, $uibModal, data) {
 
     $scope.newData = angular.copy(data);
 
     $scope.ok = function() {
         $uibModalInstance.close($scope.newData);
+    };
+
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.delete = function() {
+        var modalInstance = $uibModal.open({
+            templateUrl: "edit-windows/confirmDelete.html",
+            controller: 'ConfirmationWindowController',
+            resolve: {
+                name: function() {
+                    return name;
+                }
+            }
+        });
+
+        modalInstance.result.then(function() {
+            $uibModalInstance.close('delete');
+        });
+
+    };
+});
+
+/**
+ * Controller for delete-confirmation pop-up
+ */
+app.controller('ConfirmationWindowController', function($scope, $uibModalInstance, name) {
+
+    $scope.ok = function() {
+        $uibModalInstance.close(name);
     };
 
     $scope.cancel = function() {
@@ -1013,9 +1052,7 @@ app.directive('infoHover', function() {
         restrict : "A",
         scope : {},
         link : function(scope, element, attr, ctrl) {
-            element.on('hover', function() {
-                //need to display a tiny pop-up of modifiers
-            });
+
         }
     }
 });

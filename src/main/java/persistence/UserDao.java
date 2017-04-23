@@ -72,4 +72,18 @@ public class UserDao {
         session.close();
     }
 
+    public void changePassword(String username, String newPassword) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        User user = (User) session.get(User.class, username);
+
+        user.setPassword(newPassword);
+
+        session.update(user);
+
+        transaction.commit();
+        session.close();
+    }
+
 }

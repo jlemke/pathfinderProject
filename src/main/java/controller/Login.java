@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by Joe on 10/26/2016.
@@ -26,24 +27,10 @@ public class Login extends HttpServlet {
      */
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        UserDao userDao = new UserDao();
-        if (userDao.authenticateUser(username, password)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
-        } else {
-            request.setAttribute("errorMessage", "Your username and password didn't match.  Please try again.");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-            dispatcher.forward(request, response);
-        }
-
+        response.sendRedirect("home");
     }
 
 }

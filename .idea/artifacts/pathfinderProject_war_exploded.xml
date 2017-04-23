@@ -25,6 +25,10 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-hibernate4:2.8.5" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:catalina:6.0.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:servlet-api:6.0.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:juli:6.0.16" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:annotations-api:6.0.16" />
         </element>
       </element>
       <element id="directory" name="META-INF">
