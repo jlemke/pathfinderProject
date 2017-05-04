@@ -81,11 +81,13 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
     /**
      * Confirmation pop-up when deleting something
      */
-    $scope.confirmDeletion = function(collection, object) {
+    $scope.confirmDelete = function(collection, object) {
         console.log("Trying to delete");
         var modalInstance = $uibModal.open({
             templateUrl: "edit-windows/confirmDelete.html",
             controller: 'ConfirmationWindowController',
+            size: 'sm',
+            windowClass: 'center-modal',
             resolve: {
                 name: function() {
                     return name;

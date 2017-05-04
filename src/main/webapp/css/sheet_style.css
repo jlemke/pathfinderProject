@@ -5,6 +5,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.content {
+    margin-top: 5%;
+}
+
+.tab-contents {
+    margin-top : 5%;
+}
+
 .number-box {
     width: 25px;
     text-align: center;
@@ -12,6 +20,11 @@
 
 .number-box-md {
     width: 35px;
+    text-align: center;
+}
+
+.number-box-md {
+    width: 45px;
     text-align: center;
 }
 
@@ -30,8 +43,35 @@
     display: block;
 }
 
-.content {
-    margin-top: 5%;
+.string-field {
+    width: 100%;
+    text-align: center;
+    border: 0;
+    border-bottom: solid 1px #000;
+    background-color : transparent;
+    outline: none;
+    margin: 5px;
+    display: block;
+}
+
+.class-box {
+    margin: 5px;
+    text-align: center
+}
+
+.hp-box {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5%;
+    border: solid 1px lightgrey;
+    font-size: 1.2vw;
+}
+
+.hp-number-box {
+    width: 48%;
+    padding-right: 3%;
+    display: inline-block;
+    text-align: right;
 }
 
 .string-field-small {
@@ -76,10 +116,6 @@
     display: inline;
 }
 
-.class-box {
-    margin: 5px;
-}
-
 .class-field {
     padding: 3px;
 }
@@ -101,6 +137,12 @@
     text-align: center;
 }
 
+.side-label {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
 .text-centered {
     text-align: center;
 }
@@ -109,6 +151,9 @@
     text-align: left;
 }
 
+.text-right {
+    text-align: right;
+}
 
 
 .ability-column-header {
@@ -121,7 +166,7 @@
     font-weight: bold;
 }
 
-.ability-scores-table td, th {
+.ability-scores-table td, .ability-scores-table th {
     border: 1px solid lightgrey;
     width: 30%;
     text-align: center;
@@ -136,11 +181,6 @@
 .score-input {
     width: 100%;
     text-align: center;
-}
-
-.table-scroll {
-    overflow: auto;
-    display: inline;
 }
 
 .fixed-element {
@@ -213,4 +253,26 @@
     width: 50%;
     height: 14.28571%;
     float: left;
+}
+
+
+
+.skills-table {
+    text-align: center;
+}
+
+.skills-table th, .skills-table td {
+    text-align: center;
+    font-size: 16px;
+}
+
+.center-modal {
+    position: fixed;
+    top: 25%;
+    left: 18.5%;
+    z-index: 1050;
+    width: 80%;
+    height: 80%;
+    margin-left: -10%;
+    padding: 5%;
 }

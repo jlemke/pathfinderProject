@@ -39,233 +39,200 @@
 
 <div ng-controller="sheetController as s" class="container">
     <div id="header">
-        <input class="fixed-element" type="button" value="Save" ng-click="saveSheet()"/>
+        <button class="btn btn-primary" ng-click="saveSheet()">Save</button>
         <div id="messages"></div>
     </div>
+    <div id="loadingScreen" class="col-sm-offset-4 col-sm-4 loading-screen" ng-show="sheet == null">
+        LOADING . . .
+    </div>
     <div id="content" class="content" ng-show="sheet != null">
-
         <uib-tabset>
             <uib-tab index="0">
                 <uib-tab-heading>
                     General
                 </uib-tab-heading>
-                <div class="field-box">
-                    <input id="characterName" class="string-field-long" type="text" ng-model="sheet.characterName"/>
-                    <label for="characterName" class="field-label">Character Name</label>
-                </div>
-                <div class="field-box">
-                    <input id="characterRace" class="string-field-medium" type="text" ng-model="sheet.characterRace"/>
-                    <label for="characterRace" class="field-label">Character Race</label>
-                </div>
-                <div class="field-box">
-                    <div id="characterClasses" class="class-box" ng-bind="classesString()"></div>
-                    <label for="characterClasses" class="field-label">Character Classes</label>
-                </div>
-                <div class="field-box">
-                    <input id="campaign" class="string-field-long"  type="text" ng-model="sheet.campaign" />
-                    <label for="campaign" class="field-label">Campaign</label>
-                </div>
-                <div>
-                    <div class="field-box">
-                        <input type="text" ng-model="sheet.sheetGeneral.hpCurrent" class="number-box" force-integer />
-                        <div ng-bind="maxHp()"></div>
-                        <label class="field-label">HP</label>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="field-box">
-                        <label class="field-label">Size</label>
-                        <select ng-model="sheet.sheetGeneral.characterSize">
-                            <option value="fine">Fine</option>
-                            <option value="diminutive">Diminutive</option>
-                            <option value="tiny">Tiny</option>
-                            <option value="small">Small</option>
-                            <option value="medium">Medium</option>
-                            <option value="large">Large</option>
-                            <option value="huge">Huge</option>
-                            <option value="gargantuan">Gargantuan</option>
-                            <option value="colossal">Colossal</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-md-12 ability-scores">
-                    <div class="total-columns-table">
-                        <div>
-                            <div class="score-box score-header">ABI</div>
-                            <div class="score-box score-header">STR</div>
-                            <div class="score-box score-header">DEX</div>
-                            <div class="score-box score-header">CON</div>
-                            <div class="score-box score-header">INT</div>
-                            <div class="score-box score-header">WIS</div>
-                            <div class="score-box score-header">CHA</div>
+                <div class="tab-contents">
+                    <div class="row">
+                        <div class="field-box col-sm-3">
+                            <input id="characterName" class="string-field" type="text" ng-model="sheet.characterName"/>
+                            <label for="characterName" class="field-label">Character Name</label>
                         </div>
-                        <div>
-                            <div class="score-box score-header">SUM</div>
-                            <div ng-bind="abilityScoreSum('str')" class="score-box score-header"></div>
-                            <div ng-bind="abilityScoreSum('dex')" class="score-box score-header"></div>
-                            <div ng-bind="abilityScoreSum('con')" class="score-box score-header"></div>
-                            <div ng-bind="abilityScoreSum('int')" class="score-box score-header"></div>
-                            <div ng-bind="abilityScoreSum('wis')" class="score-box score-header"></div>
-                            <div ng-bind="abilityScoreSum('cha')" class="score-box score-header"></div>
+                        <div class="field-box col-sm-2">
+                            <input id="characterRace" class="string-field" type="text" ng-model="sheet.characterRace"/>
+                            <label for="characterRace" class="field-label">Character Race</label>
                         </div>
-                        <div>
-                            <div class="score-box score-header">MOD</div>
-                            <div ng-bind="abilityMod('str', true)" class="score-box score-header"></div>
-                            <div ng-bind="abilityMod('dex', true)" class="score-box score-header"></div>
-                            <div ng-bind="abilityMod('con', true)" class="score-box score-header"></div>
-                            <div ng-bind="abilityMod('int', true)" class="score-box score-header"></div>
-                            <div ng-bind="abilityMod('wis', true)" class="score-box score-header"></div>
-                            <div ng-bind="abilityMod('cha', true)" class="score-box score-header"></div>
+                        <div class="field-box col-sm-3">
+                            <div id="characterClasses" class="class-box" ng-bind="classesString()"></div>
+                            <label for="characterClasses" class="field-label">Character Classes</label>
+                        </div>
+                        <div class="field-box col-sm-4">
+                            <input id="campaign" class="string-field"  type="text" ng-model="sheet.campaign" />
+                            <label for="campaign" class="field-label">Campaign</label>
                         </div>
                     </div>
-                    <div class="user-columns-table">
-                        <div ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                            <div class="score-box score-header">
-                                <input ng-model="col.columnName" class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box score-header">
-                                <input ng-model="col.strRow" class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box score-header">
-                                <input ng-model="col.dexRow" class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box score-header">
-                                <input ng-model="col.conRow" class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box score-header">
-                                <input ng-model="col.intRow" class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box score-header">
-                                <input ng-model="col.wisRow" class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box score-header">
-                                <input ng-model="col.chaRow" class="score-input borderless" type="text" />
-                            </div>
-                            <div>
-                                <input class="score-box" type="checkbox" ng-model="col.enabled" />
-                            </div>
-                            <div>
-                                <button class="score-box btn btn-danger" type="button" ng-click="console.log('button works?')">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="hp-box">
+                                <input type="text" ng-model="sheet.sheetGeneral.hpCurrent" class="hp-number-box borderless" force-integer />/ {{maxHp()}}
+                                <label class="field-label">HP</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="add-column-area">
-                        <button class="btn" ng-click="addCol()">ADD</button>
-                    </div>
-                    <div class="temp-columns-table">
-                        <div>
-                            <div class="score-box score-header">TEMP</div>
-                            <div class="score-box">
-                                <input class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box">
-                                <input class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box">
-                                <input class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box">
-                                <input class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box">
-                                <input class="score-input borderless" type="text" />
-                            </div>
-                            <div class="score-box">
-                                <input class="score-input borderless" type="text" />
-                            </div>
-                            <div class="empty-cell"></div>
-                            <div class="empty-cell"></div>
-                        </div>
-                        <div>
-                            <div class="score-box score-header">MOD</div>
-                            <div class="score-box"></div>
-                            <div class="score-box"></div>
-                            <div class="score-box"></div>
-                            <div class="score-box"></div>
-                            <div class="score-box"></div>
-                            <div class="score-box"></div>
-                            <div class="empty-cell"></div>
-                            <div class="empty-cell"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <table>
-                    <tr>
-                        <td><h2>Initiative:  </h2></td>
-                        <td><h2 class="field-box" ng-bind="initiative(true)"></h2></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td colspan="2">Saving Throws</td>
-                    </tr>
-                    <tr>
-                        <th>Fortitude</th>
-                        <td ng-bind="savingThrow('fort', true)"></td>
-                    </tr>
-                    <tr>
-                        <th>Reflex</th>
-                        <td ng-bind="savingThrow('ref', true)"></td>
-                    </tr>
-                    <tr>
-                        <th>Will</th>
-                        <td ng-bind="savingThrow('will', true)"></td>
-                    </tr>
-                </table>
-
-                <hr />
-                <h3>ATTACKS</h3>
-                <div class="attacks">
-                    <div ng-repeat="weapon in sheet.sheetWeapons">
-                        <div ng-bind="weaponAttack(weapon)"></div>
-                    </div>
-                </div>
-
-                <hr />
-                <div class="ac">
-                    <table>
-                        <tr><th colspan="2">Armor Class</th></tr>
-                        <tr><th>AC</th><td ng-bind="armorClass('')"></td></tr>
-                        <tr><th>Flat-Footed</th><td ng-bind="armorClass('flat-footed')"></td></tr>
-                        <tr><th>Touch</th><td ng-bind="armorClass('touch')"></td></tr>
-                    </table>
-                </div>
-
-                <hr />
-                <div class="abilities">
-                    <h1>Abilities</h1>
-                    <input type="button" value="Add Ability" ng-click="addAbility()" />
-                    <uib-accordion close-others="false">
-                        <div ui-accordion-group class="panel-default" ng-repeat="ability in sheet.sheetAbilities as abilities">
-                            <div class="panel-heading">
-                                <input type="button" value="Edit" ng-click="editAbility(ability)"/>
-                                <div class="field-box">
-                                    <input class="number-box underline" type="text" ng-model="ability.activeLevel" force-integer="pos"/>
-                                    <label class="field-label">Level</label>
-                                </div>
-                                <div class="field-box">
-                                    <input type="text" class="string-field-long" ng-model="ability.abilityName" />
-                                    <label class="field-label">Name</label></div>
-                                <div class="field-box">
-                                    <select ng-model="ability.type">
-                                        <option value="feat">Feat</option>
-                                        <option value="trait">Trait</option>
-                                        <option value="racialTrait">Racial Trait</option>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="characterSize" class="col-sm-3 side-label">Size</label>
+                                <div class="col-sm-9">
+                                    <select id="characterSize" ng-model="sheet.sheetGeneral.characterSize" class="form-control">
+                                        <option value="fine">Fine</option>
+                                        <option value="diminutive">Diminutive</option>
+                                        <option value="tiny">Tiny</option>
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                        <option value="huge">Huge</option>
+                                        <option value="gargantuan">Gargantuan</option>
+                                        <option value="colossal">Colossal</option>
                                     </select>
                                 </div>
-                                <label>Enabled : </label><input type="checkbox" ng-model="ability.enabled" />
-                            </div>
-                            <div>
-                                <p ng-bind="ability.abilityDescription"></p>
                             </div>
                         </div>
-                    </uib-accordion>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="col-md-9 ability-scores">
+                            <div class="total-columns-table">
+                                <div>
+                                    <div class="score-box score-header">ABI</div>
+                                    <div class="score-box score-header">STR</div>
+                                    <div class="score-box score-header">DEX</div>
+                                    <div class="score-box score-header">CON</div>
+                                    <div class="score-box score-header">INT</div>
+                                    <div class="score-box score-header">WIS</div>
+                                    <div class="score-box score-header">CHA</div>
+                                </div>
+                                <div>
+                                    <div class="score-box score-header">SUM</div>
+                                    <div ng-bind="abilityScoreSum('str')" class="score-box score-header"></div>
+                                    <div ng-bind="abilityScoreSum('dex')" class="score-box score-header"></div>
+                                    <div ng-bind="abilityScoreSum('con')" class="score-box score-header"></div>
+                                    <div ng-bind="abilityScoreSum('int')" class="score-box score-header"></div>
+                                    <div ng-bind="abilityScoreSum('wis')" class="score-box score-header"></div>
+                                    <div ng-bind="abilityScoreSum('cha')" class="score-box score-header"></div>
+                                </div>
+                                <div>
+                                    <div class="score-box score-header">MOD</div>
+                                    <div ng-bind="abilityMod('str', true)" class="score-box score-header"></div>
+                                    <div ng-bind="abilityMod('dex', true)" class="score-box score-header"></div>
+                                    <div ng-bind="abilityMod('con', true)" class="score-box score-header"></div>
+                                    <div ng-bind="abilityMod('int', true)" class="score-box score-header"></div>
+                                    <div ng-bind="abilityMod('wis', true)" class="score-box score-header"></div>
+                                    <div ng-bind="abilityMod('cha', true)" class="score-box score-header"></div>
+                                </div>
+                            </div>
+                            <div class="user-columns-table">
+                                <div ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.columnName" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.strRow" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.dexRow" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.conRow" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.intRow" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.wisRow" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box score-header">
+                                        <input ng-model="col.chaRow" class="score-input borderless" type="text" />
+                                    </div>
+                                    <div>
+                                        <input class="score-box" type="checkbox" ng-model="col.enabled" />
+                                    </div>
+                                    <div>
+                                        <button class="score-box btn btn-danger" type="button" ng-click="confirmDelete(sheet.sheetAbilityScoreColumns, col)">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-column-area">
+                                <button class="btn" ng-click="addCol()">ADD</button>
+                            </div>
+                            <div class="temp-columns-table" ng-show="tempAbilityMod() != null">
+                                <div>
+                                    <div class="score-box score-header">TEMP</div>
+                                    <div class="score-box">
+                                        <input class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box">
+                                        <input class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box">
+                                        <input class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box">
+                                        <input class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box">
+                                        <input class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="score-box">
+                                        <input class="score-input borderless" type="text" />
+                                    </div>
+                                    <div class="empty-cell"></div>
+                                    <div class="empty-cell"></div>
+                                </div>
+                                <div>
+                                    <div class="score-box score-header">MOD</div>
+                                    <div class="score-box" ng-model=""></div>
+                                    <div class="score-box"></div>
+                                    <div class="score-box"></div>
+                                    <div class="score-box"></div>
+                                    <div class="score-box"></div>
+                                    <div class="score-box"></div>
+                                    <div class="empty-cell"></div>
+                                    <div class="empty-cell"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <div class="abilities">
+                        <h1>Abilities</h1>
+                        <input type="button" value="Add Ability" ng-click="addAbility()" />
+                        <uib-accordion close-others="false">
+                            <div ui-accordion-group class="panel-default" ng-repeat="ability in sheet.sheetAbilities as abilities">
+                                <div class="panel-heading">
+                                    <input type="button" value="Edit" ng-click="editAbility(ability)"/>
+                                    <div class="field-box">
+                                        <input class="number-box underline" type="text" ng-model="ability.activeLevel" force-integer="pos"/>
+                                        <label class="field-label">Level</label>
+                                    </div>
+                                    <div class="field-box">
+                                        <input type="text" class="string-field-long" ng-model="ability.abilityName" />
+                                        <label class="field-label">Name</label></div>
+                                    <div class="field-box">
+                                        <select ng-model="ability.type">
+                                            <option value="feat">Feat</option>
+                                            <option value="trait">Trait</option>
+                                            <option value="racialTrait">Racial Trait</option>
+                                        </select>
+                                    </div>
+                                    <label>Enabled : </label><input type="checkbox" ng-model="ability.enabled" />
+                                </div>
+                                <div>
+                                    <p ng-bind="ability.abilityDescription"></p>
+                                </div>
+                            </div>
+                        </uib-accordion>
+                    </div>
                 </div>
             </uib-tab>
             <uib-tab index="1">
@@ -440,24 +407,25 @@
                     Skills
                 </uib-tab-heading>
                 <h1>Skills</h1>
-                <table>
-                    <tbody>
+                <table class="skills-table col-sm-8">
                     <tr>
                         <th></th>
-                        <th>Name</th>
-                        <th>Ability</th>
+                        <th class="col-sm-3">Name</th>
+                        <th class="col-sm-2">Ability</th>
                         <th>Bonus</th>
+                        <th></th>
                         <th>Ability</th>
+                        <th></th>
                         <th>Rank</th>
+                        <th></th>
                         <th>Misc</th>
+                        <th></th>
                         <th>ACP</th>
                     </tr>
-                    </tbody>
-                    <tbody>
                     <tr ng-repeat="skill in sheet.sheetSkills | orderBy:'order'">
                         <td><input type="checkbox" ng-model="skill.classSkill" /></td>
                         <td><input type="text" ng-model="skill.skillName" class="string-field-long text-left" /></td>
-                        <td><select ng-model="skill.skillAbility">
+                        <td><select ng-model="skill.skillAbility" class="form-control">
                             <option value="str">STR</option>
                             <option value="dex">DEX</option>
                             <option value="con">CON</option>
@@ -465,28 +433,75 @@
                             <option value="wis">WIS</option>
                             <option value="cha">CHA</option>
                         </select></td>
-                        <td><div data-popover-trigger="mouseenter" popover-template="popups/skill.html" class="number-box inline-field" ng-bind="skillMod(skill)"></div>=</td>
-                        <td><div class="inline-field" ng-bind="abilityMod(skill.skillAbility)"></div>+</td>
-                        <td><input class="number-box" type="text" ng-model="skill.skillRanks" force-integer="pos" />+</td>
-                        <td><input class="number-box" type="text" ng-model="skill.skillMisc" force-integer />+</td>
-                        <td><div class="number-box" ng-bind="armorCheckPenalty(skill)"></div></td>
+                        <td><div data-popover-trigger="mouseenter" popover-template="popups/skill.html" class="number-box inline-field" ng-bind="skillMod(skill)"></div></td>
+                        <td>=</td>
+                        <td><div class="inline-field" ng-bind="abilityMod(skill.skillAbility)"></div></td>
+                        <td>+</td>
+                        <td><input class="number-box" type="text" ng-model="skill.skillRanks" force-integer="pos" /></td>
+                        <td>+</td>
+                        <td><input class="number-box" type="text" ng-model="skill.skillMisc" force-integer /></td>
+                        <td>+</td>
+                        <td class="number-box" ng-bind="armorCheckPenalty(skill)"></td>
                     </tr>
-                    </tbody>
-                    <tbody>
                     <tr>
-                        <td colspan="2"></td>
-                        <td colspan="3">Total Skill Ranks = </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="5">Total Skill Ranks = </td>
                         <td><div ng-bind="totalSkillRanks()"></div></td>
                         <td>/</td>
                         <td><div ng-bind="maxSkillRanks()"></div></td>
                     </tr>
-                    </tbody>
                 </table>
             </uib-tab>
             <uib-tab index="3">
                 <uib-tab-heading>
                     Combat
                 </uib-tab-heading>
+                <h1>Combat</h1>
+                <table>
+                    <tr>
+                        <td><h2>Initiative:  </h2></td>
+                        <td><h2 class="field-box" ng-bind="initiative(true)"></h2></td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td colspan="2">Saving Throws</td>
+                    </tr>
+                    <tr>
+                        <th>Fortitude</th>
+                        <td ng-bind="savingThrow('fort', true)"></td>
+                    </tr>
+                    <tr>
+                        <th>Reflex</th>
+                        <td ng-bind="savingThrow('ref', true)"></td>
+                    </tr>
+                    <tr>
+                        <th>Will</th>
+                        <td ng-bind="savingThrow('will', true)"></td>
+                    </tr>
+                </table>
+
+                <hr />
+                <h3>ATTACKS</h3>
+                <div class="attacks">
+                    <div ng-repeat="weapon in sheet.sheetWeapons">
+                        <div ng-bind="weaponAttack(weapon)"></div>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="ac">
+                    <table>
+                        <tr><th colspan="2">Armor Class</th></tr>
+                        <tr><th>AC</th><td ng-bind="armorClass('')"></td></tr>
+                        <tr><th>Flat-Footed</th><td ng-bind="armorClass('flat-footed')"></td></tr>
+                        <tr><th>Touch</th><td ng-bind="armorClass('touch')"></td></tr>
+                    </table>
+                </div>
             </uib-tab>
             <uib-tab index="4">
                 <uib-tab-heading>
