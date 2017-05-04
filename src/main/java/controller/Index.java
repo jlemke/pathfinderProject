@@ -1,5 +1,6 @@
 package controller;
 
+import org.apache.log4j.Logger;
 import persistence.UserDao;
 
 import javax.servlet.RequestDispatcher;
@@ -24,6 +25,8 @@ import java.io.PrintWriter;
 
 public class Index extends HttpServlet {
 
+    private final static Logger logger = Logger.getLogger(Logger.class);
+
     /*
         we need to check if the username and password match a user in the database
      */
@@ -38,7 +41,8 @@ public class Index extends HttpServlet {
             request.setAttribute("username", request.getUserPrincipal().getName());
             request.setAttribute("loggedIn", true);
         } catch (Exception e){
-
+            e.printStackTrace();
+            logger.error("Encountered error while attempting to log in.");
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");

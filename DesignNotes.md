@@ -1,18 +1,28 @@
 ##TODO
- * draw out website design - needs more work
+ * ~~draw out website design - needs more work~~
  * Look up event listeners
- * make database design pictures
+ * make database design pictures ???
  * pictures of pages
  * Need to speed up sheet load times
- * Figure out how to 
+ 
+ 
+ ###Add more fields:
+   * Temp ability score columns
+   * Armor Class fields (Dodge, Misc, ) ???
+     (possibly make sheet_armor_class table, after some database revisions)
+   * 
+   
+ ###Autofill skills !
+ 
 	
 ##CURRENT WORK
  * Add rest of fields to sheet
- * Need to create a scripting language for class features/race features/spells
+ * ~~Need to create a scripting language for class features/race features/spells~~
 	
 ##IDEAS
  * gm being able to give their players XP
  * commands typed in chat or small interface on page
+ * gm view of sheets!  viewSheet.html?id=123
 	
 	
 	

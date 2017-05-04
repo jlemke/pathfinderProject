@@ -2,5 +2,5 @@
     background-color:rgba(0,0,0,0); /*where 1 stands for 100% opacity*/
 }
 .sheet-row:hover {
-    background-color:rgba(0,0,0,0.5); /*where 0.5 stands for 50% opacity*/
+    background-color:rgba(0,0,0,0.1); /*where 0.5 stands for 50% opacity*/
 }

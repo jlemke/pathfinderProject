@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html ng-app="sheetApp">
     <head>
         <meta charset="utf-8">
@@ -89,73 +90,108 @@
                     </div>
                 </div>
 
-                <div class="ability-scores">
-                    <table>
-                        <tr>
-                            <th>ABI</th>
-                            <th>SUM</th>
-                            <th>MOD</th>
-                            <th ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input class="ability-column-header" type="text" ng-model="col.columnName" /></th>
-                            <th rowspan="8"><input type="button" value="+" ng-click="addCol()" /></th>
-                        </tr>
-                        <tr>
-                            <th>STR</th>
-                            <th ng-bind="abilityScoreSum('str')"></th>
-                            <th ng-bind="abilityMod('str', true)"></th>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="text" class="number-box" ng-model="col.strRow" force-integer /></td>
-                        </tr>
-                        <tr>
-                            <th>DEX</th>
-                            <th ng-bind="abilityScoreSum('dex')"></th>
-                            <th ng-bind="abilityMod('dex', true)"></th>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="text" class="number-box" ng-model="col.dexRow" force-integer /></td>
-                        </tr>
-                        <tr>
-                            <th>CON</th>
-                            <th ng-bind="abilityScoreSum('con')"></th>
-                            <th ng-bind="abilityMod('con', true)"></th>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="text" class="number-box" ng-model="col.conRow" force-integer /></td>
-                        </tr>
-                        <tr>
-                            <th>INT</th>
-                            <th ng-bind="abilityScoreSum('int')"></th>
-                            <th ng-bind="abilityMod('int', true)"></th>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="text" class="number-box" ng-model="col.intRow" force-integer /></td>
-                        </tr>
-                        <tr>
-                            <th>WIS</th>
-                            <th ng-bind="abilityScoreSum('wis')"></th>
-                            <th ng-bind="abilityMod('wis', true)"></th>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="text" class="number-box" ng-model="col.wisRow" force-integer /></td>
-                        </tr>
-                        <tr>
-                            <th>CHA</th>
-                            <th ng-bind="abilityScoreSum('cha')"></th>
-                            <th ng-bind="abilityMod('cha', true)"></th>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="text" class="number-box" ng-model="col.chaRow" force-integer /></td>
-                        </tr>
-                        <tr>
-                            <th>USE</th>
-                            <td></td>
-                            <td></td>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="checkbox" ng-model="col.enabled" /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td ></td>
-                            <td ng-repeat="col in sheet.sheetAbilityScoreColumns">
-                                <input type="button" value="del" ng-click="confirmDelete(sheet.sheetAbilityScoreColumns,col)" /></td>
-                        </tr>
-                    </table>
+                <div class="col-md-12 ability-scores">
+                    <div class="total-columns-table">
+                        <div>
+                            <div class="score-box score-header">ABI</div>
+                            <div class="score-box score-header">STR</div>
+                            <div class="score-box score-header">DEX</div>
+                            <div class="score-box score-header">CON</div>
+                            <div class="score-box score-header">INT</div>
+                            <div class="score-box score-header">WIS</div>
+                            <div class="score-box score-header">CHA</div>
+                        </div>
+                        <div>
+                            <div class="score-box score-header">SUM</div>
+                            <div ng-bind="abilityScoreSum('str')" class="score-box score-header"></div>
+                            <div ng-bind="abilityScoreSum('dex')" class="score-box score-header"></div>
+                            <div ng-bind="abilityScoreSum('con')" class="score-box score-header"></div>
+                            <div ng-bind="abilityScoreSum('int')" class="score-box score-header"></div>
+                            <div ng-bind="abilityScoreSum('wis')" class="score-box score-header"></div>
+                            <div ng-bind="abilityScoreSum('cha')" class="score-box score-header"></div>
+                        </div>
+                        <div>
+                            <div class="score-box score-header">MOD</div>
+                            <div ng-bind="abilityMod('str', true)" class="score-box score-header"></div>
+                            <div ng-bind="abilityMod('dex', true)" class="score-box score-header"></div>
+                            <div ng-bind="abilityMod('con', true)" class="score-box score-header"></div>
+                            <div ng-bind="abilityMod('int', true)" class="score-box score-header"></div>
+                            <div ng-bind="abilityMod('wis', true)" class="score-box score-header"></div>
+                            <div ng-bind="abilityMod('cha', true)" class="score-box score-header"></div>
+                        </div>
+                    </div>
+                    <div class="user-columns-table">
+                        <div ng-repeat="col in sheet.sheetAbilityScoreColumns">
+                            <div class="score-box score-header">
+                                <input ng-model="col.columnName" class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box score-header">
+                                <input ng-model="col.strRow" class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box score-header">
+                                <input ng-model="col.dexRow" class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box score-header">
+                                <input ng-model="col.conRow" class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box score-header">
+                                <input ng-model="col.intRow" class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box score-header">
+                                <input ng-model="col.wisRow" class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box score-header">
+                                <input ng-model="col.chaRow" class="score-input borderless" type="text" />
+                            </div>
+                            <div>
+                                <input class="score-box" type="checkbox" ng-model="col.enabled" />
+                            </div>
+                            <div>
+                                <button class="score-box btn btn-danger" type="button" ng-click="console.log('button works?')">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-column-area">
+                        <button class="btn" ng-click="addCol()">ADD</button>
+                    </div>
+                    <div class="temp-columns-table">
+                        <div>
+                            <div class="score-box score-header">TEMP</div>
+                            <div class="score-box">
+                                <input class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box">
+                                <input class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box">
+                                <input class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box">
+                                <input class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box">
+                                <input class="score-input borderless" type="text" />
+                            </div>
+                            <div class="score-box">
+                                <input class="score-input borderless" type="text" />
+                            </div>
+                            <div class="empty-cell"></div>
+                            <div class="empty-cell"></div>
+                        </div>
+                        <div>
+                            <div class="score-box score-header">MOD</div>
+                            <div class="score-box"></div>
+                            <div class="score-box"></div>
+                            <div class="score-box"></div>
+                            <div class="score-box"></div>
+                            <div class="score-box"></div>
+                            <div class="score-box"></div>
+                            <div class="empty-cell"></div>
+                            <div class="empty-cell"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <table>

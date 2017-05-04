@@ -23,15 +23,18 @@ import java.io.PrintWriter;
 
 public class Logout extends HttpServlet {
 
-    /*
-        we need to check if the username and password match a user in the database
+    /**
+     * Logs the user out
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
      */
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+        HttpSession session = request.getSession();
         session.invalidate();
 
         response.sendRedirect("/home");

@@ -42,52 +42,62 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
                 $scope.evalCode();
                 setTimeout(function() {
                 }, 5);
-            }
-        } else {
-            //retrieve sheet info from servlet
-            console.log("Sending sheet request to server...");
-            $http({
-                method: "GET",
-                url: "sheet?id=" + id
-            }).then(function(response) {
-                //successfully got info from servlet
-                $scope.sheet = response.data;
-                console.log("Sheet retrieved from server.");
-                console.log($scope.sheet);
-                $scope.evalCode();
-                setTimeout(function() {
-                    $scope.loaded = true;
-                }, 5);
-            }, function(response) {
-                //user doesn't own the sheet
-                if (response == 403) {
+            } else
+                $scope.getSheetData(id);
+        } else
+            $scope.getSheetData(id);
 
-                }
-            });
-        }
         //remove the data from localstorage once loaded
-        console.log("Removing sheet from localstorage.");
+        console.log("Removing any sheet data from localstorage.");
         localStorage.removeItem('sheet');
     });
 
     /**
+     * retrieves sheet data from server
+     */
+    $scope.getSheetData = function(id) {
+        //retrieve sheet info from servlet
+        console.log("Sending sheet request to server...");
+        $http({
+            method: "GET",
+            url: "sheet?id=" + id
+        }).then(function(response) {
+            //successfully got info from servlet
+            $scope.sheet = response.data;
+            console.log("Sheet retrieved from server.");
+            console.log($scope.sheet);
+            $scope.evalCode();
+            setTimeout(function() {
+                $scope.loaded = true;
+            }, 5);
+        }, function(response) {
+            //user doesn't own the sheet
+            if (response == 403) {
+
+            }
+        });
+    };
+
+    /**
      * Confirmation pop-up when deleting something
      */
-    $scope.confirmDelete = function(collection, object) {
-        /*
-        $mdDialog.show(
-            $mdDialog.confirm()
-                .clickOutsideToClose(true)
-                .title('Confirm deletion')
-                .textContent('Delete this item?')
-                .ok('Delete it!')
-                .cancel('Cancel')
-        ).then(function() {
-            collection.splice(index, 1);
+    $scope.confirmDeletion = function(collection, object) {
+        console.log("Trying to delete");
+        var modalInstance = $uibModal.open({
+            templateUrl: "edit-windows/confirmDelete.html",
+            controller: 'ConfirmationWindowController',
+            resolve: {
+                name: function() {
+                    return name;
+                }
+            }
         });
-        */
-        var index = collection.indexOf(object);
-        collection.splice(index, 1);
+
+        modalInstance.result.then(function() {
+            console.log("removing from collection");
+            $scope.removeFrom(collection, object);
+        });
+
     };
 
     /**
@@ -438,6 +448,7 @@ app.controller('sheetController', function($scope, $http, $location, $uibModal) 
     };
 
     $scope.removeFrom = function(collection, object) {
+        console.log("being called from unknown location");
         var index = collection.indexOf(object);
         console.log(index);
         collection.splice(index, 1);

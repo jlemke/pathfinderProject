@@ -15,27 +15,28 @@
     <script type="text/javascript" src="js/sheetList.js"></script>
 </head>
 <body>
-
-<a href="newSheet">Add Blank Sheet</a>
-<table class="table" id="sheetList">
-    <tr>
-        <th>Name</th>
-        <th>Race</th>
-        <th>Classes</th>
-        <th>Campaign</th>
-        <th>Date Created</th>
-        <th>Last Accessed</th>
-    </tr>
-    <c:forEach items="${sheets}" var="sheet">
-        <tr class="sheet-row" sheet-id="${sheet.sheetId}">
-            <td>${sheet.characterName}</td>
-            <td>${sheet.characterRace}</td>
-            <td>${sheet.characterClassString}</td>
-            <td>${sheet.campaign}</td>
-            <td>${sheet.dateCreated}</td>
-            <td>${sheet.lastAccessed}</td>
+<div class="container">
+    <button class="btn btn-default" href="newSheet">Add Blank Sheet</button>
+    <table class="table" id="sheetList">
+        <tr>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Classes</th>
+            <th>Campaign</th>
+            <th>Date Created</th>
+            <th>Last Accessed</th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach items="${sheets}" var="sheet">
+            <tr class="sheet-row" sheet-id="${sheet.sheetId}">
+                <td>${sheet.characterName}</td>
+                <td>${sheet.characterRace}</td>
+                <td>${sheet.characterClassString}</td>
+                <td>${sheet.campaign}</td>
+                <td>${sheet.dateCreated}</td>
+                <td>${sheet.lastAccessed}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 </body>
 </html>

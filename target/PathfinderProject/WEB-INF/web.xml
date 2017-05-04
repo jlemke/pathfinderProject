@@ -74,7 +74,7 @@
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/login.jsp</form-login-page>
+            <form-login-page>/WEB-INF/login.jsp</form-login-page>
             <form-error-page>/failedLogin.jsp</form-error-page>
         </form-login-config>
     </login-config>

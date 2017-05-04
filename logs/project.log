@@ -4642,3 +4642,268 @@
 2017-04-22 17:52:04,690 24781 [http-nio-8080-exec-3] INFO  logger  - 132
 2017-04-22 17:52:04,709 24800 [http-nio-8080-exec-3] INFO  logger  - 1
 2017-04-22 17:52:04,793 24884 [http-nio-8080-exec-3] INFO  logger  - 1
+2017-04-25 13:22:46,788 4    [http-nio-8080-exec-7] INFO  logger  - dao created
+2017-04-25 13:22:46,796 12   [http-nio-8080-exec-7] INFO  logger  - in getListOfSheets
+2017-04-25 13:22:47,264 480  [http-nio-8080-exec-7] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-04-25 13:22:47,288 504  [http-nio-8080-exec-7] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-04-25 13:22:47,292 508  [http-nio-8080-exec-7] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-04-25 13:22:47,300 516  [http-nio-8080-exec-7] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-04-25 13:22:47,400 616  [http-nio-8080-exec-7] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-04-25 13:22:47,400 616  [http-nio-8080-exec-7] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-04-25 13:22:47,612 828  [http-nio-8080-exec-7] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-04-25 13:22:47,960 1176 [http-nio-8080-exec-7] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-04-25 13:22:47,972 1188 [http-nio-8080-exec-7] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-04-25 13:22:47,972 1188 [http-nio-8080-exec-7] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-04-25 13:22:47,972 1188 [http-nio-8080-exec-7] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-04-25 13:22:47,976 1192 [http-nio-8080-exec-7] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-04-25 13:22:48,424 1640 [http-nio-8080-exec-7] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-04-25 13:22:49,301 2517 [http-nio-8080-exec-7] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 13:22:49,325 2541 [http-nio-8080-exec-7] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 13:23:22,314 35530 [http-nio-8080-exec-7] INFO  logger  - dao created
+2017-04-25 13:23:22,330 35546 [http-nio-8080-exec-7] INFO  logger  - 4
+2017-04-25 13:23:22,330 35546 [http-nio-8080-exec-7] INFO  logger  - 42
+2017-04-25 13:23:22,330 35546 [http-nio-8080-exec-7] INFO  logger  - 43
+2017-04-25 13:23:22,330 35546 [http-nio-8080-exec-7] INFO  logger  - 50
+2017-04-25 13:23:22,330 35546 [http-nio-8080-exec-7] INFO  logger  - 52
+2017-04-25 13:23:22,346 35562 [http-nio-8080-exec-7] INFO  logger  - 4
+2017-04-25 13:23:22,445 35661 [http-nio-8080-exec-7] INFO  logger  - 3
+2017-05-02 19:38:30,638 0    [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-02 19:38:30,653 15   [http-nio-8080-exec-6] INFO  logger  - in getListOfSheets
+2017-05-02 19:38:31,179 541  [http-nio-8080-exec-6] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-02 19:38:31,213 575  [http-nio-8080-exec-6] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-02 19:38:31,220 582  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-02 19:38:31,224 586  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-02 19:38:31,345 707  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-02 19:38:31,345 707  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-02 19:38:31,934 1296 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-02 19:38:32,608 1970 [http-nio-8080-exec-6] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-02 19:38:32,621 1983 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-02 19:38:32,622 1984 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-02 19:38:32,622 1984 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-02 19:38:32,628 1990 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-02 19:38:33,268 2630 [http-nio-8080-exec-6] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-02 19:38:34,301 3663 [http-nio-8080-exec-6] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-02 19:38:34,330 3692 [http-nio-8080-exec-6] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-02 19:46:29,146 0    [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-02 19:46:29,149 3    [http-nio-8080-exec-6] INFO  logger  - in getListOfSheets
+2017-05-02 19:46:29,686 540  [http-nio-8080-exec-6] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-02 19:46:29,722 576  [http-nio-8080-exec-6] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-02 19:46:29,731 585  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-02 19:46:29,736 590  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-02 19:46:29,838 692  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-02 19:46:29,839 693  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-02 19:46:30,292 1146 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-02 19:46:30,655 1509 [http-nio-8080-exec-6] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-02 19:46:30,667 1521 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-02 19:46:30,668 1522 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-02 19:46:30,668 1522 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-02 19:46:30,673 1527 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-02 19:46:31,182 2036 [http-nio-8080-exec-6] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-02 19:46:32,065 2919 [http-nio-8080-exec-6] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-02 19:46:32,087 2941 [http-nio-8080-exec-6] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-02 19:46:37,183 8037 [http-nio-8080-exec-10] INFO  logger  - dao created
+2017-05-02 19:46:37,281 8135 [http-nio-8080-exec-10] INFO  logger  - 4
+2017-05-02 19:46:37,281 8135 [http-nio-8080-exec-10] INFO  logger  - 42
+2017-05-02 19:46:37,282 8136 [http-nio-8080-exec-10] INFO  logger  - 43
+2017-05-02 19:46:37,282 8136 [http-nio-8080-exec-10] INFO  logger  - 50
+2017-05-02 19:46:37,282 8136 [http-nio-8080-exec-10] INFO  logger  - 52
+2017-05-02 19:46:37,292 8146 [http-nio-8080-exec-10] INFO  logger  - 4
+2017-05-02 19:46:37,350 8204 [http-nio-8080-exec-10] INFO  logger  - 3
+2017-05-03 12:23:36,815 0    [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-03 12:23:36,818 3    [http-nio-8080-exec-6] INFO  logger  - in getListOfSheets
+2017-05-03 12:23:37,384 569  [http-nio-8080-exec-6] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 12:23:37,421 606  [http-nio-8080-exec-6] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 12:23:37,429 614  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 12:23:37,434 619  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 12:23:37,543 728  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 12:23:37,543 728  [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 12:23:38,002 1187 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 12:23:38,428 1613 [http-nio-8080-exec-6] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 12:23:38,442 1627 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 12:23:38,444 1629 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 12:23:38,444 1629 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 12:23:38,450 1635 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 12:23:39,102 2287 [http-nio-8080-exec-6] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 12:23:40,425 3610 [http-nio-8080-exec-6] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 12:23:40,447 3632 [http-nio-8080-exec-6] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 17:43:54,053 19217238 [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-03 17:43:54,054 19217239 [http-nio-8080-exec-6] INFO  logger  - in getListOfSheets
+2017-05-03 18:10:07,759 0    [http-nio-8080-exec-4] INFO  logger  - dao created
+2017-05-03 18:10:07,762 3    [http-nio-8080-exec-4] INFO  logger  - in getListOfSheets
+2017-05-03 18:10:08,433 674  [http-nio-8080-exec-4] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 18:10:08,459 700  [http-nio-8080-exec-4] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 18:10:08,468 709  [http-nio-8080-exec-4] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 18:10:08,473 714  [http-nio-8080-exec-4] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 18:10:08,585 826  [http-nio-8080-exec-4] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 18:10:08,585 826  [http-nio-8080-exec-4] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 18:10:08,822 1063 [http-nio-8080-exec-4] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 18:10:09,245 1486 [http-nio-8080-exec-4] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 18:10:09,258 1499 [http-nio-8080-exec-4] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 18:10:09,259 1500 [http-nio-8080-exec-4] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 18:10:09,259 1500 [http-nio-8080-exec-4] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 18:10:09,264 1505 [http-nio-8080-exec-4] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 18:10:09,821 2062 [http-nio-8080-exec-4] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 18:10:10,772 3013 [http-nio-8080-exec-4] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 18:10:10,929 3170 [http-nio-8080-exec-4] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 18:10:12,875 5116 [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-03 18:10:12,877 5118 [http-nio-8080-exec-6] INFO  logger  - in getListOfSheets
+2017-05-03 18:10:19,929 12170 [http-nio-8080-exec-9] INFO  logger  - dao created
+2017-05-03 18:10:19,961 12202 [http-nio-8080-exec-9] INFO  logger  - 4
+2017-05-03 18:10:19,961 12202 [http-nio-8080-exec-9] INFO  logger  - 42
+2017-05-03 18:10:19,961 12202 [http-nio-8080-exec-9] INFO  logger  - 43
+2017-05-03 18:10:19,961 12202 [http-nio-8080-exec-9] INFO  logger  - 50
+2017-05-03 18:10:19,961 12202 [http-nio-8080-exec-9] INFO  logger  - 52
+2017-05-03 18:10:19,964 12205 [http-nio-8080-exec-9] INFO  logger  - 4
+2017-05-03 18:10:19,979 12220 [http-nio-8080-exec-9] INFO  logger  - 3
+2017-05-03 18:16:55,345 407586 [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-03 18:16:55,357 407598 [http-nio-8080-exec-6] INFO  logger  - 4
+2017-05-03 18:16:55,357 407598 [http-nio-8080-exec-6] INFO  logger  - 42
+2017-05-03 18:16:55,357 407598 [http-nio-8080-exec-6] INFO  logger  - 43
+2017-05-03 18:16:55,357 407598 [http-nio-8080-exec-6] INFO  logger  - 50
+2017-05-03 18:16:55,357 407598 [http-nio-8080-exec-6] INFO  logger  - 52
+2017-05-03 18:16:55,360 407601 [http-nio-8080-exec-6] INFO  logger  - 4
+2017-05-03 18:16:55,370 407611 [http-nio-8080-exec-6] INFO  logger  - 3
+2017-05-03 18:19:31,487 0    [http-nio-8080-exec-5] INFO  logger  - dao created
+2017-05-03 18:19:31,490 3    [http-nio-8080-exec-5] INFO  logger  - in getListOfSheets
+2017-05-03 18:19:32,030 543  [http-nio-8080-exec-5] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 18:19:32,058 571  [http-nio-8080-exec-5] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 18:19:32,065 578  [http-nio-8080-exec-5] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 18:19:32,071 584  [http-nio-8080-exec-5] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 18:19:32,170 683  [http-nio-8080-exec-5] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 18:19:32,170 683  [http-nio-8080-exec-5] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 18:19:32,420 933  [http-nio-8080-exec-5] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 18:19:32,777 1290 [http-nio-8080-exec-5] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 18:19:32,788 1301 [http-nio-8080-exec-5] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 18:19:32,789 1302 [http-nio-8080-exec-5] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 18:19:32,789 1302 [http-nio-8080-exec-5] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 18:19:32,795 1308 [http-nio-8080-exec-5] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 18:19:33,285 1798 [http-nio-8080-exec-5] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 18:19:34,159 2672 [http-nio-8080-exec-5] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 18:19:34,184 2697 [http-nio-8080-exec-5] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 18:26:20,036 408549 [http-nio-8080-exec-7] INFO  logger  - dao created
+2017-05-03 18:26:20,064 408577 [http-nio-8080-exec-7] INFO  logger  - 4
+2017-05-03 18:26:20,064 408577 [http-nio-8080-exec-7] INFO  logger  - 42
+2017-05-03 18:26:20,064 408577 [http-nio-8080-exec-7] INFO  logger  - 43
+2017-05-03 18:26:20,064 408577 [http-nio-8080-exec-7] INFO  logger  - 50
+2017-05-03 18:26:20,064 408577 [http-nio-8080-exec-7] INFO  logger  - 52
+2017-05-03 18:26:20,085 408598 [http-nio-8080-exec-7] INFO  logger  - 4
+2017-05-03 18:26:20,100 408613 [http-nio-8080-exec-7] INFO  logger  - 3
+2017-05-03 21:34:11,603 0    [http-nio-8080-exec-3] INFO  logger  - dao created
+2017-05-03 21:34:11,623 20   [http-nio-8080-exec-3] INFO  logger  - in getListOfSheets
+2017-05-03 21:34:12,362 759  [http-nio-8080-exec-3] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 21:34:12,404 801  [http-nio-8080-exec-3] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 21:34:12,422 819  [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 21:34:12,428 825  [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 21:34:12,583 980  [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 21:34:12,583 980  [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 21:34:12,920 1317 [http-nio-8080-exec-3] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 21:34:13,367 1764 [http-nio-8080-exec-3] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 21:34:13,392 1789 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 21:34:13,393 1790 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 21:34:13,393 1790 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 21:34:13,398 1795 [http-nio-8080-exec-3] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 21:34:14,412 2809 [http-nio-8080-exec-3] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 21:34:15,900 4297 [http-nio-8080-exec-3] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 21:34:15,945 4342 [http-nio-8080-exec-3] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 21:34:47,647 36044 [http-nio-8080-exec-8] INFO  logger  - dao created
+2017-05-03 21:34:47,670 36067 [http-nio-8080-exec-8] INFO  logger  - 4
+2017-05-03 21:34:47,670 36067 [http-nio-8080-exec-8] INFO  logger  - 42
+2017-05-03 21:34:47,670 36067 [http-nio-8080-exec-8] INFO  logger  - 43
+2017-05-03 21:34:47,671 36068 [http-nio-8080-exec-8] INFO  logger  - 50
+2017-05-03 21:34:47,671 36068 [http-nio-8080-exec-8] INFO  logger  - 52
+2017-05-03 21:34:47,688 36085 [http-nio-8080-exec-8] INFO  logger  - 4
+2017-05-03 21:34:47,714 36111 [http-nio-8080-exec-8] INFO  logger  - 3
+2017-05-03 22:40:27,170 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:40:29,143 1973 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:41:39,230 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:41:41,030 1800 [http-nio-8080-exec-9] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:42:41,617 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:42:43,451 1834 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:46:56,129 0    [http-nio-8080-exec-7] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:46:57,932 1803 [http-nio-8080-exec-9] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:48:18,953 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:48:20,773 1820 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:49:31,916 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:49:33,819 1903 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:50:23,560 51644 [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:51:43,468 1    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:51:45,463 1996 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:53:44,591 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:53:46,403 1812 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:55:29,024 1    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:55:30,816 1793 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:56:04,425 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:56:06,957 2532 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 22:56:21,263 16838 [http-nio-8080-exec-8] INFO  logger  - dao created
+2017-05-03 22:56:21,263 16838 [http-nio-8080-exec-8] INFO  logger  - in getListOfSheets
+2017-05-03 22:56:21,779 17354 [http-nio-8080-exec-8] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 22:56:21,808 17383 [http-nio-8080-exec-8] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 22:56:21,816 17391 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 22:56:21,822 17397 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 22:56:21,950 17525 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 22:56:21,951 17526 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 22:56:22,187 17762 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 22:56:22,584 18159 [http-nio-8080-exec-8] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 22:56:22,599 18174 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 22:56:22,599 18174 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 22:56:22,600 18175 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 22:56:22,607 18182 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 22:56:23,149 18724 [http-nio-8080-exec-8] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 22:56:24,098 19673 [http-nio-8080-exec-8] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 22:56:24,121 19696 [http-nio-8080-exec-8] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 22:59:32,449 208024 [http-nio-8080-exec-10] INFO  logger  - dao created
+2017-05-03 22:59:32,449 208024 [http-nio-8080-exec-10] INFO  logger  - in getListOfSheets
+2017-05-03 22:59:33,484 209059 [http-nio-8080-exec-1] INFO  logger  - dao created
+2017-05-03 22:59:33,484 209059 [http-nio-8080-exec-1] INFO  logger  - in getListOfSheets
+2017-05-03 22:59:34,126 209701 [http-nio-8080-exec-2] INFO  logger  - dao created
+2017-05-03 22:59:34,126 209701 [http-nio-8080-exec-2] INFO  logger  - in getListOfSheets
+2017-05-03 23:00:12,141 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 23:00:14,618 2477 [http-nio-8080-exec-9] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 23:00:31,208 19067 [http-nio-8080-exec-8] INFO  logger  - dao created
+2017-05-03 23:00:31,208 19067 [http-nio-8080-exec-8] INFO  logger  - in getListOfSheets
+2017-05-03 23:00:31,715 19574 [http-nio-8080-exec-8] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 23:00:31,743 19602 [http-nio-8080-exec-8] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 23:00:31,751 19610 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 23:00:31,756 19615 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 23:00:31,853 19712 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 23:00:31,853 19712 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 23:00:32,047 19906 [http-nio-8080-exec-8] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 23:00:32,425 20284 [http-nio-8080-exec-8] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 23:00:32,438 20297 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 23:00:32,439 20298 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 23:00:32,439 20298 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 23:00:32,445 20304 [http-nio-8080-exec-8] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 23:00:32,985 20844 [http-nio-8080-exec-8] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 23:00:33,889 21748 [http-nio-8080-exec-8] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 23:00:33,915 21774 [http-nio-8080-exec-8] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 23:01:21,030 68889 [http-nio-8080-exec-10] INFO  logger  - dao created
+2017-05-03 23:01:21,031 68890 [http-nio-8080-exec-10] INFO  logger  - in getListOfSheets
+2017-05-03 23:01:21,714 69573 [http-nio-8080-exec-1] INFO  logger  - dao created
+2017-05-03 23:01:21,714 69573 [http-nio-8080-exec-1] INFO  logger  - in getListOfSheets
+2017-05-03 23:01:22,048 69907 [http-nio-8080-exec-2] INFO  logger  - dao created
+2017-05-03 23:01:22,048 69907 [http-nio-8080-exec-2] INFO  logger  - in getListOfSheets
+2017-05-03 23:01:24,559 72418 [http-nio-8080-exec-3] INFO  logger  - dao created
+2017-05-03 23:01:24,560 72419 [http-nio-8080-exec-3] INFO  logger  - in getListOfSheets
+2017-05-03 23:01:25,557 73416 [http-nio-8080-exec-4] INFO  logger  - dao created
+2017-05-03 23:01:25,557 73416 [http-nio-8080-exec-4] INFO  logger  - in getListOfSheets
+2017-05-03 23:01:25,756 73615 [http-nio-8080-exec-5] INFO  logger  - dao created
+2017-05-03 23:01:25,756 73615 [http-nio-8080-exec-5] INFO  logger  - in getListOfSheets
+2017-05-03 23:01:51,165 0    [http-nio-8080-exec-6] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 23:01:53,450 2285 [http-nio-8080-exec-8] ERROR org.apache.log4j.Logger  - Encountered error while attempting to log in.
+2017-05-03 23:02:02,544 11379 [http-nio-8080-exec-6] INFO  logger  - dao created
+2017-05-03 23:02:02,544 11379 [http-nio-8080-exec-6] INFO  logger  - in getListOfSheets
+2017-05-03 23:02:03,053 11888 [http-nio-8080-exec-6] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-05-03 23:02:03,081 11916 [http-nio-8080-exec-6] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-05-03 23:02:03,090 11925 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-05-03 23:02:03,094 11929 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-05-03 23:02:03,208 12043 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-05-03 23:02:03,209 12044 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-05-03 23:02:03,450 12285 [http-nio-8080-exec-6] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-05-03 23:02:03,859 12694 [http-nio-8080-exec-6] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 23:02:03,874 12709 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/pathfinderdb]
+2017-05-03 23:02:03,874 12709 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-05-03 23:02:03,874 12709 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-05-03 23:02:03,880 12715 [http-nio-8080-exec-6] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-05-03 23:02:04,436 13271 [http-nio-8080-exec-6] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-05-03 23:02:05,326 14161 [http-nio-8080-exec-6] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-05-03 23:02:05,347 14182 [http-nio-8080-exec-6] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory

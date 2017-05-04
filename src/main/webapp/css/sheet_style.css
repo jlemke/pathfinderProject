@@ -15,6 +15,12 @@
     text-align: center;
 }
 
+.borderless {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
 .underline {
     border: 0;
     border-bottom: solid 1px #000;
@@ -22,10 +28,6 @@
     outline: none;
     margin: 5px;
     display: block;
-}
-
-.score-header {
-    font-size: 12px;
 }
 
 .content {
@@ -107,17 +109,38 @@
     text-align: left;
 }
 
+
+
 .ability-column-header {
-    font-size: 12px;
-    width: 40px;
+    font-size: 1.7vw;
+    font-weight: bold;
 }
 
-.score-table {
-    border: 2px solid black;
+.score-header {
+    font-size: 1.7vw;
+    font-weight: bold;
 }
 
-.score-table td {
-    border: 2px solid black;
+.ability-scores-table td, th {
+    border: 1px solid lightgrey;
+    width: 30%;
+    text-align: center;
+}
+
+.ability-scores-table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.score-input {
+    width: 100%;
+    text-align: center;
+}
+
+.table-scroll {
+    overflow: auto;
+    display: inline;
 }
 
 .fixed-element {
@@ -125,4 +148,69 @@
     position:fixed;
     top:0;
     z-index:100;
+}
+
+.ability-scores {
+    float: left;
+}
+
+.ability-scores * {
+    text-align: center;
+}
+
+.ability-scores > div {
+    margin: 1%;
+}
+
+.score-box {
+    border: solid 1px lightgrey;
+}
+
+.total-columns-table {
+    width: 27%;
+    height: 100%;
+    float: left;
+}
+
+.total-columns-table > div {
+    float: left;
+    width: 33.33333333%;
+    height: 14.28571%;
+}
+
+.user-columns-table {
+    width: 36%;
+    float: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.user-columns-table > div {
+    width: 25%;
+    height: 14.28571%;
+    display: inline-block;
+}
+
+.add-column-area {
+    width: 9%;
+    height: 100%;
+    padding: 1%;
+    float: left;
+}
+
+.add-column-area > button {
+    vertical-align: middle;
+}
+
+.temp-columns-table {
+    width: 18%;
+    float: left;
+}
+
+.temp-columns-table > div {
+    width: 50%;
+    height: 14.28571%;
+    float: left;
 }

@@ -14,7 +14,7 @@
 
     <h1>Please login or register to access this page.</h1>
     <br/>
-    <a href="login.jsp">Login</a>
+    <a href="WEB-INF/login.jsp">Login</a>
     <br />
     <a href="signup.jsp">Sign Up</a>
 </body>
